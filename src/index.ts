@@ -27,6 +27,7 @@ export type { AmarantCartShippingBatchModel } from './models/AmarantCartShipping
 export type { AmarantCartShippingRateModel } from './models/AmarantCartShippingRateModel';
 export type { AmarantCartTotalModel } from './models/AmarantCartTotalModel';
 export type { AmarantCustomizableProductModel } from './models/AmarantCustomizableProductModel';
+export { AmarantDataScope } from './models/AmarantDataScope';
 export type { AmarantGenericProductModel } from './models/AmarantGenericProductModel';
 export type { AmarantGroupedProductItemModel } from './models/AmarantGroupedProductItemModel';
 export type { AmarantGroupedProductModel } from './models/AmarantGroupedProductModel';
