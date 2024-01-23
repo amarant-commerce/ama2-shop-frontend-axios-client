@@ -9,11 +9,14 @@ export type { OpenAPIConfig } from './core/OpenAPI';
 
 export { AddItemToCartInputAmarantSalesCartItemInputProductDto } from './models/AddItemToCartInputAmarantSalesCartItemInputProductDto';
 export type { AmarantAliasUri } from './models/AmarantAliasUri';
+export type { AmarantApiCollectionResponse } from './models/AmarantApiCollectionResponse';
 export type { AmarantApiError } from './models/AmarantApiError';
 export type { AmarantApiLinks } from './models/AmarantApiLinks';
 export type { AmarantApiPaginatedCollectionResponse } from './models/AmarantApiPaginatedCollectionResponse';
-export type { AmarantAttribute } from './models/AmarantAttribute';
-export { AmarantAttributeFlag } from './models/AmarantAttributeFlag';
+export { AmarantAttributeDataTypeEnum } from './models/AmarantAttributeDataTypeEnum';
+export { AmarantAttributeInputTypeEnum } from './models/AmarantAttributeInputTypeEnum';
+export type { AmarantAttributeModel } from './models/AmarantAttributeModel';
+export { AmarantAttributeModelFlag } from './models/AmarantAttributeModelFlag';
 export type { AmarantCartAdjustmentModel } from './models/AmarantCartAdjustmentModel';
 export type { AmarantCartCustomerModel } from './models/AmarantCartCustomerModel';
 export type { AmarantCartItemModel } from './models/AmarantCartItemModel';

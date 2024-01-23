@@ -23,7 +23,7 @@ export class ProductsService {
         page?: number,
         itemsPerPage?: number,
     ): CancelablePromise<(AmarantApiPaginatedCollectionResponse & {
-        data?: Array<AmarantProductModel>;
+        data: Array<AmarantProductModel>;
     })> {
         return __request(OpenAPI, {
             method: 'GET',

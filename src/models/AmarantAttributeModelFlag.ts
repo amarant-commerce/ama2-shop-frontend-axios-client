@@ -2,7 +2,7 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-export enum AmarantAttributeFlag {
+export enum AmarantAttributeModelFlag {
     FACTORY = 'factory',
     GLOBAL = 'global',
     VISIBLE = 'visible',
