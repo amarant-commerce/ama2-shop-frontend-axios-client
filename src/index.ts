@@ -33,7 +33,11 @@ export type { AmarantGroupedProductItemModel } from './models/AmarantGroupedProd
 export type { AmarantGroupedProductModel } from './models/AmarantGroupedProductModel';
 export type { AmarantImageModel } from './models/AmarantImageModel';
 export type { AmarantImageModelVariant } from './models/AmarantImageModelVariant';
+export type { AmarantMediaModel } from './models/AmarantMediaModel';
+export type { AmarantNavigationContainer } from './models/AmarantNavigationContainer';
 export type { AmarantProductCategory } from './models/AmarantProductCategory';
+export type { AmarantProductCategoryNode } from './models/AmarantProductCategoryNode';
+export type { AmarantProductCategoryNodeItem } from './models/AmarantProductCategoryNodeItem';
 export type { AmarantProductCustomizationModel } from './models/AmarantProductCustomizationModel';
 export type { AmarantProductCustomizationOptionModel } from './models/AmarantProductCustomizationOptionModel';
 export type { AmarantProductInventory } from './models/AmarantProductInventory';
@@ -58,3 +62,4 @@ export { AttributesService } from './services/AttributesService';
 export { CartsService } from './services/CartsService';
 export { ProductsService } from './services/ProductsService';
 export { SearchService } from './services/SearchService';
+export { ViewService } from './services/ViewService';

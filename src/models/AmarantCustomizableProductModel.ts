@@ -16,7 +16,7 @@ export type AmarantCustomizableProductModel = {
     scopedPath: string;
     sku: string;
     setId: number;
-    attributes: Record<string, (string | number | boolean | null)>;
+    attributes: Record<string, string | number | number | boolean | any[] | null>;
     prices: AmarantProductPrices;
     media: Array<AmarantImageModel>;
     categoryIds: Array<number>;

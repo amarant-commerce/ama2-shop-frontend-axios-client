@@ -11,5 +11,6 @@ export type AmarantImageModel = {
     width: number;
     height: number;
     variants: Array<AmarantImageModelVariant>;
+    type: 'image';
 };
 

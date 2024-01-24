@@ -6,6 +6,7 @@ export enum AmarantAttributeModelFlag {
     FACTORY = 'factory',
     GLOBAL = 'global',
     VISIBLE = 'visible',
+    VISIBLE_IN_NAVIGATION = 'visible_in_navigation',
     EDITABLE = 'editable',
     PRESENTABLE = 'presentable',
     REQUIRED = 'required',
