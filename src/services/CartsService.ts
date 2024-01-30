@@ -22,6 +22,24 @@ export class CartsService {
         });
     }
     /**
+     * Get cart.
+     * Get cart.
+     * @param id Cart ID.
+     * @returns AmarantCartModel OK
+     * @throws ApiError
+     */
+    public static getCart(
+        id: string,
+    ): CancelablePromise<AmarantCartModel> {
+        return __request(OpenAPI, {
+            method: 'GET',
+            url: '/api/carts/v1/{id}',
+            path: {
+                'id': id,
+            },
+        });
+    }
+    /**
      * Add item to cart.
      * Add item to cart.
      * @param id Cart ID.
