@@ -11,6 +11,7 @@ export { AddItemToCartInputAmarantSalesCartItemInputProductDto } from './models/
 export type { AmarantAliasUri } from './models/AmarantAliasUri';
 export type { AmarantApiCollectionResponse } from './models/AmarantApiCollectionResponse';
 export type { AmarantApiError } from './models/AmarantApiError';
+export type { AmarantApiErrorDetails } from './models/AmarantApiErrorDetails';
 export type { AmarantApiLinks } from './models/AmarantApiLinks';
 export type { AmarantApiPaginatedCollectionResponse } from './models/AmarantApiPaginatedCollectionResponse';
 export { AmarantAttributeDataTypeEnum } from './models/AmarantAttributeDataTypeEnum';
@@ -28,6 +29,8 @@ export type { AmarantCartShippingRateModel } from './models/AmarantCartShippingR
 export type { AmarantCartTotalModel } from './models/AmarantCartTotalModel';
 export type { AmarantCustomizableProductModel } from './models/AmarantCustomizableProductModel';
 export { AmarantDataScope } from './models/AmarantDataScope';
+export type { AmarantErrorDetailsItem } from './models/AmarantErrorDetailsItem';
+export type { AmarantErrorDetailsItemError } from './models/AmarantErrorDetailsItemError';
 export type { AmarantGenericProductModel } from './models/AmarantGenericProductModel';
 export type { AmarantGroupedProductItemModel } from './models/AmarantGroupedProductItemModel';
 export type { AmarantGroupedProductModel } from './models/AmarantGroupedProductModel';
@@ -48,6 +51,9 @@ export type { AmarantProductPricing } from './models/AmarantProductPricing';
 export type { AmarantSalesCartAdditionalDataInputDto } from './models/AmarantSalesCartAdditionalDataInputDto';
 export type { AmarantSalesCartItemInputGenericProductDto } from './models/AmarantSalesCartItemInputGenericProductDto';
 export type { AmarantSalesCartItemInputGroupedProductDto } from './models/AmarantSalesCartItemInputGroupedProductDto';
+export type { AmarantSalesCustomerAccountAddressInputDto } from './models/AmarantSalesCustomerAccountAddressInputDto';
+export type { AmarantSalesCustomerAccountOutputDto } from './models/AmarantSalesCustomerAccountOutputDto';
+export { AmarantSalesCustomerAccountStateOutputDto } from './models/AmarantSalesCustomerAccountStateOutputDto';
 export type { AmarantSearchAggregationResultModel } from './models/AmarantSearchAggregationResultModel';
 export type { AmarantSearchAggregationResultStatsAggregationModel } from './models/AmarantSearchAggregationResultStatsAggregationModel';
 export type { AmarantSearchAggregationResultTermAggregationModel } from './models/AmarantSearchAggregationResultTermAggregationModel';
@@ -55,11 +61,17 @@ export type { AmarantSearchCriteriaFilter } from './models/AmarantSearchCriteria
 export type { AmarantSearchResultModel } from './models/AmarantSearchResultModel';
 export type { AmarantSearchResultProductSearchResultItemModel } from './models/AmarantSearchResultProductSearchResultItemModel';
 export type { AmarantSearchTermAggregationItem } from './models/AmarantSearchTermAggregationItem';
+export type { AmarantSecurityJwtTokenModel } from './models/AmarantSecurityJwtTokenModel';
+export type { CreateCustomerAccountInputAmarantSalesCustomerAccountInputDto } from './models/CreateCustomerAccountInputAmarantSalesCustomerAccountInputDto';
+export type { GetAuthorizationTokenInputAmarantSalesCustomerLoginInputDto } from './models/GetAuthorizationTokenInputAmarantSalesCustomerLoginInputDto';
+export type { RefreshAuthorizationTokenInputAmarantSalesCustomerRefreshTokenInputDto } from './models/RefreshAuthorizationTokenInputAmarantSalesCustomerRefreshTokenInputDto';
 export type { UpdateCartItemInputAmarantSalesCartItemUpdateInputDto } from './models/UpdateCartItemInputAmarantSalesCartItemUpdateInputDto';
 
 export { AliasService } from './services/AliasService';
 export { AttributesService } from './services/AttributesService';
 export { CartsService } from './services/CartsService';
+export { CategoriesService } from './services/CategoriesService';
+export { CustomersService } from './services/CustomersService';
 export { ProductsService } from './services/ProductsService';
 export { SearchService } from './services/SearchService';
 export { ViewService } from './services/ViewService';

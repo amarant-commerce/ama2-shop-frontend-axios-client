@@ -3,6 +3,7 @@
 /* tslint:disable */
 /* eslint-disable */
 import type { AmarantApiPaginatedCollectionResponse } from '../models/AmarantApiPaginatedCollectionResponse';
+import type { AmarantProductCategoryNodeItem } from '../models/AmarantProductCategoryNodeItem';
 import type { AmarantProductModel } from '../models/AmarantProductModel';
 import type { AmarantSearchCriteriaFilter } from '../models/AmarantSearchCriteriaFilter';
 import type { CancelablePromise } from '../core/CancelablePromise';
@@ -48,6 +49,24 @@ export class ProductsService {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/api/products/v1/{id}',
+            path: {
+                'id': id,
+            },
+        });
+    }
+    /**
+     * Get product category item.
+     * Get product category item.
+     * @param id Category ID
+     * @returns AmarantProductCategoryNodeItem OK
+     * @throws ApiError
+     */
+    public static getCategoryItem(
+        id: number,
+    ): CancelablePromise<AmarantProductCategoryNodeItem> {
+        return __request(OpenAPI, {
+            method: 'GET',
+            url: '/api/categories/v1/{id}',
             path: {
                 'id': id,
             },
