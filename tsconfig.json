@@ -1,7 +1,15 @@
 {
+  "files": ["src/index.ts"],
   "compilerOptions": {
-    "target": "ESNext",
-    "module": "CommonJS",
-    "lib": ["esnext"]
-  }
+    "target": "es2019",
+    "module": "es2020",
+    "declaration": true,
+    "outDir": "./dist",
+    "noEmit": false,
+    "esModuleInterop": true,
+    "skipLibCheck": true
+  },
+  "include": [
+    "src"
+  ]
 }
