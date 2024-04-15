@@ -2,7 +2,7 @@
   "name": "amarant2-shop-frontend-axios-client",
   "version": "1.0.0",
   "description": "Axios client for Amarant Commerce 2.0 Shop Frontend API",
-  "main": "src/index.ts",
+  "main": "dist/index.js",
   "scripts": {
     "build": "npx tsc"
   },
@@ -21,7 +21,9 @@
   },
   "homepage": "https://github.com/amarant-commerce/ama-2shop-frontend-axios-client",
   "dependencies": {
-    "axios": "^1.6",
+    "axios": "^1.6"
+  },
+  "devDependencies": {
     "typescript": "^5.0"
   }
 }

@@ -1,4 +1,4 @@
-/* generated using openapi-typescript-codegen -- do no edit */
+/* generated using openapi-typescript-codegen -- do not edit */
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
@@ -13,8 +13,8 @@ export class ProductsService {
     /**
      * Get product collection.
      * Get product collection.
-     * @param q Accepted as a JSON encoded string.
-     * @param page Page.
+     * @param q Search criteria query.
+     * @param page PageModel.
      * @param itemsPerPage Items per page.
      * @returns any OK
      * @throws ApiError

@@ -1,4 +1,4 @@
-/* generated using openapi-typescript-codegen -- do no edit */
+/* generated using openapi-typescript-codegen -- do not edit */
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
@@ -65,8 +65,9 @@ export const getQueryString = (params: Record<string, any>): string => {
     const process = (key: string, value: any) => {
         if (isDefined(value)) {
             if (Array.isArray(value)) {
-                value.forEach(v => {
-                    process(key, v);
+                // preserve indexes for array type query params
+                value.forEach((v, i) => {
+                    process(`${key}[${i}]`, v);
                 });
             } else if (typeof value === 'object') {
                 Object.entries(value).forEach(([k, v]) => {
@@ -175,7 +176,7 @@ export const getHeaders = async (config: OpenAPIConfig, options: ApiRequestOptio
         headers['Authorization'] = `Basic ${credentials}`;
     }
 
-    if (options.body) {
+    if (options.body !== undefined) {
         if (options.mediaType) {
             headers['Content-Type'] = options.mediaType;
         } else if (isBlob(options.body)) {
@@ -215,6 +216,7 @@ export const sendRequest = async <T>(
         data: body ?? formData,
         method: options.method,
         withCredentials: config.WITH_CREDENTIALS,
+        withXSRFToken: config.CREDENTIALS === 'include' ? config.WITH_CREDENTIALS : false,
         cancelToken: source.token,
     };
 
