@@ -5,7 +5,7 @@ export class ProductsService {
      * Get product collection.
      * Get product collection.
      * @param q Search criteria query.
-     * @param page PageModel.
+     * @param page Page.
      * @param itemsPerPage Items per page.
      * @returns any OK
      * @throws ApiError
