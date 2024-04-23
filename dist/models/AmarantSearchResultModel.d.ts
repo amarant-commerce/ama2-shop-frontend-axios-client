@@ -1,5 +1,5 @@
 import type { AmarantSearchResultProductSearchResultItemModel } from './AmarantSearchResultProductSearchResultItemModel';
-export type AmarantSearchResultModel = {
+export type AmarantSearchResultModel = Array<{
     type?: string;
     results?: Array<AmarantSearchResultProductSearchResultItemModel>;
-};
+}>;
