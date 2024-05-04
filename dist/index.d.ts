@@ -31,6 +31,8 @@ export type { AmarantCustomizableProductModel } from './models/AmarantCustomizab
 export { AmarantDataScope } from './models/AmarantDataScope';
 export type { AmarantErrorDetailsItem } from './models/AmarantErrorDetailsItem';
 export type { AmarantErrorDetailsItemError } from './models/AmarantErrorDetailsItemError';
+export type { AmarantEstimatedShippingRateModel } from './models/AmarantEstimatedShippingRateModel';
+export type { AmarantEstimatedShippingRateModelCollection } from './models/AmarantEstimatedShippingRateModelCollection';
 export type { AmarantGenericProductModel } from './models/AmarantGenericProductModel';
 export type { AmarantGroupedProductItemModel } from './models/AmarantGroupedProductItemModel';
 export type { AmarantGroupedProductModel } from './models/AmarantGroupedProductModel';
@@ -51,6 +53,7 @@ export type { AmarantProductPricing } from './models/AmarantProductPricing';
 export type { AmarantSalesCartAdditionalDataInputDto } from './models/AmarantSalesCartAdditionalDataInputDto';
 export type { AmarantSalesCartItemInputGenericProductDto } from './models/AmarantSalesCartItemInputGenericProductDto';
 export type { AmarantSalesCartItemInputGroupedProductDto } from './models/AmarantSalesCartItemInputGroupedProductDto';
+export type { AmarantSalesCartShippingRateEstimation } from './models/AmarantSalesCartShippingRateEstimation';
 export type { AmarantSalesCustomerAccountAddressInputDto } from './models/AmarantSalesCustomerAccountAddressInputDto';
 export type { AmarantSalesCustomerAccountOutputDto } from './models/AmarantSalesCustomerAccountOutputDto';
 export { AmarantSalesCustomerAccountStateOutputDto } from './models/AmarantSalesCustomerAccountStateOutputDto';
@@ -64,6 +67,7 @@ export type { AmarantSearchTermAggregationItem } from './models/AmarantSearchTer
 export type { AmarantSecurityJwtTokenModel } from './models/AmarantSecurityJwtTokenModel';
 export type { CreateCustomerAccountInputAmarantSalesCustomerAccountInputDto } from './models/CreateCustomerAccountInputAmarantSalesCustomerAccountInputDto';
 export type { GetAuthorizationTokenInputAmarantSalesCustomerLoginInputDto } from './models/GetAuthorizationTokenInputAmarantSalesCustomerLoginInputDto';
+export type { GetAvailableShippingRatesInputAmarantSalesCartShippingRateEstimationGroup } from './models/GetAvailableShippingRatesInputAmarantSalesCartShippingRateEstimationGroup';
 export type { RefreshAuthorizationTokenInputAmarantSalesCustomerRefreshTokenInputDto } from './models/RefreshAuthorizationTokenInputAmarantSalesCustomerRefreshTokenInputDto';
 export type { UpdateCartItemInputAmarantSalesCartItemUpdateInputDto } from './models/UpdateCartItemInputAmarantSalesCartItemUpdateInputDto';
 export { AliasService } from './services/AliasService';

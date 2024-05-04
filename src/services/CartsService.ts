@@ -4,6 +4,8 @@
 /* eslint-disable */
 import type { AddItemToCartInputAmarantSalesCartItemInputProductDto } from '../models/AddItemToCartInputAmarantSalesCartItemInputProductDto';
 import type { AmarantCartModel } from '../models/AmarantCartModel';
+import type { AmarantEstimatedShippingRateModelCollection } from '../models/AmarantEstimatedShippingRateModelCollection';
+import type { GetAvailableShippingRatesInputAmarantSalesCartShippingRateEstimationGroup } from '../models/GetAvailableShippingRatesInputAmarantSalesCartShippingRateEstimationGroup';
 import type { UpdateCartItemInputAmarantSalesCartItemUpdateInputDto } from '../models/UpdateCartItemInputAmarantSalesCartItemUpdateInputDto';
 import type { CancelablePromise } from '../core/CancelablePromise';
 import { OpenAPI } from '../core/OpenAPI';
@@ -54,6 +56,28 @@ export class CartsService {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/api/carts/v1/{id}/items',
+            path: {
+                'id': id,
+            },
+            body: requestBody,
+            mediaType: 'application/json',
+        });
+    }
+    /**
+     * Get available shipping rates for cart.
+     * Get available shipping rates for cart.
+     * @param id Cart ID.
+     * @param requestBody
+     * @returns AmarantEstimatedShippingRateModelCollection OK
+     * @throws ApiError
+     */
+    public static getAvailableShippingRates(
+        id: string,
+        requestBody?: GetAvailableShippingRatesInputAmarantSalesCartShippingRateEstimationGroup,
+    ): CancelablePromise<AmarantEstimatedShippingRateModelCollection> {
+        return __request(OpenAPI, {
+            method: 'POST',
+            url: '/api/carts/v1/{id}/shipping-rates',
             path: {
                 'id': id,
             },

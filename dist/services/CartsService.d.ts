@@ -1,5 +1,7 @@
 import type { AddItemToCartInputAmarantSalesCartItemInputProductDto } from '../models/AddItemToCartInputAmarantSalesCartItemInputProductDto';
 import type { AmarantCartModel } from '../models/AmarantCartModel';
+import type { AmarantEstimatedShippingRateModelCollection } from '../models/AmarantEstimatedShippingRateModelCollection';
+import type { GetAvailableShippingRatesInputAmarantSalesCartShippingRateEstimationGroup } from '../models/GetAvailableShippingRatesInputAmarantSalesCartShippingRateEstimationGroup';
 import type { UpdateCartItemInputAmarantSalesCartItemUpdateInputDto } from '../models/UpdateCartItemInputAmarantSalesCartItemUpdateInputDto';
 import type { CancelablePromise } from '../core/CancelablePromise';
 export declare class CartsService {
@@ -27,6 +29,15 @@ export declare class CartsService {
      * @throws ApiError
      */
     static addItemToCart(id: string, requestBody?: AddItemToCartInputAmarantSalesCartItemInputProductDto): CancelablePromise<AmarantCartModel>;
+    /**
+     * Get available shipping rates for cart.
+     * Get available shipping rates for cart.
+     * @param id Cart ID.
+     * @param requestBody
+     * @returns AmarantEstimatedShippingRateModelCollection OK
+     * @throws ApiError
+     */
+    static getAvailableShippingRates(id: string, requestBody?: GetAvailableShippingRatesInputAmarantSalesCartShippingRateEstimationGroup): CancelablePromise<AmarantEstimatedShippingRateModelCollection>;
     /**
      * Remove cart item.
      * Remove cart item.

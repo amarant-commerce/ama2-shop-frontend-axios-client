@@ -49,6 +49,25 @@ export class CartsService {
         });
     }
     /**
+     * Get available shipping rates for cart.
+     * Get available shipping rates for cart.
+     * @param id Cart ID.
+     * @param requestBody
+     * @returns AmarantEstimatedShippingRateModelCollection OK
+     * @throws ApiError
+     */
+    static getAvailableShippingRates(id, requestBody) {
+        return __request(OpenAPI, {
+            method: 'POST',
+            url: '/api/carts/v1/{id}/shipping-rates',
+            path: {
+                'id': id,
+            },
+            body: requestBody,
+            mediaType: 'application/json',
+        });
+    }
+    /**
      * Remove cart item.
      * Remove cart item.
      * @param id Cart ID.
