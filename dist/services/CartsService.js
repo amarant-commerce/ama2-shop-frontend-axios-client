@@ -49,8 +49,8 @@ export class CartsService {
         });
     }
     /**
-     * Get available shipping rates for cart.
-     * Get available shipping rates for cart.
+     * Get available shipping rates.
+     * Get available shipping rates.
      * @param id Cart ID.
      * @param requestBody
      * @returns AmarantEstimatedShippingRateModelCollection OK
@@ -60,6 +60,44 @@ export class CartsService {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/api/carts/v1/{id}/shipping-rates',
+            path: {
+                'id': id,
+            },
+            body: requestBody,
+            mediaType: 'application/json',
+        });
+    }
+    /**
+     * Set shipping information.
+     * Set shipping information.
+     * @param id Cart ID.
+     * @param requestBody
+     * @returns AmarantCartModel OK
+     * @throws ApiError
+     */
+    static setShippingInformation(id, requestBody) {
+        return __request(OpenAPI, {
+            method: 'POST',
+            url: '/api/carts/v1/{id}/set-shipping-information',
+            path: {
+                'id': id,
+            },
+            body: requestBody,
+            mediaType: 'application/json',
+        });
+    }
+    /**
+     * Set payment information.
+     * Set payment information.
+     * @param id Cart ID.
+     * @param requestBody
+     * @returns AmarantCartModel OK
+     * @throws ApiError
+     */
+    static setPaymentInformation(id, requestBody) {
+        return __request(OpenAPI, {
+            method: 'POST',
+            url: '/api/carts/v1/{id}/set-payment-information',
             path: {
                 'id': id,
             },

@@ -2,9 +2,7 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-export type AmarantCartPaymentModel = {
-    id: string;
-    addressId?: string | null;
-    method: string;
+export type AmarantSalesCartShippingInformationInputItemDto = {
+    orderItemId: string;
 };
 

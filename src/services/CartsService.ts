@@ -6,6 +6,8 @@ import type { AddItemToCartInputAmarantSalesCartItemInputProductDto } from '../m
 import type { AmarantCartModel } from '../models/AmarantCartModel';
 import type { AmarantEstimatedShippingRateModelCollection } from '../models/AmarantEstimatedShippingRateModelCollection';
 import type { GetAvailableShippingRatesInputAmarantSalesCartShippingRateEstimationGroup } from '../models/GetAvailableShippingRatesInputAmarantSalesCartShippingRateEstimationGroup';
+import type { SetPaymentInformationInputAmarantSalesCartPaymentInformationInputGroupDto } from '../models/SetPaymentInformationInputAmarantSalesCartPaymentInformationInputGroupDto';
+import type { SetShippingInformationInputAmarantSalesCartShippingInformationInputGroupDto } from '../models/SetShippingInformationInputAmarantSalesCartShippingInformationInputGroupDto';
 import type { UpdateCartItemInputAmarantSalesCartItemUpdateInputDto } from '../models/UpdateCartItemInputAmarantSalesCartItemUpdateInputDto';
 import type { CancelablePromise } from '../core/CancelablePromise';
 import { OpenAPI } from '../core/OpenAPI';
@@ -64,8 +66,8 @@ export class CartsService {
         });
     }
     /**
-     * Get available shipping rates for cart.
-     * Get available shipping rates for cart.
+     * Get available shipping rates.
+     * Get available shipping rates.
      * @param id Cart ID.
      * @param requestBody
      * @returns AmarantEstimatedShippingRateModelCollection OK
@@ -78,6 +80,50 @@ export class CartsService {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/api/carts/v1/{id}/shipping-rates',
+            path: {
+                'id': id,
+            },
+            body: requestBody,
+            mediaType: 'application/json',
+        });
+    }
+    /**
+     * Set shipping information.
+     * Set shipping information.
+     * @param id Cart ID.
+     * @param requestBody
+     * @returns AmarantCartModel OK
+     * @throws ApiError
+     */
+    public static setShippingInformation(
+        id: string,
+        requestBody?: SetShippingInformationInputAmarantSalesCartShippingInformationInputGroupDto,
+    ): CancelablePromise<AmarantCartModel> {
+        return __request(OpenAPI, {
+            method: 'POST',
+            url: '/api/carts/v1/{id}/set-shipping-information',
+            path: {
+                'id': id,
+            },
+            body: requestBody,
+            mediaType: 'application/json',
+        });
+    }
+    /**
+     * Set payment information.
+     * Set payment information.
+     * @param id Cart ID.
+     * @param requestBody
+     * @returns AmarantCartModel OK
+     * @throws ApiError
+     */
+    public static setPaymentInformation(
+        id: string,
+        requestBody?: SetPaymentInformationInputAmarantSalesCartPaymentInformationInputGroupDto,
+    ): CancelablePromise<AmarantCartModel> {
+        return __request(OpenAPI, {
+            method: 'POST',
+            url: '/api/carts/v1/{id}/set-payment-information',
             path: {
                 'id': id,
             },

@@ -2,9 +2,9 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-export type AmarantCartPaymentModel = {
+export type AmarantDirectoryCountryModel = {
     id: string;
-    addressId?: string | null;
-    method: string;
+    name: string;
+    localizedName: string;
 };
 

@@ -14,6 +14,7 @@ export var AmarantAttributeModelFlag;
     AmarantAttributeModelFlag["FILTERABLE"] = "filterable";
     AmarantAttributeModelFlag["SEARCHABLE"] = "searchable";
     AmarantAttributeModelFlag["SORTABLE"] = "sortable";
+    AmarantAttributeModelFlag["TRANSLATABLE"] = "translatable";
     AmarantAttributeModelFlag["USED_IN_GRID"] = "used_in_grid";
     AmarantAttributeModelFlag["FILTERABLE_IN_GRID"] = "filterable_in_grid";
     AmarantAttributeModelFlag["SORTABLE_IN_GRID"] = "sortable_in_grid";

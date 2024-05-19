@@ -18,6 +18,8 @@ export { CartsService } from './services/CartsService';
 export { CategoriesService } from './services/CategoriesService';
 export { CmsService } from './services/CmsService';
 export { CustomersService } from './services/CustomersService';
+export { DirectoryService } from './services/DirectoryService';
+export { OrdersService } from './services/OrdersService';
 export { ProductsService } from './services/ProductsService';
 export { SearchService } from './services/SearchService';
 export { ViewService } from './services/ViewService';

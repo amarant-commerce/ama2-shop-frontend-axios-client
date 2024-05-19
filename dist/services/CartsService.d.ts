@@ -2,6 +2,8 @@ import type { AddItemToCartInputAmarantSalesCartItemInputProductDto } from '../m
 import type { AmarantCartModel } from '../models/AmarantCartModel';
 import type { AmarantEstimatedShippingRateModelCollection } from '../models/AmarantEstimatedShippingRateModelCollection';
 import type { GetAvailableShippingRatesInputAmarantSalesCartShippingRateEstimationGroup } from '../models/GetAvailableShippingRatesInputAmarantSalesCartShippingRateEstimationGroup';
+import type { SetPaymentInformationInputAmarantSalesCartPaymentInformationInputGroupDto } from '../models/SetPaymentInformationInputAmarantSalesCartPaymentInformationInputGroupDto';
+import type { SetShippingInformationInputAmarantSalesCartShippingInformationInputGroupDto } from '../models/SetShippingInformationInputAmarantSalesCartShippingInformationInputGroupDto';
 import type { UpdateCartItemInputAmarantSalesCartItemUpdateInputDto } from '../models/UpdateCartItemInputAmarantSalesCartItemUpdateInputDto';
 import type { CancelablePromise } from '../core/CancelablePromise';
 export declare class CartsService {
@@ -30,14 +32,32 @@ export declare class CartsService {
      */
     static addItemToCart(id: string, requestBody?: AddItemToCartInputAmarantSalesCartItemInputProductDto): CancelablePromise<AmarantCartModel>;
     /**
-     * Get available shipping rates for cart.
-     * Get available shipping rates for cart.
+     * Get available shipping rates.
+     * Get available shipping rates.
      * @param id Cart ID.
      * @param requestBody
      * @returns AmarantEstimatedShippingRateModelCollection OK
      * @throws ApiError
      */
     static getAvailableShippingRates(id: string, requestBody?: GetAvailableShippingRatesInputAmarantSalesCartShippingRateEstimationGroup): CancelablePromise<AmarantEstimatedShippingRateModelCollection>;
+    /**
+     * Set shipping information.
+     * Set shipping information.
+     * @param id Cart ID.
+     * @param requestBody
+     * @returns AmarantCartModel OK
+     * @throws ApiError
+     */
+    static setShippingInformation(id: string, requestBody?: SetShippingInformationInputAmarantSalesCartShippingInformationInputGroupDto): CancelablePromise<AmarantCartModel>;
+    /**
+     * Set payment information.
+     * Set payment information.
+     * @param id Cart ID.
+     * @param requestBody
+     * @returns AmarantCartModel OK
+     * @throws ApiError
+     */
+    static setPaymentInformation(id: string, requestBody?: SetPaymentInformationInputAmarantSalesCartPaymentInformationInputGroupDto): CancelablePromise<AmarantCartModel>;
     /**
      * Remove cart item.
      * Remove cart item.
