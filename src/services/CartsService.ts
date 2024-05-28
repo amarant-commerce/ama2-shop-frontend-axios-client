@@ -3,6 +3,7 @@
 /* tslint:disable */
 /* eslint-disable */
 import type { AddItemToCartInputAmarantSalesCartItemInputProductDto } from '../models/AddItemToCartInputAmarantSalesCartItemInputProductDto';
+import type { AmarantAvailablePaymentMethodModelCollection } from '../models/AmarantAvailablePaymentMethodModelCollection';
 import type { AmarantCartModel } from '../models/AmarantCartModel';
 import type { AmarantEstimatedShippingRateModelCollection } from '../models/AmarantEstimatedShippingRateModelCollection';
 import type { GetAvailableShippingRatesInputAmarantSalesCartShippingRateEstimationGroup } from '../models/GetAvailableShippingRatesInputAmarantSalesCartShippingRateEstimationGroup';
@@ -107,6 +108,24 @@ export class CartsService {
             },
             body: requestBody,
             mediaType: 'application/json',
+        });
+    }
+    /**
+     * Get available payment methods.
+     * Get available payment methods.
+     * @param id Cart ID.
+     * @returns AmarantAvailablePaymentMethodModelCollection OK
+     * @throws ApiError
+     */
+    public static getAvailablePaymentMethods(
+        id: string,
+    ): CancelablePromise<AmarantAvailablePaymentMethodModelCollection> {
+        return __request(OpenAPI, {
+            method: 'POST',
+            url: '/api/carts/v1/{id}/payment-methods',
+            path: {
+                'id': id,
+            },
         });
     }
     /**

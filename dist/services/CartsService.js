@@ -87,6 +87,22 @@ export class CartsService {
         });
     }
     /**
+     * Get available payment methods.
+     * Get available payment methods.
+     * @param id Cart ID.
+     * @returns AmarantAvailablePaymentMethodModelCollection OK
+     * @throws ApiError
+     */
+    static getAvailablePaymentMethods(id) {
+        return __request(OpenAPI, {
+            method: 'POST',
+            url: '/api/carts/v1/{id}/payment-methods',
+            path: {
+                'id': id,
+            },
+        });
+    }
+    /**
      * Set payment information.
      * Set payment information.
      * @param id Cart ID.

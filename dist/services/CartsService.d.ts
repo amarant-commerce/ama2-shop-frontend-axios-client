@@ -1,4 +1,5 @@
 import type { AddItemToCartInputAmarantSalesCartItemInputProductDto } from '../models/AddItemToCartInputAmarantSalesCartItemInputProductDto';
+import type { AmarantAvailablePaymentMethodModelCollection } from '../models/AmarantAvailablePaymentMethodModelCollection';
 import type { AmarantCartModel } from '../models/AmarantCartModel';
 import type { AmarantEstimatedShippingRateModelCollection } from '../models/AmarantEstimatedShippingRateModelCollection';
 import type { GetAvailableShippingRatesInputAmarantSalesCartShippingRateEstimationGroup } from '../models/GetAvailableShippingRatesInputAmarantSalesCartShippingRateEstimationGroup';
@@ -49,6 +50,14 @@ export declare class CartsService {
      * @throws ApiError
      */
     static setShippingInformation(id: string, requestBody?: SetShippingInformationInputAmarantSalesCartShippingInformationInputGroupDto): CancelablePromise<AmarantCartModel>;
+    /**
+     * Get available payment methods.
+     * Get available payment methods.
+     * @param id Cart ID.
+     * @returns AmarantAvailablePaymentMethodModelCollection OK
+     * @throws ApiError
+     */
+    static getAvailablePaymentMethods(id: string): CancelablePromise<AmarantAvailablePaymentMethodModelCollection>;
     /**
      * Set payment information.
      * Set payment information.

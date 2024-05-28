@@ -19,6 +19,8 @@ export { AmarantAttributeDataTypeEnum } from './models/AmarantAttributeDataTypeE
 export { AmarantAttributeInputTypeEnum } from './models/AmarantAttributeInputTypeEnum';
 export type { AmarantAttributeModel } from './models/AmarantAttributeModel';
 export { AmarantAttributeModelFlag } from './models/AmarantAttributeModelFlag';
+export type { AmarantAvailablePaymentMethodModel } from './models/AmarantAvailablePaymentMethodModel';
+export type { AmarantAvailablePaymentMethodModelCollection } from './models/AmarantAvailablePaymentMethodModelCollection';
 export type { AmarantCartAdjustmentModel } from './models/AmarantCartAdjustmentModel';
 export type { AmarantCartCustomerModel } from './models/AmarantCartCustomerModel';
 export type { AmarantCartItemModel } from './models/AmarantCartItemModel';
