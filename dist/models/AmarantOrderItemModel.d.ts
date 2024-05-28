@@ -1,11 +1,12 @@
-import type { AmarantCartAdjustmentModel } from './AmarantCartAdjustmentModel';
-import type { AmarantCartProductModel } from './AmarantCartProductModel';
-export type AmarantCartItemModel = {
+import type { AmarantOrderAdjustmentModel } from './AmarantOrderAdjustmentModel';
+import type { AmarantOrderProductModel } from './AmarantOrderProductModel';
+export type AmarantOrderItemModel = {
     id: string;
+    cartItemId?: string | null;
     paymentId?: string | null;
-    product: AmarantCartProductModel;
-    parentProduct?: AmarantCartProductModel | null;
-    adjustments: Array<AmarantCartAdjustmentModel>;
+    product: AmarantOrderProductModel;
+    parentProduct?: AmarantOrderProductModel | null;
+    adjustments: Array<AmarantOrderAdjustmentModel>;
     basePriceExTax: number;
     basePrice: number;
     priceExTax: number;

@@ -2,14 +2,15 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-export type AmarantCartTotalModel = {
+export type AmarantOrderAdjustmentModel = {
     id: string;
-    code: string;
-    label: string;
+    type: string;
+    description?: string | null;
     baseAmount: number;
     amount: number;
-    baseAmountFormatted: string;
-    amountFormatted: string;
-    position: number;
+    neutral: boolean;
+    mutable: boolean;
+    taxable: boolean;
+    code: string;
 };
 

@@ -22,6 +22,10 @@ export type AmarantCartItemModel = {
     baseFinalPrice: number;
     finalPriceExTax: number;
     finalPrice: number;
+    baseFinalPriceExTaxFormatted: string;
+    baseFinalPriceFormatted: string;
+    finalPriceExTaxFormatted: string;
+    finalPriceFormatted: string;
     qty: string;
     baseRowTotalExTax: number;
     rowTotalExTax: number;

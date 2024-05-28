@@ -1,4 +1,4 @@
-export type AmarantCartTotalModel = {
+export type AmarantOrderTotalModel = {
     id: string;
     code: string;
     label: string;

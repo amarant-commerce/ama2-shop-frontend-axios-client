@@ -1,4 +1,8 @@
-export type AmarantCartTotalModel = {
+/* generated using openapi-typescript-codegen -- do not edit */
+/* istanbul ignore file */
+/* tslint:disable */
+/* eslint-disable */
+export type AmarantOrderTotalModel = {
     id: string;
     code: string;
     label: string;
@@ -8,3 +12,4 @@ export type AmarantCartTotalModel = {
     amountFormatted: string;
     position: number;
 };
+

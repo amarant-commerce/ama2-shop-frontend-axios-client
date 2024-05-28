@@ -3,6 +3,7 @@ import type { AmarantAttributeInputTypeEnum } from './AmarantAttributeInputTypeE
 export type AmarantAttributeModel = {
     id: number;
     code: string;
+    systemCode: string;
     entityName: string;
     type: AmarantAttributeDataTypeEnum;
     inputType: AmarantAttributeInputTypeEnum;

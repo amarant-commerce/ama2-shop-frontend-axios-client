@@ -2,11 +2,9 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
+import type { AmarantOrderModel } from './AmarantOrderModel';
 export type AmarantPlacedOrderResultModel = {
-    id: string;
-    humanId: string;
+    order: AmarantOrderModel;
     metadata: Record<string, (string | number | boolean | Record<string, any> | null) | null>;
-    createdAt: string;
-    updatedAt: string;
 };
 
