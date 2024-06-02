@@ -29,4 +29,11 @@ export declare class CustomersService {
      * @throws ApiError
      */
     static createCustomerAccount(requestBody?: CreateCustomerAccountInputAmarantSalesCustomerAccountInputDto): CancelablePromise<AmarantSalesCustomerAccountOutputDto>;
+    /**
+     * Get logged in customer.
+     * Get logged in customer.
+     * @returns AmarantSalesCustomerAccountOutputDto OK
+     * @throws ApiError
+     */
+    static me(): CancelablePromise<AmarantSalesCustomerAccountOutputDto>;
 }

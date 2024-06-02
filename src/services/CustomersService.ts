@@ -71,4 +71,19 @@ export class CustomersService {
             },
         });
     }
+    /**
+     * Get logged in customer.
+     * Get logged in customer.
+     * @returns AmarantSalesCustomerAccountOutputDto OK
+     * @throws ApiError
+     */
+    public static me(): CancelablePromise<AmarantSalesCustomerAccountOutputDto> {
+        return __request(OpenAPI, {
+            method: 'GET',
+            url: '/api/customers/v1/me',
+            errors: {
+                401: `Unauthorized`,
+            },
+        });
+    }
 }

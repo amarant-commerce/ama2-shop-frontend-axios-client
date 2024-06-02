@@ -2,9 +2,10 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
+import type { AmarantCartAddressModel } from './AmarantCartAddressModel';
 export type AmarantCartPaymentModel = {
     id: string;
-    addressId?: string | null;
+    address: AmarantCartAddressModel;
     method: string;
 };
 

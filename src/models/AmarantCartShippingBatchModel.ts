@@ -2,10 +2,11 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
+import type { AmarantCartAddressModel } from './AmarantCartAddressModel';
 import type { AmarantCartShippingBatchItemModel } from './AmarantCartShippingBatchItemModel';
 export type AmarantCartShippingBatchModel = {
     id: string;
-    addressId: string;
+    address: AmarantCartAddressModel;
     rateCarrierCode: string;
     rateCarrierTitle: string;
     rateMethod: string;

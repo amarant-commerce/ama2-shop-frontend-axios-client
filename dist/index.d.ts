@@ -16,6 +16,7 @@ export type { AmarantAttributeModel } from './models/AmarantAttributeModel';
 export { AmarantAttributeModelFlag } from './models/AmarantAttributeModelFlag';
 export type { AmarantAvailablePaymentMethodModel } from './models/AmarantAvailablePaymentMethodModel';
 export type { AmarantAvailablePaymentMethodModelCollection } from './models/AmarantAvailablePaymentMethodModelCollection';
+export type { AmarantCartAddressModel } from './models/AmarantCartAddressModel';
 export type { AmarantCartAdjustmentModel } from './models/AmarantCartAdjustmentModel';
 export type { AmarantCartCustomerModel } from './models/AmarantCartCustomerModel';
 export type { AmarantCartItemModel } from './models/AmarantCartItemModel';
@@ -78,6 +79,7 @@ export type { AmarantSalesCheckoutAddressAttributeModel } from './models/Amarant
 export type { AmarantSalesCheckoutAddressConfigurationModel } from './models/AmarantSalesCheckoutAddressConfigurationModel';
 export type { AmarantSalesCheckoutConfigurationModel } from './models/AmarantSalesCheckoutConfigurationModel';
 export type { AmarantSalesCustomerAccountAddressInputDto } from './models/AmarantSalesCustomerAccountAddressInputDto';
+export type { AmarantSalesCustomerAccountAddressOutputDto } from './models/AmarantSalesCustomerAccountAddressOutputDto';
 export type { AmarantSalesCustomerAccountOutputDto } from './models/AmarantSalesCustomerAccountOutputDto';
 export { AmarantSalesCustomerAccountStateOutputDto } from './models/AmarantSalesCustomerAccountStateOutputDto';
 export type { AmarantSearchAggregationResultModel } from './models/AmarantSearchAggregationResultModel';
