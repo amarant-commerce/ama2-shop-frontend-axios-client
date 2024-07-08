@@ -8,4 +8,5 @@ export type AmarantSalesCustomerAccountOutputDto = {
     state: AmarantSalesCustomerAccountStateOutputDto;
     attributeSetId: number;
     addresses: Array<AmarantSalesCustomerAccountAddressOutputDto>;
+    cartId?: string | null;
 };

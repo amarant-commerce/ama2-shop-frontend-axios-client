@@ -6,11 +6,13 @@ import type { AmarantOrderShippingBatchItemModel } from './AmarantOrderShippingB
 export type AmarantOrderShippingBatchModel = {
     id: string;
     addressId: string;
+    addressFormatted?: string | null;
     rateCarrierCode: string;
     rateCarrierTitle: string;
     rateMethod: string;
     rateShippable: boolean;
     ratePrice: number;
+    ratePriceFormatted: string;
     items: Array<AmarantOrderShippingBatchItemModel>;
 };
 
