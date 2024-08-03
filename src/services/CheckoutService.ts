@@ -8,8 +8,9 @@ import { OpenAPI } from '../core/OpenAPI';
 import { request as __request } from '../core/request';
 export class CheckoutService {
     /**
-     * Get checkout configuration.
-     * Get checkout configuration.
+     * @deprecated
+     * Use application state endpoint instead.
+     * Use application state endpoint instead.
      * @returns AmarantSalesCheckoutConfigurationModel OK
      * @throws ApiError
      */
