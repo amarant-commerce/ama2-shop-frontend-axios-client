@@ -3,6 +3,7 @@
 /* tslint:disable */
 /* eslint-disable */
 import type { AmarantApiPaginatedCollectionResponse } from '../models/AmarantApiPaginatedCollectionResponse';
+import type { AmarantCmsBannerModel } from '../models/AmarantCmsBannerModel';
 import type { AmarantCmsBlockModel } from '../models/AmarantCmsBlockModel';
 import type { AmarantCmsBlockTagModel } from '../models/AmarantCmsBlockTagModel';
 import type { AmarantCmsPageModel } from '../models/AmarantCmsPageModel';
@@ -183,6 +184,50 @@ export class CmsService {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/api/cms/v1/blocks/tags/{id}',
+            path: {
+                'id': id,
+            },
+        });
+    }
+    /**
+     * Get CMS banner collection.
+     * Get CMS banner collection.
+     * @param q Search criteria query.
+     * @param page Page.
+     * @param itemsPerPage Items per page.
+     * @returns any OK
+     * @throws ApiError
+     */
+    public static getCmsBannerCollection(
+        q?: AmarantSearchCriteriaFilter,
+        page?: number,
+        itemsPerPage?: number,
+    ): CancelablePromise<(AmarantApiPaginatedCollectionResponse & {
+        data: Array<AmarantCmsBannerModel>;
+    })> {
+        return __request(OpenAPI, {
+            method: 'GET',
+            url: '/api/cms/v1/banners',
+            query: {
+                'q': q,
+                'page': page,
+                'itemsPerPage': itemsPerPage,
+            },
+        });
+    }
+    /**
+     * Get CMS banner item.
+     * Get CMS banner item.
+     * @param id Banner ID
+     * @returns AmarantCmsBannerModel OK
+     * @throws ApiError
+     */
+    public static getCmsBannerItem(
+        id: number,
+    ): CancelablePromise<AmarantCmsBannerModel> {
+        return __request(OpenAPI, {
+            method: 'GET',
+            url: '/api/cms/v1/banners/{id}',
             path: {
                 'id': id,
             },

@@ -1,4 +1,5 @@
 import type { AmarantApiPaginatedCollectionResponse } from '../models/AmarantApiPaginatedCollectionResponse';
+import type { AmarantCmsBannerModel } from '../models/AmarantCmsBannerModel';
 import type { AmarantCmsBlockModel } from '../models/AmarantCmsBlockModel';
 import type { AmarantCmsBlockTagModel } from '../models/AmarantCmsBlockTagModel';
 import type { AmarantCmsPageModel } from '../models/AmarantCmsPageModel';
@@ -86,4 +87,24 @@ export declare class CmsService {
      * @throws ApiError
      */
     static getCmsBlockTagItem(id: number): CancelablePromise<AmarantCmsBlockTagModel>;
+    /**
+     * Get CMS banner collection.
+     * Get CMS banner collection.
+     * @param q Search criteria query.
+     * @param page Page.
+     * @param itemsPerPage Items per page.
+     * @returns any OK
+     * @throws ApiError
+     */
+    static getCmsBannerCollection(q?: AmarantSearchCriteriaFilter, page?: number, itemsPerPage?: number): CancelablePromise<(AmarantApiPaginatedCollectionResponse & {
+        data: Array<AmarantCmsBannerModel>;
+    })>;
+    /**
+     * Get CMS banner item.
+     * Get CMS banner item.
+     * @param id Banner ID
+     * @returns AmarantCmsBannerModel OK
+     * @throws ApiError
+     */
+    static getCmsBannerItem(id: number): CancelablePromise<AmarantCmsBannerModel>;
 }

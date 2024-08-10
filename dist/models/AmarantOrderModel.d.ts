@@ -1,4 +1,5 @@
 import type { AmarantOrderAdjustmentModel } from './AmarantOrderAdjustmentModel';
+import type { AmarantOrderCommentModel } from './AmarantOrderCommentModel';
 import type { AmarantOrderCustomerModel } from './AmarantOrderCustomerModel';
 import type { AmarantOrderItemModel } from './AmarantOrderItemModel';
 import type { AmarantOrderPaymentModel } from './AmarantOrderPaymentModel';
@@ -24,6 +25,7 @@ export type AmarantOrderModel = {
     shippingBatches: Array<AmarantOrderShippingBatchModel>;
     adjustments: Array<AmarantOrderAdjustmentModel>;
     totals: Array<AmarantOrderTotalModel>;
+    comments: Array<AmarantOrderCommentModel>;
     createdAt: string;
     updatedAt: string;
     baseGrandTotal: number;

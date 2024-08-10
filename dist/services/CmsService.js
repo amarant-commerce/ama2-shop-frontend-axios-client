@@ -145,4 +145,40 @@ export class CmsService {
             },
         });
     }
+    /**
+     * Get CMS banner collection.
+     * Get CMS banner collection.
+     * @param q Search criteria query.
+     * @param page Page.
+     * @param itemsPerPage Items per page.
+     * @returns any OK
+     * @throws ApiError
+     */
+    static getCmsBannerCollection(q, page, itemsPerPage) {
+        return __request(OpenAPI, {
+            method: 'GET',
+            url: '/api/cms/v1/banners',
+            query: {
+                'q': q,
+                'page': page,
+                'itemsPerPage': itemsPerPage,
+            },
+        });
+    }
+    /**
+     * Get CMS banner item.
+     * Get CMS banner item.
+     * @param id Banner ID
+     * @returns AmarantCmsBannerModel OK
+     * @throws ApiError
+     */
+    static getCmsBannerItem(id) {
+        return __request(OpenAPI, {
+            method: 'GET',
+            url: '/api/cms/v1/banners/{id}',
+            path: {
+                'id': id,
+            },
+        });
+    }
 }
