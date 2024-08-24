@@ -9,6 +9,7 @@ export var AmarantAttributeModelFlag;
     AmarantAttributeModelFlag["VISIBLE"] = "visible";
     AmarantAttributeModelFlag["VISIBLE_IN_NAVIGATION"] = "visible_in_navigation";
     AmarantAttributeModelFlag["EDITABLE"] = "editable";
+    AmarantAttributeModelFlag["USER_EDITABLE"] = "user_editable";
     AmarantAttributeModelFlag["PRESENTABLE"] = "presentable";
     AmarantAttributeModelFlag["REQUIRED"] = "required";
     AmarantAttributeModelFlag["FILTERABLE"] = "filterable";

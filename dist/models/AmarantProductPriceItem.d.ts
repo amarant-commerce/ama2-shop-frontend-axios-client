@@ -3,7 +3,11 @@ export type AmarantProductPriceItem = {
     code: string;
     scope?: string | null;
     price: number;
+    priceExTax: number;
+    priceInclTax: number;
     salePrice: number;
+    salePriceExTax: number;
+    salePriceInclTax: number;
     qty?: string | null;
     availableFrom?: string | null;
     availableTo?: string | null;

@@ -4,6 +4,7 @@ export declare enum AmarantAttributeModelFlag {
     VISIBLE = "visible",
     VISIBLE_IN_NAVIGATION = "visible_in_navigation",
     EDITABLE = "editable",
+    USER_EDITABLE = "user_editable",
     PRESENTABLE = "presentable",
     REQUIRED = "required",
     FILTERABLE = "filterable",

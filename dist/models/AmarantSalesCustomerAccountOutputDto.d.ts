@@ -2,6 +2,10 @@ import type { AmarantSalesCustomerAccountAddressOutputDto } from './AmarantSales
 import type { AmarantSalesCustomerAccountStateOutputDto } from './AmarantSalesCustomerAccountStateOutputDto';
 export type AmarantSalesCustomerAccountOutputDto = {
     id: number;
+    groupId?: number | null;
+    groupName?: string | null;
+    organizationId?: number | null;
+    organizationName?: string | null;
     username: string;
     email: string;
     channelId: number;
