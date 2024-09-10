@@ -9,7 +9,7 @@ export type AmarantSalesCustomerAccountOutputDto = {
     username: string;
     email: string;
     channelId: number;
-    channelName: string;
+    channelCode: string;
     state: AmarantSalesCustomerAccountStateOutputDto;
     attributeSetId: number;
     attributes: Record<string, string | number | number | boolean | any[] | null>;
