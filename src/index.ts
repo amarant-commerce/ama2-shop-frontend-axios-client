@@ -100,6 +100,7 @@ export type { AmarantSearchAggregationResultModel } from './models/AmarantSearch
 export type { AmarantSearchAggregationResultStatsAggregationModel } from './models/AmarantSearchAggregationResultStatsAggregationModel';
 export type { AmarantSearchAggregationResultTermAggregationModel } from './models/AmarantSearchAggregationResultTermAggregationModel';
 export type { AmarantSearchCriteriaFilter } from './models/AmarantSearchCriteriaFilter';
+export type { AmarantSearchResultCategorySearchResultItemModel } from './models/AmarantSearchResultCategorySearchResultItemModel';
 export type { AmarantSearchResultModel } from './models/AmarantSearchResultModel';
 export type { AmarantSearchResultProductSearchResultItemModel } from './models/AmarantSearchResultProductSearchResultItemModel';
 export type { AmarantSearchTermAggregationItem } from './models/AmarantSearchTermAggregationItem';

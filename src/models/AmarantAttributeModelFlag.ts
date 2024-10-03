@@ -19,4 +19,5 @@ export enum AmarantAttributeModelFlag {
     USED_IN_GRID = 'used_in_grid',
     FILTERABLE_IN_GRID = 'filterable_in_grid',
     SORTABLE_IN_GRID = 'sortable_in_grid',
+    USED_IN_CART_ITEM = 'used_in_cart_item',
 }

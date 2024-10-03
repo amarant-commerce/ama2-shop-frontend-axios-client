@@ -12,6 +12,9 @@ export type AmarantCartProductModel = {
     description?: string | null;
     basePrice: number;
     url: string;
+    path: string;
+    scopedPath: string;
+    attributes: Record<string, string | number | number | boolean | any[] | null>;
     images: Array<AmarantImageModel>;
 };
 

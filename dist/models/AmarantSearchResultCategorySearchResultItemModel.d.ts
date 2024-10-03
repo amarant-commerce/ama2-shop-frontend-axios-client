@@ -1,4 +1,4 @@
-export type AmarantSearchResultProductSearchResultItemModel = {
+export type AmarantSearchResultCategorySearchResultItemModel = {
     attributes?: {
         id?: number;
         name?: string;
@@ -6,9 +6,6 @@ export type AmarantSearchResultProductSearchResultItemModel = {
         url?: string;
         path?: string;
         scopedPath?: string;
-        sku?: string;
         image?: string | null;
-        price?: number;
-        lowestPrice?: number;
     };
 };

@@ -7,14 +7,14 @@ export type AmarantProductPricing = {
     currencyCode: string;
     prices: Array<AmarantProductPriceItem>;
     /**
-     * Deprecated, pending removal. Use properties regularPriceExTax abd regularPriceInclTax instead.
+     * Deprecated, pending removal. Use properties regularPriceExTax and regularPriceInclTax instead.
      * @deprecated
      */
     regularPrice: number;
     regularPriceExTax: number;
     regularPriceInclTax: number;
     /**
-     * Deprecated, pending removal. Use properties lowestPriceExTax abd lowestPriceInclTax instead.
+     * Deprecated, pending removal. Use properties lowestPriceExTax and lowestPriceInclTax instead.
      * @deprecated
      */
     lowestPrice: number;
