@@ -37,6 +37,35 @@ export class ProductsService {
         });
     }
     /**
+     * Get search product collection.
+     * Get search product collection.
+     * @param query Query text
+     * @param q Search criteria query.
+     * @param page Page.
+     * @param itemsPerPage Items per page.
+     * @returns any OK
+     * @throws ApiError
+     */
+    public static getSearchProductCollection(
+        query: string,
+        q?: AmarantSearchCriteriaFilter,
+        page?: number,
+        itemsPerPage?: number,
+    ): CancelablePromise<(AmarantApiPaginatedCollectionResponse & {
+        data: Array<AmarantProductModel>;
+    })> {
+        return __request(OpenAPI, {
+            method: 'GET',
+            url: '/api/products/v1/search',
+            query: {
+                'query': query,
+                'q': q,
+                'page': page,
+                'itemsPerPage': itemsPerPage,
+            },
+        });
+    }
+    /**
      * Get product item.
      * Get product item.
      * @param id Product ID

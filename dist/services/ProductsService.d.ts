@@ -17,6 +17,19 @@ export declare class ProductsService {
         data: Array<AmarantProductModel>;
     })>;
     /**
+     * Get search product collection.
+     * Get search product collection.
+     * @param query Query text
+     * @param q Search criteria query.
+     * @param page Page.
+     * @param itemsPerPage Items per page.
+     * @returns any OK
+     * @throws ApiError
+     */
+    static getSearchProductCollection(query: string, q?: AmarantSearchCriteriaFilter, page?: number, itemsPerPage?: number): CancelablePromise<(AmarantApiPaginatedCollectionResponse & {
+        data: Array<AmarantProductModel>;
+    })>;
+    /**
      * Get product item.
      * Get product item.
      * @param id Product ID

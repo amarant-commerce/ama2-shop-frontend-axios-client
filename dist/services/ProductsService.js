@@ -22,6 +22,28 @@ export class ProductsService {
         });
     }
     /**
+     * Get search product collection.
+     * Get search product collection.
+     * @param query Query text
+     * @param q Search criteria query.
+     * @param page Page.
+     * @param itemsPerPage Items per page.
+     * @returns any OK
+     * @throws ApiError
+     */
+    static getSearchProductCollection(query, q, page, itemsPerPage) {
+        return __request(OpenAPI, {
+            method: 'GET',
+            url: '/api/products/v1/search',
+            query: {
+                'query': query,
+                'q': q,
+                'page': page,
+                'itemsPerPage': itemsPerPage,
+            },
+        });
+    }
+    /**
      * Get product item.
      * Get product item.
      * @param id Product ID
