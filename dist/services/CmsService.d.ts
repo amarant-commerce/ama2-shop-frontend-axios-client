@@ -4,6 +4,7 @@ import type { AmarantCmsBlockModel } from '../models/AmarantCmsBlockModel';
 import type { AmarantCmsBlockTagModel } from '../models/AmarantCmsBlockTagModel';
 import type { AmarantCmsPageModel } from '../models/AmarantCmsPageModel';
 import type { AmarantCmsPageTagModel } from '../models/AmarantCmsPageTagModel';
+import type { AmarantGetCmsBannerCollectionSearchCriteriaFilter } from '../models/AmarantGetCmsBannerCollectionSearchCriteriaFilter';
 import type { AmarantSearchCriteriaFilter } from '../models/AmarantSearchCriteriaFilter';
 import type { CancelablePromise } from '../core/CancelablePromise';
 export declare class CmsService {
@@ -96,7 +97,7 @@ export declare class CmsService {
      * @returns any OK
      * @throws ApiError
      */
-    static getCmsBannerCollection(q?: AmarantSearchCriteriaFilter, page?: number, itemsPerPage?: number): CancelablePromise<(AmarantApiPaginatedCollectionResponse & {
+    static getCmsBannerCollection(q?: AmarantGetCmsBannerCollectionSearchCriteriaFilter, page?: number, itemsPerPage?: number): CancelablePromise<(AmarantApiPaginatedCollectionResponse & {
         data: Array<AmarantCmsBannerModel>;
     })>;
     /**

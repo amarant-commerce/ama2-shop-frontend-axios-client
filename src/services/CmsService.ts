@@ -8,6 +8,7 @@ import type { AmarantCmsBlockModel } from '../models/AmarantCmsBlockModel';
 import type { AmarantCmsBlockTagModel } from '../models/AmarantCmsBlockTagModel';
 import type { AmarantCmsPageModel } from '../models/AmarantCmsPageModel';
 import type { AmarantCmsPageTagModel } from '../models/AmarantCmsPageTagModel';
+import type { AmarantGetCmsBannerCollectionSearchCriteriaFilter } from '../models/AmarantGetCmsBannerCollectionSearchCriteriaFilter';
 import type { AmarantSearchCriteriaFilter } from '../models/AmarantSearchCriteriaFilter';
 import type { CancelablePromise } from '../core/CancelablePromise';
 import { OpenAPI } from '../core/OpenAPI';
@@ -199,7 +200,7 @@ export class CmsService {
      * @throws ApiError
      */
     public static getCmsBannerCollection(
-        q?: AmarantSearchCriteriaFilter,
+        q?: AmarantGetCmsBannerCollectionSearchCriteriaFilter,
         page?: number,
         itemsPerPage?: number,
     ): CancelablePromise<(AmarantApiPaginatedCollectionResponse & {

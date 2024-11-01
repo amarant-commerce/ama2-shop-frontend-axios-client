@@ -43,6 +43,8 @@ export type { AmarantEstimatedShippingRateModelCollection } from './models/Amara
 export type { AmarantFrameworkEntityPerson } from './models/AmarantFrameworkEntityPerson';
 export type { AmarantFrameworkEntityPersonAddress } from './models/AmarantFrameworkEntityPersonAddress';
 export type { AmarantGenericProductModel } from './models/AmarantGenericProductModel';
+export type { AmarantGetCmsBannerCollectionSearchCriteriaFilter } from './models/AmarantGetCmsBannerCollectionSearchCriteriaFilter';
+export type { AmarantGetOrderCollectionSearchCriteriaFilter } from './models/AmarantGetOrderCollectionSearchCriteriaFilter';
 export type { AmarantGroupedProductItemModel } from './models/AmarantGroupedProductItemModel';
 export type { AmarantGroupedProductModel } from './models/AmarantGroupedProductModel';
 export type { AmarantImageModel } from './models/AmarantImageModel';
