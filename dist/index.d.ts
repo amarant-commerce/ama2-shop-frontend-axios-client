@@ -104,6 +104,7 @@ export type { AmarantSearchTermAggregationItem } from './models/AmarantSearchTer
 export type { AmarantSecurityJwtTokenModel } from './models/AmarantSecurityJwtTokenModel';
 export type { ConfirmCustomerAccountInputAmarantSalesCustomerAccountConfirmationInputDto } from './models/ConfirmCustomerAccountInputAmarantSalesCustomerAccountConfirmationInputDto';
 export type { CreateCustomerAccountInputAmarantSalesCustomerAccountInputDto } from './models/CreateCustomerAccountInputAmarantSalesCustomerAccountInputDto';
+export type { CreateCustomerAddressInputAmarantSalesCustomerAccountAddressInputDto } from './models/CreateCustomerAddressInputAmarantSalesCustomerAccountAddressInputDto';
 export type { GetAuthorizationTokenInputAmarantSalesCustomerLoginInputDto } from './models/GetAuthorizationTokenInputAmarantSalesCustomerLoginInputDto';
 export type { GetAvailableShippingRatesInputAmarantSalesCartShippingRateEstimationGroup } from './models/GetAvailableShippingRatesInputAmarantSalesCartShippingRateEstimationGroup';
 export type { InitiatePasswordResetInputAmarantSalesCustomerPasswordResetRequestInputDto } from './models/InitiatePasswordResetInputAmarantSalesCustomerPasswordResetRequestInputDto';
@@ -112,6 +113,7 @@ export type { ResetPasswordInputAmarantSalesCustomerResetAccountPasswordInputDto
 export type { SetPaymentInformationInputAmarantSalesCartPaymentInformationInputGroupDto } from './models/SetPaymentInformationInputAmarantSalesCartPaymentInformationInputGroupDto';
 export type { SetShippingInformationInputAmarantSalesCartShippingInformationInputGroupDto } from './models/SetShippingInformationInputAmarantSalesCartShippingInformationInputGroupDto';
 export type { UpdateCartItemInputAmarantSalesCartItemUpdateInputDto } from './models/UpdateCartItemInputAmarantSalesCartItemUpdateInputDto';
+export type { UpdateCustomerAddressItemInputAmarantSalesCustomerAccountAddressInputDto } from './models/UpdateCustomerAddressItemInputAmarantSalesCustomerAccountAddressInputDto';
 export { AliasService } from './services/AliasService';
 export { ApplicationService } from './services/ApplicationService';
 export { AttributesService } from './services/AttributesService';

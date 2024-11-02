@@ -124,4 +124,81 @@ export class CustomersService {
             },
         });
     }
+    /**
+     * Get customer address collection.
+     * Get customer address collection.
+     *
+     * Required identity types:
+     * * customer
+     * @returns any OK
+     * @throws ApiError
+     */
+    static getCustomerAddressCollection() {
+        return __request(OpenAPI, {
+            method: 'GET',
+            url: '/api/customers/v1/addresses',
+        });
+    }
+    /**
+     * Create customer address.
+     * Create customer address.
+     *
+     * Required identity types:
+     * * customer
+     * @param requestBody
+     * @returns AmarantSalesCustomerAccountAddressOutputDto Resource created.
+     * @throws ApiError
+     */
+    static createCustomerAddress(requestBody) {
+        return __request(OpenAPI, {
+            method: 'POST',
+            url: '/api/customers/v1/addresses',
+            body: requestBody,
+            mediaType: 'application/json',
+            errors: {
+                400: `Invalid input.`,
+            },
+        });
+    }
+    /**
+     * Get customer address item.
+     * Get customer address item.
+     *
+     * Required identity types:
+     * * customer
+     * @param id Customer address ID.
+     * @returns AmarantSalesCustomerAccountAddressOutputDto OK
+     * @throws ApiError
+     */
+    static getCustomerAddressItem(id) {
+        return __request(OpenAPI, {
+            method: 'GET',
+            url: '/api/customers/v1/addresses/{id}',
+            path: {
+                'id': id,
+            },
+        });
+    }
+    /**
+     * Update customer address item.
+     * Update customer address item.
+     *
+     * Required identity types:
+     * * customer
+     * @param id Customer address ID.
+     * @param requestBody
+     * @returns AmarantSalesCustomerAccountAddressOutputDto Resource updated.
+     * @throws ApiError
+     */
+    static updateCustomerAddressItem(id, requestBody) {
+        return __request(OpenAPI, {
+            method: 'PUT',
+            url: '/api/customers/v1/addresses/{id}',
+            path: {
+                'id': id,
+            },
+            body: requestBody,
+            mediaType: 'application/json',
+        });
+    }
 }

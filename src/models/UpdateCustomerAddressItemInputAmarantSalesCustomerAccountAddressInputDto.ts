@@ -2,8 +2,7 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-export type AmarantSalesCustomerAccountAddressOutputDto = {
-    id: string;
+export type UpdateCustomerAddressItemInputAmarantSalesCustomerAccountAddressInputDto = {
     attributes: Record<string, string | number | number | boolean | any[] | null>;
     defaultBilling: boolean;
     defaultShipping: boolean;

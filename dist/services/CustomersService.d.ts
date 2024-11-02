@@ -1,11 +1,15 @@
+import type { AmarantApiCollectionResponse } from '../models/AmarantApiCollectionResponse';
+import type { AmarantSalesCustomerAccountAddressOutputDto } from '../models/AmarantSalesCustomerAccountAddressOutputDto';
 import type { AmarantSalesCustomerAccountOutputDto } from '../models/AmarantSalesCustomerAccountOutputDto';
 import type { AmarantSecurityJwtTokenModel } from '../models/AmarantSecurityJwtTokenModel';
 import type { ConfirmCustomerAccountInputAmarantSalesCustomerAccountConfirmationInputDto } from '../models/ConfirmCustomerAccountInputAmarantSalesCustomerAccountConfirmationInputDto';
 import type { CreateCustomerAccountInputAmarantSalesCustomerAccountInputDto } from '../models/CreateCustomerAccountInputAmarantSalesCustomerAccountInputDto';
+import type { CreateCustomerAddressInputAmarantSalesCustomerAccountAddressInputDto } from '../models/CreateCustomerAddressInputAmarantSalesCustomerAccountAddressInputDto';
 import type { GetAuthorizationTokenInputAmarantSalesCustomerLoginInputDto } from '../models/GetAuthorizationTokenInputAmarantSalesCustomerLoginInputDto';
 import type { InitiatePasswordResetInputAmarantSalesCustomerPasswordResetRequestInputDto } from '../models/InitiatePasswordResetInputAmarantSalesCustomerPasswordResetRequestInputDto';
 import type { RefreshAuthorizationTokenInputAmarantSalesCustomerRefreshTokenInputDto } from '../models/RefreshAuthorizationTokenInputAmarantSalesCustomerRefreshTokenInputDto';
 import type { ResetPasswordInputAmarantSalesCustomerResetAccountPasswordInputDto } from '../models/ResetPasswordInputAmarantSalesCustomerResetAccountPasswordInputDto';
+import type { UpdateCustomerAddressItemInputAmarantSalesCustomerAccountAddressInputDto } from '../models/UpdateCustomerAddressItemInputAmarantSalesCustomerAccountAddressInputDto';
 import type { CancelablePromise } from '../core/CancelablePromise';
 export declare class CustomersService {
     /**
@@ -63,4 +67,50 @@ export declare class CustomersService {
      * @throws ApiError
      */
     static me(): CancelablePromise<AmarantSalesCustomerAccountOutputDto>;
+    /**
+     * Get customer address collection.
+     * Get customer address collection.
+     *
+     * Required identity types:
+     * * customer
+     * @returns any OK
+     * @throws ApiError
+     */
+    static getCustomerAddressCollection(): CancelablePromise<(AmarantApiCollectionResponse & {
+        data: Array<AmarantSalesCustomerAccountAddressOutputDto>;
+    })>;
+    /**
+     * Create customer address.
+     * Create customer address.
+     *
+     * Required identity types:
+     * * customer
+     * @param requestBody
+     * @returns AmarantSalesCustomerAccountAddressOutputDto Resource created.
+     * @throws ApiError
+     */
+    static createCustomerAddress(requestBody?: CreateCustomerAddressInputAmarantSalesCustomerAccountAddressInputDto): CancelablePromise<AmarantSalesCustomerAccountAddressOutputDto>;
+    /**
+     * Get customer address item.
+     * Get customer address item.
+     *
+     * Required identity types:
+     * * customer
+     * @param id Customer address ID.
+     * @returns AmarantSalesCustomerAccountAddressOutputDto OK
+     * @throws ApiError
+     */
+    static getCustomerAddressItem(id: number): CancelablePromise<AmarantSalesCustomerAccountAddressOutputDto>;
+    /**
+     * Update customer address item.
+     * Update customer address item.
+     *
+     * Required identity types:
+     * * customer
+     * @param id Customer address ID.
+     * @param requestBody
+     * @returns AmarantSalesCustomerAccountAddressOutputDto Resource updated.
+     * @throws ApiError
+     */
+    static updateCustomerAddressItem(id: number, requestBody?: UpdateCustomerAddressItemInputAmarantSalesCustomerAccountAddressInputDto): CancelablePromise<AmarantSalesCustomerAccountAddressOutputDto>;
 }
