@@ -33,6 +33,14 @@ export declare class CartsService {
      */
     static addItemToCart(id: string, requestBody?: AddItemToCartInputAmarantSalesCartItemInputProductDto): CancelablePromise<AmarantCartModel>;
     /**
+     * Append guest cart items to current customer cart.
+     * Append guest cart items to current customer cart.
+     * @param id Guest cart ID.
+     * @returns AmarantCartModel OK
+     * @throws ApiError
+     */
+    static appendGuestCart(id: string): CancelablePromise<AmarantCartModel>;
+    /**
      * Get available shipping rates.
      * Get available shipping rates.
      * @param id Cart ID.

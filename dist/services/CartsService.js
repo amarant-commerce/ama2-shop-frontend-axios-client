@@ -49,6 +49,22 @@ export class CartsService {
         });
     }
     /**
+     * Append guest cart items to current customer cart.
+     * Append guest cart items to current customer cart.
+     * @param id Guest cart ID.
+     * @returns AmarantCartModel OK
+     * @throws ApiError
+     */
+    static appendGuestCart(id) {
+        return __request(OpenAPI, {
+            method: 'POST',
+            url: '/api/carts/v1/{id}/append',
+            path: {
+                'id': id,
+            },
+        });
+    }
+    /**
      * Get available shipping rates.
      * Get available shipping rates.
      * @param id Cart ID.

@@ -7,5 +7,6 @@ export type AmarantAvailablePaymentMethodModel = {
     label: string;
     shortDescription?: string | null;
     description?: string | null;
+    imageUrl?: string | null;
 };
 

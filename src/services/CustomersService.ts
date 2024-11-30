@@ -141,6 +141,9 @@ export class CustomersService {
     /**
      * Get logged in customer.
      * Get logged in customer.
+     *
+     * Required identity types:
+     * * customer
      * @returns AmarantSalesCustomerAccountOutputDto OK
      * @throws ApiError
      */

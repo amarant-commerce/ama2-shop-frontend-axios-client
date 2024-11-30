@@ -6,6 +6,8 @@ export type AmarantCartItemModel = {
     product: AmarantCartProductModel;
     parentProduct?: AmarantCartProductModel | null;
     adjustments: Array<AmarantCartAdjustmentModel>;
+    reservedUntil?: string | null;
+    reservedQty?: string | null;
     basePriceExTax: number;
     basePrice: number;
     priceExTax: number;
