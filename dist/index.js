@@ -13,6 +13,7 @@ export { AmarantDataScope } from './models/AmarantDataScope';
 export { AmarantProductPriceItem } from './models/AmarantProductPriceItem';
 export { AmarantSalesCustomerAccountStateOutputDto } from './models/AmarantSalesCustomerAccountStateOutputDto';
 export { AliasService } from './services/AliasService';
+export { AnalyticsService } from './services/AnalyticsService';
 export { ApplicationService } from './services/ApplicationService';
 export { AttributesService } from './services/AttributesService';
 export { CartsService } from './services/CartsService';

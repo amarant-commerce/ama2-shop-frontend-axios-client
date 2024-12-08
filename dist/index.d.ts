@@ -5,6 +5,8 @@ export type { OpenAPIConfig } from './core/OpenAPI';
 export { AddItemToCartInputAmarantSalesCartItemInputProductDto } from './models/AddItemToCartInputAmarantSalesCartItemInputProductDto';
 export type { Amarant_Framework_Exception_ApiException } from './models/Amarant_Framework_Exception_ApiException';
 export type { AmarantAliasUri } from './models/AmarantAliasUri';
+export type { AmarantAnalyticsCookiePanelItemModel } from './models/AmarantAnalyticsCookiePanelItemModel';
+export type { AmarantAnalyticsCookiePanelModel } from './models/AmarantAnalyticsCookiePanelModel';
 export type { AmarantApiCollectionResponse } from './models/AmarantApiCollectionResponse';
 export type { AmarantApiError } from './models/AmarantApiError';
 export type { AmarantApiErrorDetails } from './models/AmarantApiErrorDetails';
@@ -44,6 +46,7 @@ export type { AmarantFrameworkEntityPerson } from './models/AmarantFrameworkEnti
 export type { AmarantFrameworkEntityPersonAddress } from './models/AmarantFrameworkEntityPersonAddress';
 export type { AmarantGenericProductModel } from './models/AmarantGenericProductModel';
 export type { AmarantGetCmsBannerCollectionSearchCriteriaFilter } from './models/AmarantGetCmsBannerCollectionSearchCriteriaFilter';
+export type { AmarantGetCookiePanelCollectionSearchCriteriaFilter } from './models/AmarantGetCookiePanelCollectionSearchCriteriaFilter';
 export type { AmarantGetOrderCollectionSearchCriteriaFilter } from './models/AmarantGetOrderCollectionSearchCriteriaFilter';
 export type { AmarantGroupedProductItemModel } from './models/AmarantGroupedProductItemModel';
 export type { AmarantGroupedProductModel } from './models/AmarantGroupedProductModel';
@@ -115,6 +118,7 @@ export type { SetShippingInformationInputAmarantSalesCartShippingInformationInpu
 export type { UpdateCartItemInputAmarantSalesCartItemUpdateInputDto } from './models/UpdateCartItemInputAmarantSalesCartItemUpdateInputDto';
 export type { UpdateCustomerAddressItemInputAmarantSalesCustomerAccountAddressInputDto } from './models/UpdateCustomerAddressItemInputAmarantSalesCustomerAccountAddressInputDto';
 export { AliasService } from './services/AliasService';
+export { AnalyticsService } from './services/AnalyticsService';
 export { ApplicationService } from './services/ApplicationService';
 export { AttributesService } from './services/AttributesService';
 export { CartsService } from './services/CartsService';
