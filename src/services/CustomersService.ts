@@ -22,19 +22,25 @@ export class CustomersService {
      * Get authorization token.
      * Get authorization token.
      * @param requestBody
+     * @param xAmarant2FaCode Two-factor authentication code.
      * @returns AmarantSecurityJwtTokenModel OK
      * @throws ApiError
      */
     public static getAuthorizationToken(
-        requestBody?: GetAuthorizationTokenInputAmarantSalesCustomerLoginInputDto,
+        requestBody: GetAuthorizationTokenInputAmarantSalesCustomerLoginInputDto,
+        xAmarant2FaCode?: string | number,
     ): CancelablePromise<AmarantSecurityJwtTokenModel> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/api/customers/v1/token',
+            headers: {
+                'X-Amarant-2FA-Code': xAmarant2FaCode,
+            },
             body: requestBody,
             mediaType: 'application/json',
             errors: {
-                401: `Invalid credentials.`,
+                401: `Invalid credentials (SA-013).`,
+                428: `2FA code required (SA-058).`,
             },
         });
     }
@@ -46,7 +52,7 @@ export class CustomersService {
      * @throws ApiError
      */
     public static refreshAuthorizationToken(
-        requestBody?: RefreshAuthorizationTokenInputAmarantSalesCustomerRefreshTokenInputDto,
+        requestBody: RefreshAuthorizationTokenInputAmarantSalesCustomerRefreshTokenInputDto,
     ): CancelablePromise<AmarantSecurityJwtTokenModel> {
         return __request(OpenAPI, {
             method: 'POST',
@@ -66,7 +72,7 @@ export class CustomersService {
      * @throws ApiError
      */
     public static createCustomerAccount(
-        requestBody?: CreateCustomerAccountInputAmarantSalesCustomerAccountInputDto,
+        requestBody: CreateCustomerAccountInputAmarantSalesCustomerAccountInputDto,
     ): CancelablePromise<AmarantSalesCustomerAccountOutputDto> {
         return __request(OpenAPI, {
             method: 'POST',
@@ -86,7 +92,7 @@ export class CustomersService {
      * @throws ApiError
      */
     public static confirmCustomerAccount(
-        requestBody?: ConfirmCustomerAccountInputAmarantSalesCustomerAccountConfirmationInputDto,
+        requestBody: ConfirmCustomerAccountInputAmarantSalesCustomerAccountConfirmationInputDto,
     ): CancelablePromise<void> {
         return __request(OpenAPI, {
             method: 'POST',
@@ -106,7 +112,7 @@ export class CustomersService {
      * @throws ApiError
      */
     public static initiatePasswordReset(
-        requestBody?: InitiatePasswordResetInputAmarantSalesCustomerPasswordResetRequestInputDto,
+        requestBody: InitiatePasswordResetInputAmarantSalesCustomerPasswordResetRequestInputDto,
     ): CancelablePromise<void> {
         return __request(OpenAPI, {
             method: 'POST',
@@ -126,7 +132,7 @@ export class CustomersService {
      * @throws ApiError
      */
     public static resetPassword(
-        requestBody?: ResetPasswordInputAmarantSalesCustomerResetAccountPasswordInputDto,
+        requestBody: ResetPasswordInputAmarantSalesCustomerResetAccountPasswordInputDto,
     ): CancelablePromise<void> {
         return __request(OpenAPI, {
             method: 'POST',
@@ -184,7 +190,7 @@ export class CustomersService {
      * @throws ApiError
      */
     public static createCustomerAddress(
-        requestBody?: CreateCustomerAddressInputAmarantSalesCustomerAccountAddressInputDto,
+        requestBody: CreateCustomerAddressInputAmarantSalesCustomerAccountAddressInputDto,
     ): CancelablePromise<AmarantSalesCustomerAccountAddressOutputDto> {
         return __request(OpenAPI, {
             method: 'POST',
@@ -230,7 +236,7 @@ export class CustomersService {
      */
     public static updateCustomerAddressItem(
         id: number,
-        requestBody?: UpdateCustomerAddressItemInputAmarantSalesCustomerAccountAddressInputDto,
+        requestBody: UpdateCustomerAddressItemInputAmarantSalesCustomerAccountAddressInputDto,
     ): CancelablePromise<AmarantSalesCustomerAccountAddressOutputDto> {
         return __request(OpenAPI, {
             method: 'PUT',

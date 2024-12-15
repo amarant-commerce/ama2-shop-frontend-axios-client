@@ -5,17 +5,22 @@ export class CustomersService {
      * Get authorization token.
      * Get authorization token.
      * @param requestBody
+     * @param xAmarant2FaCode Two-factor authentication code.
      * @returns AmarantSecurityJwtTokenModel OK
      * @throws ApiError
      */
-    static getAuthorizationToken(requestBody) {
+    static getAuthorizationToken(requestBody, xAmarant2FaCode) {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/api/customers/v1/token',
+            headers: {
+                'X-Amarant-2FA-Code': xAmarant2FaCode,
+            },
             body: requestBody,
             mediaType: 'application/json',
             errors: {
-                401: `Invalid credentials.`,
+                401: `Invalid credentials (SA-013).`,
+                428: `2FA code required (SA-058).`,
             },
         });
     }

@@ -16,10 +16,11 @@ export declare class CustomersService {
      * Get authorization token.
      * Get authorization token.
      * @param requestBody
+     * @param xAmarant2FaCode Two-factor authentication code.
      * @returns AmarantSecurityJwtTokenModel OK
      * @throws ApiError
      */
-    static getAuthorizationToken(requestBody?: GetAuthorizationTokenInputAmarantSalesCustomerLoginInputDto): CancelablePromise<AmarantSecurityJwtTokenModel>;
+    static getAuthorizationToken(requestBody: GetAuthorizationTokenInputAmarantSalesCustomerLoginInputDto, xAmarant2FaCode?: string | number): CancelablePromise<AmarantSecurityJwtTokenModel>;
     /**
      * Refresh authorization token.
      * Refresh authorization token.
@@ -27,7 +28,7 @@ export declare class CustomersService {
      * @returns AmarantSecurityJwtTokenModel OK
      * @throws ApiError
      */
-    static refreshAuthorizationToken(requestBody?: RefreshAuthorizationTokenInputAmarantSalesCustomerRefreshTokenInputDto): CancelablePromise<AmarantSecurityJwtTokenModel>;
+    static refreshAuthorizationToken(requestBody: RefreshAuthorizationTokenInputAmarantSalesCustomerRefreshTokenInputDto): CancelablePromise<AmarantSecurityJwtTokenModel>;
     /**
      * Create customer account.
      * Create customer account.
@@ -35,7 +36,7 @@ export declare class CustomersService {
      * @returns AmarantSalesCustomerAccountOutputDto Resource created.
      * @throws ApiError
      */
-    static createCustomerAccount(requestBody?: CreateCustomerAccountInputAmarantSalesCustomerAccountInputDto): CancelablePromise<AmarantSalesCustomerAccountOutputDto>;
+    static createCustomerAccount(requestBody: CreateCustomerAccountInputAmarantSalesCustomerAccountInputDto): CancelablePromise<AmarantSalesCustomerAccountOutputDto>;
     /**
      * Confirm customer account.
      * Confirm customer account.
@@ -43,7 +44,7 @@ export declare class CustomersService {
      * @returns void
      * @throws ApiError
      */
-    static confirmCustomerAccount(requestBody?: ConfirmCustomerAccountInputAmarantSalesCustomerAccountConfirmationInputDto): CancelablePromise<void>;
+    static confirmCustomerAccount(requestBody: ConfirmCustomerAccountInputAmarantSalesCustomerAccountConfirmationInputDto): CancelablePromise<void>;
     /**
      * Initiate password reset.
      * Initiate password reset.
@@ -51,7 +52,7 @@ export declare class CustomersService {
      * @returns void
      * @throws ApiError
      */
-    static initiatePasswordReset(requestBody?: InitiatePasswordResetInputAmarantSalesCustomerPasswordResetRequestInputDto): CancelablePromise<void>;
+    static initiatePasswordReset(requestBody: InitiatePasswordResetInputAmarantSalesCustomerPasswordResetRequestInputDto): CancelablePromise<void>;
     /**
      * Reset password.
      * Reset password.
@@ -59,7 +60,7 @@ export declare class CustomersService {
      * @returns void
      * @throws ApiError
      */
-    static resetPassword(requestBody?: ResetPasswordInputAmarantSalesCustomerResetAccountPasswordInputDto): CancelablePromise<void>;
+    static resetPassword(requestBody: ResetPasswordInputAmarantSalesCustomerResetAccountPasswordInputDto): CancelablePromise<void>;
     /**
      * Get logged in customer.
      * Get logged in customer.
@@ -92,7 +93,7 @@ export declare class CustomersService {
      * @returns AmarantSalesCustomerAccountAddressOutputDto Resource created.
      * @throws ApiError
      */
-    static createCustomerAddress(requestBody?: CreateCustomerAddressInputAmarantSalesCustomerAccountAddressInputDto): CancelablePromise<AmarantSalesCustomerAccountAddressOutputDto>;
+    static createCustomerAddress(requestBody: CreateCustomerAddressInputAmarantSalesCustomerAccountAddressInputDto): CancelablePromise<AmarantSalesCustomerAccountAddressOutputDto>;
     /**
      * Get customer address item.
      * Get customer address item.
@@ -115,5 +116,5 @@ export declare class CustomersService {
      * @returns AmarantSalesCustomerAccountAddressOutputDto Resource updated.
      * @throws ApiError
      */
-    static updateCustomerAddressItem(id: number, requestBody?: UpdateCustomerAddressItemInputAmarantSalesCustomerAccountAddressInputDto): CancelablePromise<AmarantSalesCustomerAccountAddressOutputDto>;
+    static updateCustomerAddressItem(id: number, requestBody: UpdateCustomerAddressItemInputAmarantSalesCustomerAccountAddressInputDto): CancelablePromise<AmarantSalesCustomerAccountAddressOutputDto>;
 }

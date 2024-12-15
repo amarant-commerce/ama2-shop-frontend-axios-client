@@ -54,7 +54,7 @@ export class CartsService {
      */
     public static addItemToCart(
         id: string,
-        requestBody?: AddItemToCartInputAmarantSalesCartItemInputProductDto,
+        requestBody: AddItemToCartInputAmarantSalesCartItemInputProductDto,
     ): CancelablePromise<AmarantCartModel> {
         return __request(OpenAPI, {
             method: 'POST',
@@ -94,7 +94,7 @@ export class CartsService {
      */
     public static getAvailableShippingRates(
         id: string,
-        requestBody?: GetAvailableShippingRatesInputAmarantSalesCartShippingRateEstimationGroup,
+        requestBody: GetAvailableShippingRatesInputAmarantSalesCartShippingRateEstimationGroup,
     ): CancelablePromise<AmarantEstimatedShippingRateModelCollection> {
         return __request(OpenAPI, {
             method: 'POST',
@@ -116,7 +116,7 @@ export class CartsService {
      */
     public static setShippingInformation(
         id: string,
-        requestBody?: SetShippingInformationInputAmarantSalesCartShippingInformationInputGroupDto,
+        requestBody: SetShippingInformationInputAmarantSalesCartShippingInformationInputGroupDto,
     ): CancelablePromise<AmarantCartModel> {
         return __request(OpenAPI, {
             method: 'POST',
@@ -156,7 +156,7 @@ export class CartsService {
      */
     public static setPaymentInformation(
         id: string,
-        requestBody?: SetPaymentInformationInputAmarantSalesCartPaymentInformationInputGroupDto,
+        requestBody: SetPaymentInformationInputAmarantSalesCartPaymentInformationInputGroupDto,
     ): CancelablePromise<AmarantCartModel> {
         return __request(OpenAPI, {
             method: 'POST',
@@ -201,7 +201,7 @@ export class CartsService {
     public static updateCartItem(
         id: string,
         itemId: string,
-        requestBody?: UpdateCartItemInputAmarantSalesCartItemUpdateInputDto,
+        requestBody: UpdateCartItemInputAmarantSalesCartItemUpdateInputDto,
     ): CancelablePromise<AmarantCartModel> {
         return __request(OpenAPI, {
             method: 'PATCH',
