@@ -38,6 +38,7 @@ export type { AmarantCmsPageTagModel } from './models/AmarantCmsPageTagModel';
 export type { AmarantCustomizableProductModel } from './models/AmarantCustomizableProductModel';
 export { AmarantDataScope } from './models/AmarantDataScope';
 export type { AmarantDirectoryCountryModel } from './models/AmarantDirectoryCountryModel';
+export type { AmarantDirectoryRegionModel } from './models/AmarantDirectoryRegionModel';
 export type { AmarantErrorDetailsItem } from './models/AmarantErrorDetailsItem';
 export type { AmarantErrorDetailsItemError } from './models/AmarantErrorDetailsItemError';
 export type { AmarantEstimatedShippingRateModel } from './models/AmarantEstimatedShippingRateModel';
