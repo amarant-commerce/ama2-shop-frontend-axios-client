@@ -2,8 +2,8 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-import type { AmarantAnalyticsCookiePanelModel } from '../models/AmarantAnalyticsCookiePanelModel';
 import type { AmarantApiPaginatedCollectionResponse } from '../models/AmarantApiPaginatedCollectionResponse';
+import type { AmarantCookiePanelModel } from '../models/AmarantCookiePanelModel';
 import type { AmarantGetCookiePanelCollectionSearchCriteriaFilter } from '../models/AmarantGetCookiePanelCollectionSearchCriteriaFilter';
 import type { CancelablePromise } from '../core/CancelablePromise';
 import { OpenAPI } from '../core/OpenAPI';
@@ -23,11 +23,11 @@ export class AnalyticsService {
         page?: number,
         itemsPerPage?: number,
     ): CancelablePromise<(AmarantApiPaginatedCollectionResponse & {
-        data: Array<AmarantAnalyticsCookiePanelModel>;
+        data: Array<AmarantCookiePanelModel>;
     })> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/api/analytics/v1/cookie-panels',
+            url: '/api/cookie-panels/v1',
             query: {
                 'q': q,
                 'page': page,
@@ -39,15 +39,15 @@ export class AnalyticsService {
      * Get cookie panel item.
      * Get cookie panel item.
      * @param id Cookie panel ID
-     * @returns AmarantAnalyticsCookiePanelModel OK
+     * @returns AmarantCookiePanelModel OK
      * @throws ApiError
      */
     public static getCookiePanelItem(
         id: number,
-    ): CancelablePromise<AmarantAnalyticsCookiePanelModel> {
+    ): CancelablePromise<AmarantCookiePanelModel> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/api/analytics/v1/cookie-panels/{id}',
+            url: '/api/cookie-panels/v1/{id}',
             path: {
                 'id': id,
             },

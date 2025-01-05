@@ -1,8 +1,4 @@
-/* generated using openapi-typescript-codegen -- do not edit */
-/* istanbul ignore file */
-/* tslint:disable */
-/* eslint-disable */
-export type AmarantAnalyticsCookiePanelItemModel = {
+export type AmarantCookiePanelItemModel = {
     id: number;
     active: boolean;
     sortOrder: number;
@@ -10,4 +6,3 @@ export type AmarantAnalyticsCookiePanelItemModel = {
     createdAt: string;
     updatedAt: string;
 };
-

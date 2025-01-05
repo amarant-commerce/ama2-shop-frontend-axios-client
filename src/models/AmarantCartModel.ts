@@ -11,6 +11,8 @@ import type { AmarantCartTotalModel } from './AmarantCartTotalModel';
 export type AmarantCartModel = {
     id: string;
     channelId: number;
+    channelScopeId: number;
+    channel: string;
     baseCurrency: string;
     currency: string;
     conversionRate?: string | null;
@@ -23,5 +25,9 @@ export type AmarantCartModel = {
     totals: Array<AmarantCartTotalModel>;
     createdAt: string;
     updatedAt: string;
+    baseGrandTotal: number;
+    baseGrandTotalFormatted: string;
+    grandTotal: number;
+    grandTotalFormatted: string;
 };
 

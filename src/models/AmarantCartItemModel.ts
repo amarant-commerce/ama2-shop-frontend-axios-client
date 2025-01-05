@@ -12,6 +12,7 @@ export type AmarantCartItemModel = {
     adjustments: Array<AmarantCartAdjustmentModel>;
     reservedUntil?: string | null;
     reservedQty?: string | null;
+    meta: Record<string, any>;
     basePriceExTax: number;
     basePrice: number;
     priceExTax: number;

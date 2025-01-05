@@ -13,7 +13,7 @@ export class AnalyticsService {
     static getCookiePanelCollection(q, page, itemsPerPage) {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/api/analytics/v1/cookie-panels',
+            url: '/api/cookie-panels/v1',
             query: {
                 'q': q,
                 'page': page,
@@ -25,13 +25,13 @@ export class AnalyticsService {
      * Get cookie panel item.
      * Get cookie panel item.
      * @param id Cookie panel ID
-     * @returns AmarantAnalyticsCookiePanelModel OK
+     * @returns AmarantCookiePanelModel OK
      * @throws ApiError
      */
     static getCookiePanelItem(id) {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/api/analytics/v1/cookie-panels/{id}',
+            url: '/api/cookie-panels/v1/{id}',
             path: {
                 'id': id,
             },

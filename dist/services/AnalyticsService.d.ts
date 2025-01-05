@@ -1,5 +1,5 @@
-import type { AmarantAnalyticsCookiePanelModel } from '../models/AmarantAnalyticsCookiePanelModel';
 import type { AmarantApiPaginatedCollectionResponse } from '../models/AmarantApiPaginatedCollectionResponse';
+import type { AmarantCookiePanelModel } from '../models/AmarantCookiePanelModel';
 import type { AmarantGetCookiePanelCollectionSearchCriteriaFilter } from '../models/AmarantGetCookiePanelCollectionSearchCriteriaFilter';
 import type { CancelablePromise } from '../core/CancelablePromise';
 export declare class AnalyticsService {
@@ -13,14 +13,14 @@ export declare class AnalyticsService {
      * @throws ApiError
      */
     static getCookiePanelCollection(q?: AmarantGetCookiePanelCollectionSearchCriteriaFilter, page?: number, itemsPerPage?: number): CancelablePromise<(AmarantApiPaginatedCollectionResponse & {
-        data: Array<AmarantAnalyticsCookiePanelModel>;
+        data: Array<AmarantCookiePanelModel>;
     })>;
     /**
      * Get cookie panel item.
      * Get cookie panel item.
      * @param id Cookie panel ID
-     * @returns AmarantAnalyticsCookiePanelModel OK
+     * @returns AmarantCookiePanelModel OK
      * @throws ApiError
      */
-    static getCookiePanelItem(id: number): CancelablePromise<AmarantAnalyticsCookiePanelModel>;
+    static getCookiePanelItem(id: number): CancelablePromise<AmarantCookiePanelModel>;
 }
