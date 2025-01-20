@@ -83,10 +83,11 @@ export type { AmarantProductCustomizationModel } from './models/AmarantProductCu
 export type { AmarantProductCustomizationOptionModel } from './models/AmarantProductCustomizationOptionModel';
 export type { AmarantProductInventory } from './models/AmarantProductInventory';
 export type { AmarantProductModel } from './models/AmarantProductModel';
-export { AmarantProductPriceItem } from './models/AmarantProductPriceItem';
+export type { AmarantProductPriceItem } from './models/AmarantProductPriceItem';
 export type { AmarantProductPrices } from './models/AmarantProductPrices';
 export type { AmarantProductPricing } from './models/AmarantProductPricing';
 export type { AmarantSalesCartAdditionalDataInputDto } from './models/AmarantSalesCartAdditionalDataInputDto';
+export type { AmarantSalesCartItemInputCustomizableProductDto } from './models/AmarantSalesCartItemInputCustomizableProductDto';
 export type { AmarantSalesCartItemInputGenericProductDto } from './models/AmarantSalesCartItemInputGenericProductDto';
 export type { AmarantSalesCartItemInputGroupedProductDto } from './models/AmarantSalesCartItemInputGroupedProductDto';
 export type { AmarantSalesCartPaymentInformationAddressInputDto } from './models/AmarantSalesCartPaymentInformationAddressInputDto';

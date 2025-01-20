@@ -1,8 +1,8 @@
 export type AmarantProductCustomizationOptionModel = {
     code: string;
-    value: (string | null | number | null | boolean | null);
-    scopedValue?: string | null;
     label: string;
-    scopedLabel?: string | null;
+    value: string;
+    valueLabel: string;
+    imageUrl?: string | null;
     sort: number;
 };
