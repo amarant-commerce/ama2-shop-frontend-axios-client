@@ -98,6 +98,7 @@ export type { AmarantSalesCustomerAccountAddressInputDto } from './models/Amaran
 export type { AmarantSalesCustomerAccountAddressOutputDto } from './models/AmarantSalesCustomerAccountAddressOutputDto';
 export type { AmarantSalesCustomerAccountOutputDto } from './models/AmarantSalesCustomerAccountOutputDto';
 export { AmarantSalesCustomerAccountStateOutputDto } from './models/AmarantSalesCustomerAccountStateOutputDto';
+export type { AmarantSalesNewsletterSubscribeResultModel } from './models/AmarantSalesNewsletterSubscribeResultModel';
 export type { AmarantSearchAggregationResultModel } from './models/AmarantSearchAggregationResultModel';
 export type { AmarantSearchAggregationResultStatsAggregationModel } from './models/AmarantSearchAggregationResultStatsAggregationModel';
 export type { AmarantSearchAggregationResultTermAggregationModel } from './models/AmarantSearchAggregationResultTermAggregationModel';
@@ -115,6 +116,7 @@ export type { GetAvailableShippingRatesInputAmarantSalesCartShippingRateEstimati
 export type { InitiatePasswordResetInputAmarantSalesCustomerPasswordResetRequestInputDto } from './models/InitiatePasswordResetInputAmarantSalesCustomerPasswordResetRequestInputDto';
 export type { RefreshAuthorizationTokenInputAmarantSalesCustomerRefreshTokenInputDto } from './models/RefreshAuthorizationTokenInputAmarantSalesCustomerRefreshTokenInputDto';
 export type { ResetPasswordInputAmarantSalesCustomerResetAccountPasswordInputDto } from './models/ResetPasswordInputAmarantSalesCustomerResetAccountPasswordInputDto';
+export type { SalesNewslettersSubscribeGuestInputAmarantSalesNewsletterInputModel } from './models/SalesNewslettersSubscribeGuestInputAmarantSalesNewsletterInputModel';
 export type { SetPaymentInformationInputAmarantSalesCartPaymentInformationInputGroupDto } from './models/SetPaymentInformationInputAmarantSalesCartPaymentInformationInputGroupDto';
 export type { SetShippingInformationInputAmarantSalesCartShippingInformationInputGroupDto } from './models/SetShippingInformationInputAmarantSalesCartShippingInformationInputGroupDto';
 export type { UpdateCartItemInputAmarantSalesCartItemUpdateInputDto } from './models/UpdateCartItemInputAmarantSalesCartItemUpdateInputDto';
@@ -129,6 +131,7 @@ export { CheckoutService } from './services/CheckoutService';
 export { CmsService } from './services/CmsService';
 export { CustomersService } from './services/CustomersService';
 export { DirectoryService } from './services/DirectoryService';
+export { NewsletterService } from './services/NewsletterService';
 export { OrdersService } from './services/OrdersService';
 export { ProductsService } from './services/ProductsService';
 export { SearchService } from './services/SearchService';
