@@ -111,13 +111,17 @@ export class ProductsService {
     /**
      * Get product wishlist collection item.
      * Get product wishlist collection item.
+     * @param id Product wishlist ID
      * @returns AmarantProductWishlist OK
      * @throws ApiError
      */
-    static getProductWishlistCollectionItem() {
+    static getProductWishlistCollectionItem(id) {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/api/product-wishlists/v1/{id}',
+            path: {
+                'id': id,
+            },
         });
     }
     /**

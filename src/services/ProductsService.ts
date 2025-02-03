@@ -148,13 +148,19 @@ export class ProductsService {
     /**
      * Get product wishlist collection item.
      * Get product wishlist collection item.
+     * @param id Product wishlist ID
      * @returns AmarantProductWishlist OK
      * @throws ApiError
      */
-    public static getProductWishlistCollectionItem(): CancelablePromise<AmarantProductWishlist> {
+    public static getProductWishlistCollectionItem(
+        id: string,
+    ): CancelablePromise<AmarantProductWishlist> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/api/product-wishlists/v1/{id}',
+            path: {
+                'id': id,
+            },
         });
     }
     /**

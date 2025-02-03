@@ -71,10 +71,11 @@ export declare class ProductsService {
     /**
      * Get product wishlist collection item.
      * Get product wishlist collection item.
+     * @param id Product wishlist ID
      * @returns AmarantProductWishlist OK
      * @throws ApiError
      */
-    static getProductWishlistCollectionItem(): CancelablePromise<AmarantProductWishlist>;
+    static getProductWishlistCollectionItem(id: string): CancelablePromise<AmarantProductWishlist>;
     /**
      * Remove product wishlist.
      * Remove product wishlist.
