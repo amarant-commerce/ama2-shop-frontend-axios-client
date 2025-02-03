@@ -75,4 +75,121 @@ export class ProductsService {
             },
         });
     }
+    /**
+     * Get product wishlist collection.
+     * Get product wishlist collection.
+     * @param page Page.
+     * @param itemsPerPage Items per page.
+     * @returns any OK
+     * @throws ApiError
+     */
+    static getProductWishlistCollection(page, itemsPerPage) {
+        return __request(OpenAPI, {
+            method: 'GET',
+            url: '/api/product-wishlists/v1',
+            query: {
+                'page': page,
+                'itemsPerPage': itemsPerPage,
+            },
+        });
+    }
+    /**
+     * Create product wishlist.
+     * Create product wishlist.
+     * @param requestBody
+     * @returns AmarantProductWishlist OK
+     * @throws ApiError
+     */
+    static createProductWishlist(requestBody) {
+        return __request(OpenAPI, {
+            method: 'POST',
+            url: '/api/product-wishlists/v1',
+            body: requestBody,
+            mediaType: 'application/json',
+        });
+    }
+    /**
+     * Get product wishlist collection item.
+     * Get product wishlist collection item.
+     * @returns AmarantProductWishlist OK
+     * @throws ApiError
+     */
+    static getProductWishlistCollectionItem() {
+        return __request(OpenAPI, {
+            method: 'GET',
+            url: '/api/product-wishlists/v1/{id}',
+        });
+    }
+    /**
+     * Remove product wishlist.
+     * Remove product wishlist.
+     * @param id Product wishlist ID
+     * @returns AmarantProductWishlist Resource deleted.
+     * @throws ApiError
+     */
+    static removeProductWishlist(id) {
+        return __request(OpenAPI, {
+            method: 'DELETE',
+            url: '/api/product-wishlists/v1/{id}',
+            path: {
+                'id': id,
+            },
+        });
+    }
+    /**
+     * Update product wishlist.
+     * Update product wishlist.
+     * @param id Product wishlist ID
+     * @param requestBody
+     * @returns AmarantProductWishlist Resource updated.
+     * @throws ApiError
+     */
+    static updateProductWishlist(id, requestBody) {
+        return __request(OpenAPI, {
+            method: 'PATCH',
+            url: '/api/product-wishlists/v1/{id}',
+            path: {
+                'id': id,
+            },
+            body: requestBody,
+            mediaType: 'application/json',
+        });
+    }
+    /**
+     * Add items to wishlist.
+     * Add items to wishlist.
+     * @param id Product wishlist ID
+     * @param requestBody
+     * @returns AmarantProductWishlist OK
+     * @throws ApiError
+     */
+    static addItemsToWishlist(id, requestBody) {
+        return __request(OpenAPI, {
+            method: 'POST',
+            url: '/api/product-wishlists/v1/{id}/items',
+            path: {
+                'id': id,
+            },
+            body: requestBody,
+            mediaType: 'application/json',
+        });
+    }
+    /**
+     * Remove wishlist item.
+     * Remove wishlist item.
+     * @param id Product wishlist ID
+     * @param itemId Product wishlist item ID
+     * @returns AmarantProductWishlist Resource deleted.
+     * @throws ApiError
+     */
+    static removeWishlistItem(id, itemId) {
+        return __request(OpenAPI, {
+            method: 'DELETE',
+            url: '/api/product-wishlists/v1/{id}/items/{itemId}',
+            path: {
+                'id': id,
+                'itemId': itemId,
+            },
+        });
+    }
 }

@@ -2,10 +2,14 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
+import type { AddItemsToWishlistInputAmarantAddProductsToWishlistInput } from '../models/AddItemsToWishlistInputAmarantAddProductsToWishlistInput';
 import type { AmarantApiPaginatedCollectionResponse } from '../models/AmarantApiPaginatedCollectionResponse';
 import type { AmarantProductCategoryNodeItem } from '../models/AmarantProductCategoryNodeItem';
 import type { AmarantProductModel } from '../models/AmarantProductModel';
+import type { AmarantProductWishlist } from '../models/AmarantProductWishlist';
 import type { AmarantSearchCriteriaFilter } from '../models/AmarantSearchCriteriaFilter';
+import type { CreateProductWishlistInputAmarantCreateProductWishlistInput } from '../models/CreateProductWishlistInputAmarantCreateProductWishlistInput';
+import type { UpdateProductWishlistInputAmarantUpdateProductWishlistInput } from '../models/UpdateProductWishlistInputAmarantUpdateProductWishlistInput';
 import type { CancelablePromise } from '../core/CancelablePromise';
 import { OpenAPI } from '../core/OpenAPI';
 import { request as __request } from '../core/request';
@@ -98,6 +102,141 @@ export class ProductsService {
             url: '/api/categories/v1/{id}',
             path: {
                 'id': id,
+            },
+        });
+    }
+    /**
+     * Get product wishlist collection.
+     * Get product wishlist collection.
+     * @param page Page.
+     * @param itemsPerPage Items per page.
+     * @returns any OK
+     * @throws ApiError
+     */
+    public static getProductWishlistCollection(
+        page?: number,
+        itemsPerPage?: number,
+    ): CancelablePromise<(AmarantApiPaginatedCollectionResponse & {
+        data: Array<AmarantProductWishlist>;
+    })> {
+        return __request(OpenAPI, {
+            method: 'GET',
+            url: '/api/product-wishlists/v1',
+            query: {
+                'page': page,
+                'itemsPerPage': itemsPerPage,
+            },
+        });
+    }
+    /**
+     * Create product wishlist.
+     * Create product wishlist.
+     * @param requestBody
+     * @returns AmarantProductWishlist OK
+     * @throws ApiError
+     */
+    public static createProductWishlist(
+        requestBody: CreateProductWishlistInputAmarantCreateProductWishlistInput,
+    ): CancelablePromise<AmarantProductWishlist> {
+        return __request(OpenAPI, {
+            method: 'POST',
+            url: '/api/product-wishlists/v1',
+            body: requestBody,
+            mediaType: 'application/json',
+        });
+    }
+    /**
+     * Get product wishlist collection item.
+     * Get product wishlist collection item.
+     * @returns AmarantProductWishlist OK
+     * @throws ApiError
+     */
+    public static getProductWishlistCollectionItem(): CancelablePromise<AmarantProductWishlist> {
+        return __request(OpenAPI, {
+            method: 'GET',
+            url: '/api/product-wishlists/v1/{id}',
+        });
+    }
+    /**
+     * Remove product wishlist.
+     * Remove product wishlist.
+     * @param id Product wishlist ID
+     * @returns AmarantProductWishlist Resource deleted.
+     * @throws ApiError
+     */
+    public static removeProductWishlist(
+        id: string,
+    ): CancelablePromise<AmarantProductWishlist> {
+        return __request(OpenAPI, {
+            method: 'DELETE',
+            url: '/api/product-wishlists/v1/{id}',
+            path: {
+                'id': id,
+            },
+        });
+    }
+    /**
+     * Update product wishlist.
+     * Update product wishlist.
+     * @param id Product wishlist ID
+     * @param requestBody
+     * @returns AmarantProductWishlist Resource updated.
+     * @throws ApiError
+     */
+    public static updateProductWishlist(
+        id: string,
+        requestBody: UpdateProductWishlistInputAmarantUpdateProductWishlistInput,
+    ): CancelablePromise<AmarantProductWishlist> {
+        return __request(OpenAPI, {
+            method: 'PATCH',
+            url: '/api/product-wishlists/v1/{id}',
+            path: {
+                'id': id,
+            },
+            body: requestBody,
+            mediaType: 'application/json',
+        });
+    }
+    /**
+     * Add items to wishlist.
+     * Add items to wishlist.
+     * @param id Product wishlist ID
+     * @param requestBody
+     * @returns AmarantProductWishlist OK
+     * @throws ApiError
+     */
+    public static addItemsToWishlist(
+        id: string,
+        requestBody: AddItemsToWishlistInputAmarantAddProductsToWishlistInput,
+    ): CancelablePromise<AmarantProductWishlist> {
+        return __request(OpenAPI, {
+            method: 'POST',
+            url: '/api/product-wishlists/v1/{id}/items',
+            path: {
+                'id': id,
+            },
+            body: requestBody,
+            mediaType: 'application/json',
+        });
+    }
+    /**
+     * Remove wishlist item.
+     * Remove wishlist item.
+     * @param id Product wishlist ID
+     * @param itemId Product wishlist item ID
+     * @returns AmarantProductWishlist Resource deleted.
+     * @throws ApiError
+     */
+    public static removeWishlistItem(
+        id: string,
+        itemId: number,
+    ): CancelablePromise<AmarantProductWishlist> {
+        return __request(OpenAPI, {
+            method: 'DELETE',
+            url: '/api/product-wishlists/v1/{id}/items/{itemId}',
+            path: {
+                'id': id,
+                'itemId': itemId,
             },
         });
     }
