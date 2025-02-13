@@ -1,4 +1,4 @@
 export type UpdateProductWishlistInputAmarantUpdateProductWishlistInput = {
-    name: string;
-    shared: boolean;
+    name?: string | null;
+    shared?: boolean | null;
 };

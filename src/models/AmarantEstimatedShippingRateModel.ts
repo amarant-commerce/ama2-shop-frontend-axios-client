@@ -23,6 +23,7 @@ export type AmarantEstimatedShippingRateModel = {
     deliveryMethodCode: string;
     deliveryMethodRateCode: string;
     title: string;
+    imageUrl?: string | null;
     shippable: boolean;
     price: number;
     shortDescription?: string | null;

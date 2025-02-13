@@ -2,8 +2,10 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-export type UpdateProductWishlistInputAmarantUpdateProductWishlistInput = {
-    name?: string | null;
-    shared?: boolean | null;
+export type AmarantSearchRangeAggregationItem = {
+    key: string;
+    count: number;
+    from: number | null;
+    to: number | null;
 };
 

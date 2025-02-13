@@ -3,6 +3,7 @@
 /* tslint:disable */
 /* eslint-disable */
 import type { AddItemsToWishlistInputAmarantAddProductsToWishlistInput } from '../models/AddItemsToWishlistInputAmarantAddProductsToWishlistInput';
+import type { AmarantApiCollectionResponse } from '../models/AmarantApiCollectionResponse';
 import type { AmarantApiPaginatedCollectionResponse } from '../models/AmarantApiPaginatedCollectionResponse';
 import type { AmarantProductCategoryNodeItem } from '../models/AmarantProductCategoryNodeItem';
 import type { AmarantProductModel } from '../models/AmarantProductModel';
@@ -108,29 +109,26 @@ export class ProductsService {
     /**
      * Get product wishlist collection.
      * Get product wishlist collection.
-     * @param page Page.
-     * @param itemsPerPage Items per page.
+     *
+     * Required identity types:
+     * * customer
      * @returns any OK
      * @throws ApiError
      */
-    public static getProductWishlistCollection(
-        page?: number,
-        itemsPerPage?: number,
-    ): CancelablePromise<(AmarantApiPaginatedCollectionResponse & {
+    public static getProductWishlistCollection(): CancelablePromise<(AmarantApiCollectionResponse & {
         data: Array<AmarantProductWishlist>;
     })> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/api/product-wishlists/v1',
-            query: {
-                'page': page,
-                'itemsPerPage': itemsPerPage,
-            },
         });
     }
     /**
      * Create product wishlist.
      * Create product wishlist.
+     *
+     * Required identity types:
+     * * customer
      * @param requestBody
      * @returns AmarantProductWishlist OK
      * @throws ApiError
@@ -166,6 +164,9 @@ export class ProductsService {
     /**
      * Remove product wishlist.
      * Remove product wishlist.
+     *
+     * Required identity types:
+     * * customer
      * @param id Product wishlist ID
      * @returns AmarantProductWishlist Resource deleted.
      * @throws ApiError
@@ -184,6 +185,9 @@ export class ProductsService {
     /**
      * Update product wishlist.
      * Update product wishlist.
+     *
+     * Required identity types:
+     * * customer
      * @param id Product wishlist ID
      * @param requestBody
      * @returns AmarantProductWishlist Resource updated.
@@ -206,6 +210,9 @@ export class ProductsService {
     /**
      * Add items to wishlist.
      * Add items to wishlist.
+     *
+     * Required identity types:
+     * * customer
      * @param id Product wishlist ID
      * @param requestBody
      * @returns AmarantProductWishlist OK
@@ -228,6 +235,9 @@ export class ProductsService {
     /**
      * Remove wishlist item.
      * Remove wishlist item.
+     *
+     * Required identity types:
+     * * customer
      * @param id Product wishlist ID
      * @param itemId Product wishlist item ID
      * @returns AmarantProductWishlist Resource deleted.

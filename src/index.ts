@@ -109,9 +109,11 @@ export type { AmarantSalesCustomerAccountOutputDto } from './models/AmarantSales
 export { AmarantSalesCustomerAccountStateOutputDto } from './models/AmarantSalesCustomerAccountStateOutputDto';
 export type { AmarantSalesNewsletterSubscribeResultModel } from './models/AmarantSalesNewsletterSubscribeResultModel';
 export type { AmarantSearchAggregationResultModel } from './models/AmarantSearchAggregationResultModel';
+export type { AmarantSearchAggregationResultRangeAggregationModel } from './models/AmarantSearchAggregationResultRangeAggregationModel';
 export type { AmarantSearchAggregationResultStatsAggregationModel } from './models/AmarantSearchAggregationResultStatsAggregationModel';
 export type { AmarantSearchAggregationResultTermAggregationModel } from './models/AmarantSearchAggregationResultTermAggregationModel';
 export type { AmarantSearchCriteriaFilter } from './models/AmarantSearchCriteriaFilter';
+export type { AmarantSearchRangeAggregationItem } from './models/AmarantSearchRangeAggregationItem';
 export type { AmarantSearchResultCategorySearchResultItemModel } from './models/AmarantSearchResultCategorySearchResultItemModel';
 export type { AmarantSearchResultModel } from './models/AmarantSearchResultModel';
 export type { AmarantSearchResultProductSearchResultItemModel } from './models/AmarantSearchResultProductSearchResultItemModel';

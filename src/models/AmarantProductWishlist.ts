@@ -7,6 +7,7 @@ export type AmarantProductWishlist = {
     id: string;
     customerId: number;
     name: string;
-    products: Array<AmarantProductWishlistProduct>;
+    shared: boolean;
+    items: Array<AmarantProductWishlistProduct>;
 };
 

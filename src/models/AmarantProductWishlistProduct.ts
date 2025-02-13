@@ -4,10 +4,10 @@
 /* eslint-disable */
 export type AmarantProductWishlistProduct = {
     id: string;
-    productId: (number | string);
-    channelId: (number | string);
-    parentProductId: (number | null | string | null);
-    customizationId: (number | null | string | null);
+    productId: number;
+    channelId: number;
+    parentProductId?: number | null;
+    customizationId?: string | null;
     addedAt: string;
 };
 
