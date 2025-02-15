@@ -5,4 +5,5 @@
 import type { AmarantSearchAggregationResultRangeAggregationModel } from './AmarantSearchAggregationResultRangeAggregationModel';
 import type { AmarantSearchAggregationResultStatsAggregationModel } from './AmarantSearchAggregationResultStatsAggregationModel';
 import type { AmarantSearchAggregationResultTermAggregationModel } from './AmarantSearchAggregationResultTermAggregationModel';
-export type AmarantSearchAggregationResultModel = Array<(AmarantSearchAggregationResultTermAggregationModel | AmarantSearchAggregationResultStatsAggregationModel | AmarantSearchAggregationResultRangeAggregationModel)>;
+export type AmarantSearchAggregationResultModel = (AmarantSearchAggregationResultTermAggregationModel | AmarantSearchAggregationResultStatsAggregationModel | AmarantSearchAggregationResultRangeAggregationModel);
+
