@@ -3,10 +3,10 @@
 /* tslint:disable */
 /* eslint-disable */
 import type { AmarantSalesCartAdditionalDataInputDto } from './AmarantSalesCartAdditionalDataInputDto';
-import type { AmarantSalesCartItemInputCustomizableProductDto } from './AmarantSalesCartItemInputCustomizableProductDto';
+import type { AmarantSalesCartItemInputConfigurableProductDto } from './AmarantSalesCartItemInputConfigurableProductDto';
 import type { AmarantSalesCartItemInputGenericProductDto } from './AmarantSalesCartItemInputGenericProductDto';
 import type { AmarantSalesCartItemInputGroupedProductDto } from './AmarantSalesCartItemInputGroupedProductDto';
-export type AddItemToCartInputAmarantSalesCartItemInputProductDto = (AmarantSalesCartItemInputGenericProductDto | AmarantSalesCartItemInputGroupedProductDto | AmarantSalesCartItemInputCustomizableProductDto | {
+export type AddItemToCartInputAmarantSalesCartItemInputProductDto = (AmarantSalesCartItemInputGenericProductDto | AmarantSalesCartItemInputGroupedProductDto | AmarantSalesCartItemInputConfigurableProductDto | {
     type: AddItemToCartInputAmarantSalesCartItemInputProductDto.type;
     additionalData: Array<AmarantSalesCartAdditionalDataInputDto>;
 });
@@ -14,7 +14,7 @@ export namespace AddItemToCartInputAmarantSalesCartItemInputProductDto {
     export enum type {
         GENERIC = 'generic',
         GROUPED = 'grouped',
-        CUSTOMIZABLE = 'customizable',
+        CONFIGURABLE = 'configurable',
     }
 }
 

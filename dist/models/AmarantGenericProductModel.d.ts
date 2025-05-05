@@ -13,6 +13,7 @@ export type AmarantGenericProductModel = {
     sku: string;
     setId: number;
     attributes: Record<string, string | number | number | boolean | any[] | null>;
+    swatches: Record<string, Record<string, any>>;
     prices: AmarantProductPrices;
     media: Array<AmarantImageModel>;
     categoryIds: Array<number>;

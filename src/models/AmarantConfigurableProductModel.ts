@@ -4,12 +4,12 @@
 /* eslint-disable */
 import type { AmarantImageModel } from './AmarantImageModel';
 import type { AmarantProductCategory } from './AmarantProductCategory';
-import type { AmarantProductCustomizationModel } from './AmarantProductCustomizationModel';
+import type { AmarantProductConfigurationModel } from './AmarantProductConfigurationModel';
 import type { AmarantProductPrices } from './AmarantProductPrices';
 import type { AmarantProductPricing } from './AmarantProductPricing';
-export type AmarantCustomizableProductModel = {
-    customizations: Array<AmarantProductCustomizationModel>;
-    type: 'customizable';
+export type AmarantConfigurableProductModel = {
+    configurations: Array<AmarantProductConfigurationModel>;
+    type: 'configurable';
     id: number;
     url: string;
     path: string;
@@ -17,6 +17,7 @@ export type AmarantCustomizableProductModel = {
     sku: string;
     setId: number;
     attributes: Record<string, string | number | number | boolean | any[] | null>;
+    swatches: Record<string, Record<string, any>>;
     prices: AmarantProductPrices;
     media: Array<AmarantImageModel>;
     categoryIds: Array<number>;

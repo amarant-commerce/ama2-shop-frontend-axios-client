@@ -3,6 +3,6 @@ export type AmarantProductWishlistProduct = {
     productId: number;
     channelId: number;
     parentProductId?: number | null;
-    customizationId?: string | null;
+    configurationId?: string | null;
     addedAt: string;
 };

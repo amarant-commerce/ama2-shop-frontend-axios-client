@@ -2,7 +2,7 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-export type AmarantProductCustomizationOptionModel = {
+export type AmarantProductConfigurationOptionModel = {
     code: string;
     label: string;
     value: string;

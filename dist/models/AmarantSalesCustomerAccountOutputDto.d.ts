@@ -15,4 +15,5 @@ export type AmarantSalesCustomerAccountOutputDto = {
     attributes: Record<string, string | number | number | boolean | any[] | null>;
     addresses: Array<AmarantSalesCustomerAccountAddressOutputDto>;
     cartId?: string | null;
+    impersonatedBy?: number | null;
 };

@@ -2,11 +2,11 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-import type { AmarantProductCustomizationOptionModel } from './AmarantProductCustomizationOptionModel';
+import type { AmarantProductConfigurationOptionModel } from './AmarantProductConfigurationOptionModel';
 import type { AmarantProductModel } from './AmarantProductModel';
-export type AmarantProductCustomizationModel = {
+export type AmarantProductConfigurationModel = {
     id: number;
-    options: Array<AmarantProductCustomizationOptionModel>;
+    options: Array<AmarantProductConfigurationOptionModel>;
     productId: number;
     productType: string;
     sku: string;

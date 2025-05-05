@@ -1,15 +1,11 @@
-/* generated using openapi-typescript-codegen -- do not edit */
-/* istanbul ignore file */
-/* tslint:disable */
-/* eslint-disable */
-import type { AmarantGroupedProductItemModel } from './AmarantGroupedProductItemModel';
 import type { AmarantImageModel } from './AmarantImageModel';
 import type { AmarantProductCategory } from './AmarantProductCategory';
+import type { AmarantProductConfigurationModel } from './AmarantProductConfigurationModel';
 import type { AmarantProductPrices } from './AmarantProductPrices';
 import type { AmarantProductPricing } from './AmarantProductPricing';
-export type AmarantGroupedProductModel = {
-    groupChildren: Array<AmarantGroupedProductItemModel>;
-    type: 'grouped';
+export type AmarantConfigurableProductModel = {
+    configurations: Array<AmarantProductConfigurationModel>;
+    type: 'configurable';
     id: number;
     url: string;
     path: string;
@@ -28,4 +24,3 @@ export type AmarantGroupedProductModel = {
     regularPrice: number;
     lowestPrice: number;
 };
-

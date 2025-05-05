@@ -2,14 +2,14 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-import type { AmarantCustomizableProductModel } from './AmarantCustomizableProductModel';
+import type { AmarantConfigurableProductModel } from './AmarantConfigurableProductModel';
 import type { AmarantGenericProductModel } from './AmarantGenericProductModel';
 import type { AmarantGroupedProductModel } from './AmarantGroupedProductModel';
 import type { AmarantImageModel } from './AmarantImageModel';
 import type { AmarantProductCategory } from './AmarantProductCategory';
 import type { AmarantProductPrices } from './AmarantProductPrices';
 import type { AmarantProductPricing } from './AmarantProductPricing';
-export type AmarantProductModel = (AmarantGroupedProductModel | AmarantCustomizableProductModel | AmarantGenericProductModel | {
+export type AmarantProductModel = (AmarantGroupedProductModel | AmarantConfigurableProductModel | AmarantGenericProductModel | {
     type: string;
     id: number;
     url: string;
@@ -18,6 +18,7 @@ export type AmarantProductModel = (AmarantGroupedProductModel | AmarantCustomiza
     sku: string;
     setId: number;
     attributes: Record<string, string | number | number | boolean | any[] | null>;
+    swatches: Record<string, Record<string, any>>;
     prices: AmarantProductPrices;
     media: Array<AmarantImageModel>;
     categoryIds: Array<number>;

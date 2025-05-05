@@ -4,6 +4,6 @@ export var AddItemToCartInputAmarantSalesCartItemInputProductDto;
     (function (type) {
         type["GENERIC"] = "generic";
         type["GROUPED"] = "grouped";
-        type["CUSTOMIZABLE"] = "customizable";
+        type["CONFIGURABLE"] = "configurable";
     })(type = AddItemToCartInputAmarantSalesCartItemInputProductDto.type || (AddItemToCartInputAmarantSalesCartItemInputProductDto.type = {}));
 })(AddItemToCartInputAmarantSalesCartItemInputProductDto || (AddItemToCartInputAmarantSalesCartItemInputProductDto = {}));
