@@ -2,6 +2,7 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
+import type { AmarantAttributeSwatchModel } from './AmarantAttributeSwatchModel';
 import type { AmarantConfigurableProductModel } from './AmarantConfigurableProductModel';
 import type { AmarantGenericProductModel } from './AmarantGenericProductModel';
 import type { AmarantGroupedProductModel } from './AmarantGroupedProductModel';
@@ -18,7 +19,7 @@ export type AmarantProductModel = (AmarantGroupedProductModel | AmarantConfigura
     sku: string;
     setId: number;
     attributes: Record<string, string | number | number | boolean | any[] | null>;
-    swatches: Record<string, Record<string, any>>;
+    swatches: Array<AmarantAttributeSwatchModel>;
     prices: AmarantProductPrices;
     media: Array<AmarantImageModel>;
     categoryIds: Array<number>;
