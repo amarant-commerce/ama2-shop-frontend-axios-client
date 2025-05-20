@@ -13,6 +13,7 @@ export var AmarantAttributeInputTypeEnum;
     AmarantAttributeInputTypeEnum["MULTISELECT"] = "multiselect";
     AmarantAttributeInputTypeEnum["RANGE"] = "range";
     AmarantAttributeInputTypeEnum["TEXTAREA"] = "textarea";
+    AmarantAttributeInputTypeEnum["WYSIWYG"] = "wysiwyg";
     AmarantAttributeInputTypeEnum["BOOLEAN"] = "boolean";
     AmarantAttributeInputTypeEnum["FILE"] = "file";
     AmarantAttributeInputTypeEnum["FILE_MULTIPLE"] = "file_multiple";

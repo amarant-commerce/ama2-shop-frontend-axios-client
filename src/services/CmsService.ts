@@ -9,7 +9,10 @@ import type { AmarantCmsBlockTagModel } from '../models/AmarantCmsBlockTagModel'
 import type { AmarantCmsPageModel } from '../models/AmarantCmsPageModel';
 import type { AmarantCmsPageTagModel } from '../models/AmarantCmsPageTagModel';
 import type { AmarantGetCmsBannerCollectionSearchCriteriaFilter } from '../models/AmarantGetCmsBannerCollectionSearchCriteriaFilter';
-import type { AmarantSearchCriteriaFilter } from '../models/AmarantSearchCriteriaFilter';
+import type { AmarantGetCmsBlockCollectionSearchCriteriaFilter } from '../models/AmarantGetCmsBlockCollectionSearchCriteriaFilter';
+import type { AmarantGetCmsBlockTagCollectionSearchCriteriaFilter } from '../models/AmarantGetCmsBlockTagCollectionSearchCriteriaFilter';
+import type { AmarantGetCmsPageCollectionSearchCriteriaFilter } from '../models/AmarantGetCmsPageCollectionSearchCriteriaFilter';
+import type { AmarantGetCmsPageTagCollectionSearchCriteriaFilter } from '../models/AmarantGetCmsPageTagCollectionSearchCriteriaFilter';
 import type { CancelablePromise } from '../core/CancelablePromise';
 import { OpenAPI } from '../core/OpenAPI';
 import { request as __request } from '../core/request';
@@ -24,7 +27,7 @@ export class CmsService {
      * @throws ApiError
      */
     public static getCmsPageCollection(
-        q?: AmarantSearchCriteriaFilter,
+        q?: AmarantGetCmsPageCollectionSearchCriteriaFilter,
         page?: number,
         itemsPerPage?: number,
     ): CancelablePromise<(AmarantApiPaginatedCollectionResponse & {
@@ -68,7 +71,7 @@ export class CmsService {
      * @throws ApiError
      */
     public static getCmsPageTagCollection(
-        q?: AmarantSearchCriteriaFilter,
+        q?: AmarantGetCmsPageTagCollectionSearchCriteriaFilter,
         page?: number,
         itemsPerPage?: number,
     ): CancelablePromise<(AmarantApiPaginatedCollectionResponse & {
@@ -112,7 +115,7 @@ export class CmsService {
      * @throws ApiError
      */
     public static getCmsBlockCollection(
-        q?: AmarantSearchCriteriaFilter,
+        q?: AmarantGetCmsBlockCollectionSearchCriteriaFilter,
         page?: number,
         itemsPerPage?: number,
     ): CancelablePromise<(AmarantApiPaginatedCollectionResponse & {
@@ -156,7 +159,7 @@ export class CmsService {
      * @throws ApiError
      */
     public static getCmsBlockTagCollection(
-        q?: AmarantSearchCriteriaFilter,
+        q?: AmarantGetCmsBlockTagCollectionSearchCriteriaFilter,
         page?: number,
         itemsPerPage?: number,
     ): CancelablePromise<(AmarantApiPaginatedCollectionResponse & {

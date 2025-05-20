@@ -54,6 +54,10 @@ export type { AmarantFrameworkEntityPerson } from './models/AmarantFrameworkEnti
 export type { AmarantFrameworkEntityPersonAddress } from './models/AmarantFrameworkEntityPersonAddress';
 export type { AmarantGenericProductModel } from './models/AmarantGenericProductModel';
 export type { AmarantGetCmsBannerCollectionSearchCriteriaFilter } from './models/AmarantGetCmsBannerCollectionSearchCriteriaFilter';
+export type { AmarantGetCmsBlockCollectionSearchCriteriaFilter } from './models/AmarantGetCmsBlockCollectionSearchCriteriaFilter';
+export type { AmarantGetCmsBlockTagCollectionSearchCriteriaFilter } from './models/AmarantGetCmsBlockTagCollectionSearchCriteriaFilter';
+export type { AmarantGetCmsPageCollectionSearchCriteriaFilter } from './models/AmarantGetCmsPageCollectionSearchCriteriaFilter';
+export type { AmarantGetCmsPageTagCollectionSearchCriteriaFilter } from './models/AmarantGetCmsPageTagCollectionSearchCriteriaFilter';
 export type { AmarantGetCookiePanelCollectionSearchCriteriaFilter } from './models/AmarantGetCookiePanelCollectionSearchCriteriaFilter';
 export type { AmarantGetOrderCollectionSearchCriteriaFilter } from './models/AmarantGetOrderCollectionSearchCriteriaFilter';
 export type { AmarantGroupedProductItemModel } from './models/AmarantGroupedProductItemModel';

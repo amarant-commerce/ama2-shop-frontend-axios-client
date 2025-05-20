@@ -1,21 +1,17 @@
-export type AmarantGetCmsBannerCollectionSearchCriteriaFilter = {
+export type AmarantGetCmsBlockTagCollectionSearchCriteriaFilter = {
     groups?: Array<Record<string, {
         /**
-         * active: eq
-         * identifier: like
-         * identifiers: ina
+         * name: like
          */
         condition?: 'eq' | 'neq' | 'in' | 'nin' | 'gt' | 'lt' | 'lte' | 'gte' | 'null' | 'range' | 'like' | 'tr';
         /**
-         * active: boolean, integer, string
-         * identifier: string
-         * identifiers: array
+         * name: string
          */
         value?: number | number | string | boolean | any[] | null;
     }>>;
     sort?: Array<{
         /**
-         * id, active, identifier, identifiers, created_at, updated_at
+         * id, name, created_at, updated_at
          */
         path?: string;
         direction?: 'ASC' | 'DESC';

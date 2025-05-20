@@ -8,6 +8,7 @@ export declare enum AmarantAttributeInputTypeEnum {
     MULTISELECT = "multiselect",
     RANGE = "range",
     TEXTAREA = "textarea",
+    WYSIWYG = "wysiwyg",
     BOOLEAN = "boolean",
     FILE = "file",
     FILE_MULTIPLE = "file_multiple"
