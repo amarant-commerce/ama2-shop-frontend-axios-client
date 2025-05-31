@@ -13,6 +13,7 @@ import type { AmarantGetCmsBlockCollectionSearchCriteriaFilter } from '../models
 import type { AmarantGetCmsBlockTagCollectionSearchCriteriaFilter } from '../models/AmarantGetCmsBlockTagCollectionSearchCriteriaFilter';
 import type { AmarantGetCmsPageCollectionSearchCriteriaFilter } from '../models/AmarantGetCmsPageCollectionSearchCriteriaFilter';
 import type { AmarantGetCmsPageTagCollectionSearchCriteriaFilter } from '../models/AmarantGetCmsPageTagCollectionSearchCriteriaFilter';
+import type { InputAmarantCmsContactFormInputDto } from '../models/InputAmarantCmsContactFormInputDto';
 import type { CancelablePromise } from '../core/CancelablePromise';
 import { OpenAPI } from '../core/OpenAPI';
 import { request as __request } from '../core/request';
@@ -234,6 +235,31 @@ export class CmsService {
             url: '/api/cms/v1/banners/{id}',
             path: {
                 'id': id,
+            },
+        });
+    }
+    /**
+     * Submit contact form.
+     * Submit contact form.
+     *
+     * Rate limiting:
+     * - limit: 30
+     * - interval: 1 minute
+     * @param requestBody
+     * @returns void
+     * @throws ApiError
+     */
+    public static submitCmsContactForm(
+        requestBody: InputAmarantCmsContactFormInputDto,
+    ): CancelablePromise<void> {
+        return __request(OpenAPI, {
+            method: 'POST',
+            url: '/api/cms/v1/contact-form',
+            body: requestBody,
+            mediaType: 'application/json',
+            errors: {
+                400: `Invalid input.`,
+                429: `Too many requests.`,
             },
         });
     }

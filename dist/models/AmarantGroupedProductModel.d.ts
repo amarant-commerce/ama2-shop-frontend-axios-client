@@ -1,11 +1,13 @@
 import type { AmarantAttributeSwatchModel } from './AmarantAttributeSwatchModel';
 import type { AmarantGroupedProductItemModel } from './AmarantGroupedProductItemModel';
 import type { AmarantImageModel } from './AmarantImageModel';
+import type { AmarantParentProductInventory } from './AmarantParentProductInventory';
 import type { AmarantProductCategory } from './AmarantProductCategory';
 import type { AmarantProductPrices } from './AmarantProductPrices';
 import type { AmarantProductPricing } from './AmarantProductPricing';
 export type AmarantGroupedProductModel = {
     groupChildren: Array<AmarantGroupedProductItemModel>;
+    inventory: AmarantParentProductInventory;
     type: 'grouped';
     id: number;
     url: string;

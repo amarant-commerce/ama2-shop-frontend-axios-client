@@ -1,7 +1,7 @@
 import type { AmarantProductPriceItem } from './AmarantProductPriceItem';
 export type AmarantProductPricing = {
     currencyCode: string;
-    prices: Array<AmarantProductPriceItem>;
+    prices: Record<string, Array<AmarantProductPriceItem>>;
     /**
      * Deprecated, pending removal. Use properties regularPriceExTax and regularPriceInclTax instead.
      * @deprecated

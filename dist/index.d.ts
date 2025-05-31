@@ -73,6 +73,7 @@ export type { AmarantOrderProductModel } from './models/AmarantOrderProductModel
 export type { AmarantOrderShippingBatchItemModel } from './models/AmarantOrderShippingBatchItemModel';
 export type { AmarantOrderShippingBatchModel } from './models/AmarantOrderShippingBatchModel';
 export type { AmarantOrderTotalModel } from './models/AmarantOrderTotalModel';
+export type { AmarantParentProductInventory } from './models/AmarantParentProductInventory';
 export type { AmarantPlacedOrderResultModel } from './models/AmarantPlacedOrderResultModel';
 export type { AmarantPlacedOrderResultPaymentFormRequestModel } from './models/AmarantPlacedOrderResultPaymentFormRequestModel';
 export type { AmarantPlacedOrderResultPaymentRedirectRequestModel } from './models/AmarantPlacedOrderResultPaymentRedirectRequestModel';
@@ -126,6 +127,7 @@ export type { CreateProductWishlistInputAmarantCreateProductWishlistInput } from
 export type { GetAuthorizationTokenInputAmarantSalesCustomerLoginInputDto } from './models/GetAuthorizationTokenInputAmarantSalesCustomerLoginInputDto';
 export type { GetAvailableShippingRatesInputAmarantSalesCartShippingRateEstimationGroup } from './models/GetAvailableShippingRatesInputAmarantSalesCartShippingRateEstimationGroup';
 export type { InitiatePasswordResetInputAmarantSalesCustomerPasswordResetRequestInputDto } from './models/InitiatePasswordResetInputAmarantSalesCustomerPasswordResetRequestInputDto';
+export type { InputAmarantCmsContactFormInputDto } from './models/InputAmarantCmsContactFormInputDto';
 export type { RefreshAuthorizationTokenInputAmarantSalesCustomerRefreshTokenInputDto } from './models/RefreshAuthorizationTokenInputAmarantSalesCustomerRefreshTokenInputDto';
 export type { ResetPasswordInputAmarantSalesCustomerResetAccountPasswordInputDto } from './models/ResetPasswordInputAmarantSalesCustomerResetAccountPasswordInputDto';
 export type { SalesNewslettersSubscribeGuestInputAmarantSalesNewsletterInputModel } from './models/SalesNewslettersSubscribeGuestInputAmarantSalesNewsletterInputModel';

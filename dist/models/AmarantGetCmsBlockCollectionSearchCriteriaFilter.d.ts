@@ -2,7 +2,7 @@ export type AmarantGetCmsBlockCollectionSearchCriteriaFilter = {
     groups?: Array<Record<string, {
         /**
          * identifier: like
-         * identifiers: ina
+         * identifiers: in
          * tag_ids: ina
          */
         condition?: 'eq' | 'neq' | 'in' | 'nin' | 'gt' | 'lt' | 'lte' | 'gte' | 'null' | 'range' | 'like' | 'tr';

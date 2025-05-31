@@ -181,4 +181,27 @@ export class CmsService {
             },
         });
     }
+    /**
+     * Submit contact form.
+     * Submit contact form.
+     *
+     * Rate limiting:
+     * - limit: 30
+     * - interval: 1 minute
+     * @param requestBody
+     * @returns void
+     * @throws ApiError
+     */
+    static submitCmsContactForm(requestBody) {
+        return __request(OpenAPI, {
+            method: 'POST',
+            url: '/api/cms/v1/contact-form',
+            body: requestBody,
+            mediaType: 'application/json',
+            errors: {
+                400: `Invalid input.`,
+                429: `Too many requests.`,
+            },
+        });
+    }
 }

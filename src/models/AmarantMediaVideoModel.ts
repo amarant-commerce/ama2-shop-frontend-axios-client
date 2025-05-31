@@ -7,6 +7,7 @@ export type AmarantMediaVideoModel = {
     position: number;
     featured: boolean;
     altText?: string | null;
+    id: number;
     type: 'video';
 };
 

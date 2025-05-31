@@ -8,7 +8,7 @@ export type AmarantProductInventory = {
     backorders: boolean;
     minQtyPurchase?: string | null;
     maxQtyPurchase?: string | null;
-    qty?: string | null;
+    qty: string;
     qtyComparison: string;
 };
 

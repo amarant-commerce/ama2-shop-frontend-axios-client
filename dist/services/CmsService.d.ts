@@ -9,6 +9,7 @@ import type { AmarantGetCmsBlockCollectionSearchCriteriaFilter } from '../models
 import type { AmarantGetCmsBlockTagCollectionSearchCriteriaFilter } from '../models/AmarantGetCmsBlockTagCollectionSearchCriteriaFilter';
 import type { AmarantGetCmsPageCollectionSearchCriteriaFilter } from '../models/AmarantGetCmsPageCollectionSearchCriteriaFilter';
 import type { AmarantGetCmsPageTagCollectionSearchCriteriaFilter } from '../models/AmarantGetCmsPageTagCollectionSearchCriteriaFilter';
+import type { InputAmarantCmsContactFormInputDto } from '../models/InputAmarantCmsContactFormInputDto';
 import type { CancelablePromise } from '../core/CancelablePromise';
 export declare class CmsService {
     /**
@@ -111,4 +112,16 @@ export declare class CmsService {
      * @throws ApiError
      */
     static getCmsBannerItem(id: number): CancelablePromise<AmarantCmsBannerModel>;
+    /**
+     * Submit contact form.
+     * Submit contact form.
+     *
+     * Rate limiting:
+     * - limit: 30
+     * - interval: 1 minute
+     * @param requestBody
+     * @returns void
+     * @throws ApiError
+     */
+    static submitCmsContactForm(requestBody: InputAmarantCmsContactFormInputDto): CancelablePromise<void>;
 }

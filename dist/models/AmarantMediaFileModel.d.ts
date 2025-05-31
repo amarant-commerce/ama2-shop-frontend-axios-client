@@ -3,5 +3,6 @@ export type AmarantMediaFileModel = {
     position: number;
     featured: boolean;
     altText?: string | null;
+    id: number;
     type: 'file';
 };

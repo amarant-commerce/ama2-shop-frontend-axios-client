@@ -1,11 +1,13 @@
 import type { AmarantAttributeSwatchModel } from './AmarantAttributeSwatchModel';
 import type { AmarantImageModel } from './AmarantImageModel';
+import type { AmarantParentProductInventory } from './AmarantParentProductInventory';
 import type { AmarantProductCategory } from './AmarantProductCategory';
 import type { AmarantProductConfigurationModel } from './AmarantProductConfigurationModel';
 import type { AmarantProductPrices } from './AmarantProductPrices';
 import type { AmarantProductPricing } from './AmarantProductPricing';
 export type AmarantConfigurableProductModel = {
     configurations: Array<AmarantProductConfigurationModel>;
+    inventory: AmarantParentProductInventory;
     type: 'configurable';
     id: number;
     url: string;
