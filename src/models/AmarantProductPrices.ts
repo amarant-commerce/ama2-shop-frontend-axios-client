@@ -20,5 +20,9 @@ export type AmarantProductPrices = {
     defaultLowestPrice: number;
     defaultLowestPriceExTax: number;
     defaultLowestPriceInclTax: number;
+    /**
+     * Is set to true if default lowest price is lower than default regular price.
+     */
+    onSale: boolean;
 };
 
