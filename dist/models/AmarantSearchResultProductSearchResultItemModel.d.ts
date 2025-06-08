@@ -10,5 +10,6 @@ export type AmarantSearchResultProductSearchResultItemModel = {
         image?: string | null;
         price?: number;
         lowestPrice?: number;
+        onSale?: boolean;
     };
 };

@@ -6,6 +6,7 @@ import type { AddItemsToWishlistInputAmarantAddProductsToWishlistInput } from '.
 import type { AmarantApiCollectionResponse } from '../models/AmarantApiCollectionResponse';
 import type { AmarantApiPaginatedCollectionResponse } from '../models/AmarantApiPaginatedCollectionResponse';
 import type { AmarantProductCategoryNodeItem } from '../models/AmarantProductCategoryNodeItem';
+import type { AmarantProductCategoryRelationOutputModel } from '../models/AmarantProductCategoryRelationOutputModel';
 import type { AmarantProductModel } from '../models/AmarantProductModel';
 import type { AmarantProductWishlist } from '../models/AmarantProductWishlist';
 import type { AmarantSearchCriteriaFilter } from '../models/AmarantSearchCriteriaFilter';
@@ -102,6 +103,26 @@ export class ProductsService {
             method: 'GET',
             url: '/api/categories/v1/{id}',
             path: {
+                'id': id,
+            },
+        });
+    }
+    /**
+     * Get product category relations collection.
+     * Get product category relations collection.
+     * @param id Root category ID
+     * @returns any OK
+     * @throws ApiError
+     */
+    public static getProductCategoryRelationsCollection(
+        id: number,
+    ): CancelablePromise<(AmarantApiCollectionResponse & {
+        data: Array<AmarantProductCategoryRelationOutputModel>;
+    })> {
+        return __request(OpenAPI, {
+            method: 'GET',
+            url: '/api/product-category-relations/v1',
+            query: {
                 'id': id,
             },
         });

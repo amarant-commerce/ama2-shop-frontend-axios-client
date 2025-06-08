@@ -76,6 +76,22 @@ export class ProductsService {
         });
     }
     /**
+     * Get product category relations collection.
+     * Get product category relations collection.
+     * @param id Root category ID
+     * @returns any OK
+     * @throws ApiError
+     */
+    static getProductCategoryRelationsCollection(id) {
+        return __request(OpenAPI, {
+            method: 'GET',
+            url: '/api/product-category-relations/v1',
+            query: {
+                'id': id,
+            },
+        });
+    }
+    /**
      * Get product wishlist collection.
      * Get product wishlist collection.
      *

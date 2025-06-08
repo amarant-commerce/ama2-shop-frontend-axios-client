@@ -86,6 +86,8 @@ export type { AmarantPlacedOrderResultPaymentRequestModel } from './models/Amara
 export type { AmarantProductCategory } from './models/AmarantProductCategory';
 export type { AmarantProductCategoryNode } from './models/AmarantProductCategoryNode';
 export type { AmarantProductCategoryNodeItem } from './models/AmarantProductCategoryNodeItem';
+export type { AmarantProductCategoryRelationCategoryOutputModel } from './models/AmarantProductCategoryRelationCategoryOutputModel';
+export type { AmarantProductCategoryRelationOutputModel } from './models/AmarantProductCategoryRelationOutputModel';
 export type { AmarantProductConfigurationModel } from './models/AmarantProductConfigurationModel';
 export type { AmarantProductConfigurationOptionModel } from './models/AmarantProductConfigurationOptionModel';
 export type { AmarantProductInventory } from './models/AmarantProductInventory';

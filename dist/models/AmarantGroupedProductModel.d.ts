@@ -1,6 +1,6 @@
 import type { AmarantAttributeSwatchModel } from './AmarantAttributeSwatchModel';
 import type { AmarantGroupedProductItemModel } from './AmarantGroupedProductItemModel';
-import type { AmarantImageModel } from './AmarantImageModel';
+import type { AmarantMediaModel } from './AmarantMediaModel';
 import type { AmarantParentProductInventory } from './AmarantParentProductInventory';
 import type { AmarantProductCategory } from './AmarantProductCategory';
 import type { AmarantProductPrices } from './AmarantProductPrices';
@@ -18,9 +18,13 @@ export type AmarantGroupedProductModel = {
     attributes: Record<string, string | number | number | boolean | any[] | null>;
     swatches: Array<AmarantAttributeSwatchModel>;
     prices: AmarantProductPrices;
-    media: Array<AmarantImageModel>;
+    media: Array<AmarantMediaModel>;
     categoryIds: Array<number>;
     categories: Array<AmarantProductCategory>;
+    /**
+     * Position within a category. Currently always 0.
+     */
+    position: number;
     createdAt: string;
     updatedAt: string;
     pricingData?: AmarantProductPricing | null;
