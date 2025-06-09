@@ -3,8 +3,9 @@
 /* tslint:disable */
 /* eslint-disable */
 import type { AmarantProductCategoryNodeItem } from './AmarantProductCategoryNodeItem';
+import type { AmarantProductCategoryRelationChildCategoryOutputModel } from './AmarantProductCategoryRelationChildCategoryOutputModel';
 export type AmarantProductCategoryRelationCategoryOutputModel = {
     parentCategory: AmarantProductCategoryNodeItem;
-    childCategories: Array<AmarantProductCategoryNodeItem>;
+    childCategories: Array<AmarantProductCategoryRelationChildCategoryOutputModel>;
 };
 
