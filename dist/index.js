@@ -11,6 +11,7 @@ export { AmarantAttributeInputTypeEnum } from './models/AmarantAttributeInputTyp
 export { AmarantAttributeModelFlag } from './models/AmarantAttributeModelFlag';
 export { AmarantDataScope } from './models/AmarantDataScope';
 export { AmarantSalesCustomerAccountStateOutputDto } from './models/AmarantSalesCustomerAccountStateOutputDto';
+export { AmarantSalesCustomerAccountType } from './models/AmarantSalesCustomerAccountType';
 export { AliasService } from './services/AliasService';
 export { AnalyticsService } from './services/AnalyticsService';
 export { ApplicationService } from './services/ApplicationService';

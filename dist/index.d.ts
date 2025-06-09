@@ -106,11 +106,14 @@ export type { AmarantSalesCartShippingInformationInputItemDto } from './models/A
 export type { AmarantSalesCartShippingRateEstimation } from './models/AmarantSalesCartShippingRateEstimation';
 export type { AmarantSalesCheckoutAddressAttributeModel } from './models/AmarantSalesCheckoutAddressAttributeModel';
 export type { AmarantSalesCheckoutAddressConfigurationModel } from './models/AmarantSalesCheckoutAddressConfigurationModel';
+export type { AmarantSalesCheckoutAttributeModel } from './models/AmarantSalesCheckoutAttributeModel';
 export type { AmarantSalesCheckoutConfigurationModel } from './models/AmarantSalesCheckoutConfigurationModel';
+export type { AmarantSalesCheckoutCustomerAccountConfigurationModel } from './models/AmarantSalesCheckoutCustomerAccountConfigurationModel';
 export type { AmarantSalesCustomerAccountAddressInputDto } from './models/AmarantSalesCustomerAccountAddressInputDto';
 export type { AmarantSalesCustomerAccountAddressOutputDto } from './models/AmarantSalesCustomerAccountAddressOutputDto';
 export type { AmarantSalesCustomerAccountOutputDto } from './models/AmarantSalesCustomerAccountOutputDto';
 export { AmarantSalesCustomerAccountStateOutputDto } from './models/AmarantSalesCustomerAccountStateOutputDto';
+export { AmarantSalesCustomerAccountType } from './models/AmarantSalesCustomerAccountType';
 export type { AmarantSalesNewsletterSubscribeResultModel } from './models/AmarantSalesNewsletterSubscribeResultModel';
 export type { AmarantSearchAggregationResultModel } from './models/AmarantSearchAggregationResultModel';
 export type { AmarantSearchAggregationResultRangeAggregationModel } from './models/AmarantSearchAggregationResultRangeAggregationModel';

@@ -26,6 +26,9 @@ export class OrdersService {
             path: {
                 'cartId': cartId,
             },
+            errors: {
+                401: `Cart not found / Guest orders not allowed.`,
+            },
         });
     }
     /**

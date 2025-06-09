@@ -3,6 +3,15 @@ export type CreateCustomerAccountInputAmarantSalesCustomerAccountInputDto = {
     username: string;
     password: string;
     email: string;
+    /**
+     * Required transient attributes:
+     *
+     * **customerAccountType**
+     *
+     * Type "business" in turn requires attributes:
+     * - companyName (string)
+     * - vatId (string)
+     */
     attributes: Record<string, string | number | number | boolean | any[] | null>;
     addresses: Array<AmarantSalesCustomerAccountAddressInputDto>;
     /**
