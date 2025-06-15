@@ -1,5 +1,6 @@
 import type { AmarantApiCollectionResponse } from '../models/AmarantApiCollectionResponse';
 import type { AmarantSalesCustomerAccountAddressOutputDto } from '../models/AmarantSalesCustomerAccountAddressOutputDto';
+import type { AmarantSalesCustomerAccountOrganizationOutputDto } from '../models/AmarantSalesCustomerAccountOrganizationOutputDto';
 import type { AmarantSalesCustomerAccountOutputDto } from '../models/AmarantSalesCustomerAccountOutputDto';
 import type { AmarantSecurityJwtTokenModel } from '../models/AmarantSecurityJwtTokenModel';
 import type { ConfirmCustomerAccountInputAmarantSalesCustomerAccountConfirmationInputDto } from '../models/ConfirmCustomerAccountInputAmarantSalesCustomerAccountConfirmationInputDto';
@@ -7,6 +8,8 @@ import type { CreateCustomerAccountInputAmarantSalesCustomerAccountInputDto } fr
 import type { CreateCustomerAddressInputAmarantSalesCustomerAccountAddressInputDto } from '../models/CreateCustomerAddressInputAmarantSalesCustomerAccountAddressInputDto';
 import type { GetAuthorizationTokenInputAmarantSalesCustomerLoginInputDto } from '../models/GetAuthorizationTokenInputAmarantSalesCustomerLoginInputDto';
 import type { InitiatePasswordResetInputAmarantSalesCustomerPasswordResetRequestInputDto } from '../models/InitiatePasswordResetInputAmarantSalesCustomerPasswordResetRequestInputDto';
+import type { MeUpdateInputAmarantSalesCustomerAccountUpdateInputDto } from '../models/MeUpdateInputAmarantSalesCustomerAccountUpdateInputDto';
+import type { MeUpdateOrganizationInputAmarantSalesCustomerAccountOrganizationInputDto } from '../models/MeUpdateOrganizationInputAmarantSalesCustomerAccountOrganizationInputDto';
 import type { RefreshAuthorizationTokenInputAmarantSalesCustomerRefreshTokenInputDto } from '../models/RefreshAuthorizationTokenInputAmarantSalesCustomerRefreshTokenInputDto';
 import type { ResetPasswordInputAmarantSalesCustomerResetAccountPasswordInputDto } from '../models/ResetPasswordInputAmarantSalesCustomerResetAccountPasswordInputDto';
 import type { UpdateCustomerAddressItemInputAmarantSalesCustomerAccountAddressInputDto } from '../models/UpdateCustomerAddressItemInputAmarantSalesCustomerAccountAddressInputDto';
@@ -71,6 +74,31 @@ export declare class CustomersService {
      * @throws ApiError
      */
     static me(): CancelablePromise<AmarantSalesCustomerAccountOutputDto>;
+    /**
+     * Update logged in customer.
+     * Update logged in customer.
+     *
+     * Required identity types:
+     * * customer
+     * @param requestBody
+     * @returns AmarantSalesCustomerAccountOutputDto Resource updated.
+     * @throws ApiError
+     */
+    static meUpdate(requestBody: MeUpdateInputAmarantSalesCustomerAccountUpdateInputDto): CancelablePromise<AmarantSalesCustomerAccountOutputDto>;
+    /**
+     * Update organization of logged in customer.
+     * Update organization of logged in customer.
+     *
+     * Required access scopes:
+     * * organization_owner
+     *
+     * Required identity types:
+     * * customer
+     * @param requestBody
+     * @returns AmarantSalesCustomerAccountOrganizationOutputDto Resource updated.
+     * @throws ApiError
+     */
+    static meUpdateOrganization(requestBody: MeUpdateOrganizationInputAmarantSalesCustomerAccountOrganizationInputDto): CancelablePromise<AmarantSalesCustomerAccountOrganizationOutputDto>;
     /**
      * Get customer address collection.
      * Get customer address collection.

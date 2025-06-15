@@ -133,6 +133,52 @@ export class CustomersService {
         });
     }
     /**
+     * Update logged in customer.
+     * Update logged in customer.
+     *
+     * Required identity types:
+     * * customer
+     * @param requestBody
+     * @returns AmarantSalesCustomerAccountOutputDto Resource updated.
+     * @throws ApiError
+     */
+    static meUpdate(requestBody) {
+        return __request(OpenAPI, {
+            method: 'PATCH',
+            url: '/api/customers/v1/me',
+            body: requestBody,
+            mediaType: 'application/json',
+            errors: {
+                401: `Unauthorized`,
+            },
+        });
+    }
+    /**
+     * Update organization of logged in customer.
+     * Update organization of logged in customer.
+     *
+     * Required access scopes:
+     * * organization_owner
+     *
+     * Required identity types:
+     * * customer
+     * @param requestBody
+     * @returns AmarantSalesCustomerAccountOrganizationOutputDto Resource updated.
+     * @throws ApiError
+     */
+    static meUpdateOrganization(requestBody) {
+        return __request(OpenAPI, {
+            method: 'PATCH',
+            url: '/api/customers/v1/me/organization',
+            body: requestBody,
+            mediaType: 'application/json',
+            errors: {
+                400: `Customer not bound to organization.`,
+                401: `Unauthorized`,
+            },
+        });
+    }
+    /**
      * Get customer address collection.
      * Get customer address collection.
      *

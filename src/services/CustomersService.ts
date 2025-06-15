@@ -4,6 +4,7 @@
 /* eslint-disable */
 import type { AmarantApiCollectionResponse } from '../models/AmarantApiCollectionResponse';
 import type { AmarantSalesCustomerAccountAddressOutputDto } from '../models/AmarantSalesCustomerAccountAddressOutputDto';
+import type { AmarantSalesCustomerAccountOrganizationOutputDto } from '../models/AmarantSalesCustomerAccountOrganizationOutputDto';
 import type { AmarantSalesCustomerAccountOutputDto } from '../models/AmarantSalesCustomerAccountOutputDto';
 import type { AmarantSecurityJwtTokenModel } from '../models/AmarantSecurityJwtTokenModel';
 import type { ConfirmCustomerAccountInputAmarantSalesCustomerAccountConfirmationInputDto } from '../models/ConfirmCustomerAccountInputAmarantSalesCustomerAccountConfirmationInputDto';
@@ -11,6 +12,8 @@ import type { CreateCustomerAccountInputAmarantSalesCustomerAccountInputDto } fr
 import type { CreateCustomerAddressInputAmarantSalesCustomerAccountAddressInputDto } from '../models/CreateCustomerAddressInputAmarantSalesCustomerAccountAddressInputDto';
 import type { GetAuthorizationTokenInputAmarantSalesCustomerLoginInputDto } from '../models/GetAuthorizationTokenInputAmarantSalesCustomerLoginInputDto';
 import type { InitiatePasswordResetInputAmarantSalesCustomerPasswordResetRequestInputDto } from '../models/InitiatePasswordResetInputAmarantSalesCustomerPasswordResetRequestInputDto';
+import type { MeUpdateInputAmarantSalesCustomerAccountUpdateInputDto } from '../models/MeUpdateInputAmarantSalesCustomerAccountUpdateInputDto';
+import type { MeUpdateOrganizationInputAmarantSalesCustomerAccountOrganizationInputDto } from '../models/MeUpdateOrganizationInputAmarantSalesCustomerAccountOrganizationInputDto';
 import type { RefreshAuthorizationTokenInputAmarantSalesCustomerRefreshTokenInputDto } from '../models/RefreshAuthorizationTokenInputAmarantSalesCustomerRefreshTokenInputDto';
 import type { ResetPasswordInputAmarantSalesCustomerResetAccountPasswordInputDto } from '../models/ResetPasswordInputAmarantSalesCustomerResetAccountPasswordInputDto';
 import type { UpdateCustomerAddressItemInputAmarantSalesCustomerAccountAddressInputDto } from '../models/UpdateCustomerAddressItemInputAmarantSalesCustomerAccountAddressInputDto';
@@ -158,6 +161,56 @@ export class CustomersService {
             method: 'GET',
             url: '/api/customers/v1/me',
             errors: {
+                401: `Unauthorized`,
+            },
+        });
+    }
+    /**
+     * Update logged in customer.
+     * Update logged in customer.
+     *
+     * Required identity types:
+     * * customer
+     * @param requestBody
+     * @returns AmarantSalesCustomerAccountOutputDto Resource updated.
+     * @throws ApiError
+     */
+    public static meUpdate(
+        requestBody: MeUpdateInputAmarantSalesCustomerAccountUpdateInputDto,
+    ): CancelablePromise<AmarantSalesCustomerAccountOutputDto> {
+        return __request(OpenAPI, {
+            method: 'PATCH',
+            url: '/api/customers/v1/me',
+            body: requestBody,
+            mediaType: 'application/json',
+            errors: {
+                401: `Unauthorized`,
+            },
+        });
+    }
+    /**
+     * Update organization of logged in customer.
+     * Update organization of logged in customer.
+     *
+     * Required access scopes:
+     * * organization_owner
+     *
+     * Required identity types:
+     * * customer
+     * @param requestBody
+     * @returns AmarantSalesCustomerAccountOrganizationOutputDto Resource updated.
+     * @throws ApiError
+     */
+    public static meUpdateOrganization(
+        requestBody: MeUpdateOrganizationInputAmarantSalesCustomerAccountOrganizationInputDto,
+    ): CancelablePromise<AmarantSalesCustomerAccountOrganizationOutputDto> {
+        return __request(OpenAPI, {
+            method: 'PATCH',
+            url: '/api/customers/v1/me/organization',
+            body: requestBody,
+            mediaType: 'application/json',
+            errors: {
+                400: `Customer not bound to organization.`,
                 401: `Unauthorized`,
             },
         });

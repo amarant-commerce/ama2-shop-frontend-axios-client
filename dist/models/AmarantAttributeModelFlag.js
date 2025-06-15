@@ -11,6 +11,7 @@ export var AmarantAttributeModelFlag;
     AmarantAttributeModelFlag["EDITABLE"] = "editable";
     AmarantAttributeModelFlag["NOT_EDITABLE_IN_FORM"] = "not_editable_in_form";
     AmarantAttributeModelFlag["USER_EDITABLE"] = "user_editable";
+    AmarantAttributeModelFlag["USER_UPDATABLE"] = "user_updatable";
     AmarantAttributeModelFlag["PRESENTABLE"] = "presentable";
     AmarantAttributeModelFlag["REQUIRED"] = "required";
     AmarantAttributeModelFlag["FILTERABLE"] = "filterable";

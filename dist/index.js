@@ -16,6 +16,7 @@ export { AliasService } from './services/AliasService';
 export { AnalyticsService } from './services/AnalyticsService';
 export { ApplicationService } from './services/ApplicationService';
 export { AttributesService } from './services/AttributesService';
+export { BlogService } from './services/BlogService';
 export { CartsService } from './services/CartsService';
 export { CategoriesService } from './services/CategoriesService';
 export { CheckoutService } from './services/CheckoutService';

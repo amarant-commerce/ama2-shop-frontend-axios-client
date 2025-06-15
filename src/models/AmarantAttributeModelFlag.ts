@@ -10,6 +10,7 @@ export enum AmarantAttributeModelFlag {
     EDITABLE = 'editable',
     NOT_EDITABLE_IN_FORM = 'not_editable_in_form',
     USER_EDITABLE = 'user_editable',
+    USER_UPDATABLE = 'user_updatable',
     PRESENTABLE = 'presentable',
     REQUIRED = 'required',
     FILTERABLE = 'filterable',
