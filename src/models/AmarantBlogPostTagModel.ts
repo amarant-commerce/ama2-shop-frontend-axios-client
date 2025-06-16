@@ -4,6 +4,8 @@
 /* eslint-disable */
 export type AmarantBlogPostTagModel = {
     id: number;
-    name: string;
+    attributes: Record<string, string | number | number | boolean | any[] | null>;
+    createdAt: string;
+    updatedAt: string;
 };
 
