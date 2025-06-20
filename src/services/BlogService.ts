@@ -31,7 +31,7 @@ export class BlogService {
     })> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/api/blogs/v1/posts',
+            url: '/api/blog/v1/posts',
             query: {
                 'q': q,
                 'page': page,
@@ -75,7 +75,7 @@ export class BlogService {
     })> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/api/blogs/v1/tags',
+            url: '/api/blog/v1/tags',
             query: {
                 'q': q,
                 'page': page,
@@ -119,7 +119,7 @@ export class BlogService {
     })> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/api/blogs/v1/categories',
+            url: '/api/blog/v1/categories',
             query: {
                 'q': q,
                 'page': page,

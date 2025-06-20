@@ -10,9 +10,11 @@ export type AmarantBlogPostModel = {
     categoryIds: Array<number>;
     tags: Array<AmarantBlogPostTagModel>;
     author?: AmarantBlogPostAuthorModel | null;
-    attributes: Record<string, string | number | number | boolean | any[] | null>;
+    url: string;
+    path: string;
     content?: AmarantBlogPostVersionModel | null;
     createdAt: string;
     updatedAt: string;
+    attributes: Record<string, string | number | number | boolean | any[] | null>;
 };
 

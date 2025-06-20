@@ -137,6 +137,8 @@ export type { AmarantSearchCriteriaFilter } from './models/AmarantSearchCriteria
 export type { AmarantSearchRangeAggregationItem } from './models/AmarantSearchRangeAggregationItem';
 export type { AmarantSearchResultCategorySearchResultItemModel } from './models/AmarantSearchResultCategorySearchResultItemModel';
 export type { AmarantSearchResultModel } from './models/AmarantSearchResultModel';
+export type { AmarantSearchResultPostCategorySearchResultItemModel } from './models/AmarantSearchResultPostCategorySearchResultItemModel';
+export type { AmarantSearchResultPostSearchResultItemModel } from './models/AmarantSearchResultPostSearchResultItemModel';
 export type { AmarantSearchResultProductSearchResultItemModel } from './models/AmarantSearchResultProductSearchResultItemModel';
 export type { AmarantSearchTermAggregationItem } from './models/AmarantSearchTermAggregationItem';
 export type { AmarantSecurityJwtTokenModel } from './models/AmarantSecurityJwtTokenModel';

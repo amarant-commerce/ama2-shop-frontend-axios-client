@@ -3,22 +3,23 @@
 /* tslint:disable */
 /* eslint-disable */
 import type { AmarantImageModel } from './AmarantImageModel';
-export type AmarantSearchResultProductSearchResultItemModel = {
+export type AmarantSearchResultPostCategorySearchResultItemModel = {
     attributes?: {
         id?: number;
+        /**
+         * Category title.
+         */
         name?: string;
         description?: string;
         url?: string;
-        path?: string;
-        scopedPath?: string;
-        sku?: string;
         /**
-         * Returns default image asset as URL if the product has no image.
+         * Scoped category path. Ex.: /some-category, /en/some-category
+         */
+        path?: string;
+        /**
+         * Returns channel logo as URL if the category has no image.
          */
         image?: (string | AmarantImageModel);
-        price?: number;
-        lowestPrice?: number;
-        onSale?: boolean;
     };
 };
 

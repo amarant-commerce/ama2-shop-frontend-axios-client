@@ -1,3 +1,4 @@
+import type { AmarantImageModel } from './AmarantImageModel';
 export type AmarantSearchResultProductSearchResultItemModel = {
     attributes?: {
         id?: number;
@@ -7,7 +8,10 @@ export type AmarantSearchResultProductSearchResultItemModel = {
         path?: string;
         scopedPath?: string;
         sku?: string;
-        image?: string | null;
+        /**
+         * Returns default image asset as URL if the product has no image.
+         */
+        image?: (string | AmarantImageModel);
         price?: number;
         lowestPrice?: number;
         onSale?: boolean;

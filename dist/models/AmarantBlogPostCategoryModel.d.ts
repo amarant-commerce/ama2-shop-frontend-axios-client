@@ -1,6 +1,8 @@
 export type AmarantBlogPostCategoryModel = {
     id: number;
-    attributes: Record<string, string | number | number | boolean | any[] | null>;
+    url: string;
+    path: string;
     createdAt: string;
     updatedAt: string;
+    attributes: Record<string, string | number | number | boolean | any[] | null>;
 };
