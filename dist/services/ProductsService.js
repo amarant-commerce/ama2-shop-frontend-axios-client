@@ -113,7 +113,7 @@ export class ProductsService {
      * Required identity types:
      * * customer
      * @param requestBody
-     * @returns AmarantProductWishlist OK
+     * @returns AmarantProductWishlist Resource created.
      * @throws ApiError
      */
     static createProductWishlist(requestBody) {

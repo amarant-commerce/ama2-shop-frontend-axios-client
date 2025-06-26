@@ -151,7 +151,7 @@ export class ProductsService {
      * Required identity types:
      * * customer
      * @param requestBody
-     * @returns AmarantProductWishlist OK
+     * @returns AmarantProductWishlist Resource created.
      * @throws ApiError
      */
     public static createProductWishlist(
@@ -266,7 +266,7 @@ export class ProductsService {
      */
     public static removeWishlistItem(
         id: string,
-        itemId: number,
+        itemId: string,
     ): CancelablePromise<AmarantProductWishlist> {
         return __request(OpenAPI, {
             method: 'DELETE',

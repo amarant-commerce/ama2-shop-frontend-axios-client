@@ -80,7 +80,7 @@ export declare class ProductsService {
      * Required identity types:
      * * customer
      * @param requestBody
-     * @returns AmarantProductWishlist OK
+     * @returns AmarantProductWishlist Resource created.
      * @throws ApiError
      */
     static createProductWishlist(requestBody: CreateProductWishlistInputAmarantCreateProductWishlistInput): CancelablePromise<AmarantProductWishlist>;
@@ -138,5 +138,5 @@ export declare class ProductsService {
      * @returns AmarantProductWishlist Resource deleted.
      * @throws ApiError
      */
-    static removeWishlistItem(id: string, itemId: number): CancelablePromise<AmarantProductWishlist>;
+    static removeWishlistItem(id: string, itemId: string): CancelablePromise<AmarantProductWishlist>;
 }
