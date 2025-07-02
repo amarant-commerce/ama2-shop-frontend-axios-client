@@ -2,6 +2,8 @@ import type { AmarantApiCollectionResponse } from '../models/AmarantApiCollectio
 import type { AmarantSalesCustomerAccountAddressOutputDto } from '../models/AmarantSalesCustomerAccountAddressOutputDto';
 import type { AmarantSalesCustomerAccountOrganizationOutputDto } from '../models/AmarantSalesCustomerAccountOrganizationOutputDto';
 import type { AmarantSalesCustomerAccountOutputDto } from '../models/AmarantSalesCustomerAccountOutputDto';
+import type { AmarantSalesCustomerSocialLoginProviderOutputDto } from '../models/AmarantSalesCustomerSocialLoginProviderOutputDto';
+import type { AmarantSalesCustomerSocialLoginStartAuthenticationOutputDto } from '../models/AmarantSalesCustomerSocialLoginStartAuthenticationOutputDto';
 import type { AmarantSecurityJwtTokenModel } from '../models/AmarantSecurityJwtTokenModel';
 import type { ConfirmCustomerAccountInputAmarantSalesCustomerAccountConfirmationInputDto } from '../models/ConfirmCustomerAccountInputAmarantSalesCustomerAccountConfirmationInputDto';
 import type { CreateCustomerAccountInputAmarantSalesCustomerAccountInputDto } from '../models/CreateCustomerAccountInputAmarantSalesCustomerAccountInputDto';
@@ -12,6 +14,8 @@ import type { MeUpdateInputAmarantSalesCustomerAccountUpdateInputDto } from '../
 import type { MeUpdateOrganizationInputAmarantSalesCustomerAccountOrganizationInputDto } from '../models/MeUpdateOrganizationInputAmarantSalesCustomerAccountOrganizationInputDto';
 import type { RefreshAuthorizationTokenInputAmarantSalesCustomerRefreshTokenInputDto } from '../models/RefreshAuthorizationTokenInputAmarantSalesCustomerRefreshTokenInputDto';
 import type { ResetPasswordInputAmarantSalesCustomerResetAccountPasswordInputDto } from '../models/ResetPasswordInputAmarantSalesCustomerResetAccountPasswordInputDto';
+import type { SocialLoginStartAuthenticationInputAmarantSalesCustomerSocialLoginStartAuthenticationInputDto } from '../models/SocialLoginStartAuthenticationInputAmarantSalesCustomerSocialLoginStartAuthenticationInputDto';
+import type { SocialLoginWithAuthorizationCodeInputAmarantSalesCustomerSocialLoginAuthorizationCodeInputDto } from '../models/SocialLoginWithAuthorizationCodeInputAmarantSalesCustomerSocialLoginAuthorizationCodeInputDto';
 import type { UpdateCustomerAddressItemInputAmarantSalesCustomerAccountAddressInputDto } from '../models/UpdateCustomerAddressItemInputAmarantSalesCustomerAccountAddressInputDto';
 import type { CancelablePromise } from '../core/CancelablePromise';
 export declare class CustomersService {
@@ -145,4 +149,35 @@ export declare class CustomersService {
      * @throws ApiError
      */
     static updateCustomerAddressItem(id: number, requestBody: UpdateCustomerAddressItemInputAmarantSalesCustomerAccountAddressInputDto): CancelablePromise<AmarantSalesCustomerAccountAddressOutputDto>;
+    /**
+     * Start social login authentication.
+     * Start social login authentication.
+     *
+     * Required identity types:
+     * * guest
+     * @param requestBody
+     * @returns AmarantSalesCustomerSocialLoginStartAuthenticationOutputDto OK
+     * @throws ApiError
+     */
+    static socialLoginStartAuthentication(requestBody: SocialLoginStartAuthenticationInputAmarantSalesCustomerSocialLoginStartAuthenticationInputDto): CancelablePromise<AmarantSalesCustomerSocialLoginStartAuthenticationOutputDto>;
+    /**
+     * Login with authorization code.
+     * Login with authorization code.
+     *
+     * Required identity types:
+     * * guest
+     * @param requestBody
+     * @returns AmarantSecurityJwtTokenModel OK
+     * @throws ApiError
+     */
+    static socialLoginWithAuthorizationCode(requestBody: SocialLoginWithAuthorizationCodeInputAmarantSalesCustomerSocialLoginAuthorizationCodeInputDto): CancelablePromise<AmarantSecurityJwtTokenModel>;
+    /**
+     * Get social login provider collection.
+     * Get social login provider collection.
+     * @returns any OK
+     * @throws ApiError
+     */
+    static socialLoginGetProviderCollection(): CancelablePromise<(AmarantApiCollectionResponse & {
+        data: Array<AmarantSalesCustomerSocialLoginProviderOutputDto>;
+    })>;
 }

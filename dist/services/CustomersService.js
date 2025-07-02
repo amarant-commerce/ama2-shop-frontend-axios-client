@@ -255,4 +255,60 @@ export class CustomersService {
             mediaType: 'application/json',
         });
     }
+    /**
+     * Start social login authentication.
+     * Start social login authentication.
+     *
+     * Required identity types:
+     * * guest
+     * @param requestBody
+     * @returns AmarantSalesCustomerSocialLoginStartAuthenticationOutputDto OK
+     * @throws ApiError
+     */
+    static socialLoginStartAuthentication(requestBody) {
+        return __request(OpenAPI, {
+            method: 'POST',
+            url: '/api/customer-social-login/v1/start-authentication',
+            body: requestBody,
+            mediaType: 'application/json',
+            errors: {
+                400: `Provider not available (SASL-007).`,
+                500: `Authentication failure (SASL-008).`,
+            },
+        });
+    }
+    /**
+     * Login with authorization code.
+     * Login with authorization code.
+     *
+     * Required identity types:
+     * * guest
+     * @param requestBody
+     * @returns AmarantSecurityJwtTokenModel OK
+     * @throws ApiError
+     */
+    static socialLoginWithAuthorizationCode(requestBody) {
+        return __request(OpenAPI, {
+            method: 'POST',
+            url: '/api/customer-social-login/v1/login-with-authorization-code',
+            body: requestBody,
+            mediaType: 'application/json',
+            errors: {
+                400: `Provider not available (SASL-007).`,
+                500: `Authentication failure (SASL-008).`,
+            },
+        });
+    }
+    /**
+     * Get social login provider collection.
+     * Get social login provider collection.
+     * @returns any OK
+     * @throws ApiError
+     */
+    static socialLoginGetProviderCollection() {
+        return __request(OpenAPI, {
+            method: 'GET',
+            url: '/api/customer-social-login/v1/providers',
+        });
+    }
 }

@@ -67,6 +67,7 @@ export type { AmarantGroupedProductItemModel } from './models/AmarantGroupedProd
 export type { AmarantGroupedProductModel } from './models/AmarantGroupedProductModel';
 export type { AmarantImageModel } from './models/AmarantImageModel';
 export type { AmarantImageModelVariant } from './models/AmarantImageModelVariant';
+export { AmarantMediaAttributeValueModel } from './models/AmarantMediaAttributeValueModel';
 export type { AmarantMediaFileModel } from './models/AmarantMediaFileModel';
 export type { AmarantMediaModel } from './models/AmarantMediaModel';
 export type { AmarantMediaVideoModel } from './models/AmarantMediaVideoModel';
@@ -123,6 +124,8 @@ export type { AmarantSalesCustomerAccountOrganizationOutputDto } from './models/
 export type { AmarantSalesCustomerAccountOutputDto } from './models/AmarantSalesCustomerAccountOutputDto';
 export { AmarantSalesCustomerAccountStateOutputDto } from './models/AmarantSalesCustomerAccountStateOutputDto';
 export { AmarantSalesCustomerAccountType } from './models/AmarantSalesCustomerAccountType';
+export type { AmarantSalesCustomerSocialLoginProviderOutputDto } from './models/AmarantSalesCustomerSocialLoginProviderOutputDto';
+export type { AmarantSalesCustomerSocialLoginStartAuthenticationOutputDto } from './models/AmarantSalesCustomerSocialLoginStartAuthenticationOutputDto';
 export type { AmarantSalesNewsletterSubscribeResultModel } from './models/AmarantSalesNewsletterSubscribeResultModel';
 export type { AmarantSearchAggregationResultModel } from './models/AmarantSearchAggregationResultModel';
 export type { AmarantSearchAggregationResultRangeAggregationModel } from './models/AmarantSearchAggregationResultRangeAggregationModel';
@@ -152,6 +155,8 @@ export type { ResetPasswordInputAmarantSalesCustomerResetAccountPasswordInputDto
 export type { SalesNewslettersSubscribeGuestInputAmarantSalesNewsletterInputModel } from './models/SalesNewslettersSubscribeGuestInputAmarantSalesNewsletterInputModel';
 export type { SetPaymentInformationInputAmarantSalesCartPaymentInformationInputGroupDto } from './models/SetPaymentInformationInputAmarantSalesCartPaymentInformationInputGroupDto';
 export type { SetShippingInformationInputAmarantSalesCartShippingInformationInputGroupDto } from './models/SetShippingInformationInputAmarantSalesCartShippingInformationInputGroupDto';
+export type { SocialLoginStartAuthenticationInputAmarantSalesCustomerSocialLoginStartAuthenticationInputDto } from './models/SocialLoginStartAuthenticationInputAmarantSalesCustomerSocialLoginStartAuthenticationInputDto';
+export type { SocialLoginWithAuthorizationCodeInputAmarantSalesCustomerSocialLoginAuthorizationCodeInputDto } from './models/SocialLoginWithAuthorizationCodeInputAmarantSalesCustomerSocialLoginAuthorizationCodeInputDto';
 export type { UpdateCartItemInputAmarantSalesCartItemUpdateInputDto } from './models/UpdateCartItemInputAmarantSalesCartItemUpdateInputDto';
 export type { UpdateCustomerAddressItemInputAmarantSalesCustomerAccountAddressInputDto } from './models/UpdateCustomerAddressItemInputAmarantSalesCustomerAccountAddressInputDto';
 export type { UpdateProductWishlistInputAmarantUpdateProductWishlistInput } from './models/UpdateProductWishlistInputAmarantUpdateProductWishlistInput';

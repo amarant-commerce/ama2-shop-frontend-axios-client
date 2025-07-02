@@ -10,6 +10,7 @@ export { AmarantAttributeDataTypeEnum } from './models/AmarantAttributeDataTypeE
 export { AmarantAttributeInputTypeEnum } from './models/AmarantAttributeInputTypeEnum';
 export { AmarantAttributeModelFlag } from './models/AmarantAttributeModelFlag';
 export { AmarantDataScope } from './models/AmarantDataScope';
+export { AmarantMediaAttributeValueModel } from './models/AmarantMediaAttributeValueModel';
 export { AmarantSalesCustomerAccountStateOutputDto } from './models/AmarantSalesCustomerAccountStateOutputDto';
 export { AmarantSalesCustomerAccountType } from './models/AmarantSalesCustomerAccountType';
 export { AliasService } from './services/AliasService';

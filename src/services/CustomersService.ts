@@ -6,6 +6,8 @@ import type { AmarantApiCollectionResponse } from '../models/AmarantApiCollectio
 import type { AmarantSalesCustomerAccountAddressOutputDto } from '../models/AmarantSalesCustomerAccountAddressOutputDto';
 import type { AmarantSalesCustomerAccountOrganizationOutputDto } from '../models/AmarantSalesCustomerAccountOrganizationOutputDto';
 import type { AmarantSalesCustomerAccountOutputDto } from '../models/AmarantSalesCustomerAccountOutputDto';
+import type { AmarantSalesCustomerSocialLoginProviderOutputDto } from '../models/AmarantSalesCustomerSocialLoginProviderOutputDto';
+import type { AmarantSalesCustomerSocialLoginStartAuthenticationOutputDto } from '../models/AmarantSalesCustomerSocialLoginStartAuthenticationOutputDto';
 import type { AmarantSecurityJwtTokenModel } from '../models/AmarantSecurityJwtTokenModel';
 import type { ConfirmCustomerAccountInputAmarantSalesCustomerAccountConfirmationInputDto } from '../models/ConfirmCustomerAccountInputAmarantSalesCustomerAccountConfirmationInputDto';
 import type { CreateCustomerAccountInputAmarantSalesCustomerAccountInputDto } from '../models/CreateCustomerAccountInputAmarantSalesCustomerAccountInputDto';
@@ -16,6 +18,8 @@ import type { MeUpdateInputAmarantSalesCustomerAccountUpdateInputDto } from '../
 import type { MeUpdateOrganizationInputAmarantSalesCustomerAccountOrganizationInputDto } from '../models/MeUpdateOrganizationInputAmarantSalesCustomerAccountOrganizationInputDto';
 import type { RefreshAuthorizationTokenInputAmarantSalesCustomerRefreshTokenInputDto } from '../models/RefreshAuthorizationTokenInputAmarantSalesCustomerRefreshTokenInputDto';
 import type { ResetPasswordInputAmarantSalesCustomerResetAccountPasswordInputDto } from '../models/ResetPasswordInputAmarantSalesCustomerResetAccountPasswordInputDto';
+import type { SocialLoginStartAuthenticationInputAmarantSalesCustomerSocialLoginStartAuthenticationInputDto } from '../models/SocialLoginStartAuthenticationInputAmarantSalesCustomerSocialLoginStartAuthenticationInputDto';
+import type { SocialLoginWithAuthorizationCodeInputAmarantSalesCustomerSocialLoginAuthorizationCodeInputDto } from '../models/SocialLoginWithAuthorizationCodeInputAmarantSalesCustomerSocialLoginAuthorizationCodeInputDto';
 import type { UpdateCustomerAddressItemInputAmarantSalesCustomerAccountAddressInputDto } from '../models/UpdateCustomerAddressItemInputAmarantSalesCustomerAccountAddressInputDto';
 import type { CancelablePromise } from '../core/CancelablePromise';
 import { OpenAPI } from '../core/OpenAPI';
@@ -299,6 +303,68 @@ export class CustomersService {
             },
             body: requestBody,
             mediaType: 'application/json',
+        });
+    }
+    /**
+     * Start social login authentication.
+     * Start social login authentication.
+     *
+     * Required identity types:
+     * * guest
+     * @param requestBody
+     * @returns AmarantSalesCustomerSocialLoginStartAuthenticationOutputDto OK
+     * @throws ApiError
+     */
+    public static socialLoginStartAuthentication(
+        requestBody: SocialLoginStartAuthenticationInputAmarantSalesCustomerSocialLoginStartAuthenticationInputDto,
+    ): CancelablePromise<AmarantSalesCustomerSocialLoginStartAuthenticationOutputDto> {
+        return __request(OpenAPI, {
+            method: 'POST',
+            url: '/api/customer-social-login/v1/start-authentication',
+            body: requestBody,
+            mediaType: 'application/json',
+            errors: {
+                400: `Provider not available (SASL-007).`,
+                500: `Authentication failure (SASL-008).`,
+            },
+        });
+    }
+    /**
+     * Login with authorization code.
+     * Login with authorization code.
+     *
+     * Required identity types:
+     * * guest
+     * @param requestBody
+     * @returns AmarantSecurityJwtTokenModel OK
+     * @throws ApiError
+     */
+    public static socialLoginWithAuthorizationCode(
+        requestBody: SocialLoginWithAuthorizationCodeInputAmarantSalesCustomerSocialLoginAuthorizationCodeInputDto,
+    ): CancelablePromise<AmarantSecurityJwtTokenModel> {
+        return __request(OpenAPI, {
+            method: 'POST',
+            url: '/api/customer-social-login/v1/login-with-authorization-code',
+            body: requestBody,
+            mediaType: 'application/json',
+            errors: {
+                400: `Provider not available (SASL-007).`,
+                500: `Authentication failure (SASL-008).`,
+            },
+        });
+    }
+    /**
+     * Get social login provider collection.
+     * Get social login provider collection.
+     * @returns any OK
+     * @throws ApiError
+     */
+    public static socialLoginGetProviderCollection(): CancelablePromise<(AmarantApiCollectionResponse & {
+        data: Array<AmarantSalesCustomerSocialLoginProviderOutputDto>;
+    })> {
+        return __request(OpenAPI, {
+            method: 'GET',
+            url: '/api/customer-social-login/v1/providers',
         });
     }
 }
