@@ -19,6 +19,8 @@ export type AmarantCartModel = {
     shippingBatches: Array<AmarantCartShippingBatchModel>;
     adjustments: Array<AmarantCartAdjustmentModel>;
     totals: Array<AmarantCartTotalModel>;
+    attributes: Record<string, string | number | number | boolean | any[] | null>;
+    allowedActions: Array<string>;
     createdAt: string;
     updatedAt: string;
     baseGrandTotal: number;

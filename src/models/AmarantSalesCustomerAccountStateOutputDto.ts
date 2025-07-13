@@ -3,6 +3,7 @@
 /* tslint:disable */
 /* eslint-disable */
 export enum AmarantSalesCustomerAccountStateOutputDto {
+    UNAPPROVED = 'unapproved',
     UNCONFIRMED = 'unconfirmed',
     ACTIVE = 'active',
     DISABLED = 'disabled',

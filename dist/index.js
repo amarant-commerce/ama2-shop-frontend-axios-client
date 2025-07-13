@@ -9,6 +9,7 @@ export { AddItemToCartInputAmarantSalesCartItemInputProductDto } from './models/
 export { AmarantAttributeDataTypeEnum } from './models/AmarantAttributeDataTypeEnum';
 export { AmarantAttributeInputTypeEnum } from './models/AmarantAttributeInputTypeEnum';
 export { AmarantAttributeModelFlag } from './models/AmarantAttributeModelFlag';
+export { AmarantCheckoutAllowedActionsModel } from './models/AmarantCheckoutAllowedActionsModel';
 export { AmarantDataScope } from './models/AmarantDataScope';
 export { AmarantMediaAttributeValueModel } from './models/AmarantMediaAttributeValueModel';
 export { AmarantSalesCustomerAccountStateOutputDto } from './models/AmarantSalesCustomerAccountStateOutputDto';
@@ -27,5 +28,6 @@ export { DirectoryService } from './services/DirectoryService';
 export { NewsletterService } from './services/NewsletterService';
 export { OrdersService } from './services/OrdersService';
 export { ProductsService } from './services/ProductsService';
+export { QuotesService } from './services/QuotesService';
 export { SearchService } from './services/SearchService';
 export { ViewService } from './services/ViewService';

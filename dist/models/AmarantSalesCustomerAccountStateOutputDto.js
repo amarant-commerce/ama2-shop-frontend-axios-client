@@ -4,6 +4,7 @@
 /* eslint-disable */
 export var AmarantSalesCustomerAccountStateOutputDto;
 (function (AmarantSalesCustomerAccountStateOutputDto) {
+    AmarantSalesCustomerAccountStateOutputDto["UNAPPROVED"] = "unapproved";
     AmarantSalesCustomerAccountStateOutputDto["UNCONFIRMED"] = "unconfirmed";
     AmarantSalesCustomerAccountStateOutputDto["ACTIVE"] = "active";
     AmarantSalesCustomerAccountStateOutputDto["DISABLED"] = "disabled";
