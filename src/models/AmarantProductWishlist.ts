@@ -9,5 +9,6 @@ export type AmarantProductWishlist = {
     name: string;
     shared: boolean;
     items: Array<AmarantProductWishlistProduct>;
+    attributes: Record<string, string | number | number | boolean | any[] | null>;
 };
 

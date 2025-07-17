@@ -5,6 +5,7 @@
 import type { AmarantCartModel } from './AmarantCartModel';
 export type AmarantCartQuoteModel = {
     id: number;
+    humanId: string;
     state: number;
     stateText: string;
     customer?: string | null;
