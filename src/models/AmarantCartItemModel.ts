@@ -12,6 +12,9 @@ export type AmarantCartItemModel = {
     adjustments: Array<AmarantCartAdjustmentModel>;
     reservedUntil?: string | null;
     reservedQty?: string | null;
+    mutable: boolean;
+    removable: boolean;
+    associatedParentItemId?: string | null;
     meta: Record<string, any>;
     basePriceExTax: number;
     basePrice: number;

@@ -25,6 +25,7 @@ export type AmarantCartModel = {
     totals: Array<AmarantCartTotalModel>;
     attributes: Record<string, string | number | number | boolean | any[] | null>;
     allowedActions: Array<string>;
+    email: (string | null | Array<string> | null);
     createdAt: string;
     updatedAt: string;
     baseGrandTotal: number;

@@ -10,8 +10,8 @@ import type { AmarantProductCategory } from './AmarantProductCategory';
 import type { AmarantProductPrices } from './AmarantProductPrices';
 import type { AmarantProductPricing } from './AmarantProductPricing';
 export type AmarantGroupedProductModel = {
-    groupChildren: Array<AmarantGroupedProductItemModel>;
-    inventory: AmarantParentProductInventory;
+    children: Array<AmarantGroupedProductItemModel>;
+    aggregatedInventory: AmarantParentProductInventory;
     type: 'grouped';
     id: number;
     url: string;

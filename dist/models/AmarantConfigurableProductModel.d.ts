@@ -6,8 +6,8 @@ import type { AmarantProductConfigurationModel } from './AmarantProductConfigura
 import type { AmarantProductPrices } from './AmarantProductPrices';
 import type { AmarantProductPricing } from './AmarantProductPricing';
 export type AmarantConfigurableProductModel = {
-    configurations: Array<AmarantProductConfigurationModel>;
-    inventory: AmarantParentProductInventory;
+    children: Array<AmarantProductConfigurationModel>;
+    aggregatedInventory: AmarantParentProductInventory;
     type: 'configurable';
     id: number;
     url: string;
