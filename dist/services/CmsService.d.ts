@@ -10,6 +10,7 @@ import type { AmarantGetCmsBlockTagCollectionSearchCriteriaFilter } from '../mod
 import type { AmarantGetCmsPageCollectionSearchCriteriaFilter } from '../models/AmarantGetCmsPageCollectionSearchCriteriaFilter';
 import type { AmarantGetCmsPageTagCollectionSearchCriteriaFilter } from '../models/AmarantGetCmsPageTagCollectionSearchCriteriaFilter';
 import type { InputAmarantCmsContactFormInputDto } from '../models/InputAmarantCmsContactFormInputDto';
+import type { SubmitCmsOrganizationalContactFormInputAmarantCmsOrganizationalContactFormInputDto } from '../models/SubmitCmsOrganizationalContactFormInputAmarantCmsOrganizationalContactFormInputDto';
 import type { CancelablePromise } from '../core/CancelablePromise';
 export declare class CmsService {
     /**
@@ -124,4 +125,16 @@ export declare class CmsService {
      * @throws ApiError
      */
     static submitCmsContactForm(requestBody: InputAmarantCmsContactFormInputDto): CancelablePromise<void>;
+    /**
+     * Submit organizational contact form.
+     * Submit organizational contact form.
+     *
+     * Rate limiting:
+     * - limit: 30
+     * - interval: 1 minute
+     * @param requestBody
+     * @returns void
+     * @throws ApiError
+     */
+    static submitCmsOrganizationalContactForm(requestBody: SubmitCmsOrganizationalContactFormInputAmarantCmsOrganizationalContactFormInputDto): CancelablePromise<void>;
 }

@@ -11,7 +11,7 @@ import type { AmarantProductPrices } from './AmarantProductPrices';
 import type { AmarantProductPricing } from './AmarantProductPricing';
 export type AmarantConfigurableProductModel = {
     children: Array<AmarantProductConfigurationModel>;
-    aggregatedInventory: AmarantParentProductInventory;
+    inventory: AmarantParentProductInventory;
     type: 'configurable';
     id: number;
     url: string;

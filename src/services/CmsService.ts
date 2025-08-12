@@ -14,6 +14,7 @@ import type { AmarantGetCmsBlockTagCollectionSearchCriteriaFilter } from '../mod
 import type { AmarantGetCmsPageCollectionSearchCriteriaFilter } from '../models/AmarantGetCmsPageCollectionSearchCriteriaFilter';
 import type { AmarantGetCmsPageTagCollectionSearchCriteriaFilter } from '../models/AmarantGetCmsPageTagCollectionSearchCriteriaFilter';
 import type { InputAmarantCmsContactFormInputDto } from '../models/InputAmarantCmsContactFormInputDto';
+import type { SubmitCmsOrganizationalContactFormInputAmarantCmsOrganizationalContactFormInputDto } from '../models/SubmitCmsOrganizationalContactFormInputAmarantCmsOrganizationalContactFormInputDto';
 import type { CancelablePromise } from '../core/CancelablePromise';
 import { OpenAPI } from '../core/OpenAPI';
 import { request as __request } from '../core/request';
@@ -255,6 +256,31 @@ export class CmsService {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/api/cms/v1/contact-form',
+            body: requestBody,
+            mediaType: 'application/json',
+            errors: {
+                400: `Invalid input.`,
+                429: `Too many requests.`,
+            },
+        });
+    }
+    /**
+     * Submit organizational contact form.
+     * Submit organizational contact form.
+     *
+     * Rate limiting:
+     * - limit: 30
+     * - interval: 1 minute
+     * @param requestBody
+     * @returns void
+     * @throws ApiError
+     */
+    public static submitCmsOrganizationalContactForm(
+        requestBody: SubmitCmsOrganizationalContactFormInputAmarantCmsOrganizationalContactFormInputDto,
+    ): CancelablePromise<void> {
+        return __request(OpenAPI, {
+            method: 'POST',
+            url: '/api/cms/v1/organizational-contact-form',
             body: requestBody,
             mediaType: 'application/json',
             errors: {
