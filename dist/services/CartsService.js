@@ -138,6 +138,44 @@ export class CartsService {
         });
     }
     /**
+     * Apply cart coupon.
+     * Apply cart coupon.
+     * @param id Cart ID.
+     * @param requestBody
+     * @returns AmarantCartModel OK
+     * @throws ApiError
+     */
+    static applyCartCoupon(id, requestBody) {
+        return __request(OpenAPI, {
+            method: 'POST',
+            url: '/api/carts/v1/{id}/coupons',
+            path: {
+                'id': id,
+            },
+            body: requestBody,
+            mediaType: 'application/json',
+        });
+    }
+    /**
+     * Discard cart coupon.
+     * Discard cart coupon.
+     * @param id Cart ID.
+     * @param requestBody
+     * @returns AmarantCartModel Resource deleted.
+     * @throws ApiError
+     */
+    static discardCartCoupon(id, requestBody) {
+        return __request(OpenAPI, {
+            method: 'DELETE',
+            url: '/api/carts/v1/{id}/coupons',
+            path: {
+                'id': id,
+            },
+            body: requestBody,
+            mediaType: 'application/json',
+        });
+    }
+    /**
      * Remove cart item.
      * Remove cart item.
      * @param id Cart ID.

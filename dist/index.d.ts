@@ -144,10 +144,12 @@ export type { AmarantSearchResultPostSearchResultItemModel } from './models/Amar
 export type { AmarantSearchResultProductSearchResultItemModel } from './models/AmarantSearchResultProductSearchResultItemModel';
 export type { AmarantSearchTermAggregationItem } from './models/AmarantSearchTermAggregationItem';
 export type { AmarantSecurityJwtTokenModel } from './models/AmarantSecurityJwtTokenModel';
+export type { ApplyCartCouponInputAmarantSalesCartCouponInputDto } from './models/ApplyCartCouponInputAmarantSalesCartCouponInputDto';
 export type { ConfirmCustomerAccountInputAmarantSalesCustomerAccountConfirmationInputDto } from './models/ConfirmCustomerAccountInputAmarantSalesCustomerAccountConfirmationInputDto';
 export type { CreateCustomerAccountInputAmarantSalesCustomerAccountInputDto } from './models/CreateCustomerAccountInputAmarantSalesCustomerAccountInputDto';
 export type { CreateCustomerAddressInputAmarantSalesCustomerAccountAddressInputDto } from './models/CreateCustomerAddressInputAmarantSalesCustomerAccountAddressInputDto';
 export type { CreateProductWishlistInputAmarantCreateProductWishlistInput } from './models/CreateProductWishlistInputAmarantCreateProductWishlistInput';
+export type { DiscardCartCouponInputAmarantSalesCartCouponInputDto } from './models/DiscardCartCouponInputAmarantSalesCartCouponInputDto';
 export type { GetAuthorizationTokenInputAmarantSalesCustomerLoginInputDto } from './models/GetAuthorizationTokenInputAmarantSalesCustomerLoginInputDto';
 export type { GetAvailableShippingRatesInputAmarantSalesCartShippingRateEstimationGroup } from './models/GetAvailableShippingRatesInputAmarantSalesCartShippingRateEstimationGroup';
 export type { InitiatePasswordResetInputAmarantSalesCustomerPasswordResetRequestInputDto } from './models/InitiatePasswordResetInputAmarantSalesCustomerPasswordResetRequestInputDto';

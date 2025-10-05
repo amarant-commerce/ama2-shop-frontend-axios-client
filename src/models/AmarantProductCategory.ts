@@ -8,5 +8,6 @@ export type AmarantProductCategory = {
     name: string;
     path: string;
     scopedPath: string;
+    filterable: boolean;
 };
 

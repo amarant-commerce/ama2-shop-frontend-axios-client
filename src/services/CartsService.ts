@@ -6,6 +6,8 @@ import type { AddItemToCartInputAmarantSalesCartItemInputProductDto } from '../m
 import type { AmarantAvailablePaymentMethodModelCollection } from '../models/AmarantAvailablePaymentMethodModelCollection';
 import type { AmarantCartModel } from '../models/AmarantCartModel';
 import type { AmarantEstimatedShippingRateModelCollection } from '../models/AmarantEstimatedShippingRateModelCollection';
+import type { ApplyCartCouponInputAmarantSalesCartCouponInputDto } from '../models/ApplyCartCouponInputAmarantSalesCartCouponInputDto';
+import type { DiscardCartCouponInputAmarantSalesCartCouponInputDto } from '../models/DiscardCartCouponInputAmarantSalesCartCouponInputDto';
 import type { GetAvailableShippingRatesInputAmarantSalesCartShippingRateEstimationGroup } from '../models/GetAvailableShippingRatesInputAmarantSalesCartShippingRateEstimationGroup';
 import type { SetPaymentInformationInputAmarantSalesCartPaymentInformationInputGroupDto } from '../models/SetPaymentInformationInputAmarantSalesCartPaymentInformationInputGroupDto';
 import type { SetShippingInformationInputAmarantSalesCartShippingInformationInputGroupDto } from '../models/SetShippingInformationInputAmarantSalesCartShippingInformationInputGroupDto';
@@ -161,6 +163,50 @@ export class CartsService {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/api/carts/v1/{id}/set-payment-information',
+            path: {
+                'id': id,
+            },
+            body: requestBody,
+            mediaType: 'application/json',
+        });
+    }
+    /**
+     * Apply cart coupon.
+     * Apply cart coupon.
+     * @param id Cart ID.
+     * @param requestBody
+     * @returns AmarantCartModel OK
+     * @throws ApiError
+     */
+    public static applyCartCoupon(
+        id: string,
+        requestBody: ApplyCartCouponInputAmarantSalesCartCouponInputDto,
+    ): CancelablePromise<AmarantCartModel> {
+        return __request(OpenAPI, {
+            method: 'POST',
+            url: '/api/carts/v1/{id}/coupons',
+            path: {
+                'id': id,
+            },
+            body: requestBody,
+            mediaType: 'application/json',
+        });
+    }
+    /**
+     * Discard cart coupon.
+     * Discard cart coupon.
+     * @param id Cart ID.
+     * @param requestBody
+     * @returns AmarantCartModel Resource deleted.
+     * @throws ApiError
+     */
+    public static discardCartCoupon(
+        id: string,
+        requestBody: DiscardCartCouponInputAmarantSalesCartCouponInputDto,
+    ): CancelablePromise<AmarantCartModel> {
+        return __request(OpenAPI, {
+            method: 'DELETE',
+            url: '/api/carts/v1/{id}/coupons',
             path: {
                 'id': id,
             },

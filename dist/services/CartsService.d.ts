@@ -2,6 +2,8 @@ import type { AddItemToCartInputAmarantSalesCartItemInputProductDto } from '../m
 import type { AmarantAvailablePaymentMethodModelCollection } from '../models/AmarantAvailablePaymentMethodModelCollection';
 import type { AmarantCartModel } from '../models/AmarantCartModel';
 import type { AmarantEstimatedShippingRateModelCollection } from '../models/AmarantEstimatedShippingRateModelCollection';
+import type { ApplyCartCouponInputAmarantSalesCartCouponInputDto } from '../models/ApplyCartCouponInputAmarantSalesCartCouponInputDto';
+import type { DiscardCartCouponInputAmarantSalesCartCouponInputDto } from '../models/DiscardCartCouponInputAmarantSalesCartCouponInputDto';
 import type { GetAvailableShippingRatesInputAmarantSalesCartShippingRateEstimationGroup } from '../models/GetAvailableShippingRatesInputAmarantSalesCartShippingRateEstimationGroup';
 import type { SetPaymentInformationInputAmarantSalesCartPaymentInformationInputGroupDto } from '../models/SetPaymentInformationInputAmarantSalesCartPaymentInformationInputGroupDto';
 import type { SetShippingInformationInputAmarantSalesCartShippingInformationInputGroupDto } from '../models/SetShippingInformationInputAmarantSalesCartShippingInformationInputGroupDto';
@@ -75,6 +77,24 @@ export declare class CartsService {
      * @throws ApiError
      */
     static setPaymentInformation(id: string, requestBody: SetPaymentInformationInputAmarantSalesCartPaymentInformationInputGroupDto): CancelablePromise<AmarantCartModel>;
+    /**
+     * Apply cart coupon.
+     * Apply cart coupon.
+     * @param id Cart ID.
+     * @param requestBody
+     * @returns AmarantCartModel OK
+     * @throws ApiError
+     */
+    static applyCartCoupon(id: string, requestBody: ApplyCartCouponInputAmarantSalesCartCouponInputDto): CancelablePromise<AmarantCartModel>;
+    /**
+     * Discard cart coupon.
+     * Discard cart coupon.
+     * @param id Cart ID.
+     * @param requestBody
+     * @returns AmarantCartModel Resource deleted.
+     * @throws ApiError
+     */
+    static discardCartCoupon(id: string, requestBody: DiscardCartCouponInputAmarantSalesCartCouponInputDto): CancelablePromise<AmarantCartModel>;
     /**
      * Remove cart item.
      * Remove cart item.
