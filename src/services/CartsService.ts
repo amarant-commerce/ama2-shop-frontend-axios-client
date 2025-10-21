@@ -2,6 +2,7 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
+import type { AddCartItemProductOptionFilesInputAmarantSalesCartItemInputProductOptionsFileItemDto } from '../models/AddCartItemProductOptionFilesInputAmarantSalesCartItemInputProductOptionsFileItemDto';
 import type { AddItemToCartInputAmarantSalesCartItemInputProductDto } from '../models/AddItemToCartInputAmarantSalesCartItemInputProductDto';
 import type { AmarantAvailablePaymentMethodModelCollection } from '../models/AmarantAvailablePaymentMethodModelCollection';
 import type { AmarantCartModel } from '../models/AmarantCartModel';
@@ -258,6 +259,31 @@ export class CartsService {
             },
             body: requestBody,
             mediaType: 'application/json',
+        });
+    }
+    /**
+     * Update files for a product option on a cart item. Previous files will be removed.
+     * Update files for a product option on a cart item. Previous files will be removed.
+     * @param id Cart ID.
+     * @param itemId Cart Item ID.
+     * @param formData
+     * @returns void
+     * @throws ApiError
+     */
+    public static addCartItemProductOptionFiles(
+        id: string,
+        itemId: string,
+        formData: AddCartItemProductOptionFilesInputAmarantSalesCartItemInputProductOptionsFileItemDto,
+    ): CancelablePromise<void> {
+        return __request(OpenAPI, {
+            method: 'PUT',
+            url: '/api/carts/v1/{id}/items/{itemId}/product-option-files',
+            path: {
+                'id': id,
+                'itemId': itemId,
+            },
+            formData: formData,
+            mediaType: 'multipart/form-data',
         });
     }
 }

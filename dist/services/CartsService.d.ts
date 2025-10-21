@@ -1,3 +1,4 @@
+import type { AddCartItemProductOptionFilesInputAmarantSalesCartItemInputProductOptionsFileItemDto } from '../models/AddCartItemProductOptionFilesInputAmarantSalesCartItemInputProductOptionsFileItemDto';
 import type { AddItemToCartInputAmarantSalesCartItemInputProductDto } from '../models/AddItemToCartInputAmarantSalesCartItemInputProductDto';
 import type { AmarantAvailablePaymentMethodModelCollection } from '../models/AmarantAvailablePaymentMethodModelCollection';
 import type { AmarantCartModel } from '../models/AmarantCartModel';
@@ -114,4 +115,14 @@ export declare class CartsService {
      * @throws ApiError
      */
     static updateCartItem(id: string, itemId: string, requestBody: UpdateCartItemInputAmarantSalesCartItemUpdateInputDto): CancelablePromise<AmarantCartModel>;
+    /**
+     * Update files for a product option on a cart item. Previous files will be removed.
+     * Update files for a product option on a cart item. Previous files will be removed.
+     * @param id Cart ID.
+     * @param itemId Cart Item ID.
+     * @param formData
+     * @returns void
+     * @throws ApiError
+     */
+    static addCartItemProductOptionFiles(id: string, itemId: string, formData: AddCartItemProductOptionFilesInputAmarantSalesCartItemInputProductOptionsFileItemDto): CancelablePromise<void>;
 }

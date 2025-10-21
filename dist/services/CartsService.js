@@ -214,4 +214,25 @@ export class CartsService {
             mediaType: 'application/json',
         });
     }
+    /**
+     * Update files for a product option on a cart item. Previous files will be removed.
+     * Update files for a product option on a cart item. Previous files will be removed.
+     * @param id Cart ID.
+     * @param itemId Cart Item ID.
+     * @param formData
+     * @returns void
+     * @throws ApiError
+     */
+    static addCartItemProductOptionFiles(id, itemId, formData) {
+        return __request(OpenAPI, {
+            method: 'PUT',
+            url: '/api/carts/v1/{id}/items/{itemId}/product-option-files',
+            path: {
+                'id': id,
+                'itemId': itemId,
+            },
+            formData: formData,
+            mediaType: 'multipart/form-data',
+        });
+    }
 }

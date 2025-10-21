@@ -4,6 +4,7 @@
 /* eslint-disable */
 export type AmarantBlogPostCategoryModel = {
     id: number;
+    parentId?: number | null;
     url: string;
     path: string;
     createdAt: string;

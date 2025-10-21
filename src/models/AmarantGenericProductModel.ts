@@ -6,6 +6,7 @@ import type { AmarantAttributeSwatchModel } from './AmarantAttributeSwatchModel'
 import type { AmarantMediaModel } from './AmarantMediaModel';
 import type { AmarantProductCategory } from './AmarantProductCategory';
 import type { AmarantProductInventory } from './AmarantProductInventory';
+import type { AmarantProductOptionModel } from './AmarantProductOptionModel';
 import type { AmarantProductPrices } from './AmarantProductPrices';
 import type { AmarantProductPricing } from './AmarantProductPricing';
 export type AmarantGenericProductModel = {
@@ -23,6 +24,7 @@ export type AmarantGenericProductModel = {
     media: Array<AmarantMediaModel>;
     categoryIds: Array<number>;
     categories: Array<AmarantProductCategory>;
+    options: Array<AmarantProductOptionModel>;
     /**
      * Position within a category. Currently always 0.
      */

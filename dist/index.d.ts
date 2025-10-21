@@ -2,6 +2,7 @@ export { ApiError } from './core/ApiError';
 export { CancelablePromise, CancelError } from './core/CancelablePromise';
 export { OpenAPI } from './core/OpenAPI';
 export type { OpenAPIConfig } from './core/OpenAPI';
+export type { AddCartItemProductOptionFilesInputAmarantSalesCartItemInputProductOptionsFileItemDto } from './models/AddCartItemProductOptionFilesInputAmarantSalesCartItemInputProductOptionsFileItemDto';
 export type { AddItemsToWishlistInputAmarantAddProductsToWishlistInput } from './models/AddItemsToWishlistInputAmarantAddProductsToWishlistInput';
 export { AddItemToCartInputAmarantSalesCartItemInputProductDto } from './models/AddItemToCartInputAmarantSalesCartItemInputProductDto';
 export type { Amarant_Framework_Exception_ApiException } from './models/Amarant_Framework_Exception_ApiException';
@@ -100,6 +101,7 @@ export type { AmarantProductConfigurationModel } from './models/AmarantProductCo
 export type { AmarantProductConfigurationOptionModel } from './models/AmarantProductConfigurationOptionModel';
 export type { AmarantProductInventory } from './models/AmarantProductInventory';
 export type { AmarantProductModel } from './models/AmarantProductModel';
+export type { AmarantProductOptionModel } from './models/AmarantProductOptionModel';
 export type { AmarantProductPriceItem } from './models/AmarantProductPriceItem';
 export type { AmarantProductPrices } from './models/AmarantProductPrices';
 export type { AmarantProductPricing } from './models/AmarantProductPricing';
@@ -111,6 +113,7 @@ export type { AmarantSalesCartAdditionalDataInputDto } from './models/AmarantSal
 export type { AmarantSalesCartItemInputConfigurableProductDto } from './models/AmarantSalesCartItemInputConfigurableProductDto';
 export type { AmarantSalesCartItemInputGenericProductDto } from './models/AmarantSalesCartItemInputGenericProductDto';
 export type { AmarantSalesCartItemInputGroupedProductDto } from './models/AmarantSalesCartItemInputGroupedProductDto';
+export type { AmarantSalesCartItemInputProductOptionsDto } from './models/AmarantSalesCartItemInputProductOptionsDto';
 export type { AmarantSalesCartPaymentInformationAddressInputDto } from './models/AmarantSalesCartPaymentInformationAddressInputDto';
 export type { AmarantSalesCartPaymentInformationInputDto } from './models/AmarantSalesCartPaymentInformationInputDto';
 export type { AmarantSalesCartShippingInformationAddressInputDto } from './models/AmarantSalesCartShippingInformationAddressInputDto';
@@ -131,10 +134,12 @@ export { AmarantSalesCustomerAccountType } from './models/AmarantSalesCustomerAc
 export type { AmarantSalesCustomerSocialLoginProviderOutputDto } from './models/AmarantSalesCustomerSocialLoginProviderOutputDto';
 export type { AmarantSalesCustomerSocialLoginStartAuthenticationOutputDto } from './models/AmarantSalesCustomerSocialLoginStartAuthenticationOutputDto';
 export type { AmarantSalesNewsletterSubscribeResultModel } from './models/AmarantSalesNewsletterSubscribeResultModel';
+export type { AmarantSearchAggregationResultCategoryAggregationModel } from './models/AmarantSearchAggregationResultCategoryAggregationModel';
 export type { AmarantSearchAggregationResultModel } from './models/AmarantSearchAggregationResultModel';
 export type { AmarantSearchAggregationResultRangeAggregationModel } from './models/AmarantSearchAggregationResultRangeAggregationModel';
 export type { AmarantSearchAggregationResultStatsAggregationModel } from './models/AmarantSearchAggregationResultStatsAggregationModel';
 export type { AmarantSearchAggregationResultTermAggregationModel } from './models/AmarantSearchAggregationResultTermAggregationModel';
+export type { AmarantSearchCategoryAggregationItem } from './models/AmarantSearchCategoryAggregationItem';
 export type { AmarantSearchCriteriaFilter } from './models/AmarantSearchCriteriaFilter';
 export type { AmarantSearchRangeAggregationItem } from './models/AmarantSearchRangeAggregationItem';
 export type { AmarantSearchResultCategorySearchResultItemModel } from './models/AmarantSearchResultCategorySearchResultItemModel';

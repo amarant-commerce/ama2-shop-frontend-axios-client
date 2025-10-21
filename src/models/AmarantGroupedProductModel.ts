@@ -7,6 +7,7 @@ import type { AmarantGroupedProductItemModel } from './AmarantGroupedProductItem
 import type { AmarantMediaModel } from './AmarantMediaModel';
 import type { AmarantParentProductInventory } from './AmarantParentProductInventory';
 import type { AmarantProductCategory } from './AmarantProductCategory';
+import type { AmarantProductOptionModel } from './AmarantProductOptionModel';
 import type { AmarantProductPrices } from './AmarantProductPrices';
 import type { AmarantProductPricing } from './AmarantProductPricing';
 export type AmarantGroupedProductModel = {
@@ -25,6 +26,7 @@ export type AmarantGroupedProductModel = {
     media: Array<AmarantMediaModel>;
     categoryIds: Array<number>;
     categories: Array<AmarantProductCategory>;
+    options: Array<AmarantProductOptionModel>;
     /**
      * Position within a category. Currently always 0.
      */

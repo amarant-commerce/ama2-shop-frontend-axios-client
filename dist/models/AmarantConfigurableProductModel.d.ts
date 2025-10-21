@@ -3,6 +3,7 @@ import type { AmarantMediaModel } from './AmarantMediaModel';
 import type { AmarantParentProductInventory } from './AmarantParentProductInventory';
 import type { AmarantProductCategory } from './AmarantProductCategory';
 import type { AmarantProductConfigurationModel } from './AmarantProductConfigurationModel';
+import type { AmarantProductOptionModel } from './AmarantProductOptionModel';
 import type { AmarantProductPrices } from './AmarantProductPrices';
 import type { AmarantProductPricing } from './AmarantProductPricing';
 export type AmarantConfigurableProductModel = {
@@ -21,6 +22,7 @@ export type AmarantConfigurableProductModel = {
     media: Array<AmarantMediaModel>;
     categoryIds: Array<number>;
     categories: Array<AmarantProductCategory>;
+    options: Array<AmarantProductOptionModel>;
     /**
      * Position within a category. Currently always 0.
      */
