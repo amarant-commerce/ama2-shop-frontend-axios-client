@@ -37,4 +37,23 @@ export class AnalyticsService {
             },
         });
     }
+    /**
+     * Record cookie panel consent history.
+     * Record cookie panel consent history.
+     * @param requestBody
+     * @returns void
+     * @throws ApiError
+     */
+    static recordCookiePanelConsentHistory(requestBody) {
+        return __request(OpenAPI, {
+            method: 'POST',
+            url: '/api/cookie-panels/v1/history',
+            body: requestBody,
+            mediaType: 'application/json',
+            errors: {
+                401: `Invalid identity.`,
+                404: `Cookie panel / Cookie panel item not found.`,
+            },
+        });
+    }
 }

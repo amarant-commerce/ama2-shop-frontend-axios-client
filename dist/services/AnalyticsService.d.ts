@@ -1,6 +1,7 @@
 import type { AmarantApiPaginatedCollectionResponse } from '../models/AmarantApiPaginatedCollectionResponse';
 import type { AmarantCookiePanelModel } from '../models/AmarantCookiePanelModel';
 import type { AmarantGetCookiePanelCollectionSearchCriteriaFilter } from '../models/AmarantGetCookiePanelCollectionSearchCriteriaFilter';
+import type { RecordCookiePanelConsentHistoryInputAmarantCookiePanelConsentHistoryInputDto } from '../models/RecordCookiePanelConsentHistoryInputAmarantCookiePanelConsentHistoryInputDto';
 import type { CancelablePromise } from '../core/CancelablePromise';
 export declare class AnalyticsService {
     /**
@@ -23,4 +24,12 @@ export declare class AnalyticsService {
      * @throws ApiError
      */
     static getCookiePanelItem(id: number): CancelablePromise<AmarantCookiePanelModel>;
+    /**
+     * Record cookie panel consent history.
+     * Record cookie panel consent history.
+     * @param requestBody
+     * @returns void
+     * @throws ApiError
+     */
+    static recordCookiePanelConsentHistory(requestBody: RecordCookiePanelConsentHistoryInputAmarantCookiePanelConsentHistoryInputDto): CancelablePromise<void>;
 }

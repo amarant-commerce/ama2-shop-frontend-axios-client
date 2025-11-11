@@ -44,6 +44,7 @@ export type { AmarantCmsBlockTagModel } from './models/AmarantCmsBlockTagModel';
 export type { AmarantCmsPageModel } from './models/AmarantCmsPageModel';
 export type { AmarantCmsPageTagModel } from './models/AmarantCmsPageTagModel';
 export type { AmarantConfigurableProductModel } from './models/AmarantConfigurableProductModel';
+export type { AmarantCookiePanelConsentHistoryItemInputDto } from './models/AmarantCookiePanelConsentHistoryItemInputDto';
 export type { AmarantCookiePanelItemModel } from './models/AmarantCookiePanelItemModel';
 export type { AmarantCookiePanelModel } from './models/AmarantCookiePanelModel';
 export { AmarantDataScope } from './models/AmarantDataScope';
@@ -161,6 +162,7 @@ export type { InitiatePasswordResetInputAmarantSalesCustomerPasswordResetRequest
 export type { InputAmarantCmsContactFormInputDto } from './models/InputAmarantCmsContactFormInputDto';
 export type { MeUpdateInputAmarantSalesCustomerAccountUpdateInputDto } from './models/MeUpdateInputAmarantSalesCustomerAccountUpdateInputDto';
 export type { MeUpdateOrganizationInputAmarantSalesCustomerAccountOrganizationInputDto } from './models/MeUpdateOrganizationInputAmarantSalesCustomerAccountOrganizationInputDto';
+export type { RecordCookiePanelConsentHistoryInputAmarantCookiePanelConsentHistoryInputDto } from './models/RecordCookiePanelConsentHistoryInputAmarantCookiePanelConsentHistoryInputDto';
 export type { RefreshAuthorizationTokenInputAmarantSalesCustomerRefreshTokenInputDto } from './models/RefreshAuthorizationTokenInputAmarantSalesCustomerRefreshTokenInputDto';
 export type { ResetPasswordInputAmarantSalesCustomerResetAccountPasswordInputDto } from './models/ResetPasswordInputAmarantSalesCustomerResetAccountPasswordInputDto';
 export type { SalesNewslettersSubscribeGuestInputAmarantSalesNewsletterInputModel } from './models/SalesNewslettersSubscribeGuestInputAmarantSalesNewsletterInputModel';
