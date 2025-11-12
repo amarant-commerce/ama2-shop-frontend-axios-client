@@ -6,6 +6,7 @@ import type { AmarantApiCollectionResponse } from '../models/AmarantApiCollectio
 import type { AmarantSalesCustomerAccountAddressOutputDto } from '../models/AmarantSalesCustomerAccountAddressOutputDto';
 import type { AmarantSalesCustomerAccountOrganizationOutputDto } from '../models/AmarantSalesCustomerAccountOrganizationOutputDto';
 import type { AmarantSalesCustomerAccountOutputDto } from '../models/AmarantSalesCustomerAccountOutputDto';
+import type { AmarantSalesCustomerMeOutputDto } from '../models/AmarantSalesCustomerMeOutputDto';
 import type { AmarantSalesCustomerSocialLoginProviderOutputDto } from '../models/AmarantSalesCustomerSocialLoginProviderOutputDto';
 import type { AmarantSalesCustomerSocialLoginStartAuthenticationOutputDto } from '../models/AmarantSalesCustomerSocialLoginStartAuthenticationOutputDto';
 import type { AmarantSecurityJwtTokenModel } from '../models/AmarantSecurityJwtTokenModel';
@@ -152,8 +153,9 @@ export class CustomersService {
         });
     }
     /**
-     * Get logged in customer.
-     * Get logged in customer.
+     * @deprecated
+     * Get logged in customer. Deprecated, use v2 instead.
+     * Get logged in customer. Deprecated, use v2 instead.
      *
      * Required identity types:
      * * customer
@@ -190,6 +192,18 @@ export class CustomersService {
             errors: {
                 401: `Unauthorized`,
             },
+        });
+    }
+    /**
+     * Get logged in customer.
+     * Get logged in customer.
+     * @returns AmarantSalesCustomerMeOutputDto OK
+     * @throws ApiError
+     */
+    public static getLoggedInCustomer(): CancelablePromise<AmarantSalesCustomerMeOutputDto> {
+        return __request(OpenAPI, {
+            method: 'POST',
+            url: '/api/customers/v2/me',
         });
     }
     /**

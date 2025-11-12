@@ -4,5 +4,5 @@ import type { AmarantSearchResultPostSearchResultItemModel } from './AmarantSear
 import type { AmarantSearchResultProductSearchResultItemModel } from './AmarantSearchResultProductSearchResultItemModel';
 export type AmarantSearchResultModel = Array<{
     type?: string;
-    results?: Array<(AmarantSearchResultProductSearchResultItemModel | AmarantSearchResultCategorySearchResultItemModel | AmarantSearchResultPostCategorySearchResultItemModel | AmarantSearchResultPostSearchResultItemModel)>;
+    results?: Array<(AmarantSearchResultPostCategorySearchResultItemModel | AmarantSearchResultPostSearchResultItemModel | AmarantSearchResultProductSearchResultItemModel | AmarantSearchResultCategorySearchResultItemModel)>;
 }>;

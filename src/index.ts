@@ -137,6 +137,7 @@ export type { AmarantSalesCustomerAccountOrganizationOutputDto } from './models/
 export type { AmarantSalesCustomerAccountOutputDto } from './models/AmarantSalesCustomerAccountOutputDto';
 export { AmarantSalesCustomerAccountStateOutputDto } from './models/AmarantSalesCustomerAccountStateOutputDto';
 export { AmarantSalesCustomerAccountType } from './models/AmarantSalesCustomerAccountType';
+export type { AmarantSalesCustomerMeOutputDto } from './models/AmarantSalesCustomerMeOutputDto';
 export type { AmarantSalesCustomerSocialLoginProviderOutputDto } from './models/AmarantSalesCustomerSocialLoginProviderOutputDto';
 export type { AmarantSalesCustomerSocialLoginStartAuthenticationOutputDto } from './models/AmarantSalesCustomerSocialLoginStartAuthenticationOutputDto';
 export type { AmarantSalesNewsletterSubscribeResultModel } from './models/AmarantSalesNewsletterSubscribeResultModel';

@@ -2,6 +2,7 @@ import type { AmarantApiCollectionResponse } from '../models/AmarantApiCollectio
 import type { AmarantSalesCustomerAccountAddressOutputDto } from '../models/AmarantSalesCustomerAccountAddressOutputDto';
 import type { AmarantSalesCustomerAccountOrganizationOutputDto } from '../models/AmarantSalesCustomerAccountOrganizationOutputDto';
 import type { AmarantSalesCustomerAccountOutputDto } from '../models/AmarantSalesCustomerAccountOutputDto';
+import type { AmarantSalesCustomerMeOutputDto } from '../models/AmarantSalesCustomerMeOutputDto';
 import type { AmarantSalesCustomerSocialLoginProviderOutputDto } from '../models/AmarantSalesCustomerSocialLoginProviderOutputDto';
 import type { AmarantSalesCustomerSocialLoginStartAuthenticationOutputDto } from '../models/AmarantSalesCustomerSocialLoginStartAuthenticationOutputDto';
 import type { AmarantSecurityJwtTokenModel } from '../models/AmarantSecurityJwtTokenModel';
@@ -69,8 +70,9 @@ export declare class CustomersService {
      */
     static resetPassword(requestBody: ResetPasswordInputAmarantSalesCustomerResetAccountPasswordInputDto): CancelablePromise<void>;
     /**
-     * Get logged in customer.
-     * Get logged in customer.
+     * @deprecated
+     * Get logged in customer. Deprecated, use v2 instead.
+     * Get logged in customer. Deprecated, use v2 instead.
      *
      * Required identity types:
      * * customer
@@ -89,6 +91,13 @@ export declare class CustomersService {
      * @throws ApiError
      */
     static meUpdate(requestBody: MeUpdateInputAmarantSalesCustomerAccountUpdateInputDto): CancelablePromise<AmarantSalesCustomerAccountOutputDto>;
+    /**
+     * Get logged in customer.
+     * Get logged in customer.
+     * @returns AmarantSalesCustomerMeOutputDto OK
+     * @throws ApiError
+     */
+    static getLoggedInCustomer(): CancelablePromise<AmarantSalesCustomerMeOutputDto>;
     /**
      * Update organization of logged in customer.
      * Update organization of logged in customer.

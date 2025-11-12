@@ -115,8 +115,9 @@ export class CustomersService {
         });
     }
     /**
-     * Get logged in customer.
-     * Get logged in customer.
+     * @deprecated
+     * Get logged in customer. Deprecated, use v2 instead.
+     * Get logged in customer. Deprecated, use v2 instead.
      *
      * Required identity types:
      * * customer
@@ -151,6 +152,18 @@ export class CustomersService {
             errors: {
                 401: `Unauthorized`,
             },
+        });
+    }
+    /**
+     * Get logged in customer.
+     * Get logged in customer.
+     * @returns AmarantSalesCustomerMeOutputDto OK
+     * @throws ApiError
+     */
+    static getLoggedInCustomer() {
+        return __request(OpenAPI, {
+            method: 'POST',
+            url: '/api/customers/v2/me',
         });
     }
     /**
