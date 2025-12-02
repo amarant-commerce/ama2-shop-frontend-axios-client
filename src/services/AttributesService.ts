@@ -22,4 +22,16 @@ export class AttributesService {
             url: '/api/attributes/v1',
         });
     }
+    /**
+     * Get attribute item.
+     * Get attribute item.
+     * @returns AmarantAttributeModel OK
+     * @throws ApiError
+     */
+    public static getAttributeItem(): CancelablePromise<AmarantAttributeModel> {
+        return __request(OpenAPI, {
+            method: 'GET',
+            url: '/api/attributes/v1/{id}',
+        });
+    }
 }

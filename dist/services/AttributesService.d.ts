@@ -11,4 +11,11 @@ export declare class AttributesService {
     static getAttributeCollection(): CancelablePromise<(AmarantApiCollectionResponse & {
         data: Array<AmarantAttributeModel>;
     })>;
+    /**
+     * Get attribute item.
+     * Get attribute item.
+     * @returns AmarantAttributeModel OK
+     * @throws ApiError
+     */
+    static getAttributeItem(): CancelablePromise<AmarantAttributeModel>;
 }

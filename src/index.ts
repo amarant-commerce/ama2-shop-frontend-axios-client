@@ -22,6 +22,7 @@ export { AmarantAttributeDataTypeEnum } from './models/AmarantAttributeDataTypeE
 export { AmarantAttributeInputTypeEnum } from './models/AmarantAttributeInputTypeEnum';
 export type { AmarantAttributeModel } from './models/AmarantAttributeModel';
 export { AmarantAttributeModelFlag } from './models/AmarantAttributeModelFlag';
+export type { AmarantAttributeOptionModel } from './models/AmarantAttributeOptionModel';
 export type { AmarantAttributeSwatchModel } from './models/AmarantAttributeSwatchModel';
 export type { AmarantAvailablePaymentMethodModel } from './models/AmarantAvailablePaymentMethodModel';
 export type { AmarantAvailablePaymentMethodModelCollection } from './models/AmarantAvailablePaymentMethodModelCollection';
@@ -92,6 +93,7 @@ export type { AmarantOrderProductModel } from './models/AmarantOrderProductModel
 export type { AmarantOrderShippingBatchItemModel } from './models/AmarantOrderShippingBatchItemModel';
 export type { AmarantOrderShippingBatchModel } from './models/AmarantOrderShippingBatchModel';
 export type { AmarantOrderTotalModel } from './models/AmarantOrderTotalModel';
+export type { AmarantParentProductCategoryNodeItem } from './models/AmarantParentProductCategoryNodeItem';
 export type { AmarantParentProductInventory } from './models/AmarantParentProductInventory';
 export type { AmarantPlacedOrderResultModel } from './models/AmarantPlacedOrderResultModel';
 export type { AmarantPlacedOrderResultPaymentFormRequestModel } from './models/AmarantPlacedOrderResultPaymentFormRequestModel';
@@ -141,12 +143,10 @@ export type { AmarantSalesCustomerMeOutputDto } from './models/AmarantSalesCusto
 export type { AmarantSalesCustomerSocialLoginProviderOutputDto } from './models/AmarantSalesCustomerSocialLoginProviderOutputDto';
 export type { AmarantSalesCustomerSocialLoginStartAuthenticationOutputDto } from './models/AmarantSalesCustomerSocialLoginStartAuthenticationOutputDto';
 export type { AmarantSalesNewsletterSubscribeResultModel } from './models/AmarantSalesNewsletterSubscribeResultModel';
-export type { AmarantSearchAggregationResultCategoryAggregationModel } from './models/AmarantSearchAggregationResultCategoryAggregationModel';
 export type { AmarantSearchAggregationResultModel } from './models/AmarantSearchAggregationResultModel';
 export type { AmarantSearchAggregationResultRangeAggregationModel } from './models/AmarantSearchAggregationResultRangeAggregationModel';
 export type { AmarantSearchAggregationResultStatsAggregationModel } from './models/AmarantSearchAggregationResultStatsAggregationModel';
 export type { AmarantSearchAggregationResultTermAggregationModel } from './models/AmarantSearchAggregationResultTermAggregationModel';
-export type { AmarantSearchCategoryAggregationItem } from './models/AmarantSearchCategoryAggregationItem';
 export type { AmarantSearchCriteriaFilter } from './models/AmarantSearchCriteriaFilter';
 export type { AmarantSearchRangeAggregationItem } from './models/AmarantSearchRangeAggregationItem';
 export type { AmarantSearchResultCategorySearchResultItemModel } from './models/AmarantSearchResultCategorySearchResultItemModel';

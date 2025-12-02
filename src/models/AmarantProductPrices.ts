@@ -24,5 +24,8 @@ export type AmarantProductPrices = {
      * Is set to true if default lowest price is lower than default regular price.
      */
     onSale: boolean;
+    defaultLowestHistoryPriceExTax?: number | null;
+    defaultLowestHistoryPriceInclTax?: number | null;
+    defaultLowestHistoryAge?: number | null;
 };
 

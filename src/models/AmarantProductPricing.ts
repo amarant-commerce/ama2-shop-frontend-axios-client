@@ -20,6 +20,9 @@ export type AmarantProductPricing = {
     lowestPrice: number;
     lowestPriceExTax: number;
     lowestPriceInclTax: number;
+    lowestHistoryPriceExTax?: number | null;
+    lowestHistoryPriceInclTax?: number | null;
+    lowestHistoryAge?: number | null;
     meta?: Record<string, (string | number | boolean | null)> | null;
 };
 

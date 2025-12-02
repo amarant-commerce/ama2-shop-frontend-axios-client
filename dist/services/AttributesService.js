@@ -13,4 +13,16 @@ export class AttributesService {
             url: '/api/attributes/v1',
         });
     }
+    /**
+     * Get attribute item.
+     * Get attribute item.
+     * @returns AmarantAttributeModel OK
+     * @throws ApiError
+     */
+    static getAttributeItem() {
+        return __request(OpenAPI, {
+            method: 'GET',
+            url: '/api/attributes/v1/{id}',
+        });
+    }
 }

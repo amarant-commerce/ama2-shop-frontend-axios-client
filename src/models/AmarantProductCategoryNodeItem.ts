@@ -3,6 +3,7 @@
 /* tslint:disable */
 /* eslint-disable */
 import type { AmarantMediaModel } from './AmarantMediaModel';
+import type { AmarantParentProductCategoryNodeItem } from './AmarantParentProductCategoryNodeItem';
 export type AmarantProductCategoryNodeItem = {
     id: number;
     name: string;
@@ -13,5 +14,6 @@ export type AmarantProductCategoryNodeItem = {
     swatches: Record<string, Record<string, any>>;
     media: Array<AmarantMediaModel>;
     children: Array<AmarantProductCategoryNodeItem>;
+    parents: Array<AmarantParentProductCategoryNodeItem>;
 };
 

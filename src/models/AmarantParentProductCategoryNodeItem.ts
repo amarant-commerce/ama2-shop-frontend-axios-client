@@ -2,10 +2,11 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-export type AmarantSearchCategoryAggregationItem = {
-    count: number;
-    value: number;
+export type AmarantParentProductCategoryNodeItem = {
+    id: number;
     name: string;
-    parentIds: Array<number>;
+    url: string;
+    path: string;
+    scopedPath: string;
 };
 

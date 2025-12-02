@@ -1,5 +1,6 @@
 import type { AmarantAttributeDataTypeEnum } from './AmarantAttributeDataTypeEnum';
 import type { AmarantAttributeInputTypeEnum } from './AmarantAttributeInputTypeEnum';
+import type { AmarantAttributeOptionModel } from './AmarantAttributeOptionModel';
 export type AmarantAttributeModel = {
     id: number;
     code: string;
@@ -9,4 +10,5 @@ export type AmarantAttributeModel = {
     inputType: AmarantAttributeInputTypeEnum;
     labels: Record<string, Record<string, string>>;
     flags: Array<boolean>;
+    options: Array<AmarantAttributeOptionModel>;
 };

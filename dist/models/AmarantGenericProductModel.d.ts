@@ -20,6 +20,7 @@ export type AmarantGenericProductModel = {
     media: Array<AmarantMediaModel>;
     categoryIds: Array<number>;
     categories: Array<AmarantProductCategory>;
+    primaryCategoryId?: number | null;
     options: Array<AmarantProductOptionModel>;
     /**
      * Position within a category. Currently always 0.

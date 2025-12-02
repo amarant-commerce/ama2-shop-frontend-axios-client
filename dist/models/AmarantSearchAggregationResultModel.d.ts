@@ -1,5 +1,4 @@
-import type { AmarantSearchAggregationResultCategoryAggregationModel } from './AmarantSearchAggregationResultCategoryAggregationModel';
 import type { AmarantSearchAggregationResultRangeAggregationModel } from './AmarantSearchAggregationResultRangeAggregationModel';
 import type { AmarantSearchAggregationResultStatsAggregationModel } from './AmarantSearchAggregationResultStatsAggregationModel';
 import type { AmarantSearchAggregationResultTermAggregationModel } from './AmarantSearchAggregationResultTermAggregationModel';
-export type AmarantSearchAggregationResultModel = (AmarantSearchAggregationResultTermAggregationModel | AmarantSearchAggregationResultStatsAggregationModel | AmarantSearchAggregationResultRangeAggregationModel | AmarantSearchAggregationResultCategoryAggregationModel);
+export type AmarantSearchAggregationResultModel = (AmarantSearchAggregationResultTermAggregationModel | AmarantSearchAggregationResultStatsAggregationModel | AmarantSearchAggregationResultRangeAggregationModel);
