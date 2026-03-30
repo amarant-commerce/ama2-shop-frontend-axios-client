@@ -3,7 +3,7 @@ export type AmarantGetCmsBlockTagCollectionSearchCriteriaFilter = {
         /**
          * name: like
          */
-        condition?: 'eq' | 'neq' | 'in' | 'nin' | 'gt' | 'lt' | 'lte' | 'gte' | 'null' | 'range' | 'like' | 'tr';
+        condition?: 'eq' | 'neq' | 'in' | 'nin' | 'gt' | 'lt' | 'lte' | 'gte' | 'null' | 'range' | 'like' | 'tr' | 'fa';
         /**
          * name: string
          */

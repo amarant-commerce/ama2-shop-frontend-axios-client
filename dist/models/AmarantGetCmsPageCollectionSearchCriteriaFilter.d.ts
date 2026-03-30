@@ -4,7 +4,7 @@ export type AmarantGetCmsPageCollectionSearchCriteriaFilter = {
          * identifier: like
          * tag_ids: ina
          */
-        condition?: 'eq' | 'neq' | 'in' | 'nin' | 'gt' | 'lt' | 'lte' | 'gte' | 'null' | 'range' | 'like' | 'tr';
+        condition?: 'eq' | 'neq' | 'in' | 'nin' | 'gt' | 'lt' | 'lte' | 'gte' | 'null' | 'range' | 'like' | 'tr' | 'fa';
         /**
          * identifier: string
          * tag_ids: array

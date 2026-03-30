@@ -9,7 +9,7 @@ export type AmarantGetCmsBannerCollectionSearchCriteriaFilter = {
          * identifier: like
          * identifiers: in
          */
-        condition?: 'eq' | 'neq' | 'in' | 'nin' | 'gt' | 'lt' | 'lte' | 'gte' | 'null' | 'range' | 'like' | 'tr';
+        condition?: 'eq' | 'neq' | 'in' | 'nin' | 'gt' | 'lt' | 'lte' | 'gte' | 'null' | 'range' | 'like' | 'tr' | 'fa';
         /**
          * active: boolean, integer, string
          * identifier: string

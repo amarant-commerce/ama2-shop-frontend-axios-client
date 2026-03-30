@@ -14,6 +14,8 @@ export { AmarantDataScope } from './models/AmarantDataScope';
 export { AmarantMediaAttributeValueModel } from './models/AmarantMediaAttributeValueModel';
 export { AmarantSalesCustomerAccountStateOutputDto } from './models/AmarantSalesCustomerAccountStateOutputDto';
 export { AmarantSalesCustomerAccountType } from './models/AmarantSalesCustomerAccountType';
+export { AmarantTotalCodeModel } from './models/AmarantTotalCodeModel';
+export { AmarantTotalLabelModel } from './models/AmarantTotalLabelModel';
 export { AliasService } from './services/AliasService';
 export { AnalyticsService } from './services/AnalyticsService';
 export { ApplicationService } from './services/ApplicationService';

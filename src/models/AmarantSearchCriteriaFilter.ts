@@ -4,7 +4,7 @@
 /* eslint-disable */
 export type AmarantSearchCriteriaFilter = {
     groups?: Array<Record<string, {
-        condition?: 'eq' | 'neq' | 'in' | 'nin' | 'gt' | 'lt' | 'lte' | 'gte' | 'null' | 'range' | 'like' | 'tr';
+        condition?: 'eq' | 'neq' | 'in' | 'nin' | 'gt' | 'lt' | 'lte' | 'gte' | 'null' | 'range' | 'like' | 'tr' | 'fa';
         value?: number | number | string | boolean | any[] | null;
     }>>;
     sort?: Array<{

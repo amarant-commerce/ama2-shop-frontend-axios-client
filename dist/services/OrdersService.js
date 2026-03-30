@@ -5,16 +5,19 @@ export class OrdersService {
      * Place order.
      * Place order.
      * @param cartId Cart ID.
+     * @param requestBody
      * @returns AmarantPlacedOrderResultModel Resource created.
      * @throws ApiError
      */
-    static placeOrder(cartId) {
+    static placeOrder(cartId, requestBody) {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/api/orders/v1/place/{cartId}',
             path: {
                 'cartId': cartId,
             },
+            body: requestBody,
+            mediaType: 'application/json',
             errors: {
                 401: `Cart not found / Guest orders not allowed.`,
             },

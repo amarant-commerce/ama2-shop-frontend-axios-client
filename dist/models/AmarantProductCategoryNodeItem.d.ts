@@ -11,4 +11,5 @@ export type AmarantProductCategoryNodeItem = {
     media: Array<AmarantMediaModel>;
     children: Array<AmarantProductCategoryNodeItem>;
     parents: Array<AmarantParentProductCategoryNodeItem>;
+    productCount: number;
 };

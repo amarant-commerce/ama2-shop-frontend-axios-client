@@ -6,6 +6,7 @@ import type { AmarantApiPaginatedCollectionResponse } from '../models/AmarantApi
 import type { AmarantGetOrderCollectionSearchCriteriaFilter } from '../models/AmarantGetOrderCollectionSearchCriteriaFilter';
 import type { AmarantOrderModel } from '../models/AmarantOrderModel';
 import type { AmarantPlacedOrderResultModel } from '../models/AmarantPlacedOrderResultModel';
+import type { PlaceOrderInputAmarantSalesPlaceOrderInputDto } from '../models/PlaceOrderInputAmarantSalesPlaceOrderInputDto';
 import type { CancelablePromise } from '../core/CancelablePromise';
 import { OpenAPI } from '../core/OpenAPI';
 import { request as __request } from '../core/request';
@@ -14,11 +15,13 @@ export class OrdersService {
      * Place order.
      * Place order.
      * @param cartId Cart ID.
+     * @param requestBody
      * @returns AmarantPlacedOrderResultModel Resource created.
      * @throws ApiError
      */
     public static placeOrder(
         cartId: string,
+        requestBody: PlaceOrderInputAmarantSalesPlaceOrderInputDto,
     ): CancelablePromise<AmarantPlacedOrderResultModel> {
         return __request(OpenAPI, {
             method: 'POST',
@@ -26,6 +29,8 @@ export class OrdersService {
             path: {
                 'cartId': cartId,
             },
+            body: requestBody,
+            mediaType: 'application/json',
             errors: {
                 401: `Cart not found / Guest orders not allowed.`,
             },

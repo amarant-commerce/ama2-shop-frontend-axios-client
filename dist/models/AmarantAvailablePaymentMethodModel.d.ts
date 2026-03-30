@@ -4,4 +4,6 @@ export type AmarantAvailablePaymentMethodModel = {
     shortDescription?: string | null;
     description?: string | null;
     imageUrl?: string | null;
+    sortOrder: number;
+    redirectsFromCheckout: boolean;
 };

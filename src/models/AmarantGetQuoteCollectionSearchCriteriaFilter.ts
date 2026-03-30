@@ -7,7 +7,7 @@ export type AmarantGetQuoteCollectionSearchCriteriaFilter = {
         /**
          * human_id: eq, like
          */
-        condition?: 'eq' | 'neq' | 'in' | 'nin' | 'gt' | 'lt' | 'lte' | 'gte' | 'null' | 'range' | 'like' | 'tr';
+        condition?: 'eq' | 'neq' | 'in' | 'nin' | 'gt' | 'lt' | 'lte' | 'gte' | 'null' | 'range' | 'like' | 'tr' | 'fa';
         /**
          * human_id: string
          */

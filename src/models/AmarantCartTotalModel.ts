@@ -2,10 +2,12 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
+import type { AmarantTotalCodeModel } from './AmarantTotalCodeModel';
+import type { AmarantTotalLabelModel } from './AmarantTotalLabelModel';
 export type AmarantCartTotalModel = {
     id: string;
-    code: string;
-    label: string;
+    code: AmarantTotalCodeModel;
+    label: AmarantTotalLabelModel;
     baseAmount: number;
     amount: number;
     baseAmountFormatted: string;

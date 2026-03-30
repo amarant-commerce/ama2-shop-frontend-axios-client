@@ -138,6 +138,7 @@ export type { AmarantSalesCustomerMeOutputDto } from './models/AmarantSalesCusto
 export type { AmarantSalesCustomerSocialLoginProviderOutputDto } from './models/AmarantSalesCustomerSocialLoginProviderOutputDto';
 export type { AmarantSalesCustomerSocialLoginStartAuthenticationOutputDto } from './models/AmarantSalesCustomerSocialLoginStartAuthenticationOutputDto';
 export type { AmarantSalesNewsletterSubscribeResultModel } from './models/AmarantSalesNewsletterSubscribeResultModel';
+export type { AmarantSalesTermsConditionsOutputDto } from './models/AmarantSalesTermsConditionsOutputDto';
 export type { AmarantSearchAggregationResultModel } from './models/AmarantSearchAggregationResultModel';
 export type { AmarantSearchAggregationResultRangeAggregationModel } from './models/AmarantSearchAggregationResultRangeAggregationModel';
 export type { AmarantSearchAggregationResultStatsAggregationModel } from './models/AmarantSearchAggregationResultStatsAggregationModel';
@@ -151,6 +152,8 @@ export type { AmarantSearchResultPostSearchResultItemModel } from './models/Amar
 export type { AmarantSearchResultProductSearchResultItemModel } from './models/AmarantSearchResultProductSearchResultItemModel';
 export type { AmarantSearchTermAggregationItem } from './models/AmarantSearchTermAggregationItem';
 export type { AmarantSecurityJwtTokenModel } from './models/AmarantSecurityJwtTokenModel';
+export { AmarantTotalCodeModel } from './models/AmarantTotalCodeModel';
+export { AmarantTotalLabelModel } from './models/AmarantTotalLabelModel';
 export type { ApplyCartCouponInputAmarantSalesCartCouponInputDto } from './models/ApplyCartCouponInputAmarantSalesCartCouponInputDto';
 export type { ConfirmCustomerAccountInputAmarantSalesCustomerAccountConfirmationInputDto } from './models/ConfirmCustomerAccountInputAmarantSalesCustomerAccountConfirmationInputDto';
 export type { CreateCustomerAccountInputAmarantSalesCustomerAccountInputDto } from './models/CreateCustomerAccountInputAmarantSalesCustomerAccountInputDto';
@@ -163,6 +166,7 @@ export type { InitiatePasswordResetInputAmarantSalesCustomerPasswordResetRequest
 export type { InputAmarantCmsContactFormInputDto } from './models/InputAmarantCmsContactFormInputDto';
 export type { MeUpdateInputAmarantSalesCustomerAccountUpdateInputDto } from './models/MeUpdateInputAmarantSalesCustomerAccountUpdateInputDto';
 export type { MeUpdateOrganizationInputAmarantSalesCustomerAccountOrganizationInputDto } from './models/MeUpdateOrganizationInputAmarantSalesCustomerAccountOrganizationInputDto';
+export type { PlaceOrderInputAmarantSalesPlaceOrderInputDto } from './models/PlaceOrderInputAmarantSalesPlaceOrderInputDto';
 export type { RecordCookiePanelConsentHistoryInputAmarantCookiePanelConsentHistoryInputDto } from './models/RecordCookiePanelConsentHistoryInputAmarantCookiePanelConsentHistoryInputDto';
 export type { RefreshAuthorizationTokenInputAmarantSalesCustomerRefreshTokenInputDto } from './models/RefreshAuthorizationTokenInputAmarantSalesCustomerRefreshTokenInputDto';
 export type { ResetPasswordInputAmarantSalesCustomerResetAccountPasswordInputDto } from './models/ResetPasswordInputAmarantSalesCustomerResetAccountPasswordInputDto';

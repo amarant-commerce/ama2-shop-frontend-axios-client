@@ -8,6 +8,7 @@ export type AmarantCartQuoteModel = {
     organizationId?: number | null;
     organization?: string | null;
     attributes: Record<string, string | number | number | boolean | any[] | null>;
+    extendedData: Record<string, any>;
     cart: AmarantCartModel;
     createdAt: string;
     updatedAt: string;

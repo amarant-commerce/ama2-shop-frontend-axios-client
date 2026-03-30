@@ -8,7 +8,7 @@ export type AmarantGetBlogPostCategoryCollectionSearchCriteriaFilter = {
          * parent_id: eq, null
          * name: like
          */
-        condition?: 'eq' | 'neq' | 'in' | 'nin' | 'gt' | 'lt' | 'lte' | 'gte' | 'null' | 'range' | 'like' | 'tr';
+        condition?: 'eq' | 'neq' | 'in' | 'nin' | 'gt' | 'lt' | 'lte' | 'gte' | 'null' | 'range' | 'like' | 'tr' | 'fa';
         /**
          * parent_id: string, integer, boolean, boolean, boolean, null
          * name: string

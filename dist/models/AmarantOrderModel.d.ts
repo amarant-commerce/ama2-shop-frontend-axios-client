@@ -8,6 +8,7 @@ import type { AmarantOrderTotalModel } from './AmarantOrderTotalModel';
 export type AmarantOrderModel = {
     id: string;
     humanId: string;
+    guestCode?: string | null;
     channelId: number;
     channelScopeId: number;
     channel: string;

@@ -12,8 +12,4 @@ export type AmarantCartProductModel = {
     scopedPath: string;
     attributes: Record<string, string | number | number | boolean | any[] | null>;
     images: Array<AmarantImageModel>;
-    /**
-     * Populated only for quotes.
-     */
-    stockItemQty?: string | null;
 };

@@ -9,7 +9,7 @@ export type AmarantGetCmsBlockCollectionSearchCriteriaFilter = {
          * identifiers: in
          * tag_ids: ina
          */
-        condition?: 'eq' | 'neq' | 'in' | 'nin' | 'gt' | 'lt' | 'lte' | 'gte' | 'null' | 'range' | 'like' | 'tr';
+        condition?: 'eq' | 'neq' | 'in' | 'nin' | 'gt' | 'lt' | 'lte' | 'gte' | 'null' | 'range' | 'like' | 'tr' | 'fa';
         /**
          * identifier: string
          * identifiers: array

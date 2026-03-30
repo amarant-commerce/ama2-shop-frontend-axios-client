@@ -2,16 +2,18 @@ import type { AmarantApiPaginatedCollectionResponse } from '../models/AmarantApi
 import type { AmarantGetOrderCollectionSearchCriteriaFilter } from '../models/AmarantGetOrderCollectionSearchCriteriaFilter';
 import type { AmarantOrderModel } from '../models/AmarantOrderModel';
 import type { AmarantPlacedOrderResultModel } from '../models/AmarantPlacedOrderResultModel';
+import type { PlaceOrderInputAmarantSalesPlaceOrderInputDto } from '../models/PlaceOrderInputAmarantSalesPlaceOrderInputDto';
 import type { CancelablePromise } from '../core/CancelablePromise';
 export declare class OrdersService {
     /**
      * Place order.
      * Place order.
      * @param cartId Cart ID.
+     * @param requestBody
      * @returns AmarantPlacedOrderResultModel Resource created.
      * @throws ApiError
      */
-    static placeOrder(cartId: string): CancelablePromise<AmarantPlacedOrderResultModel>;
+    static placeOrder(cartId: string, requestBody: PlaceOrderInputAmarantSalesPlaceOrderInputDto): CancelablePromise<AmarantPlacedOrderResultModel>;
     /**
      * Get order item.
      * Get order item.

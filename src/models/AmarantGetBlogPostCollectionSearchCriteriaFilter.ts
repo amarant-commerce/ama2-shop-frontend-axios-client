@@ -8,7 +8,7 @@ export type AmarantGetBlogPostCollectionSearchCriteriaFilter = {
          * category_ids: in, nin, ina, nina, aina, anina
          * tag_ids: in
          */
-        condition?: 'eq' | 'neq' | 'in' | 'nin' | 'gt' | 'lt' | 'lte' | 'gte' | 'null' | 'range' | 'like' | 'tr';
+        condition?: 'eq' | 'neq' | 'in' | 'nin' | 'gt' | 'lt' | 'lte' | 'gte' | 'null' | 'range' | 'like' | 'tr' | 'fa';
         /**
          * category_ids: array
          * tag_ids: array

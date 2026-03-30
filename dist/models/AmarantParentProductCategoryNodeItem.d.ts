@@ -4,4 +4,5 @@ export type AmarantParentProductCategoryNodeItem = {
     url: string;
     path: string;
     scopedPath: string;
+    productCount: number;
 };

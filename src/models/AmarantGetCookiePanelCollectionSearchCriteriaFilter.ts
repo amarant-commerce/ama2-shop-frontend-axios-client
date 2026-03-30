@@ -8,7 +8,7 @@ export type AmarantGetCookiePanelCollectionSearchCriteriaFilter = {
          * active: eq
          * identifier: like
          */
-        condition?: 'eq' | 'neq' | 'in' | 'nin' | 'gt' | 'lt' | 'lte' | 'gte' | 'null' | 'range' | 'like' | 'tr';
+        condition?: 'eq' | 'neq' | 'in' | 'nin' | 'gt' | 'lt' | 'lte' | 'gte' | 'null' | 'range' | 'like' | 'tr' | 'fa';
         /**
          * active: integer, string
          * identifier: string
