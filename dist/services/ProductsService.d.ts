@@ -16,10 +16,12 @@ export declare class ProductsService {
      * @param q Search criteria query.
      * @param page Page.
      * @param itemsPerPage Items per page.
+     * @param include Include fields (comma separated).
+     * @param exclude Exclude fields (comma separated).
      * @returns any OK
      * @throws ApiError
      */
-    static getProductCollection(q?: AmarantSearchCriteriaFilter, page?: number, itemsPerPage?: number): CancelablePromise<(AmarantApiPaginatedCollectionResponse & {
+    static getProductCollection(q?: AmarantSearchCriteriaFilter, page?: number, itemsPerPage?: number, include?: string, exclude?: string): CancelablePromise<(AmarantApiPaginatedCollectionResponse & {
         data: Array<AmarantProductModel>;
     })>;
     /**
@@ -29,10 +31,12 @@ export declare class ProductsService {
      * @param q Search criteria query.
      * @param page Page.
      * @param itemsPerPage Items per page.
+     * @param include Include fields (comma separated).
+     * @param exclude Exclude fields (comma separated).
      * @returns any OK
      * @throws ApiError
      */
-    static getSearchProductCollection(query: string, q?: AmarantSearchCriteriaFilter, page?: number, itemsPerPage?: number): CancelablePromise<(AmarantApiPaginatedCollectionResponse & {
+    static getSearchProductCollection(query: string, q?: AmarantSearchCriteriaFilter, page?: number, itemsPerPage?: number, include?: string, exclude?: string): CancelablePromise<(AmarantApiPaginatedCollectionResponse & {
         data: Array<AmarantProductModel>;
     })>;
     /**
@@ -55,10 +59,12 @@ export declare class ProductsService {
      * Get product category relations collection.
      * Get product category relations collection.
      * @param id Root category ID
+     * @param include Include fields (comma separated).
+     * @param exclude Exclude fields (comma separated).
      * @returns any OK
      * @throws ApiError
      */
-    static getProductCategoryRelationsCollection(id: number): CancelablePromise<(AmarantApiCollectionResponse & {
+    static getProductCategoryRelationsCollection(id: number, include?: string, exclude?: string): CancelablePromise<(AmarantApiCollectionResponse & {
         data: Array<AmarantProductCategoryRelationOutputModel>;
     })>;
     /**
@@ -67,10 +73,12 @@ export declare class ProductsService {
      *
      * Required identity types:
      * * customer
+     * @param include Include fields (comma separated).
+     * @param exclude Exclude fields (comma separated).
      * @returns any OK
      * @throws ApiError
      */
-    static getProductWishlistCollection(): CancelablePromise<(AmarantApiCollectionResponse & {
+    static getProductWishlistCollection(include?: string, exclude?: string): CancelablePromise<(AmarantApiCollectionResponse & {
         data: Array<AmarantProductWishlist>;
     })>;
     /**

@@ -4,13 +4,19 @@ export class AttributesService {
     /**
      * Get attribute collection.
      * Get attribute collection.
+     * @param include Include fields (comma separated).
+     * @param exclude Exclude fields (comma separated).
      * @returns any OK
      * @throws ApiError
      */
-    static getAttributeCollection() {
+    static getAttributeCollection(include, exclude) {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/api/attributes/v1',
+            query: {
+                'include': include,
+                'exclude': exclude,
+            },
         });
     }
     /**

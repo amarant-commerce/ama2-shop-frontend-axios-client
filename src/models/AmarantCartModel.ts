@@ -27,6 +27,7 @@ export type AmarantCartModel = {
     allowedActions: Array<string>;
     email: (string | null | Array<string> | null);
     appliedCouponCodes: Array<string>;
+    meta: Record<string, any>;
     createdAt: string;
     updatedAt: string;
     baseGrandTotal: number;

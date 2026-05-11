@@ -5,10 +5,12 @@ export declare class AttributesService {
     /**
      * Get attribute collection.
      * Get attribute collection.
+     * @param include Include fields (comma separated).
+     * @param exclude Exclude fields (comma separated).
      * @returns any OK
      * @throws ApiError
      */
-    static getAttributeCollection(): CancelablePromise<(AmarantApiCollectionResponse & {
+    static getAttributeCollection(include?: string, exclude?: string): CancelablePromise<(AmarantApiCollectionResponse & {
         data: Array<AmarantAttributeModel>;
     })>;
     /**

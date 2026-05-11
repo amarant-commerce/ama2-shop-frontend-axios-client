@@ -7,10 +7,12 @@ export class ProductsService {
      * @param q Search criteria query.
      * @param page Page.
      * @param itemsPerPage Items per page.
+     * @param include Include fields (comma separated).
+     * @param exclude Exclude fields (comma separated).
      * @returns any OK
      * @throws ApiError
      */
-    static getProductCollection(q, page, itemsPerPage) {
+    static getProductCollection(q, page, itemsPerPage, include, exclude) {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/api/products/v1',
@@ -18,6 +20,8 @@ export class ProductsService {
                 'q': q,
                 'page': page,
                 'itemsPerPage': itemsPerPage,
+                'include': include,
+                'exclude': exclude,
             },
         });
     }
@@ -28,10 +32,12 @@ export class ProductsService {
      * @param q Search criteria query.
      * @param page Page.
      * @param itemsPerPage Items per page.
+     * @param include Include fields (comma separated).
+     * @param exclude Exclude fields (comma separated).
      * @returns any OK
      * @throws ApiError
      */
-    static getSearchProductCollection(query, q, page, itemsPerPage) {
+    static getSearchProductCollection(query, q, page, itemsPerPage, include, exclude) {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/api/products/v1/search',
@@ -40,6 +46,8 @@ export class ProductsService {
                 'q': q,
                 'page': page,
                 'itemsPerPage': itemsPerPage,
+                'include': include,
+                'exclude': exclude,
             },
         });
     }
@@ -79,15 +87,19 @@ export class ProductsService {
      * Get product category relations collection.
      * Get product category relations collection.
      * @param id Root category ID
+     * @param include Include fields (comma separated).
+     * @param exclude Exclude fields (comma separated).
      * @returns any OK
      * @throws ApiError
      */
-    static getProductCategoryRelationsCollection(id) {
+    static getProductCategoryRelationsCollection(id, include, exclude) {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/api/product-category-relations/v1',
             query: {
                 'id': id,
+                'include': include,
+                'exclude': exclude,
             },
         });
     }
@@ -97,13 +109,19 @@ export class ProductsService {
      *
      * Required identity types:
      * * customer
+     * @param include Include fields (comma separated).
+     * @param exclude Exclude fields (comma separated).
      * @returns any OK
      * @throws ApiError
      */
-    static getProductWishlistCollection() {
+    static getProductWishlistCollection(include, exclude) {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/api/product-wishlists/v1',
+            query: {
+                'include': include,
+                'exclude': exclude,
+            },
         });
     }
     /**

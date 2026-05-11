@@ -118,10 +118,12 @@ export declare class CustomersService {
      *
      * Required identity types:
      * * customer
+     * @param include Include fields (comma separated).
+     * @param exclude Exclude fields (comma separated).
      * @returns any OK
      * @throws ApiError
      */
-    static getCustomerAddressCollection(): CancelablePromise<(AmarantApiCollectionResponse & {
+    static getCustomerAddressCollection(include?: string, exclude?: string): CancelablePromise<(AmarantApiCollectionResponse & {
         data: Array<AmarantSalesCustomerAccountAddressOutputDto>;
     })>;
     /**
@@ -183,10 +185,12 @@ export declare class CustomersService {
     /**
      * Get social login provider collection.
      * Get social login provider collection.
+     * @param include Include fields (comma separated).
+     * @param exclude Exclude fields (comma separated).
      * @returns any OK
      * @throws ApiError
      */
-    static socialLoginGetProviderCollection(): CancelablePromise<(AmarantApiCollectionResponse & {
+    static socialLoginGetProviderCollection(include?: string, exclude?: string): CancelablePromise<(AmarantApiCollectionResponse & {
         data: Array<AmarantSalesCustomerSocialLoginProviderOutputDto>;
     })>;
 }

@@ -13,7 +13,7 @@ export type AmarantGetBlogPostCollectionSearchCriteriaFilter = {
     }>>;
     sort?: Array<{
         /**
-         * id, category_ids, tag_ids, created_at, updated_at
+         * id, category_ids, tag_ids, position, created_at, updated_at
          */
         path?: string;
         direction?: 'ASC' | 'DESC';

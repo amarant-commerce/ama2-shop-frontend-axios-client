@@ -239,15 +239,24 @@ export class CustomersService {
      *
      * Required identity types:
      * * customer
+     * @param include Include fields (comma separated).
+     * @param exclude Exclude fields (comma separated).
      * @returns any OK
      * @throws ApiError
      */
-    public static getCustomerAddressCollection(): CancelablePromise<(AmarantApiCollectionResponse & {
+    public static getCustomerAddressCollection(
+        include?: string,
+        exclude?: string,
+    ): CancelablePromise<(AmarantApiCollectionResponse & {
         data: Array<AmarantSalesCustomerAccountAddressOutputDto>;
     })> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/api/customers/v1/addresses',
+            query: {
+                'include': include,
+                'exclude': exclude,
+            },
         });
     }
     /**
@@ -370,15 +379,24 @@ export class CustomersService {
     /**
      * Get social login provider collection.
      * Get social login provider collection.
+     * @param include Include fields (comma separated).
+     * @param exclude Exclude fields (comma separated).
      * @returns any OK
      * @throws ApiError
      */
-    public static socialLoginGetProviderCollection(): CancelablePromise<(AmarantApiCollectionResponse & {
+    public static socialLoginGetProviderCollection(
+        include?: string,
+        exclude?: string,
+    ): CancelablePromise<(AmarantApiCollectionResponse & {
         data: Array<AmarantSalesCustomerSocialLoginProviderOutputDto>;
     })> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/api/customer-social-login/v1/providers',
+            query: {
+                'include': include,
+                'exclude': exclude,
+            },
         });
     }
 }
