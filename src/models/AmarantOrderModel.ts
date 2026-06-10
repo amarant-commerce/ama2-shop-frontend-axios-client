@@ -31,6 +31,9 @@ export type AmarantOrderModel = {
     adjustments: Array<AmarantOrderAdjustmentModel>;
     totals: Array<AmarantOrderTotalModel>;
     comments: Array<AmarantOrderCommentModel>;
+    attributes: Record<string, string | number | number | boolean | any[] | null>;
+    storeCreatedAt: string;
+    storeUpdatedAt: string;
     createdAt: string;
     updatedAt: string;
     baseGrandTotal: number;

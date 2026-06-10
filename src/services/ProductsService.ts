@@ -24,6 +24,7 @@ export class ProductsService {
      * @param itemsPerPage Items per page.
      * @param include Include fields (comma separated).
      * @param exclude Exclude fields (comma separated).
+     * @param visibility Comma separated product visibility filter (default collection visibility filter applies if value is not sent or invalid).
      * @returns any OK
      * @throws ApiError
      */
@@ -33,6 +34,7 @@ export class ProductsService {
         itemsPerPage?: number,
         include?: string,
         exclude?: string,
+        visibility?: Array<'visible' | 'url' | 'search' | 'hidden'>,
     ): CancelablePromise<(AmarantApiPaginatedCollectionResponse & {
         data: Array<AmarantProductModel>;
     })> {
@@ -45,6 +47,7 @@ export class ProductsService {
                 'itemsPerPage': itemsPerPage,
                 'include': include,
                 'exclude': exclude,
+                'visibility': visibility,
             },
         });
     }

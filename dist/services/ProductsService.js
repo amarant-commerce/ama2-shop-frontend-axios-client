@@ -9,10 +9,11 @@ export class ProductsService {
      * @param itemsPerPage Items per page.
      * @param include Include fields (comma separated).
      * @param exclude Exclude fields (comma separated).
+     * @param visibility Comma separated product visibility filter (default collection visibility filter applies if value is not sent or invalid).
      * @returns any OK
      * @throws ApiError
      */
-    static getProductCollection(q, page, itemsPerPage, include, exclude) {
+    static getProductCollection(q, page, itemsPerPage, include, exclude, visibility) {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/api/products/v1',
@@ -22,6 +23,7 @@ export class ProductsService {
                 'itemsPerPage': itemsPerPage,
                 'include': include,
                 'exclude': exclude,
+                'visibility': visibility,
             },
         });
     }
