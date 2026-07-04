@@ -6,6 +6,8 @@ export type { AddCartItemProductOptionFilesInputAmarantSalesCartItemInputProduct
 export type { AddItemsToWishlistInputAmarantAddProductsToWishlistInput } from './models/AddItemsToWishlistInputAmarantAddProductsToWishlistInput';
 export { AddItemToCartInputAmarantSalesCartItemInputProductDto } from './models/AddItemToCartInputAmarantSalesCartItemInputProductDto';
 export type { Amarant_Framework_Exception_ApiException } from './models/Amarant_Framework_Exception_ApiException';
+export type { AmarantAiConversationDataInputDto } from './models/AmarantAiConversationDataInputDto';
+export type { AmarantAiConversationOutputModel } from './models/AmarantAiConversationOutputModel';
 export type { AmarantAliasUri } from './models/AmarantAliasUri';
 export type { AmarantApiCollectionResponse } from './models/AmarantApiCollectionResponse';
 export type { AmarantApiError } from './models/AmarantApiError';
@@ -171,6 +173,7 @@ export type { RecordCookiePanelConsentHistoryInputAmarantCookiePanelConsentHisto
 export type { RefreshAuthorizationTokenInputAmarantSalesCustomerRefreshTokenInputDto } from './models/RefreshAuthorizationTokenInputAmarantSalesCustomerRefreshTokenInputDto';
 export type { ResetPasswordInputAmarantSalesCustomerResetAccountPasswordInputDto } from './models/ResetPasswordInputAmarantSalesCustomerResetAccountPasswordInputDto';
 export type { SalesNewslettersSubscribeGuestInputAmarantSalesNewsletterInputModel } from './models/SalesNewslettersSubscribeGuestInputAmarantSalesNewsletterInputModel';
+export type { SendMessageInputAmarantAiConversationInputDto } from './models/SendMessageInputAmarantAiConversationInputDto';
 export type { SetPaymentInformationInputAmarantSalesCartPaymentInformationInputGroupDto } from './models/SetPaymentInformationInputAmarantSalesCartPaymentInformationInputGroupDto';
 export type { SetShippingInformationInputAmarantSalesCartShippingInformationInputGroupDto } from './models/SetShippingInformationInputAmarantSalesCartShippingInformationInputGroupDto';
 export type { SocialLoginStartAuthenticationInputAmarantSalesCustomerSocialLoginStartAuthenticationInputDto } from './models/SocialLoginStartAuthenticationInputAmarantSalesCustomerSocialLoginStartAuthenticationInputDto';
@@ -179,6 +182,7 @@ export type { SubmitCmsOrganizationalContactFormInputAmarantCmsOrganizationalCon
 export type { UpdateCartItemInputAmarantSalesCartItemUpdateInputDto } from './models/UpdateCartItemInputAmarantSalesCartItemUpdateInputDto';
 export type { UpdateCustomerAddressItemInputAmarantSalesCustomerAccountAddressInputDto } from './models/UpdateCustomerAddressItemInputAmarantSalesCustomerAccountAddressInputDto';
 export type { UpdateProductWishlistInputAmarantUpdateProductWishlistInput } from './models/UpdateProductWishlistInputAmarantUpdateProductWishlistInput';
+export { AiService } from './services/AiService';
 export { AliasService } from './services/AliasService';
 export { AnalyticsService } from './services/AnalyticsService';
 export { ApplicationService } from './services/ApplicationService';
