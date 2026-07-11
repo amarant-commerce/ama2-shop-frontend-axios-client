@@ -42,4 +42,15 @@ export declare class OrdersService {
     static getOrderCollection(q?: AmarantGetOrderCollectionSearchCriteriaFilter, page?: number, itemsPerPage?: number, include?: string, exclude?: string): CancelablePromise<(AmarantApiPaginatedCollectionResponse & {
         data: Array<AmarantOrderModel>;
     })>;
+    /**
+     * Get guest order item.
+     * Get guest order item.
+     *
+     * Required identity types:
+     * * guest
+     * @param guestCode Order guest code.
+     * @returns AmarantOrderModel OK
+     * @throws ApiError
+     */
+    static getGuestOrderItem(guestCode: string): CancelablePromise<AmarantOrderModel>;
 }

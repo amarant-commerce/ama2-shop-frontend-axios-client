@@ -69,4 +69,23 @@ export class OrdersService {
             },
         });
     }
+    /**
+     * Get guest order item.
+     * Get guest order item.
+     *
+     * Required identity types:
+     * * guest
+     * @param guestCode Order guest code.
+     * @returns AmarantOrderModel OK
+     * @throws ApiError
+     */
+    static getGuestOrderItem(guestCode) {
+        return __request(OpenAPI, {
+            method: 'GET',
+            url: '/api/orders/v1/guest-order/{guestCode}',
+            path: {
+                'guestCode': guestCode,
+            },
+        });
+    }
 }
