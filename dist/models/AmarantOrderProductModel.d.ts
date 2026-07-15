@@ -12,4 +12,5 @@ export type AmarantOrderProductModel = {
     scopedPath: string;
     attributes: Record<string, string | number | number | boolean | any[] | null>;
     images: Array<AmarantImageModel>;
+    categoryIds: Array<number>;
 };
