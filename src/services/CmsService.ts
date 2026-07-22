@@ -16,9 +16,9 @@ import type { AmarantGetCmsPageTagCollectionSearchCriteriaFilter } from '../mode
 import type { InputAmarantCmsContactFormInputDto } from '../models/InputAmarantCmsContactFormInputDto';
 import type { SubmitCmsOrganizationalContactFormInputAmarantCmsOrganizationalContactFormInputDto } from '../models/SubmitCmsOrganizationalContactFormInputAmarantCmsOrganizationalContactFormInputDto';
 import type { CancelablePromise } from '../core/CancelablePromise';
-import { OpenAPI } from '../core/OpenAPI';
-import { request as __request } from '../core/request';
+import type { BaseHttpRequest } from '../core/BaseHttpRequest';
 export class CmsService {
+    constructor(public readonly httpRequest: BaseHttpRequest) {}
     /**
      * Get CMS page collection.
      * Get CMS page collection.
@@ -30,7 +30,7 @@ export class CmsService {
      * @returns any OK
      * @throws ApiError
      */
-    public static getCmsPageCollection(
+    public getCmsPageCollection(
         q?: AmarantGetCmsPageCollectionSearchCriteriaFilter,
         page?: number,
         itemsPerPage?: number,
@@ -39,7 +39,7 @@ export class CmsService {
     ): CancelablePromise<(AmarantApiPaginatedCollectionResponse & {
         data: Array<AmarantCmsPageModel>;
     })> {
-        return __request(OpenAPI, {
+        return this.httpRequest.request({
             method: 'GET',
             url: '/api/cms/v1/pages',
             query: {
@@ -58,10 +58,10 @@ export class CmsService {
      * @returns AmarantCmsPageModel OK
      * @throws ApiError
      */
-    public static getCmsPageItem(
+    public getCmsPageItem(
         id: number,
     ): CancelablePromise<AmarantCmsPageModel> {
-        return __request(OpenAPI, {
+        return this.httpRequest.request({
             method: 'GET',
             url: '/api/cms/v1/pages/{id}',
             path: {
@@ -80,7 +80,7 @@ export class CmsService {
      * @returns any OK
      * @throws ApiError
      */
-    public static getCmsPageTagCollection(
+    public getCmsPageTagCollection(
         q?: AmarantGetCmsPageTagCollectionSearchCriteriaFilter,
         page?: number,
         itemsPerPage?: number,
@@ -89,7 +89,7 @@ export class CmsService {
     ): CancelablePromise<(AmarantApiPaginatedCollectionResponse & {
         data: Array<AmarantCmsPageTagModel>;
     })> {
-        return __request(OpenAPI, {
+        return this.httpRequest.request({
             method: 'GET',
             url: '/api/cms/v1/pages/tags',
             query: {
@@ -108,10 +108,10 @@ export class CmsService {
      * @returns AmarantCmsPageTagModel OK
      * @throws ApiError
      */
-    public static getCmsPageTagItem(
+    public getCmsPageTagItem(
         id: number,
     ): CancelablePromise<AmarantCmsPageTagModel> {
-        return __request(OpenAPI, {
+        return this.httpRequest.request({
             method: 'GET',
             url: '/api/cms/v1/pages/tags/{id}',
             path: {
@@ -130,7 +130,7 @@ export class CmsService {
      * @returns any OK
      * @throws ApiError
      */
-    public static getCmsBlockCollection(
+    public getCmsBlockCollection(
         q?: AmarantGetCmsBlockCollectionSearchCriteriaFilter,
         page?: number,
         itemsPerPage?: number,
@@ -139,7 +139,7 @@ export class CmsService {
     ): CancelablePromise<(AmarantApiPaginatedCollectionResponse & {
         data: Array<AmarantCmsBlockModel>;
     })> {
-        return __request(OpenAPI, {
+        return this.httpRequest.request({
             method: 'GET',
             url: '/api/cms/v1/blocks',
             query: {
@@ -158,10 +158,10 @@ export class CmsService {
      * @returns AmarantCmsBlockModel OK
      * @throws ApiError
      */
-    public static getCmsBlockItem(
+    public getCmsBlockItem(
         id: number,
     ): CancelablePromise<AmarantCmsBlockModel> {
-        return __request(OpenAPI, {
+        return this.httpRequest.request({
             method: 'GET',
             url: '/api/cms/v1/blocks/{id}',
             path: {
@@ -180,7 +180,7 @@ export class CmsService {
      * @returns any OK
      * @throws ApiError
      */
-    public static getCmsBlockTagCollection(
+    public getCmsBlockTagCollection(
         q?: AmarantGetCmsBlockTagCollectionSearchCriteriaFilter,
         page?: number,
         itemsPerPage?: number,
@@ -189,7 +189,7 @@ export class CmsService {
     ): CancelablePromise<(AmarantApiPaginatedCollectionResponse & {
         data: Array<AmarantCmsBlockTagModel>;
     })> {
-        return __request(OpenAPI, {
+        return this.httpRequest.request({
             method: 'GET',
             url: '/api/cms/v1/blocks/tags',
             query: {
@@ -208,10 +208,10 @@ export class CmsService {
      * @returns AmarantCmsBlockTagModel OK
      * @throws ApiError
      */
-    public static getCmsBlockTagItem(
+    public getCmsBlockTagItem(
         id: number,
     ): CancelablePromise<AmarantCmsBlockTagModel> {
-        return __request(OpenAPI, {
+        return this.httpRequest.request({
             method: 'GET',
             url: '/api/cms/v1/blocks/tags/{id}',
             path: {
@@ -230,7 +230,7 @@ export class CmsService {
      * @returns any OK
      * @throws ApiError
      */
-    public static getCmsBannerCollection(
+    public getCmsBannerCollection(
         q?: AmarantGetCmsBannerCollectionSearchCriteriaFilter,
         page?: number,
         itemsPerPage?: number,
@@ -239,7 +239,7 @@ export class CmsService {
     ): CancelablePromise<(AmarantApiPaginatedCollectionResponse & {
         data: Array<AmarantCmsBannerModel>;
     })> {
-        return __request(OpenAPI, {
+        return this.httpRequest.request({
             method: 'GET',
             url: '/api/cms/v1/banners',
             query: {
@@ -258,10 +258,10 @@ export class CmsService {
      * @returns AmarantCmsBannerModel OK
      * @throws ApiError
      */
-    public static getCmsBannerItem(
+    public getCmsBannerItem(
         id: number,
     ): CancelablePromise<AmarantCmsBannerModel> {
-        return __request(OpenAPI, {
+        return this.httpRequest.request({
             method: 'GET',
             url: '/api/cms/v1/banners/{id}',
             path: {
@@ -280,10 +280,10 @@ export class CmsService {
      * @returns void
      * @throws ApiError
      */
-    public static submitCmsContactForm(
+    public submitCmsContactForm(
         requestBody: InputAmarantCmsContactFormInputDto,
     ): CancelablePromise<void> {
-        return __request(OpenAPI, {
+        return this.httpRequest.request({
             method: 'POST',
             url: '/api/cms/v1/contact-form',
             body: requestBody,
@@ -305,10 +305,10 @@ export class CmsService {
      * @returns void
      * @throws ApiError
      */
-    public static submitCmsOrganizationalContactForm(
+    public submitCmsOrganizationalContactForm(
         requestBody: SubmitCmsOrganizationalContactFormInputAmarantCmsOrganizationalContactFormInputDto,
     ): CancelablePromise<void> {
-        return __request(OpenAPI, {
+        return this.httpRequest.request({
             method: 'POST',
             url: '/api/cms/v1/organizational-contact-form',
             body: requestBody,

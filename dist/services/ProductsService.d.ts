@@ -9,7 +9,10 @@ import type { AmarantSearchCriteriaFilter } from '../models/AmarantSearchCriteri
 import type { CreateProductWishlistInputAmarantCreateProductWishlistInput } from '../models/CreateProductWishlistInputAmarantCreateProductWishlistInput';
 import type { UpdateProductWishlistInputAmarantUpdateProductWishlistInput } from '../models/UpdateProductWishlistInputAmarantUpdateProductWishlistInput';
 import type { CancelablePromise } from '../core/CancelablePromise';
+import type { BaseHttpRequest } from '../core/BaseHttpRequest';
 export declare class ProductsService {
+    readonly httpRequest: BaseHttpRequest;
+    constructor(httpRequest: BaseHttpRequest);
     /**
      * Get product collection.
      * Get product collection.
@@ -22,7 +25,7 @@ export declare class ProductsService {
      * @returns any OK
      * @throws ApiError
      */
-    static getProductCollection(q?: AmarantSearchCriteriaFilter, page?: number, itemsPerPage?: number, include?: string, exclude?: string, visibility?: Array<'visible' | 'url' | 'search' | 'hidden'>): CancelablePromise<(AmarantApiPaginatedCollectionResponse & {
+    getProductCollection(q?: AmarantSearchCriteriaFilter, page?: number, itemsPerPage?: number, include?: string, exclude?: string, visibility?: Array<'visible' | 'url' | 'search' | 'hidden'>): CancelablePromise<(AmarantApiPaginatedCollectionResponse & {
         data: Array<AmarantProductModel>;
     })>;
     /**
@@ -37,7 +40,7 @@ export declare class ProductsService {
      * @returns any OK
      * @throws ApiError
      */
-    static getSearchProductCollection(query: string, q?: AmarantSearchCriteriaFilter, page?: number, itemsPerPage?: number, include?: string, exclude?: string): CancelablePromise<(AmarantApiPaginatedCollectionResponse & {
+    getSearchProductCollection(query: string, q?: AmarantSearchCriteriaFilter, page?: number, itemsPerPage?: number, include?: string, exclude?: string): CancelablePromise<(AmarantApiPaginatedCollectionResponse & {
         data: Array<AmarantProductModel>;
     })>;
     /**
@@ -47,7 +50,7 @@ export declare class ProductsService {
      * @returns AmarantProductModel OK
      * @throws ApiError
      */
-    static getProductItem(id: number): CancelablePromise<AmarantProductModel>;
+    getProductItem(id: number): CancelablePromise<AmarantProductModel>;
     /**
      * Get product category item.
      * Get product category item.
@@ -55,7 +58,7 @@ export declare class ProductsService {
      * @returns AmarantProductCategoryNodeItem OK
      * @throws ApiError
      */
-    static getCategoryItem(id: number): CancelablePromise<AmarantProductCategoryNodeItem>;
+    getCategoryItem(id: number): CancelablePromise<AmarantProductCategoryNodeItem>;
     /**
      * Get product category relations collection.
      * Get product category relations collection.
@@ -65,7 +68,7 @@ export declare class ProductsService {
      * @returns any OK
      * @throws ApiError
      */
-    static getProductCategoryRelationsCollection(id: number, include?: string, exclude?: string): CancelablePromise<(AmarantApiCollectionResponse & {
+    getProductCategoryRelationsCollection(id: number, include?: string, exclude?: string): CancelablePromise<(AmarantApiCollectionResponse & {
         data: Array<AmarantProductCategoryRelationOutputModel>;
     })>;
     /**
@@ -79,7 +82,7 @@ export declare class ProductsService {
      * @returns any OK
      * @throws ApiError
      */
-    static getProductWishlistCollection(include?: string, exclude?: string): CancelablePromise<(AmarantApiCollectionResponse & {
+    getProductWishlistCollection(include?: string, exclude?: string): CancelablePromise<(AmarantApiCollectionResponse & {
         data: Array<AmarantProductWishlist>;
     })>;
     /**
@@ -92,7 +95,7 @@ export declare class ProductsService {
      * @returns AmarantProductWishlist Resource created.
      * @throws ApiError
      */
-    static createProductWishlist(requestBody: CreateProductWishlistInputAmarantCreateProductWishlistInput): CancelablePromise<AmarantProductWishlist>;
+    createProductWishlist(requestBody: CreateProductWishlistInputAmarantCreateProductWishlistInput): CancelablePromise<AmarantProductWishlist>;
     /**
      * Get product wishlist collection item.
      * Get product wishlist collection item.
@@ -100,7 +103,7 @@ export declare class ProductsService {
      * @returns AmarantProductWishlist OK
      * @throws ApiError
      */
-    static getProductWishlistCollectionItem(id: string): CancelablePromise<AmarantProductWishlist>;
+    getProductWishlistCollectionItem(id: string): CancelablePromise<AmarantProductWishlist>;
     /**
      * Remove product wishlist.
      * Remove product wishlist.
@@ -111,7 +114,7 @@ export declare class ProductsService {
      * @returns AmarantProductWishlist Resource deleted.
      * @throws ApiError
      */
-    static removeProductWishlist(id: string): CancelablePromise<AmarantProductWishlist>;
+    removeProductWishlist(id: string): CancelablePromise<AmarantProductWishlist>;
     /**
      * Update product wishlist.
      * Update product wishlist.
@@ -123,7 +126,7 @@ export declare class ProductsService {
      * @returns AmarantProductWishlist Resource updated.
      * @throws ApiError
      */
-    static updateProductWishlist(id: string, requestBody: UpdateProductWishlistInputAmarantUpdateProductWishlistInput): CancelablePromise<AmarantProductWishlist>;
+    updateProductWishlist(id: string, requestBody: UpdateProductWishlistInputAmarantUpdateProductWishlistInput): CancelablePromise<AmarantProductWishlist>;
     /**
      * Add items to wishlist.
      * Add items to wishlist.
@@ -135,7 +138,7 @@ export declare class ProductsService {
      * @returns AmarantProductWishlist OK
      * @throws ApiError
      */
-    static addItemsToWishlist(id: string, requestBody: AddItemsToWishlistInputAmarantAddProductsToWishlistInput): CancelablePromise<AmarantProductWishlist>;
+    addItemsToWishlist(id: string, requestBody: AddItemsToWishlistInputAmarantAddProductsToWishlistInput): CancelablePromise<AmarantProductWishlist>;
     /**
      * Remove wishlist item.
      * Remove wishlist item.
@@ -147,5 +150,5 @@ export declare class ProductsService {
      * @returns AmarantProductWishlist Resource deleted.
      * @throws ApiError
      */
-    static removeWishlistItem(id: string, itemId: string): CancelablePromise<AmarantProductWishlist>;
+    removeWishlistItem(id: string, itemId: string): CancelablePromise<AmarantProductWishlist>;
 }

@@ -1,6 +1,9 @@
 import type { AmarantSearchResultModel } from '../models/AmarantSearchResultModel';
 import type { CancelablePromise } from '../core/CancelablePromise';
+import type { BaseHttpRequest } from '../core/BaseHttpRequest';
 export declare class SearchService {
+    readonly httpRequest: BaseHttpRequest;
+    constructor(httpRequest: BaseHttpRequest);
     /**
      * Get search results.
      * Get search results.
@@ -8,5 +11,5 @@ export declare class SearchService {
      * @returns AmarantSearchResultModel
      * @throws ApiError
      */
-    static getSearchResults(q: string): CancelablePromise<AmarantSearchResultModel>;
+    getSearchResults(q: string): CancelablePromise<AmarantSearchResultModel>;
 }

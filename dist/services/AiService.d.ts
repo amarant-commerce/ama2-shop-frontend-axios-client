@@ -1,7 +1,10 @@
 import type { AmarantAiConversationOutputModel } from '../models/AmarantAiConversationOutputModel';
 import type { SendMessageInputAmarantAiConversationInputDto } from '../models/SendMessageInputAmarantAiConversationInputDto';
 import type { CancelablePromise } from '../core/CancelablePromise';
+import type { BaseHttpRequest } from '../core/BaseHttpRequest';
 export declare class AiService {
+    readonly httpRequest: BaseHttpRequest;
+    constructor(httpRequest: BaseHttpRequest);
     /**
      * Send a message to a registered agent, creating or continuing a conversation.
      * Send a message to a registered agent, creating or continuing a conversation.
@@ -13,5 +16,5 @@ export declare class AiService {
      * @returns AmarantAiConversationOutputModel OK
      * @throws ApiError
      */
-    static sendMessage(formData: SendMessageInputAmarantAiConversationInputDto): CancelablePromise<AmarantAiConversationOutputModel>;
+    sendMessage(formData: SendMessageInputAmarantAiConversationInputDto): CancelablePromise<AmarantAiConversationOutputModel>;
 }

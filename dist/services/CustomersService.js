@@ -1,6 +1,7 @@
-import { OpenAPI } from '../core/OpenAPI';
-import { request as __request } from '../core/request';
 export class CustomersService {
+    constructor(httpRequest) {
+        this.httpRequest = httpRequest;
+    }
     /**
      * Get authorization token.
      * Get authorization token.
@@ -9,8 +10,8 @@ export class CustomersService {
      * @returns AmarantSecurityJwtTokenModel OK
      * @throws ApiError
      */
-    static getAuthorizationToken(requestBody, xAmarant2FaCode) {
-        return __request(OpenAPI, {
+    getAuthorizationToken(requestBody, xAmarant2FaCode) {
+        return this.httpRequest.request({
             method: 'POST',
             url: '/api/customers/v1/token',
             headers: {
@@ -31,8 +32,8 @@ export class CustomersService {
      * @returns AmarantSecurityJwtTokenModel OK
      * @throws ApiError
      */
-    static refreshAuthorizationToken(requestBody) {
-        return __request(OpenAPI, {
+    refreshAuthorizationToken(requestBody) {
+        return this.httpRequest.request({
             method: 'POST',
             url: '/api/customers/v1/refresh-token',
             body: requestBody,
@@ -49,8 +50,8 @@ export class CustomersService {
      * @returns AmarantSalesCustomerAccountOutputDto Resource created.
      * @throws ApiError
      */
-    static createCustomerAccount(requestBody) {
-        return __request(OpenAPI, {
+    createCustomerAccount(requestBody) {
+        return this.httpRequest.request({
             method: 'POST',
             url: '/api/customers/v1/create-account',
             body: requestBody,
@@ -67,8 +68,8 @@ export class CustomersService {
      * @returns void
      * @throws ApiError
      */
-    static confirmCustomerAccount(requestBody) {
-        return __request(OpenAPI, {
+    confirmCustomerAccount(requestBody) {
+        return this.httpRequest.request({
             method: 'POST',
             url: '/api/customers/v1/confirm-account',
             body: requestBody,
@@ -85,8 +86,8 @@ export class CustomersService {
      * @returns void
      * @throws ApiError
      */
-    static initiatePasswordReset(requestBody) {
-        return __request(OpenAPI, {
+    initiatePasswordReset(requestBody) {
+        return this.httpRequest.request({
             method: 'POST',
             url: '/api/customers/v1/initiate-password-reset',
             body: requestBody,
@@ -103,8 +104,8 @@ export class CustomersService {
      * @returns void
      * @throws ApiError
      */
-    static resetPassword(requestBody) {
-        return __request(OpenAPI, {
+    resetPassword(requestBody) {
+        return this.httpRequest.request({
             method: 'POST',
             url: '/api/customers/v1/reset-password',
             body: requestBody,
@@ -124,8 +125,8 @@ export class CustomersService {
      * @returns AmarantSalesCustomerAccountOutputDto OK
      * @throws ApiError
      */
-    static me() {
-        return __request(OpenAPI, {
+    me() {
+        return this.httpRequest.request({
             method: 'GET',
             url: '/api/customers/v1/me',
             errors: {
@@ -143,8 +144,8 @@ export class CustomersService {
      * @returns AmarantSalesCustomerAccountOutputDto Resource updated.
      * @throws ApiError
      */
-    static meUpdate(requestBody) {
-        return __request(OpenAPI, {
+    meUpdate(requestBody) {
+        return this.httpRequest.request({
             method: 'PATCH',
             url: '/api/customers/v1/me',
             body: requestBody,
@@ -160,8 +161,8 @@ export class CustomersService {
      * @returns AmarantSalesCustomerMeOutputDto OK
      * @throws ApiError
      */
-    static getLoggedInCustomer() {
-        return __request(OpenAPI, {
+    getLoggedInCustomer() {
+        return this.httpRequest.request({
             method: 'POST',
             url: '/api/customers/v2/me',
         });
@@ -179,8 +180,8 @@ export class CustomersService {
      * @returns AmarantSalesCustomerAccountOrganizationOutputDto Resource updated.
      * @throws ApiError
      */
-    static meUpdateOrganization(requestBody) {
-        return __request(OpenAPI, {
+    meUpdateOrganization(requestBody) {
+        return this.httpRequest.request({
             method: 'PATCH',
             url: '/api/customers/v1/me/organization',
             body: requestBody,
@@ -202,8 +203,8 @@ export class CustomersService {
      * @returns any OK
      * @throws ApiError
      */
-    static getCustomerAddressCollection(include, exclude) {
-        return __request(OpenAPI, {
+    getCustomerAddressCollection(include, exclude) {
+        return this.httpRequest.request({
             method: 'GET',
             url: '/api/customers/v1/addresses',
             query: {
@@ -222,8 +223,8 @@ export class CustomersService {
      * @returns AmarantSalesCustomerAccountAddressOutputDto Resource created.
      * @throws ApiError
      */
-    static createCustomerAddress(requestBody) {
-        return __request(OpenAPI, {
+    createCustomerAddress(requestBody) {
+        return this.httpRequest.request({
             method: 'POST',
             url: '/api/customers/v1/addresses',
             body: requestBody,
@@ -243,8 +244,8 @@ export class CustomersService {
      * @returns AmarantSalesCustomerAccountAddressOutputDto OK
      * @throws ApiError
      */
-    static getCustomerAddressItem(id) {
-        return __request(OpenAPI, {
+    getCustomerAddressItem(id) {
+        return this.httpRequest.request({
             method: 'GET',
             url: '/api/customers/v1/addresses/{id}',
             path: {
@@ -263,8 +264,8 @@ export class CustomersService {
      * @returns AmarantSalesCustomerAccountAddressOutputDto Resource updated.
      * @throws ApiError
      */
-    static updateCustomerAddressItem(id, requestBody) {
-        return __request(OpenAPI, {
+    updateCustomerAddressItem(id, requestBody) {
+        return this.httpRequest.request({
             method: 'PUT',
             url: '/api/customers/v1/addresses/{id}',
             path: {
@@ -284,8 +285,8 @@ export class CustomersService {
      * @returns AmarantSalesCustomerSocialLoginStartAuthenticationOutputDto OK
      * @throws ApiError
      */
-    static socialLoginStartAuthentication(requestBody) {
-        return __request(OpenAPI, {
+    socialLoginStartAuthentication(requestBody) {
+        return this.httpRequest.request({
             method: 'POST',
             url: '/api/customer-social-login/v1/start-authentication',
             body: requestBody,
@@ -306,8 +307,8 @@ export class CustomersService {
      * @returns AmarantSecurityJwtTokenModel OK
      * @throws ApiError
      */
-    static socialLoginWithAuthorizationCode(requestBody) {
-        return __request(OpenAPI, {
+    socialLoginWithAuthorizationCode(requestBody) {
+        return this.httpRequest.request({
             method: 'POST',
             url: '/api/customer-social-login/v1/login-with-authorization-code',
             body: requestBody,
@@ -326,8 +327,8 @@ export class CustomersService {
      * @returns any OK
      * @throws ApiError
      */
-    static socialLoginGetProviderCollection(include, exclude) {
-        return __request(OpenAPI, {
+    socialLoginGetProviderCollection(include, exclude) {
+        return this.httpRequest.request({
             method: 'GET',
             url: '/api/customer-social-login/v1/providers',
             query: {

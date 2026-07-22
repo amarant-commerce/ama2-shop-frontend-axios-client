@@ -1,6 +1,9 @@
 import type { AmarantSalesCheckoutConfigurationModel } from '../models/AmarantSalesCheckoutConfigurationModel';
 import type { CancelablePromise } from '../core/CancelablePromise';
+import type { BaseHttpRequest } from '../core/BaseHttpRequest';
 export declare class CheckoutService {
+    readonly httpRequest: BaseHttpRequest;
+    constructor(httpRequest: BaseHttpRequest);
     /**
      * @deprecated
      * Use application state endpoint instead.
@@ -8,5 +11,5 @@ export declare class CheckoutService {
      * @returns AmarantSalesCheckoutConfigurationModel OK
      * @throws ApiError
      */
-    static getCheckoutConfiguration(): CancelablePromise<AmarantSalesCheckoutConfigurationModel>;
+    getCheckoutConfiguration(): CancelablePromise<AmarantSalesCheckoutConfigurationModel>;
 }

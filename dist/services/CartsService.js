@@ -1,14 +1,15 @@
-import { OpenAPI } from '../core/OpenAPI';
-import { request as __request } from '../core/request';
 export class CartsService {
+    constructor(httpRequest) {
+        this.httpRequest = httpRequest;
+    }
     /**
      * Create cart.
      * Create cart.
      * @returns AmarantCartModel Resource created.
      * @throws ApiError
      */
-    static createCart() {
-        return __request(OpenAPI, {
+    createCart() {
+        return this.httpRequest.request({
             method: 'POST',
             url: '/api/carts/v1',
         });
@@ -20,8 +21,8 @@ export class CartsService {
      * @returns AmarantCartModel OK
      * @throws ApiError
      */
-    static getCart(id) {
-        return __request(OpenAPI, {
+    getCart(id) {
+        return this.httpRequest.request({
             method: 'GET',
             url: '/api/carts/v1/{id}',
             path: {
@@ -37,8 +38,8 @@ export class CartsService {
      * @returns AmarantCartModel OK
      * @throws ApiError
      */
-    static addItemToCart(id, requestBody) {
-        return __request(OpenAPI, {
+    addItemToCart(id, requestBody) {
+        return this.httpRequest.request({
             method: 'POST',
             url: '/api/carts/v1/{id}/items',
             path: {
@@ -55,8 +56,8 @@ export class CartsService {
      * @returns AmarantCartModel OK
      * @throws ApiError
      */
-    static appendGuestCart(id) {
-        return __request(OpenAPI, {
+    appendGuestCart(id) {
+        return this.httpRequest.request({
             method: 'POST',
             url: '/api/carts/v1/{id}/append',
             path: {
@@ -72,8 +73,8 @@ export class CartsService {
      * @returns AmarantEstimatedShippingRateModelCollection OK
      * @throws ApiError
      */
-    static getAvailableShippingRates(id, requestBody) {
-        return __request(OpenAPI, {
+    getAvailableShippingRates(id, requestBody) {
+        return this.httpRequest.request({
             method: 'POST',
             url: '/api/carts/v1/{id}/shipping-rates',
             path: {
@@ -91,8 +92,8 @@ export class CartsService {
      * @returns AmarantCartModel OK
      * @throws ApiError
      */
-    static setShippingInformation(id, requestBody) {
-        return __request(OpenAPI, {
+    setShippingInformation(id, requestBody) {
+        return this.httpRequest.request({
             method: 'POST',
             url: '/api/carts/v1/{id}/set-shipping-information',
             path: {
@@ -109,8 +110,8 @@ export class CartsService {
      * @returns AmarantAvailablePaymentMethodModelCollection OK
      * @throws ApiError
      */
-    static getAvailablePaymentMethods(id) {
-        return __request(OpenAPI, {
+    getAvailablePaymentMethods(id) {
+        return this.httpRequest.request({
             method: 'POST',
             url: '/api/carts/v1/{id}/payment-methods',
             path: {
@@ -126,8 +127,8 @@ export class CartsService {
      * @returns AmarantCartModel OK
      * @throws ApiError
      */
-    static setPaymentInformation(id, requestBody) {
-        return __request(OpenAPI, {
+    setPaymentInformation(id, requestBody) {
+        return this.httpRequest.request({
             method: 'POST',
             url: '/api/carts/v1/{id}/set-payment-information',
             path: {
@@ -145,8 +146,8 @@ export class CartsService {
      * @returns AmarantCartModel OK
      * @throws ApiError
      */
-    static applyCartCoupon(id, requestBody) {
-        return __request(OpenAPI, {
+    applyCartCoupon(id, requestBody) {
+        return this.httpRequest.request({
             method: 'POST',
             url: '/api/carts/v1/{id}/coupons',
             path: {
@@ -164,8 +165,8 @@ export class CartsService {
      * @returns AmarantCartModel Resource deleted.
      * @throws ApiError
      */
-    static discardCartCoupon(id, requestBody) {
-        return __request(OpenAPI, {
+    discardCartCoupon(id, requestBody) {
+        return this.httpRequest.request({
             method: 'DELETE',
             url: '/api/carts/v1/{id}/coupons',
             path: {
@@ -183,8 +184,8 @@ export class CartsService {
      * @returns AmarantCartModel Resource deleted.
      * @throws ApiError
      */
-    static removeCartItem(id, itemId) {
-        return __request(OpenAPI, {
+    removeCartItem(id, itemId) {
+        return this.httpRequest.request({
             method: 'DELETE',
             url: '/api/carts/v1/{id}/items/{itemId}',
             path: {
@@ -202,8 +203,8 @@ export class CartsService {
      * @returns AmarantCartModel Resource updated.
      * @throws ApiError
      */
-    static updateCartItem(id, itemId, requestBody) {
-        return __request(OpenAPI, {
+    updateCartItem(id, itemId, requestBody) {
+        return this.httpRequest.request({
             method: 'PATCH',
             url: '/api/carts/v1/{id}/items/{itemId}',
             path: {
@@ -223,8 +224,8 @@ export class CartsService {
      * @returns void
      * @throws ApiError
      */
-    static addCartItemProductOptionFiles(id, itemId, formData) {
-        return __request(OpenAPI, {
+    addCartItemProductOptionFiles(id, itemId, formData) {
+        return this.httpRequest.request({
             method: 'PUT',
             url: '/api/carts/v1/{id}/items/{itemId}/product-option-files',
             path: {

@@ -1,6 +1,7 @@
-import { OpenAPI } from '../core/OpenAPI';
-import { request as __request } from '../core/request';
 export class SearchService {
+    constructor(httpRequest) {
+        this.httpRequest = httpRequest;
+    }
     /**
      * Get search results.
      * Get search results.
@@ -8,8 +9,8 @@ export class SearchService {
      * @returns AmarantSearchResultModel
      * @throws ApiError
      */
-    static getSearchResults(q) {
-        return __request(OpenAPI, {
+    getSearchResults(q) {
+        return this.httpRequest.request({
             method: 'GET',
             url: '/api/search/v1',
             query: {

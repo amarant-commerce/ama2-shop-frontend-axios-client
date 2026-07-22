@@ -12,7 +12,10 @@ import type { AmarantGetCmsPageTagCollectionSearchCriteriaFilter } from '../mode
 import type { InputAmarantCmsContactFormInputDto } from '../models/InputAmarantCmsContactFormInputDto';
 import type { SubmitCmsOrganizationalContactFormInputAmarantCmsOrganizationalContactFormInputDto } from '../models/SubmitCmsOrganizationalContactFormInputAmarantCmsOrganizationalContactFormInputDto';
 import type { CancelablePromise } from '../core/CancelablePromise';
+import type { BaseHttpRequest } from '../core/BaseHttpRequest';
 export declare class CmsService {
+    readonly httpRequest: BaseHttpRequest;
+    constructor(httpRequest: BaseHttpRequest);
     /**
      * Get CMS page collection.
      * Get CMS page collection.
@@ -24,7 +27,7 @@ export declare class CmsService {
      * @returns any OK
      * @throws ApiError
      */
-    static getCmsPageCollection(q?: AmarantGetCmsPageCollectionSearchCriteriaFilter, page?: number, itemsPerPage?: number, include?: string, exclude?: string): CancelablePromise<(AmarantApiPaginatedCollectionResponse & {
+    getCmsPageCollection(q?: AmarantGetCmsPageCollectionSearchCriteriaFilter, page?: number, itemsPerPage?: number, include?: string, exclude?: string): CancelablePromise<(AmarantApiPaginatedCollectionResponse & {
         data: Array<AmarantCmsPageModel>;
     })>;
     /**
@@ -34,7 +37,7 @@ export declare class CmsService {
      * @returns AmarantCmsPageModel OK
      * @throws ApiError
      */
-    static getCmsPageItem(id: number): CancelablePromise<AmarantCmsPageModel>;
+    getCmsPageItem(id: number): CancelablePromise<AmarantCmsPageModel>;
     /**
      * Get CMS page tag collection.
      * Get CMS page tag collection.
@@ -46,7 +49,7 @@ export declare class CmsService {
      * @returns any OK
      * @throws ApiError
      */
-    static getCmsPageTagCollection(q?: AmarantGetCmsPageTagCollectionSearchCriteriaFilter, page?: number, itemsPerPage?: number, include?: string, exclude?: string): CancelablePromise<(AmarantApiPaginatedCollectionResponse & {
+    getCmsPageTagCollection(q?: AmarantGetCmsPageTagCollectionSearchCriteriaFilter, page?: number, itemsPerPage?: number, include?: string, exclude?: string): CancelablePromise<(AmarantApiPaginatedCollectionResponse & {
         data: Array<AmarantCmsPageTagModel>;
     })>;
     /**
@@ -56,7 +59,7 @@ export declare class CmsService {
      * @returns AmarantCmsPageTagModel OK
      * @throws ApiError
      */
-    static getCmsPageTagItem(id: number): CancelablePromise<AmarantCmsPageTagModel>;
+    getCmsPageTagItem(id: number): CancelablePromise<AmarantCmsPageTagModel>;
     /**
      * Get CMS block collection.
      * Get CMS block collection.
@@ -68,7 +71,7 @@ export declare class CmsService {
      * @returns any OK
      * @throws ApiError
      */
-    static getCmsBlockCollection(q?: AmarantGetCmsBlockCollectionSearchCriteriaFilter, page?: number, itemsPerPage?: number, include?: string, exclude?: string): CancelablePromise<(AmarantApiPaginatedCollectionResponse & {
+    getCmsBlockCollection(q?: AmarantGetCmsBlockCollectionSearchCriteriaFilter, page?: number, itemsPerPage?: number, include?: string, exclude?: string): CancelablePromise<(AmarantApiPaginatedCollectionResponse & {
         data: Array<AmarantCmsBlockModel>;
     })>;
     /**
@@ -78,7 +81,7 @@ export declare class CmsService {
      * @returns AmarantCmsBlockModel OK
      * @throws ApiError
      */
-    static getCmsBlockItem(id: number): CancelablePromise<AmarantCmsBlockModel>;
+    getCmsBlockItem(id: number): CancelablePromise<AmarantCmsBlockModel>;
     /**
      * Get CMS block tag collection.
      * Get CMS block tag collection.
@@ -90,7 +93,7 @@ export declare class CmsService {
      * @returns any OK
      * @throws ApiError
      */
-    static getCmsBlockTagCollection(q?: AmarantGetCmsBlockTagCollectionSearchCriteriaFilter, page?: number, itemsPerPage?: number, include?: string, exclude?: string): CancelablePromise<(AmarantApiPaginatedCollectionResponse & {
+    getCmsBlockTagCollection(q?: AmarantGetCmsBlockTagCollectionSearchCriteriaFilter, page?: number, itemsPerPage?: number, include?: string, exclude?: string): CancelablePromise<(AmarantApiPaginatedCollectionResponse & {
         data: Array<AmarantCmsBlockTagModel>;
     })>;
     /**
@@ -100,7 +103,7 @@ export declare class CmsService {
      * @returns AmarantCmsBlockTagModel OK
      * @throws ApiError
      */
-    static getCmsBlockTagItem(id: number): CancelablePromise<AmarantCmsBlockTagModel>;
+    getCmsBlockTagItem(id: number): CancelablePromise<AmarantCmsBlockTagModel>;
     /**
      * Get CMS banner collection.
      * Get CMS banner collection.
@@ -112,7 +115,7 @@ export declare class CmsService {
      * @returns any OK
      * @throws ApiError
      */
-    static getCmsBannerCollection(q?: AmarantGetCmsBannerCollectionSearchCriteriaFilter, page?: number, itemsPerPage?: number, include?: string, exclude?: string): CancelablePromise<(AmarantApiPaginatedCollectionResponse & {
+    getCmsBannerCollection(q?: AmarantGetCmsBannerCollectionSearchCriteriaFilter, page?: number, itemsPerPage?: number, include?: string, exclude?: string): CancelablePromise<(AmarantApiPaginatedCollectionResponse & {
         data: Array<AmarantCmsBannerModel>;
     })>;
     /**
@@ -122,7 +125,7 @@ export declare class CmsService {
      * @returns AmarantCmsBannerModel OK
      * @throws ApiError
      */
-    static getCmsBannerItem(id: number): CancelablePromise<AmarantCmsBannerModel>;
+    getCmsBannerItem(id: number): CancelablePromise<AmarantCmsBannerModel>;
     /**
      * Submit contact form.
      * Submit contact form.
@@ -134,7 +137,7 @@ export declare class CmsService {
      * @returns void
      * @throws ApiError
      */
-    static submitCmsContactForm(requestBody: InputAmarantCmsContactFormInputDto): CancelablePromise<void>;
+    submitCmsContactForm(requestBody: InputAmarantCmsContactFormInputDto): CancelablePromise<void>;
     /**
      * Submit organizational contact form.
      * Submit organizational contact form.
@@ -146,5 +149,5 @@ export declare class CmsService {
      * @returns void
      * @throws ApiError
      */
-    static submitCmsOrganizationalContactForm(requestBody: SubmitCmsOrganizationalContactFormInputAmarantCmsOrganizationalContactFormInputDto): CancelablePromise<void>;
+    submitCmsOrganizationalContactForm(requestBody: SubmitCmsOrganizationalContactFormInputAmarantCmsOrganizationalContactFormInputDto): CancelablePromise<void>;
 }

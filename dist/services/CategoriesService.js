@@ -1,6 +1,7 @@
-import { OpenAPI } from '../core/OpenAPI';
-import { request as __request } from '../core/request';
 export class CategoriesService {
+    constructor(httpRequest) {
+        this.httpRequest = httpRequest;
+    }
     /**
      * Get product category item.
      * Get product category item.
@@ -8,8 +9,8 @@ export class CategoriesService {
      * @returns AmarantProductCategoryNodeItem OK
      * @throws ApiError
      */
-    static getCategoryItem(id) {
-        return __request(OpenAPI, {
+    getCategoryItem(id) {
+        return this.httpRequest.request({
             method: 'GET',
             url: '/api/categories/v1/{id}',
             path: {

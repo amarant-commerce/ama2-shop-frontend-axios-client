@@ -7,9 +7,9 @@ import type { AmarantCookiePanelModel } from '../models/AmarantCookiePanelModel'
 import type { AmarantGetCookiePanelCollectionSearchCriteriaFilter } from '../models/AmarantGetCookiePanelCollectionSearchCriteriaFilter';
 import type { RecordCookiePanelConsentHistoryInputAmarantCookiePanelConsentHistoryInputDto } from '../models/RecordCookiePanelConsentHistoryInputAmarantCookiePanelConsentHistoryInputDto';
 import type { CancelablePromise } from '../core/CancelablePromise';
-import { OpenAPI } from '../core/OpenAPI';
-import { request as __request } from '../core/request';
+import type { BaseHttpRequest } from '../core/BaseHttpRequest';
 export class AnalyticsService {
+    constructor(public readonly httpRequest: BaseHttpRequest) {}
     /**
      * Get cookie panel collection.
      * Get cookie panel collection.
@@ -21,7 +21,7 @@ export class AnalyticsService {
      * @returns any OK
      * @throws ApiError
      */
-    public static getCookiePanelCollection(
+    public getCookiePanelCollection(
         q?: AmarantGetCookiePanelCollectionSearchCriteriaFilter,
         page?: number,
         itemsPerPage?: number,
@@ -30,7 +30,7 @@ export class AnalyticsService {
     ): CancelablePromise<(AmarantApiPaginatedCollectionResponse & {
         data: Array<AmarantCookiePanelModel>;
     })> {
-        return __request(OpenAPI, {
+        return this.httpRequest.request({
             method: 'GET',
             url: '/api/cookie-panels/v1',
             query: {
@@ -49,10 +49,10 @@ export class AnalyticsService {
      * @returns AmarantCookiePanelModel OK
      * @throws ApiError
      */
-    public static getCookiePanelItem(
+    public getCookiePanelItem(
         id: number,
     ): CancelablePromise<AmarantCookiePanelModel> {
-        return __request(OpenAPI, {
+        return this.httpRequest.request({
             method: 'GET',
             url: '/api/cookie-panels/v1/{id}',
             path: {
@@ -67,10 +67,10 @@ export class AnalyticsService {
      * @returns void
      * @throws ApiError
      */
-    public static recordCookiePanelConsentHistory(
+    public recordCookiePanelConsentHistory(
         requestBody: RecordCookiePanelConsentHistoryInputAmarantCookiePanelConsentHistoryInputDto,
     ): CancelablePromise<void> {
-        return __request(OpenAPI, {
+        return this.httpRequest.request({
             method: 'POST',
             url: '/api/cookie-panels/v1/history',
             body: requestBody,

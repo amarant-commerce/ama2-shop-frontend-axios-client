@@ -1,14 +1,15 @@
-import { OpenAPI } from '../core/OpenAPI';
-import { request as __request } from '../core/request';
 export class ApplicationService {
+    constructor(httpRequest) {
+        this.httpRequest = httpRequest;
+    }
     /**
      * Get application state.
      * Get application state.
      * @returns AmarantApplicationStateModel OK
      * @throws ApiError
      */
-    static getApplicationState() {
-        return __request(OpenAPI, {
+    getApplicationState() {
+        return this.httpRequest.request({
             method: 'GET',
             url: '/api/application/v1/state',
         });

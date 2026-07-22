@@ -1,7 +1,10 @@
 import type { AmarantApiCollectionResponse } from '../models/AmarantApiCollectionResponse';
 import type { AmarantAttributeModel } from '../models/AmarantAttributeModel';
 import type { CancelablePromise } from '../core/CancelablePromise';
+import type { BaseHttpRequest } from '../core/BaseHttpRequest';
 export declare class AttributesService {
+    readonly httpRequest: BaseHttpRequest;
+    constructor(httpRequest: BaseHttpRequest);
     /**
      * Get attribute collection.
      * Get attribute collection.
@@ -10,7 +13,7 @@ export declare class AttributesService {
      * @returns any OK
      * @throws ApiError
      */
-    static getAttributeCollection(include?: string, exclude?: string): CancelablePromise<(AmarantApiCollectionResponse & {
+    getAttributeCollection(include?: string, exclude?: string): CancelablePromise<(AmarantApiCollectionResponse & {
         data: Array<AmarantAttributeModel>;
     })>;
     /**
@@ -19,5 +22,5 @@ export declare class AttributesService {
      * @returns AmarantAttributeModel OK
      * @throws ApiError
      */
-    static getAttributeItem(): CancelablePromise<AmarantAttributeModel>;
+    getAttributeItem(): CancelablePromise<AmarantAttributeModel>;
 }

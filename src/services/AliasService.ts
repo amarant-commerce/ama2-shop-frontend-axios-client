@@ -4,9 +4,9 @@
 /* eslint-disable */
 import type { AmarantAliasUri } from '../models/AmarantAliasUri';
 import type { CancelablePromise } from '../core/CancelablePromise';
-import { OpenAPI } from '../core/OpenAPI';
-import { request as __request } from '../core/request';
+import type { BaseHttpRequest } from '../core/BaseHttpRequest';
 export class AliasService {
+    constructor(public readonly httpRequest: BaseHttpRequest) {}
     /**
      * Match URI.
      * Match URI.
@@ -14,10 +14,10 @@ export class AliasService {
      * @returns AmarantAliasUri OK
      * @throws ApiError
      */
-    public static matchUri(
+    public matchUri(
         uri: string,
     ): CancelablePromise<AmarantAliasUri> {
-        return __request(OpenAPI, {
+        return this.httpRequest.request({
             method: 'GET',
             url: '/api/alias/v1/match',
             query: {

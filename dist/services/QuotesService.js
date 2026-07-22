@@ -1,6 +1,7 @@
-import { OpenAPI } from '../core/OpenAPI';
-import { request as __request } from '../core/request';
 export class QuotesService {
+    constructor(httpRequest) {
+        this.httpRequest = httpRequest;
+    }
     /**
      * Request a quote from cart.
      * Request a quote from cart.
@@ -11,8 +12,8 @@ export class QuotesService {
      * @returns AmarantRequestedQuoteResultModel Resource created.
      * @throws ApiError
      */
-    static requestQuote(cartId) {
-        return __request(OpenAPI, {
+    requestQuote(cartId) {
+        return this.httpRequest.request({
             method: 'POST',
             url: '/api/quotes/v1/{cartId}',
             path: {
@@ -33,8 +34,8 @@ export class QuotesService {
      * @returns AmarantCartQuoteModel OK
      * @throws ApiError
      */
-    static getQuote(id) {
-        return __request(OpenAPI, {
+    getQuote(id) {
+        return this.httpRequest.request({
             method: 'GET',
             url: '/api/quotes/v1/{id}',
             path: {
@@ -56,8 +57,8 @@ export class QuotesService {
      * @returns any OK
      * @throws ApiError
      */
-    static getQuoteCollection(q, page, itemsPerPage, include, exclude) {
-        return __request(OpenAPI, {
+    getQuoteCollection(q, page, itemsPerPage, include, exclude) {
+        return this.httpRequest.request({
             method: 'GET',
             url: '/api/quotes/v1',
             query: {

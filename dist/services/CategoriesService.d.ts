@@ -1,6 +1,9 @@
 import type { AmarantProductCategoryNodeItem } from '../models/AmarantProductCategoryNodeItem';
 import type { CancelablePromise } from '../core/CancelablePromise';
+import type { BaseHttpRequest } from '../core/BaseHttpRequest';
 export declare class CategoriesService {
+    readonly httpRequest: BaseHttpRequest;
+    constructor(httpRequest: BaseHttpRequest);
     /**
      * Get product category item.
      * Get product category item.
@@ -8,5 +11,5 @@ export declare class CategoriesService {
      * @returns AmarantProductCategoryNodeItem OK
      * @throws ApiError
      */
-    static getCategoryItem(id: number): CancelablePromise<AmarantProductCategoryNodeItem>;
+    getCategoryItem(id: number): CancelablePromise<AmarantProductCategoryNodeItem>;
 }

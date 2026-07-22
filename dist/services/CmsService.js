@@ -1,6 +1,7 @@
-import { OpenAPI } from '../core/OpenAPI';
-import { request as __request } from '../core/request';
 export class CmsService {
+    constructor(httpRequest) {
+        this.httpRequest = httpRequest;
+    }
     /**
      * Get CMS page collection.
      * Get CMS page collection.
@@ -12,8 +13,8 @@ export class CmsService {
      * @returns any OK
      * @throws ApiError
      */
-    static getCmsPageCollection(q, page, itemsPerPage, include, exclude) {
-        return __request(OpenAPI, {
+    getCmsPageCollection(q, page, itemsPerPage, include, exclude) {
+        return this.httpRequest.request({
             method: 'GET',
             url: '/api/cms/v1/pages',
             query: {
@@ -32,8 +33,8 @@ export class CmsService {
      * @returns AmarantCmsPageModel OK
      * @throws ApiError
      */
-    static getCmsPageItem(id) {
-        return __request(OpenAPI, {
+    getCmsPageItem(id) {
+        return this.httpRequest.request({
             method: 'GET',
             url: '/api/cms/v1/pages/{id}',
             path: {
@@ -52,8 +53,8 @@ export class CmsService {
      * @returns any OK
      * @throws ApiError
      */
-    static getCmsPageTagCollection(q, page, itemsPerPage, include, exclude) {
-        return __request(OpenAPI, {
+    getCmsPageTagCollection(q, page, itemsPerPage, include, exclude) {
+        return this.httpRequest.request({
             method: 'GET',
             url: '/api/cms/v1/pages/tags',
             query: {
@@ -72,8 +73,8 @@ export class CmsService {
      * @returns AmarantCmsPageTagModel OK
      * @throws ApiError
      */
-    static getCmsPageTagItem(id) {
-        return __request(OpenAPI, {
+    getCmsPageTagItem(id) {
+        return this.httpRequest.request({
             method: 'GET',
             url: '/api/cms/v1/pages/tags/{id}',
             path: {
@@ -92,8 +93,8 @@ export class CmsService {
      * @returns any OK
      * @throws ApiError
      */
-    static getCmsBlockCollection(q, page, itemsPerPage, include, exclude) {
-        return __request(OpenAPI, {
+    getCmsBlockCollection(q, page, itemsPerPage, include, exclude) {
+        return this.httpRequest.request({
             method: 'GET',
             url: '/api/cms/v1/blocks',
             query: {
@@ -112,8 +113,8 @@ export class CmsService {
      * @returns AmarantCmsBlockModel OK
      * @throws ApiError
      */
-    static getCmsBlockItem(id) {
-        return __request(OpenAPI, {
+    getCmsBlockItem(id) {
+        return this.httpRequest.request({
             method: 'GET',
             url: '/api/cms/v1/blocks/{id}',
             path: {
@@ -132,8 +133,8 @@ export class CmsService {
      * @returns any OK
      * @throws ApiError
      */
-    static getCmsBlockTagCollection(q, page, itemsPerPage, include, exclude) {
-        return __request(OpenAPI, {
+    getCmsBlockTagCollection(q, page, itemsPerPage, include, exclude) {
+        return this.httpRequest.request({
             method: 'GET',
             url: '/api/cms/v1/blocks/tags',
             query: {
@@ -152,8 +153,8 @@ export class CmsService {
      * @returns AmarantCmsBlockTagModel OK
      * @throws ApiError
      */
-    static getCmsBlockTagItem(id) {
-        return __request(OpenAPI, {
+    getCmsBlockTagItem(id) {
+        return this.httpRequest.request({
             method: 'GET',
             url: '/api/cms/v1/blocks/tags/{id}',
             path: {
@@ -172,8 +173,8 @@ export class CmsService {
      * @returns any OK
      * @throws ApiError
      */
-    static getCmsBannerCollection(q, page, itemsPerPage, include, exclude) {
-        return __request(OpenAPI, {
+    getCmsBannerCollection(q, page, itemsPerPage, include, exclude) {
+        return this.httpRequest.request({
             method: 'GET',
             url: '/api/cms/v1/banners',
             query: {
@@ -192,8 +193,8 @@ export class CmsService {
      * @returns AmarantCmsBannerModel OK
      * @throws ApiError
      */
-    static getCmsBannerItem(id) {
-        return __request(OpenAPI, {
+    getCmsBannerItem(id) {
+        return this.httpRequest.request({
             method: 'GET',
             url: '/api/cms/v1/banners/{id}',
             path: {
@@ -212,8 +213,8 @@ export class CmsService {
      * @returns void
      * @throws ApiError
      */
-    static submitCmsContactForm(requestBody) {
-        return __request(OpenAPI, {
+    submitCmsContactForm(requestBody) {
+        return this.httpRequest.request({
             method: 'POST',
             url: '/api/cms/v1/contact-form',
             body: requestBody,
@@ -235,8 +236,8 @@ export class CmsService {
      * @returns void
      * @throws ApiError
      */
-    static submitCmsOrganizationalContactForm(requestBody) {
-        return __request(OpenAPI, {
+    submitCmsOrganizationalContactForm(requestBody) {
+        return this.httpRequest.request({
             method: 'POST',
             url: '/api/cms/v1/organizational-contact-form',
             body: requestBody,

@@ -23,9 +23,9 @@ import type { SocialLoginStartAuthenticationInputAmarantSalesCustomerSocialLogin
 import type { SocialLoginWithAuthorizationCodeInputAmarantSalesCustomerSocialLoginAuthorizationCodeInputDto } from '../models/SocialLoginWithAuthorizationCodeInputAmarantSalesCustomerSocialLoginAuthorizationCodeInputDto';
 import type { UpdateCustomerAddressItemInputAmarantSalesCustomerAccountAddressInputDto } from '../models/UpdateCustomerAddressItemInputAmarantSalesCustomerAccountAddressInputDto';
 import type { CancelablePromise } from '../core/CancelablePromise';
-import { OpenAPI } from '../core/OpenAPI';
-import { request as __request } from '../core/request';
+import type { BaseHttpRequest } from '../core/BaseHttpRequest';
 export class CustomersService {
+    constructor(public readonly httpRequest: BaseHttpRequest) {}
     /**
      * Get authorization token.
      * Get authorization token.
@@ -34,11 +34,11 @@ export class CustomersService {
      * @returns AmarantSecurityJwtTokenModel OK
      * @throws ApiError
      */
-    public static getAuthorizationToken(
+    public getAuthorizationToken(
         requestBody: GetAuthorizationTokenInputAmarantSalesCustomerLoginInputDto,
         xAmarant2FaCode?: string | number,
     ): CancelablePromise<AmarantSecurityJwtTokenModel> {
-        return __request(OpenAPI, {
+        return this.httpRequest.request({
             method: 'POST',
             url: '/api/customers/v1/token',
             headers: {
@@ -59,10 +59,10 @@ export class CustomersService {
      * @returns AmarantSecurityJwtTokenModel OK
      * @throws ApiError
      */
-    public static refreshAuthorizationToken(
+    public refreshAuthorizationToken(
         requestBody: RefreshAuthorizationTokenInputAmarantSalesCustomerRefreshTokenInputDto,
     ): CancelablePromise<AmarantSecurityJwtTokenModel> {
-        return __request(OpenAPI, {
+        return this.httpRequest.request({
             method: 'POST',
             url: '/api/customers/v1/refresh-token',
             body: requestBody,
@@ -79,10 +79,10 @@ export class CustomersService {
      * @returns AmarantSalesCustomerAccountOutputDto Resource created.
      * @throws ApiError
      */
-    public static createCustomerAccount(
+    public createCustomerAccount(
         requestBody: CreateCustomerAccountInputAmarantSalesCustomerAccountInputDto,
     ): CancelablePromise<AmarantSalesCustomerAccountOutputDto> {
-        return __request(OpenAPI, {
+        return this.httpRequest.request({
             method: 'POST',
             url: '/api/customers/v1/create-account',
             body: requestBody,
@@ -99,10 +99,10 @@ export class CustomersService {
      * @returns void
      * @throws ApiError
      */
-    public static confirmCustomerAccount(
+    public confirmCustomerAccount(
         requestBody: ConfirmCustomerAccountInputAmarantSalesCustomerAccountConfirmationInputDto,
     ): CancelablePromise<void> {
-        return __request(OpenAPI, {
+        return this.httpRequest.request({
             method: 'POST',
             url: '/api/customers/v1/confirm-account',
             body: requestBody,
@@ -119,10 +119,10 @@ export class CustomersService {
      * @returns void
      * @throws ApiError
      */
-    public static initiatePasswordReset(
+    public initiatePasswordReset(
         requestBody: InitiatePasswordResetInputAmarantSalesCustomerPasswordResetRequestInputDto,
     ): CancelablePromise<void> {
-        return __request(OpenAPI, {
+        return this.httpRequest.request({
             method: 'POST',
             url: '/api/customers/v1/initiate-password-reset',
             body: requestBody,
@@ -139,10 +139,10 @@ export class CustomersService {
      * @returns void
      * @throws ApiError
      */
-    public static resetPassword(
+    public resetPassword(
         requestBody: ResetPasswordInputAmarantSalesCustomerResetAccountPasswordInputDto,
     ): CancelablePromise<void> {
-        return __request(OpenAPI, {
+        return this.httpRequest.request({
             method: 'POST',
             url: '/api/customers/v1/reset-password',
             body: requestBody,
@@ -162,8 +162,8 @@ export class CustomersService {
      * @returns AmarantSalesCustomerAccountOutputDto OK
      * @throws ApiError
      */
-    public static me(): CancelablePromise<AmarantSalesCustomerAccountOutputDto> {
-        return __request(OpenAPI, {
+    public me(): CancelablePromise<AmarantSalesCustomerAccountOutputDto> {
+        return this.httpRequest.request({
             method: 'GET',
             url: '/api/customers/v1/me',
             errors: {
@@ -181,10 +181,10 @@ export class CustomersService {
      * @returns AmarantSalesCustomerAccountOutputDto Resource updated.
      * @throws ApiError
      */
-    public static meUpdate(
+    public meUpdate(
         requestBody: MeUpdateInputAmarantSalesCustomerAccountUpdateInputDto,
     ): CancelablePromise<AmarantSalesCustomerAccountOutputDto> {
-        return __request(OpenAPI, {
+        return this.httpRequest.request({
             method: 'PATCH',
             url: '/api/customers/v1/me',
             body: requestBody,
@@ -200,8 +200,8 @@ export class CustomersService {
      * @returns AmarantSalesCustomerMeOutputDto OK
      * @throws ApiError
      */
-    public static getLoggedInCustomer(): CancelablePromise<AmarantSalesCustomerMeOutputDto> {
-        return __request(OpenAPI, {
+    public getLoggedInCustomer(): CancelablePromise<AmarantSalesCustomerMeOutputDto> {
+        return this.httpRequest.request({
             method: 'POST',
             url: '/api/customers/v2/me',
         });
@@ -219,10 +219,10 @@ export class CustomersService {
      * @returns AmarantSalesCustomerAccountOrganizationOutputDto Resource updated.
      * @throws ApiError
      */
-    public static meUpdateOrganization(
+    public meUpdateOrganization(
         requestBody: MeUpdateOrganizationInputAmarantSalesCustomerAccountOrganizationInputDto,
     ): CancelablePromise<AmarantSalesCustomerAccountOrganizationOutputDto> {
-        return __request(OpenAPI, {
+        return this.httpRequest.request({
             method: 'PATCH',
             url: '/api/customers/v1/me/organization',
             body: requestBody,
@@ -244,13 +244,13 @@ export class CustomersService {
      * @returns any OK
      * @throws ApiError
      */
-    public static getCustomerAddressCollection(
+    public getCustomerAddressCollection(
         include?: string,
         exclude?: string,
     ): CancelablePromise<(AmarantApiCollectionResponse & {
         data: Array<AmarantSalesCustomerAccountAddressOutputDto>;
     })> {
-        return __request(OpenAPI, {
+        return this.httpRequest.request({
             method: 'GET',
             url: '/api/customers/v1/addresses',
             query: {
@@ -269,10 +269,10 @@ export class CustomersService {
      * @returns AmarantSalesCustomerAccountAddressOutputDto Resource created.
      * @throws ApiError
      */
-    public static createCustomerAddress(
+    public createCustomerAddress(
         requestBody: CreateCustomerAddressInputAmarantSalesCustomerAccountAddressInputDto,
     ): CancelablePromise<AmarantSalesCustomerAccountAddressOutputDto> {
-        return __request(OpenAPI, {
+        return this.httpRequest.request({
             method: 'POST',
             url: '/api/customers/v1/addresses',
             body: requestBody,
@@ -292,10 +292,10 @@ export class CustomersService {
      * @returns AmarantSalesCustomerAccountAddressOutputDto OK
      * @throws ApiError
      */
-    public static getCustomerAddressItem(
+    public getCustomerAddressItem(
         id: number,
     ): CancelablePromise<AmarantSalesCustomerAccountAddressOutputDto> {
-        return __request(OpenAPI, {
+        return this.httpRequest.request({
             method: 'GET',
             url: '/api/customers/v1/addresses/{id}',
             path: {
@@ -314,11 +314,11 @@ export class CustomersService {
      * @returns AmarantSalesCustomerAccountAddressOutputDto Resource updated.
      * @throws ApiError
      */
-    public static updateCustomerAddressItem(
+    public updateCustomerAddressItem(
         id: number,
         requestBody: UpdateCustomerAddressItemInputAmarantSalesCustomerAccountAddressInputDto,
     ): CancelablePromise<AmarantSalesCustomerAccountAddressOutputDto> {
-        return __request(OpenAPI, {
+        return this.httpRequest.request({
             method: 'PUT',
             url: '/api/customers/v1/addresses/{id}',
             path: {
@@ -338,10 +338,10 @@ export class CustomersService {
      * @returns AmarantSalesCustomerSocialLoginStartAuthenticationOutputDto OK
      * @throws ApiError
      */
-    public static socialLoginStartAuthentication(
+    public socialLoginStartAuthentication(
         requestBody: SocialLoginStartAuthenticationInputAmarantSalesCustomerSocialLoginStartAuthenticationInputDto,
     ): CancelablePromise<AmarantSalesCustomerSocialLoginStartAuthenticationOutputDto> {
-        return __request(OpenAPI, {
+        return this.httpRequest.request({
             method: 'POST',
             url: '/api/customer-social-login/v1/start-authentication',
             body: requestBody,
@@ -362,10 +362,10 @@ export class CustomersService {
      * @returns AmarantSecurityJwtTokenModel OK
      * @throws ApiError
      */
-    public static socialLoginWithAuthorizationCode(
+    public socialLoginWithAuthorizationCode(
         requestBody: SocialLoginWithAuthorizationCodeInputAmarantSalesCustomerSocialLoginAuthorizationCodeInputDto,
     ): CancelablePromise<AmarantSecurityJwtTokenModel> {
-        return __request(OpenAPI, {
+        return this.httpRequest.request({
             method: 'POST',
             url: '/api/customer-social-login/v1/login-with-authorization-code',
             body: requestBody,
@@ -384,13 +384,13 @@ export class CustomersService {
      * @returns any OK
      * @throws ApiError
      */
-    public static socialLoginGetProviderCollection(
+    public socialLoginGetProviderCollection(
         include?: string,
         exclude?: string,
     ): CancelablePromise<(AmarantApiCollectionResponse & {
         data: Array<AmarantSalesCustomerSocialLoginProviderOutputDto>;
     })> {
-        return __request(OpenAPI, {
+        return this.httpRequest.request({
             method: 'GET',
             url: '/api/customer-social-login/v1/providers',
             query: {

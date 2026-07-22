@@ -2,7 +2,10 @@ import type { AmarantApiCollectionResponse } from '../models/AmarantApiCollectio
 import type { AmarantDirectoryCountryModel } from '../models/AmarantDirectoryCountryModel';
 import type { AmarantDirectoryRegionModel } from '../models/AmarantDirectoryRegionModel';
 import type { CancelablePromise } from '../core/CancelablePromise';
+import type { BaseHttpRequest } from '../core/BaseHttpRequest';
 export declare class DirectoryService {
+    readonly httpRequest: BaseHttpRequest;
+    constructor(httpRequest: BaseHttpRequest);
     /**
      * Get country collection.
      * Get country collection.
@@ -11,7 +14,7 @@ export declare class DirectoryService {
      * @returns any OK
      * @throws ApiError
      */
-    static getCountryCollection(include?: string, exclude?: string): CancelablePromise<(AmarantApiCollectionResponse & {
+    getCountryCollection(include?: string, exclude?: string): CancelablePromise<(AmarantApiCollectionResponse & {
         data: Array<AmarantDirectoryCountryModel>;
     })>;
     /**
@@ -23,7 +26,7 @@ export declare class DirectoryService {
      * @returns any OK
      * @throws ApiError
      */
-    static getCountryRegionCollection(id: string, include?: string, exclude?: string): CancelablePromise<(AmarantApiCollectionResponse & {
+    getCountryRegionCollection(id: string, include?: string, exclude?: string): CancelablePromise<(AmarantApiCollectionResponse & {
         data: Array<AmarantDirectoryRegionModel>;
     })>;
 }

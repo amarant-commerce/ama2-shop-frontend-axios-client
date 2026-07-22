@@ -1,6 +1,7 @@
-import { OpenAPI } from '../core/OpenAPI';
-import { request as __request } from '../core/request';
 export class AliasService {
+    constructor(httpRequest) {
+        this.httpRequest = httpRequest;
+    }
     /**
      * Match URI.
      * Match URI.
@@ -8,8 +9,8 @@ export class AliasService {
      * @returns AmarantAliasUri OK
      * @throws ApiError
      */
-    static matchUri(uri) {
-        return __request(OpenAPI, {
+    matchUri(uri) {
+        return this.httpRequest.request({
             method: 'GET',
             url: '/api/alias/v1/match',
             query: {

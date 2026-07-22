@@ -1,6 +1,7 @@
-import { OpenAPI } from '../core/OpenAPI';
-import { request as __request } from '../core/request';
 export class BlogService {
+    constructor(httpRequest) {
+        this.httpRequest = httpRequest;
+    }
     /**
      * Get blog post collection.
      * Get blog post collection.
@@ -12,8 +13,8 @@ export class BlogService {
      * @returns any OK
      * @throws ApiError
      */
-    static getBlogPostCollection(q, page, itemsPerPage, include, exclude) {
-        return __request(OpenAPI, {
+    getBlogPostCollection(q, page, itemsPerPage, include, exclude) {
+        return this.httpRequest.request({
             method: 'GET',
             url: '/api/blog/v1/posts',
             query: {
@@ -32,8 +33,8 @@ export class BlogService {
      * @returns AmarantBlogPostModel OK
      * @throws ApiError
      */
-    static getBlogPostItem(id) {
-        return __request(OpenAPI, {
+    getBlogPostItem(id) {
+        return this.httpRequest.request({
             method: 'GET',
             url: '/api/blog/v1/posts/{id}',
             path: {
@@ -52,8 +53,8 @@ export class BlogService {
      * @returns any OK
      * @throws ApiError
      */
-    static getBlogPostTagCollection(q, page, itemsPerPage, include, exclude) {
-        return __request(OpenAPI, {
+    getBlogPostTagCollection(q, page, itemsPerPage, include, exclude) {
+        return this.httpRequest.request({
             method: 'GET',
             url: '/api/blog/v1/tags',
             query: {
@@ -72,8 +73,8 @@ export class BlogService {
      * @returns AmarantBlogPostTagModel OK
      * @throws ApiError
      */
-    static getBlogPostTagItem(id) {
-        return __request(OpenAPI, {
+    getBlogPostTagItem(id) {
+        return this.httpRequest.request({
             method: 'GET',
             url: '/api/blog/v1/tags/{id}',
             path: {
@@ -92,8 +93,8 @@ export class BlogService {
      * @returns any OK
      * @throws ApiError
      */
-    static getBlogPostCategoryCollection(q, page, itemsPerPage, include, exclude) {
-        return __request(OpenAPI, {
+    getBlogPostCategoryCollection(q, page, itemsPerPage, include, exclude) {
+        return this.httpRequest.request({
             method: 'GET',
             url: '/api/blog/v1/categories',
             query: {
@@ -112,8 +113,8 @@ export class BlogService {
      * @returns AmarantBlogPostCategoryModel OK
      * @throws ApiError
      */
-    static getBlogPostCategoryItem(id) {
-        return __request(OpenAPI, {
+    getBlogPostCategoryItem(id) {
+        return this.httpRequest.request({
             method: 'GET',
             url: '/api/blog/v1/categories/{id}',
             path: {

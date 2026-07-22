@@ -1,6 +1,7 @@
-import { OpenAPI } from '../core/OpenAPI';
-import { request as __request } from '../core/request';
 export class ProductsService {
+    constructor(httpRequest) {
+        this.httpRequest = httpRequest;
+    }
     /**
      * Get product collection.
      * Get product collection.
@@ -13,8 +14,8 @@ export class ProductsService {
      * @returns any OK
      * @throws ApiError
      */
-    static getProductCollection(q, page, itemsPerPage, include, exclude, visibility) {
-        return __request(OpenAPI, {
+    getProductCollection(q, page, itemsPerPage, include, exclude, visibility) {
+        return this.httpRequest.request({
             method: 'GET',
             url: '/api/products/v1',
             query: {
@@ -39,8 +40,8 @@ export class ProductsService {
      * @returns any OK
      * @throws ApiError
      */
-    static getSearchProductCollection(query, q, page, itemsPerPage, include, exclude) {
-        return __request(OpenAPI, {
+    getSearchProductCollection(query, q, page, itemsPerPage, include, exclude) {
+        return this.httpRequest.request({
             method: 'GET',
             url: '/api/products/v1/search',
             query: {
@@ -60,8 +61,8 @@ export class ProductsService {
      * @returns AmarantProductModel OK
      * @throws ApiError
      */
-    static getProductItem(id) {
-        return __request(OpenAPI, {
+    getProductItem(id) {
+        return this.httpRequest.request({
             method: 'GET',
             url: '/api/products/v1/{id}',
             path: {
@@ -76,8 +77,8 @@ export class ProductsService {
      * @returns AmarantProductCategoryNodeItem OK
      * @throws ApiError
      */
-    static getCategoryItem(id) {
-        return __request(OpenAPI, {
+    getCategoryItem(id) {
+        return this.httpRequest.request({
             method: 'GET',
             url: '/api/categories/v1/{id}',
             path: {
@@ -94,8 +95,8 @@ export class ProductsService {
      * @returns any OK
      * @throws ApiError
      */
-    static getProductCategoryRelationsCollection(id, include, exclude) {
-        return __request(OpenAPI, {
+    getProductCategoryRelationsCollection(id, include, exclude) {
+        return this.httpRequest.request({
             method: 'GET',
             url: '/api/product-category-relations/v1',
             query: {
@@ -116,8 +117,8 @@ export class ProductsService {
      * @returns any OK
      * @throws ApiError
      */
-    static getProductWishlistCollection(include, exclude) {
-        return __request(OpenAPI, {
+    getProductWishlistCollection(include, exclude) {
+        return this.httpRequest.request({
             method: 'GET',
             url: '/api/product-wishlists/v1',
             query: {
@@ -136,8 +137,8 @@ export class ProductsService {
      * @returns AmarantProductWishlist Resource created.
      * @throws ApiError
      */
-    static createProductWishlist(requestBody) {
-        return __request(OpenAPI, {
+    createProductWishlist(requestBody) {
+        return this.httpRequest.request({
             method: 'POST',
             url: '/api/product-wishlists/v1',
             body: requestBody,
@@ -151,8 +152,8 @@ export class ProductsService {
      * @returns AmarantProductWishlist OK
      * @throws ApiError
      */
-    static getProductWishlistCollectionItem(id) {
-        return __request(OpenAPI, {
+    getProductWishlistCollectionItem(id) {
+        return this.httpRequest.request({
             method: 'GET',
             url: '/api/product-wishlists/v1/{id}',
             path: {
@@ -170,8 +171,8 @@ export class ProductsService {
      * @returns AmarantProductWishlist Resource deleted.
      * @throws ApiError
      */
-    static removeProductWishlist(id) {
-        return __request(OpenAPI, {
+    removeProductWishlist(id) {
+        return this.httpRequest.request({
             method: 'DELETE',
             url: '/api/product-wishlists/v1/{id}',
             path: {
@@ -190,8 +191,8 @@ export class ProductsService {
      * @returns AmarantProductWishlist Resource updated.
      * @throws ApiError
      */
-    static updateProductWishlist(id, requestBody) {
-        return __request(OpenAPI, {
+    updateProductWishlist(id, requestBody) {
+        return this.httpRequest.request({
             method: 'PATCH',
             url: '/api/product-wishlists/v1/{id}',
             path: {
@@ -212,8 +213,8 @@ export class ProductsService {
      * @returns AmarantProductWishlist OK
      * @throws ApiError
      */
-    static addItemsToWishlist(id, requestBody) {
-        return __request(OpenAPI, {
+    addItemsToWishlist(id, requestBody) {
+        return this.httpRequest.request({
             method: 'POST',
             url: '/api/product-wishlists/v1/{id}/items',
             path: {
@@ -234,8 +235,8 @@ export class ProductsService {
      * @returns AmarantProductWishlist Resource deleted.
      * @throws ApiError
      */
-    static removeWishlistItem(id, itemId) {
-        return __request(OpenAPI, {
+    removeWishlistItem(id, itemId) {
+        return this.httpRequest.request({
             method: 'DELETE',
             url: '/api/product-wishlists/v1/{id}/items/{itemId}',
             path: {

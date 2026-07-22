@@ -5,9 +5,9 @@
 import type { AmarantApiCollectionResponse } from '../models/AmarantApiCollectionResponse';
 import type { AmarantAttributeModel } from '../models/AmarantAttributeModel';
 import type { CancelablePromise } from '../core/CancelablePromise';
-import { OpenAPI } from '../core/OpenAPI';
-import { request as __request } from '../core/request';
+import type { BaseHttpRequest } from '../core/BaseHttpRequest';
 export class AttributesService {
+    constructor(public readonly httpRequest: BaseHttpRequest) {}
     /**
      * Get attribute collection.
      * Get attribute collection.
@@ -16,13 +16,13 @@ export class AttributesService {
      * @returns any OK
      * @throws ApiError
      */
-    public static getAttributeCollection(
+    public getAttributeCollection(
         include?: string,
         exclude?: string,
     ): CancelablePromise<(AmarantApiCollectionResponse & {
         data: Array<AmarantAttributeModel>;
     })> {
-        return __request(OpenAPI, {
+        return this.httpRequest.request({
             method: 'GET',
             url: '/api/attributes/v1',
             query: {
@@ -37,8 +37,8 @@ export class AttributesService {
      * @returns AmarantAttributeModel OK
      * @throws ApiError
      */
-    public static getAttributeItem(): CancelablePromise<AmarantAttributeModel> {
-        return __request(OpenAPI, {
+    public getAttributeItem(): CancelablePromise<AmarantAttributeModel> {
+        return this.httpRequest.request({
             method: 'GET',
             url: '/api/attributes/v1/{id}',
         });

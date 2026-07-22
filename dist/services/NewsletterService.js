@@ -1,6 +1,7 @@
-import { OpenAPI } from '../core/OpenAPI';
-import { request as __request } from '../core/request';
 export class NewsletterService {
+    constructor(httpRequest) {
+        this.httpRequest = httpRequest;
+    }
     /**
      * Confirm sales newsletter subscription.
      * Confirm sales newsletter subscription.
@@ -8,8 +9,8 @@ export class NewsletterService {
      * @returns void
      * @throws ApiError
      */
-    static salesNewslettersConfirm(c) {
-        return __request(OpenAPI, {
+    salesNewslettersConfirm(c) {
+        return this.httpRequest.request({
             method: 'POST',
             url: '/api/sales-newsletters/v1/confirm',
             query: {
@@ -29,8 +30,8 @@ export class NewsletterService {
      * @returns AmarantSalesNewsletterSubscribeResultModel OK
      * @throws ApiError
      */
-    static salesNewslettersSubscribe() {
-        return __request(OpenAPI, {
+    salesNewslettersSubscribe() {
+        return this.httpRequest.request({
             method: 'POST',
             url: '/api/sales-newsletters/v1/subscribe',
             errors: {
@@ -48,8 +49,8 @@ export class NewsletterService {
      * @returns AmarantSalesNewsletterSubscribeResultModel OK
      * @throws ApiError
      */
-    static salesNewslettersSubscribeGuest(requestBody) {
-        return __request(OpenAPI, {
+    salesNewslettersSubscribeGuest(requestBody) {
+        return this.httpRequest.request({
             method: 'POST',
             url: '/api/sales-newsletters/v1/subscribe-guest',
             body: requestBody,
@@ -68,8 +69,8 @@ export class NewsletterService {
      * @returns AmarantSalesNewsletterSubscribeResultModel OK
      * @throws ApiError
      */
-    static salesNewslettersUnsubscribe() {
-        return __request(OpenAPI, {
+    salesNewslettersUnsubscribe() {
+        return this.httpRequest.request({
             method: 'POST',
             url: '/api/sales-newsletters/v1/unsubscribe',
         });

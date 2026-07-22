@@ -8,9 +8,9 @@ import type { AmarantOrderModel } from '../models/AmarantOrderModel';
 import type { AmarantPlacedOrderResultModel } from '../models/AmarantPlacedOrderResultModel';
 import type { PlaceOrderInputAmarantSalesPlaceOrderInputDto } from '../models/PlaceOrderInputAmarantSalesPlaceOrderInputDto';
 import type { CancelablePromise } from '../core/CancelablePromise';
-import { OpenAPI } from '../core/OpenAPI';
-import { request as __request } from '../core/request';
+import type { BaseHttpRequest } from '../core/BaseHttpRequest';
 export class OrdersService {
+    constructor(public readonly httpRequest: BaseHttpRequest) {}
     /**
      * Place order.
      * Place order.
@@ -19,11 +19,11 @@ export class OrdersService {
      * @returns AmarantPlacedOrderResultModel Resource created.
      * @throws ApiError
      */
-    public static placeOrder(
+    public placeOrder(
         cartId: string,
         requestBody: PlaceOrderInputAmarantSalesPlaceOrderInputDto,
     ): CancelablePromise<AmarantPlacedOrderResultModel> {
-        return __request(OpenAPI, {
+        return this.httpRequest.request({
             method: 'POST',
             url: '/api/orders/v1/place/{cartId}',
             path: {
@@ -46,10 +46,10 @@ export class OrdersService {
      * @returns AmarantOrderModel OK
      * @throws ApiError
      */
-    public static getOrderItem(
+    public getOrderItem(
         id: number,
     ): CancelablePromise<AmarantOrderModel> {
-        return __request(OpenAPI, {
+        return this.httpRequest.request({
             method: 'GET',
             url: '/api/orders/v1/{id}',
             path: {
@@ -71,7 +71,7 @@ export class OrdersService {
      * @returns any OK
      * @throws ApiError
      */
-    public static getOrderCollection(
+    public getOrderCollection(
         q?: AmarantGetOrderCollectionSearchCriteriaFilter,
         page?: number,
         itemsPerPage?: number,
@@ -80,7 +80,7 @@ export class OrdersService {
     ): CancelablePromise<(AmarantApiPaginatedCollectionResponse & {
         data: Array<AmarantOrderModel>;
     })> {
-        return __request(OpenAPI, {
+        return this.httpRequest.request({
             method: 'GET',
             url: '/api/orders/v1',
             query: {
@@ -102,10 +102,10 @@ export class OrdersService {
      * @returns AmarantOrderModel OK
      * @throws ApiError
      */
-    public static getGuestOrderItem(
+    public getGuestOrderItem(
         guestCode: string,
     ): CancelablePromise<AmarantOrderModel> {
-        return __request(OpenAPI, {
+        return this.httpRequest.request({
             method: 'GET',
             url: '/api/orders/v1/guest-order/{guestCode}',
             path: {

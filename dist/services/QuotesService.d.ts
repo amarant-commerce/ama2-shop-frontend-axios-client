@@ -3,7 +3,10 @@ import type { AmarantCartQuoteModel } from '../models/AmarantCartQuoteModel';
 import type { AmarantGetQuoteCollectionSearchCriteriaFilter } from '../models/AmarantGetQuoteCollectionSearchCriteriaFilter';
 import type { AmarantRequestedQuoteResultModel } from '../models/AmarantRequestedQuoteResultModel';
 import type { CancelablePromise } from '../core/CancelablePromise';
+import type { BaseHttpRequest } from '../core/BaseHttpRequest';
 export declare class QuotesService {
+    readonly httpRequest: BaseHttpRequest;
+    constructor(httpRequest: BaseHttpRequest);
     /**
      * Request a quote from cart.
      * Request a quote from cart.
@@ -14,7 +17,7 @@ export declare class QuotesService {
      * @returns AmarantRequestedQuoteResultModel Resource created.
      * @throws ApiError
      */
-    static requestQuote(cartId: string): CancelablePromise<AmarantRequestedQuoteResultModel>;
+    requestQuote(cartId: string): CancelablePromise<AmarantRequestedQuoteResultModel>;
     /**
      * Get quote.
      * Get quote.
@@ -25,7 +28,7 @@ export declare class QuotesService {
      * @returns AmarantCartQuoteModel OK
      * @throws ApiError
      */
-    static getQuote(id: number): CancelablePromise<AmarantCartQuoteModel>;
+    getQuote(id: number): CancelablePromise<AmarantCartQuoteModel>;
     /**
      * Get quote collection.
      * Get quote collection.
@@ -40,7 +43,7 @@ export declare class QuotesService {
      * @returns any OK
      * @throws ApiError
      */
-    static getQuoteCollection(q?: AmarantGetQuoteCollectionSearchCriteriaFilter, page?: number, itemsPerPage?: number, include?: string, exclude?: string): CancelablePromise<(AmarantApiPaginatedCollectionResponse & {
+    getQuoteCollection(q?: AmarantGetQuoteCollectionSearchCriteriaFilter, page?: number, itemsPerPage?: number, include?: string, exclude?: string): CancelablePromise<(AmarantApiPaginatedCollectionResponse & {
         data: Array<AmarantCartQuoteModel>;
     })>;
 }

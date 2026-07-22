@@ -7,9 +7,9 @@ import type { AmarantCartQuoteModel } from '../models/AmarantCartQuoteModel';
 import type { AmarantGetQuoteCollectionSearchCriteriaFilter } from '../models/AmarantGetQuoteCollectionSearchCriteriaFilter';
 import type { AmarantRequestedQuoteResultModel } from '../models/AmarantRequestedQuoteResultModel';
 import type { CancelablePromise } from '../core/CancelablePromise';
-import { OpenAPI } from '../core/OpenAPI';
-import { request as __request } from '../core/request';
+import type { BaseHttpRequest } from '../core/BaseHttpRequest';
 export class QuotesService {
+    constructor(public readonly httpRequest: BaseHttpRequest) {}
     /**
      * Request a quote from cart.
      * Request a quote from cart.
@@ -20,10 +20,10 @@ export class QuotesService {
      * @returns AmarantRequestedQuoteResultModel Resource created.
      * @throws ApiError
      */
-    public static requestQuote(
+    public requestQuote(
         cartId: string,
     ): CancelablePromise<AmarantRequestedQuoteResultModel> {
-        return __request(OpenAPI, {
+        return this.httpRequest.request({
             method: 'POST',
             url: '/api/quotes/v1/{cartId}',
             path: {
@@ -44,10 +44,10 @@ export class QuotesService {
      * @returns AmarantCartQuoteModel OK
      * @throws ApiError
      */
-    public static getQuote(
+    public getQuote(
         id: number,
     ): CancelablePromise<AmarantCartQuoteModel> {
-        return __request(OpenAPI, {
+        return this.httpRequest.request({
             method: 'GET',
             url: '/api/quotes/v1/{id}',
             path: {
@@ -69,7 +69,7 @@ export class QuotesService {
      * @returns any OK
      * @throws ApiError
      */
-    public static getQuoteCollection(
+    public getQuoteCollection(
         q?: AmarantGetQuoteCollectionSearchCriteriaFilter,
         page?: number,
         itemsPerPage?: number,
@@ -78,7 +78,7 @@ export class QuotesService {
     ): CancelablePromise<(AmarantApiPaginatedCollectionResponse & {
         data: Array<AmarantCartQuoteModel>;
     })> {
-        return __request(OpenAPI, {
+        return this.httpRequest.request({
             method: 'GET',
             url: '/api/quotes/v1',
             query: {

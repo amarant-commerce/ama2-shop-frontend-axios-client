@@ -1,6 +1,7 @@
-import { OpenAPI } from '../core/OpenAPI';
-import { request as __request } from '../core/request';
 export class AiService {
+    constructor(httpRequest) {
+        this.httpRequest = httpRequest;
+    }
     /**
      * Send a message to a registered agent, creating or continuing a conversation.
      * Send a message to a registered agent, creating or continuing a conversation.
@@ -12,8 +13,8 @@ export class AiService {
      * @returns AmarantAiConversationOutputModel OK
      * @throws ApiError
      */
-    static sendMessage(formData) {
-        return __request(OpenAPI, {
+    sendMessage(formData) {
+        return this.httpRequest.request({
             method: 'POST',
             url: '/api/ai/v1/conversations',
             formData: formData,

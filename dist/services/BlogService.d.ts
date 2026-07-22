@@ -6,7 +6,10 @@ import type { AmarantGetBlogPostCategoryCollectionSearchCriteriaFilter } from '.
 import type { AmarantGetBlogPostCollectionSearchCriteriaFilter } from '../models/AmarantGetBlogPostCollectionSearchCriteriaFilter';
 import type { AmarantGetBlogPostTagCollectionSearchCriteriaFilter } from '../models/AmarantGetBlogPostTagCollectionSearchCriteriaFilter';
 import type { CancelablePromise } from '../core/CancelablePromise';
+import type { BaseHttpRequest } from '../core/BaseHttpRequest';
 export declare class BlogService {
+    readonly httpRequest: BaseHttpRequest;
+    constructor(httpRequest: BaseHttpRequest);
     /**
      * Get blog post collection.
      * Get blog post collection.
@@ -18,7 +21,7 @@ export declare class BlogService {
      * @returns any OK
      * @throws ApiError
      */
-    static getBlogPostCollection(q?: AmarantGetBlogPostCollectionSearchCriteriaFilter, page?: number, itemsPerPage?: number, include?: string, exclude?: string): CancelablePromise<(AmarantApiPaginatedCollectionResponse & {
+    getBlogPostCollection(q?: AmarantGetBlogPostCollectionSearchCriteriaFilter, page?: number, itemsPerPage?: number, include?: string, exclude?: string): CancelablePromise<(AmarantApiPaginatedCollectionResponse & {
         data: Array<AmarantBlogPostModel>;
     })>;
     /**
@@ -28,7 +31,7 @@ export declare class BlogService {
      * @returns AmarantBlogPostModel OK
      * @throws ApiError
      */
-    static getBlogPostItem(id: number): CancelablePromise<AmarantBlogPostModel>;
+    getBlogPostItem(id: number): CancelablePromise<AmarantBlogPostModel>;
     /**
      * Get blog post tag collection.
      * Get blog post tag collection.
@@ -40,7 +43,7 @@ export declare class BlogService {
      * @returns any OK
      * @throws ApiError
      */
-    static getBlogPostTagCollection(q?: AmarantGetBlogPostTagCollectionSearchCriteriaFilter, page?: number, itemsPerPage?: number, include?: string, exclude?: string): CancelablePromise<(AmarantApiPaginatedCollectionResponse & {
+    getBlogPostTagCollection(q?: AmarantGetBlogPostTagCollectionSearchCriteriaFilter, page?: number, itemsPerPage?: number, include?: string, exclude?: string): CancelablePromise<(AmarantApiPaginatedCollectionResponse & {
         data: Array<AmarantBlogPostTagModel>;
     })>;
     /**
@@ -50,7 +53,7 @@ export declare class BlogService {
      * @returns AmarantBlogPostTagModel OK
      * @throws ApiError
      */
-    static getBlogPostTagItem(id: number): CancelablePromise<AmarantBlogPostTagModel>;
+    getBlogPostTagItem(id: number): CancelablePromise<AmarantBlogPostTagModel>;
     /**
      * Get blog post category collection.
      * Get blog post category collection.
@@ -62,7 +65,7 @@ export declare class BlogService {
      * @returns any OK
      * @throws ApiError
      */
-    static getBlogPostCategoryCollection(q?: AmarantGetBlogPostCategoryCollectionSearchCriteriaFilter, page?: number, itemsPerPage?: number, include?: string, exclude?: string): CancelablePromise<(AmarantApiPaginatedCollectionResponse & {
+    getBlogPostCategoryCollection(q?: AmarantGetBlogPostCategoryCollectionSearchCriteriaFilter, page?: number, itemsPerPage?: number, include?: string, exclude?: string): CancelablePromise<(AmarantApiPaginatedCollectionResponse & {
         data: Array<AmarantBlogPostCategoryModel>;
     })>;
     /**
@@ -72,5 +75,5 @@ export declare class BlogService {
      * @returns AmarantBlogPostCategoryModel OK
      * @throws ApiError
      */
-    static getBlogPostCategoryItem(id: number): CancelablePromise<AmarantBlogPostCategoryModel>;
+    getBlogPostCategoryItem(id: number): CancelablePromise<AmarantBlogPostCategoryModel>;
 }

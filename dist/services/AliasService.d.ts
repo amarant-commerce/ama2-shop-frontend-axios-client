@@ -1,6 +1,9 @@
 import type { AmarantAliasUri } from '../models/AmarantAliasUri';
 import type { CancelablePromise } from '../core/CancelablePromise';
+import type { BaseHttpRequest } from '../core/BaseHttpRequest';
 export declare class AliasService {
+    readonly httpRequest: BaseHttpRequest;
+    constructor(httpRequest: BaseHttpRequest);
     /**
      * Match URI.
      * Match URI.
@@ -8,5 +11,5 @@ export declare class AliasService {
      * @returns AmarantAliasUri OK
      * @throws ApiError
      */
-    static matchUri(uri: string): CancelablePromise<AmarantAliasUri>;
+    matchUri(uri: string): CancelablePromise<AmarantAliasUri>;
 }

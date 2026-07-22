@@ -1,7 +1,10 @@
 import type { AmarantSalesNewsletterSubscribeResultModel } from '../models/AmarantSalesNewsletterSubscribeResultModel';
 import type { SalesNewslettersSubscribeGuestInputAmarantSalesNewsletterInputModel } from '../models/SalesNewslettersSubscribeGuestInputAmarantSalesNewsletterInputModel';
 import type { CancelablePromise } from '../core/CancelablePromise';
+import type { BaseHttpRequest } from '../core/BaseHttpRequest';
 export declare class NewsletterService {
+    readonly httpRequest: BaseHttpRequest;
+    constructor(httpRequest: BaseHttpRequest);
     /**
      * Confirm sales newsletter subscription.
      * Confirm sales newsletter subscription.
@@ -9,7 +12,7 @@ export declare class NewsletterService {
      * @returns void
      * @throws ApiError
      */
-    static salesNewslettersConfirm(c: string): CancelablePromise<void>;
+    salesNewslettersConfirm(c: string): CancelablePromise<void>;
     /**
      * Subscribe logged in customer to newsletter.
      * Subscribe logged in customer to newsletter.
@@ -19,7 +22,7 @@ export declare class NewsletterService {
      * @returns AmarantSalesNewsletterSubscribeResultModel OK
      * @throws ApiError
      */
-    static salesNewslettersSubscribe(): CancelablePromise<AmarantSalesNewsletterSubscribeResultModel>;
+    salesNewslettersSubscribe(): CancelablePromise<AmarantSalesNewsletterSubscribeResultModel>;
     /**
      * Subscribe guest customer to newsletter.
      * Subscribe guest customer to newsletter.
@@ -30,7 +33,7 @@ export declare class NewsletterService {
      * @returns AmarantSalesNewsletterSubscribeResultModel OK
      * @throws ApiError
      */
-    static salesNewslettersSubscribeGuest(requestBody: SalesNewslettersSubscribeGuestInputAmarantSalesNewsletterInputModel): CancelablePromise<AmarantSalesNewsletterSubscribeResultModel>;
+    salesNewslettersSubscribeGuest(requestBody: SalesNewslettersSubscribeGuestInputAmarantSalesNewsletterInputModel): CancelablePromise<AmarantSalesNewsletterSubscribeResultModel>;
     /**
      * Unsubscribe logged in customer from newsletter.
      * Unsubscribe logged in customer from newsletter.
@@ -40,5 +43,5 @@ export declare class NewsletterService {
      * @returns AmarantSalesNewsletterSubscribeResultModel OK
      * @throws ApiError
      */
-    static salesNewslettersUnsubscribe(): CancelablePromise<AmarantSalesNewsletterSubscribeResultModel>;
+    salesNewslettersUnsubscribe(): CancelablePromise<AmarantSalesNewsletterSubscribeResultModel>;
 }

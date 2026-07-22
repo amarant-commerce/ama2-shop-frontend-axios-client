@@ -1,6 +1,7 @@
-import { OpenAPI } from '../core/OpenAPI';
-import { request as __request } from '../core/request';
 export class DirectoryService {
+    constructor(httpRequest) {
+        this.httpRequest = httpRequest;
+    }
     /**
      * Get country collection.
      * Get country collection.
@@ -9,8 +10,8 @@ export class DirectoryService {
      * @returns any OK
      * @throws ApiError
      */
-    static getCountryCollection(include, exclude) {
-        return __request(OpenAPI, {
+    getCountryCollection(include, exclude) {
+        return this.httpRequest.request({
             method: 'GET',
             url: '/api/directory/v1/countries',
             query: {
@@ -28,8 +29,8 @@ export class DirectoryService {
      * @returns any OK
      * @throws ApiError
      */
-    static getCountryRegionCollection(id, include, exclude) {
-        return __request(OpenAPI, {
+    getCountryRegionCollection(id, include, exclude) {
+        return this.httpRequest.request({
             method: 'GET',
             url: '/api/directory/v1/countries/{id}/regions',
             path: {

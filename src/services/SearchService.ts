@@ -4,9 +4,9 @@
 /* eslint-disable */
 import type { AmarantSearchResultModel } from '../models/AmarantSearchResultModel';
 import type { CancelablePromise } from '../core/CancelablePromise';
-import { OpenAPI } from '../core/OpenAPI';
-import { request as __request } from '../core/request';
+import type { BaseHttpRequest } from '../core/BaseHttpRequest';
 export class SearchService {
+    constructor(public readonly httpRequest: BaseHttpRequest) {}
     /**
      * Get search results.
      * Get search results.
@@ -14,10 +14,10 @@ export class SearchService {
      * @returns AmarantSearchResultModel
      * @throws ApiError
      */
-    public static getSearchResults(
+    public getSearchResults(
         q: string,
     ): CancelablePromise<AmarantSearchResultModel> {
-        return __request(OpenAPI, {
+        return this.httpRequest.request({
             method: 'GET',
             url: '/api/search/v1',
             query: {

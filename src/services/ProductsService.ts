@@ -13,9 +13,9 @@ import type { AmarantSearchCriteriaFilter } from '../models/AmarantSearchCriteri
 import type { CreateProductWishlistInputAmarantCreateProductWishlistInput } from '../models/CreateProductWishlistInputAmarantCreateProductWishlistInput';
 import type { UpdateProductWishlistInputAmarantUpdateProductWishlistInput } from '../models/UpdateProductWishlistInputAmarantUpdateProductWishlistInput';
 import type { CancelablePromise } from '../core/CancelablePromise';
-import { OpenAPI } from '../core/OpenAPI';
-import { request as __request } from '../core/request';
+import type { BaseHttpRequest } from '../core/BaseHttpRequest';
 export class ProductsService {
+    constructor(public readonly httpRequest: BaseHttpRequest) {}
     /**
      * Get product collection.
      * Get product collection.
@@ -28,7 +28,7 @@ export class ProductsService {
      * @returns any OK
      * @throws ApiError
      */
-    public static getProductCollection(
+    public getProductCollection(
         q?: AmarantSearchCriteriaFilter,
         page?: number,
         itemsPerPage?: number,
@@ -38,7 +38,7 @@ export class ProductsService {
     ): CancelablePromise<(AmarantApiPaginatedCollectionResponse & {
         data: Array<AmarantProductModel>;
     })> {
-        return __request(OpenAPI, {
+        return this.httpRequest.request({
             method: 'GET',
             url: '/api/products/v1',
             query: {
@@ -63,7 +63,7 @@ export class ProductsService {
      * @returns any OK
      * @throws ApiError
      */
-    public static getSearchProductCollection(
+    public getSearchProductCollection(
         query: string,
         q?: AmarantSearchCriteriaFilter,
         page?: number,
@@ -73,7 +73,7 @@ export class ProductsService {
     ): CancelablePromise<(AmarantApiPaginatedCollectionResponse & {
         data: Array<AmarantProductModel>;
     })> {
-        return __request(OpenAPI, {
+        return this.httpRequest.request({
             method: 'GET',
             url: '/api/products/v1/search',
             query: {
@@ -93,10 +93,10 @@ export class ProductsService {
      * @returns AmarantProductModel OK
      * @throws ApiError
      */
-    public static getProductItem(
+    public getProductItem(
         id: number,
     ): CancelablePromise<AmarantProductModel> {
-        return __request(OpenAPI, {
+        return this.httpRequest.request({
             method: 'GET',
             url: '/api/products/v1/{id}',
             path: {
@@ -111,10 +111,10 @@ export class ProductsService {
      * @returns AmarantProductCategoryNodeItem OK
      * @throws ApiError
      */
-    public static getCategoryItem(
+    public getCategoryItem(
         id: number,
     ): CancelablePromise<AmarantProductCategoryNodeItem> {
-        return __request(OpenAPI, {
+        return this.httpRequest.request({
             method: 'GET',
             url: '/api/categories/v1/{id}',
             path: {
@@ -131,14 +131,14 @@ export class ProductsService {
      * @returns any OK
      * @throws ApiError
      */
-    public static getProductCategoryRelationsCollection(
+    public getProductCategoryRelationsCollection(
         id: number,
         include?: string,
         exclude?: string,
     ): CancelablePromise<(AmarantApiCollectionResponse & {
         data: Array<AmarantProductCategoryRelationOutputModel>;
     })> {
-        return __request(OpenAPI, {
+        return this.httpRequest.request({
             method: 'GET',
             url: '/api/product-category-relations/v1',
             query: {
@@ -159,13 +159,13 @@ export class ProductsService {
      * @returns any OK
      * @throws ApiError
      */
-    public static getProductWishlistCollection(
+    public getProductWishlistCollection(
         include?: string,
         exclude?: string,
     ): CancelablePromise<(AmarantApiCollectionResponse & {
         data: Array<AmarantProductWishlist>;
     })> {
-        return __request(OpenAPI, {
+        return this.httpRequest.request({
             method: 'GET',
             url: '/api/product-wishlists/v1',
             query: {
@@ -184,10 +184,10 @@ export class ProductsService {
      * @returns AmarantProductWishlist Resource created.
      * @throws ApiError
      */
-    public static createProductWishlist(
+    public createProductWishlist(
         requestBody: CreateProductWishlistInputAmarantCreateProductWishlistInput,
     ): CancelablePromise<AmarantProductWishlist> {
-        return __request(OpenAPI, {
+        return this.httpRequest.request({
             method: 'POST',
             url: '/api/product-wishlists/v1',
             body: requestBody,
@@ -201,10 +201,10 @@ export class ProductsService {
      * @returns AmarantProductWishlist OK
      * @throws ApiError
      */
-    public static getProductWishlistCollectionItem(
+    public getProductWishlistCollectionItem(
         id: string,
     ): CancelablePromise<AmarantProductWishlist> {
-        return __request(OpenAPI, {
+        return this.httpRequest.request({
             method: 'GET',
             url: '/api/product-wishlists/v1/{id}',
             path: {
@@ -222,10 +222,10 @@ export class ProductsService {
      * @returns AmarantProductWishlist Resource deleted.
      * @throws ApiError
      */
-    public static removeProductWishlist(
+    public removeProductWishlist(
         id: string,
     ): CancelablePromise<AmarantProductWishlist> {
-        return __request(OpenAPI, {
+        return this.httpRequest.request({
             method: 'DELETE',
             url: '/api/product-wishlists/v1/{id}',
             path: {
@@ -244,11 +244,11 @@ export class ProductsService {
      * @returns AmarantProductWishlist Resource updated.
      * @throws ApiError
      */
-    public static updateProductWishlist(
+    public updateProductWishlist(
         id: string,
         requestBody: UpdateProductWishlistInputAmarantUpdateProductWishlistInput,
     ): CancelablePromise<AmarantProductWishlist> {
-        return __request(OpenAPI, {
+        return this.httpRequest.request({
             method: 'PATCH',
             url: '/api/product-wishlists/v1/{id}',
             path: {
@@ -269,11 +269,11 @@ export class ProductsService {
      * @returns AmarantProductWishlist OK
      * @throws ApiError
      */
-    public static addItemsToWishlist(
+    public addItemsToWishlist(
         id: string,
         requestBody: AddItemsToWishlistInputAmarantAddProductsToWishlistInput,
     ): CancelablePromise<AmarantProductWishlist> {
-        return __request(OpenAPI, {
+        return this.httpRequest.request({
             method: 'POST',
             url: '/api/product-wishlists/v1/{id}/items',
             path: {
@@ -294,11 +294,11 @@ export class ProductsService {
      * @returns AmarantProductWishlist Resource deleted.
      * @throws ApiError
      */
-    public static removeWishlistItem(
+    public removeWishlistItem(
         id: string,
         itemId: string,
     ): CancelablePromise<AmarantProductWishlist> {
-        return __request(OpenAPI, {
+        return this.httpRequest.request({
             method: 'DELETE',
             url: '/api/product-wishlists/v1/{id}/items/{itemId}',
             path: {

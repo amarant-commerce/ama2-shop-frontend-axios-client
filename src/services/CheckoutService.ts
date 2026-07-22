@@ -4,9 +4,9 @@
 /* eslint-disable */
 import type { AmarantSalesCheckoutConfigurationModel } from '../models/AmarantSalesCheckoutConfigurationModel';
 import type { CancelablePromise } from '../core/CancelablePromise';
-import { OpenAPI } from '../core/OpenAPI';
-import { request as __request } from '../core/request';
+import type { BaseHttpRequest } from '../core/BaseHttpRequest';
 export class CheckoutService {
+    constructor(public readonly httpRequest: BaseHttpRequest) {}
     /**
      * @deprecated
      * Use application state endpoint instead.
@@ -14,8 +14,8 @@ export class CheckoutService {
      * @returns AmarantSalesCheckoutConfigurationModel OK
      * @throws ApiError
      */
-    public static getCheckoutConfiguration(): CancelablePromise<AmarantSalesCheckoutConfigurationModel> {
-        return __request(OpenAPI, {
+    public getCheckoutConfiguration(): CancelablePromise<AmarantSalesCheckoutConfigurationModel> {
+        return this.httpRequest.request({
             method: 'GET',
             url: '/api/checkout/v1/configuration',
         });

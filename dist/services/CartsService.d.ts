@@ -10,14 +10,17 @@ import type { SetPaymentInformationInputAmarantSalesCartPaymentInformationInputG
 import type { SetShippingInformationInputAmarantSalesCartShippingInformationInputGroupDto } from '../models/SetShippingInformationInputAmarantSalesCartShippingInformationInputGroupDto';
 import type { UpdateCartItemInputAmarantSalesCartItemUpdateInputDto } from '../models/UpdateCartItemInputAmarantSalesCartItemUpdateInputDto';
 import type { CancelablePromise } from '../core/CancelablePromise';
+import type { BaseHttpRequest } from '../core/BaseHttpRequest';
 export declare class CartsService {
+    readonly httpRequest: BaseHttpRequest;
+    constructor(httpRequest: BaseHttpRequest);
     /**
      * Create cart.
      * Create cart.
      * @returns AmarantCartModel Resource created.
      * @throws ApiError
      */
-    static createCart(): CancelablePromise<AmarantCartModel>;
+    createCart(): CancelablePromise<AmarantCartModel>;
     /**
      * Get cart.
      * Get cart.
@@ -25,7 +28,7 @@ export declare class CartsService {
      * @returns AmarantCartModel OK
      * @throws ApiError
      */
-    static getCart(id: string): CancelablePromise<AmarantCartModel>;
+    getCart(id: string): CancelablePromise<AmarantCartModel>;
     /**
      * Add item to cart.
      * Add item to cart.
@@ -34,7 +37,7 @@ export declare class CartsService {
      * @returns AmarantCartModel OK
      * @throws ApiError
      */
-    static addItemToCart(id: string, requestBody: AddItemToCartInputAmarantSalesCartItemInputProductDto): CancelablePromise<AmarantCartModel>;
+    addItemToCart(id: string, requestBody: AddItemToCartInputAmarantSalesCartItemInputProductDto): CancelablePromise<AmarantCartModel>;
     /**
      * Append guest cart items to current customer cart.
      * Append guest cart items to current customer cart.
@@ -42,7 +45,7 @@ export declare class CartsService {
      * @returns AmarantCartModel OK
      * @throws ApiError
      */
-    static appendGuestCart(id: string): CancelablePromise<AmarantCartModel>;
+    appendGuestCart(id: string): CancelablePromise<AmarantCartModel>;
     /**
      * Get available shipping rates.
      * Get available shipping rates.
@@ -51,7 +54,7 @@ export declare class CartsService {
      * @returns AmarantEstimatedShippingRateModelCollection OK
      * @throws ApiError
      */
-    static getAvailableShippingRates(id: string, requestBody: GetAvailableShippingRatesInputAmarantSalesCartShippingRateEstimationGroup): CancelablePromise<AmarantEstimatedShippingRateModelCollection>;
+    getAvailableShippingRates(id: string, requestBody: GetAvailableShippingRatesInputAmarantSalesCartShippingRateEstimationGroup): CancelablePromise<AmarantEstimatedShippingRateModelCollection>;
     /**
      * Set shipping information.
      * Set shipping information.
@@ -60,7 +63,7 @@ export declare class CartsService {
      * @returns AmarantCartModel OK
      * @throws ApiError
      */
-    static setShippingInformation(id: string, requestBody: SetShippingInformationInputAmarantSalesCartShippingInformationInputGroupDto): CancelablePromise<AmarantCartModel>;
+    setShippingInformation(id: string, requestBody: SetShippingInformationInputAmarantSalesCartShippingInformationInputGroupDto): CancelablePromise<AmarantCartModel>;
     /**
      * Get available payment methods.
      * Get available payment methods.
@@ -68,7 +71,7 @@ export declare class CartsService {
      * @returns AmarantAvailablePaymentMethodModelCollection OK
      * @throws ApiError
      */
-    static getAvailablePaymentMethods(id: string): CancelablePromise<AmarantAvailablePaymentMethodModelCollection>;
+    getAvailablePaymentMethods(id: string): CancelablePromise<AmarantAvailablePaymentMethodModelCollection>;
     /**
      * Set payment information.
      * Set payment information.
@@ -77,7 +80,7 @@ export declare class CartsService {
      * @returns AmarantCartModel OK
      * @throws ApiError
      */
-    static setPaymentInformation(id: string, requestBody: SetPaymentInformationInputAmarantSalesCartPaymentInformationInputGroupDto): CancelablePromise<AmarantCartModel>;
+    setPaymentInformation(id: string, requestBody: SetPaymentInformationInputAmarantSalesCartPaymentInformationInputGroupDto): CancelablePromise<AmarantCartModel>;
     /**
      * Apply cart coupon.
      * Apply cart coupon.
@@ -86,7 +89,7 @@ export declare class CartsService {
      * @returns AmarantCartModel OK
      * @throws ApiError
      */
-    static applyCartCoupon(id: string, requestBody: ApplyCartCouponInputAmarantSalesCartCouponInputDto): CancelablePromise<AmarantCartModel>;
+    applyCartCoupon(id: string, requestBody: ApplyCartCouponInputAmarantSalesCartCouponInputDto): CancelablePromise<AmarantCartModel>;
     /**
      * Discard cart coupon.
      * Discard cart coupon.
@@ -95,7 +98,7 @@ export declare class CartsService {
      * @returns AmarantCartModel Resource deleted.
      * @throws ApiError
      */
-    static discardCartCoupon(id: string, requestBody: DiscardCartCouponInputAmarantSalesCartCouponInputDto): CancelablePromise<AmarantCartModel>;
+    discardCartCoupon(id: string, requestBody: DiscardCartCouponInputAmarantSalesCartCouponInputDto): CancelablePromise<AmarantCartModel>;
     /**
      * Remove cart item.
      * Remove cart item.
@@ -104,7 +107,7 @@ export declare class CartsService {
      * @returns AmarantCartModel Resource deleted.
      * @throws ApiError
      */
-    static removeCartItem(id: string, itemId: string): CancelablePromise<AmarantCartModel>;
+    removeCartItem(id: string, itemId: string): CancelablePromise<AmarantCartModel>;
     /**
      * Update cart item.
      * Update cart item.
@@ -114,7 +117,7 @@ export declare class CartsService {
      * @returns AmarantCartModel Resource updated.
      * @throws ApiError
      */
-    static updateCartItem(id: string, itemId: string, requestBody: UpdateCartItemInputAmarantSalesCartItemUpdateInputDto): CancelablePromise<AmarantCartModel>;
+    updateCartItem(id: string, itemId: string, requestBody: UpdateCartItemInputAmarantSalesCartItemUpdateInputDto): CancelablePromise<AmarantCartModel>;
     /**
      * Update files for a product option on a cart item. Previous files will be removed.
      * Update files for a product option on a cart item. Previous files will be removed.
@@ -124,5 +127,5 @@ export declare class CartsService {
      * @returns void
      * @throws ApiError
      */
-    static addCartItemProductOptionFiles(id: string, itemId: string, formData: AddCartItemProductOptionFilesInputAmarantSalesCartItemInputProductOptionsFileItemDto): CancelablePromise<void>;
+    addCartItemProductOptionFiles(id: string, itemId: string, formData: AddCartItemProductOptionFilesInputAmarantSalesCartItemInputProductOptionsFileItemDto): CancelablePromise<void>;
 }

@@ -4,7 +4,10 @@ import type { AmarantOrderModel } from '../models/AmarantOrderModel';
 import type { AmarantPlacedOrderResultModel } from '../models/AmarantPlacedOrderResultModel';
 import type { PlaceOrderInputAmarantSalesPlaceOrderInputDto } from '../models/PlaceOrderInputAmarantSalesPlaceOrderInputDto';
 import type { CancelablePromise } from '../core/CancelablePromise';
+import type { BaseHttpRequest } from '../core/BaseHttpRequest';
 export declare class OrdersService {
+    readonly httpRequest: BaseHttpRequest;
+    constructor(httpRequest: BaseHttpRequest);
     /**
      * Place order.
      * Place order.
@@ -13,7 +16,7 @@ export declare class OrdersService {
      * @returns AmarantPlacedOrderResultModel Resource created.
      * @throws ApiError
      */
-    static placeOrder(cartId: string, requestBody: PlaceOrderInputAmarantSalesPlaceOrderInputDto): CancelablePromise<AmarantPlacedOrderResultModel>;
+    placeOrder(cartId: string, requestBody: PlaceOrderInputAmarantSalesPlaceOrderInputDto): CancelablePromise<AmarantPlacedOrderResultModel>;
     /**
      * Get order item.
      * Get order item.
@@ -24,7 +27,7 @@ export declare class OrdersService {
      * @returns AmarantOrderModel OK
      * @throws ApiError
      */
-    static getOrderItem(id: number): CancelablePromise<AmarantOrderModel>;
+    getOrderItem(id: number): CancelablePromise<AmarantOrderModel>;
     /**
      * Get order collection.
      * Get order collection.
@@ -39,7 +42,7 @@ export declare class OrdersService {
      * @returns any OK
      * @throws ApiError
      */
-    static getOrderCollection(q?: AmarantGetOrderCollectionSearchCriteriaFilter, page?: number, itemsPerPage?: number, include?: string, exclude?: string): CancelablePromise<(AmarantApiPaginatedCollectionResponse & {
+    getOrderCollection(q?: AmarantGetOrderCollectionSearchCriteriaFilter, page?: number, itemsPerPage?: number, include?: string, exclude?: string): CancelablePromise<(AmarantApiPaginatedCollectionResponse & {
         data: Array<AmarantOrderModel>;
     })>;
     /**
@@ -52,5 +55,5 @@ export declare class OrdersService {
      * @returns AmarantOrderModel OK
      * @throws ApiError
      */
-    static getGuestOrderItem(guestCode: string): CancelablePromise<AmarantOrderModel>;
+    getGuestOrderItem(guestCode: string): CancelablePromise<AmarantOrderModel>;
 }

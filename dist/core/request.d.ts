@@ -5,7 +5,7 @@ import type { ApiResult } from './ApiResult';
 import { CancelablePromise } from './CancelablePromise';
 import type { OnCancel } from './CancelablePromise';
 import type { OpenAPIConfig } from './OpenAPI';
-export declare const isDefined: <T>(value: T | null | undefined) => value is Exclude<T, null>;
+export declare const isDefined: <T>(value: T | null | undefined) => value is Exclude<T, null | undefined>;
 export declare const isString: (value: any) => value is string;
 export declare const isStringWithValue: (value: any) => value is string;
 export declare const isBlob: (value: any) => value is Blob;

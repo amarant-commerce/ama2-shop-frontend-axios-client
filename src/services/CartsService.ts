@@ -14,17 +14,17 @@ import type { SetPaymentInformationInputAmarantSalesCartPaymentInformationInputG
 import type { SetShippingInformationInputAmarantSalesCartShippingInformationInputGroupDto } from '../models/SetShippingInformationInputAmarantSalesCartShippingInformationInputGroupDto';
 import type { UpdateCartItemInputAmarantSalesCartItemUpdateInputDto } from '../models/UpdateCartItemInputAmarantSalesCartItemUpdateInputDto';
 import type { CancelablePromise } from '../core/CancelablePromise';
-import { OpenAPI } from '../core/OpenAPI';
-import { request as __request } from '../core/request';
+import type { BaseHttpRequest } from '../core/BaseHttpRequest';
 export class CartsService {
+    constructor(public readonly httpRequest: BaseHttpRequest) {}
     /**
      * Create cart.
      * Create cart.
      * @returns AmarantCartModel Resource created.
      * @throws ApiError
      */
-    public static createCart(): CancelablePromise<AmarantCartModel> {
-        return __request(OpenAPI, {
+    public createCart(): CancelablePromise<AmarantCartModel> {
+        return this.httpRequest.request({
             method: 'POST',
             url: '/api/carts/v1',
         });
@@ -36,10 +36,10 @@ export class CartsService {
      * @returns AmarantCartModel OK
      * @throws ApiError
      */
-    public static getCart(
+    public getCart(
         id: string,
     ): CancelablePromise<AmarantCartModel> {
-        return __request(OpenAPI, {
+        return this.httpRequest.request({
             method: 'GET',
             url: '/api/carts/v1/{id}',
             path: {
@@ -55,11 +55,11 @@ export class CartsService {
      * @returns AmarantCartModel OK
      * @throws ApiError
      */
-    public static addItemToCart(
+    public addItemToCart(
         id: string,
         requestBody: AddItemToCartInputAmarantSalesCartItemInputProductDto,
     ): CancelablePromise<AmarantCartModel> {
-        return __request(OpenAPI, {
+        return this.httpRequest.request({
             method: 'POST',
             url: '/api/carts/v1/{id}/items',
             path: {
@@ -76,10 +76,10 @@ export class CartsService {
      * @returns AmarantCartModel OK
      * @throws ApiError
      */
-    public static appendGuestCart(
+    public appendGuestCart(
         id: string,
     ): CancelablePromise<AmarantCartModel> {
-        return __request(OpenAPI, {
+        return this.httpRequest.request({
             method: 'POST',
             url: '/api/carts/v1/{id}/append',
             path: {
@@ -95,11 +95,11 @@ export class CartsService {
      * @returns AmarantEstimatedShippingRateModelCollection OK
      * @throws ApiError
      */
-    public static getAvailableShippingRates(
+    public getAvailableShippingRates(
         id: string,
         requestBody: GetAvailableShippingRatesInputAmarantSalesCartShippingRateEstimationGroup,
     ): CancelablePromise<AmarantEstimatedShippingRateModelCollection> {
-        return __request(OpenAPI, {
+        return this.httpRequest.request({
             method: 'POST',
             url: '/api/carts/v1/{id}/shipping-rates',
             path: {
@@ -117,11 +117,11 @@ export class CartsService {
      * @returns AmarantCartModel OK
      * @throws ApiError
      */
-    public static setShippingInformation(
+    public setShippingInformation(
         id: string,
         requestBody: SetShippingInformationInputAmarantSalesCartShippingInformationInputGroupDto,
     ): CancelablePromise<AmarantCartModel> {
-        return __request(OpenAPI, {
+        return this.httpRequest.request({
             method: 'POST',
             url: '/api/carts/v1/{id}/set-shipping-information',
             path: {
@@ -138,10 +138,10 @@ export class CartsService {
      * @returns AmarantAvailablePaymentMethodModelCollection OK
      * @throws ApiError
      */
-    public static getAvailablePaymentMethods(
+    public getAvailablePaymentMethods(
         id: string,
     ): CancelablePromise<AmarantAvailablePaymentMethodModelCollection> {
-        return __request(OpenAPI, {
+        return this.httpRequest.request({
             method: 'POST',
             url: '/api/carts/v1/{id}/payment-methods',
             path: {
@@ -157,11 +157,11 @@ export class CartsService {
      * @returns AmarantCartModel OK
      * @throws ApiError
      */
-    public static setPaymentInformation(
+    public setPaymentInformation(
         id: string,
         requestBody: SetPaymentInformationInputAmarantSalesCartPaymentInformationInputGroupDto,
     ): CancelablePromise<AmarantCartModel> {
-        return __request(OpenAPI, {
+        return this.httpRequest.request({
             method: 'POST',
             url: '/api/carts/v1/{id}/set-payment-information',
             path: {
@@ -179,11 +179,11 @@ export class CartsService {
      * @returns AmarantCartModel OK
      * @throws ApiError
      */
-    public static applyCartCoupon(
+    public applyCartCoupon(
         id: string,
         requestBody: ApplyCartCouponInputAmarantSalesCartCouponInputDto,
     ): CancelablePromise<AmarantCartModel> {
-        return __request(OpenAPI, {
+        return this.httpRequest.request({
             method: 'POST',
             url: '/api/carts/v1/{id}/coupons',
             path: {
@@ -201,11 +201,11 @@ export class CartsService {
      * @returns AmarantCartModel Resource deleted.
      * @throws ApiError
      */
-    public static discardCartCoupon(
+    public discardCartCoupon(
         id: string,
         requestBody: DiscardCartCouponInputAmarantSalesCartCouponInputDto,
     ): CancelablePromise<AmarantCartModel> {
-        return __request(OpenAPI, {
+        return this.httpRequest.request({
             method: 'DELETE',
             url: '/api/carts/v1/{id}/coupons',
             path: {
@@ -223,11 +223,11 @@ export class CartsService {
      * @returns AmarantCartModel Resource deleted.
      * @throws ApiError
      */
-    public static removeCartItem(
+    public removeCartItem(
         id: string,
         itemId: string,
     ): CancelablePromise<AmarantCartModel> {
-        return __request(OpenAPI, {
+        return this.httpRequest.request({
             method: 'DELETE',
             url: '/api/carts/v1/{id}/items/{itemId}',
             path: {
@@ -245,12 +245,12 @@ export class CartsService {
      * @returns AmarantCartModel Resource updated.
      * @throws ApiError
      */
-    public static updateCartItem(
+    public updateCartItem(
         id: string,
         itemId: string,
         requestBody: UpdateCartItemInputAmarantSalesCartItemUpdateInputDto,
     ): CancelablePromise<AmarantCartModel> {
-        return __request(OpenAPI, {
+        return this.httpRequest.request({
             method: 'PATCH',
             url: '/api/carts/v1/{id}/items/{itemId}',
             path: {
@@ -270,12 +270,12 @@ export class CartsService {
      * @returns void
      * @throws ApiError
      */
-    public static addCartItemProductOptionFiles(
+    public addCartItemProductOptionFiles(
         id: string,
         itemId: string,
         formData: AddCartItemProductOptionFilesInputAmarantSalesCartItemInputProductOptionsFileItemDto,
     ): CancelablePromise<void> {
-        return __request(OpenAPI, {
+        return this.httpRequest.request({
             method: 'PUT',
             url: '/api/carts/v1/{id}/items/{itemId}/product-option-files',
             path: {

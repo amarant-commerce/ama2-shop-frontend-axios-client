@@ -10,9 +10,9 @@ import type { AmarantGetBlogPostCategoryCollectionSearchCriteriaFilter } from '.
 import type { AmarantGetBlogPostCollectionSearchCriteriaFilter } from '../models/AmarantGetBlogPostCollectionSearchCriteriaFilter';
 import type { AmarantGetBlogPostTagCollectionSearchCriteriaFilter } from '../models/AmarantGetBlogPostTagCollectionSearchCriteriaFilter';
 import type { CancelablePromise } from '../core/CancelablePromise';
-import { OpenAPI } from '../core/OpenAPI';
-import { request as __request } from '../core/request';
+import type { BaseHttpRequest } from '../core/BaseHttpRequest';
 export class BlogService {
+    constructor(public readonly httpRequest: BaseHttpRequest) {}
     /**
      * Get blog post collection.
      * Get blog post collection.
@@ -24,7 +24,7 @@ export class BlogService {
      * @returns any OK
      * @throws ApiError
      */
-    public static getBlogPostCollection(
+    public getBlogPostCollection(
         q?: AmarantGetBlogPostCollectionSearchCriteriaFilter,
         page?: number,
         itemsPerPage?: number,
@@ -33,7 +33,7 @@ export class BlogService {
     ): CancelablePromise<(AmarantApiPaginatedCollectionResponse & {
         data: Array<AmarantBlogPostModel>;
     })> {
-        return __request(OpenAPI, {
+        return this.httpRequest.request({
             method: 'GET',
             url: '/api/blog/v1/posts',
             query: {
@@ -52,10 +52,10 @@ export class BlogService {
      * @returns AmarantBlogPostModel OK
      * @throws ApiError
      */
-    public static getBlogPostItem(
+    public getBlogPostItem(
         id: number,
     ): CancelablePromise<AmarantBlogPostModel> {
-        return __request(OpenAPI, {
+        return this.httpRequest.request({
             method: 'GET',
             url: '/api/blog/v1/posts/{id}',
             path: {
@@ -74,7 +74,7 @@ export class BlogService {
      * @returns any OK
      * @throws ApiError
      */
-    public static getBlogPostTagCollection(
+    public getBlogPostTagCollection(
         q?: AmarantGetBlogPostTagCollectionSearchCriteriaFilter,
         page?: number,
         itemsPerPage?: number,
@@ -83,7 +83,7 @@ export class BlogService {
     ): CancelablePromise<(AmarantApiPaginatedCollectionResponse & {
         data: Array<AmarantBlogPostTagModel>;
     })> {
-        return __request(OpenAPI, {
+        return this.httpRequest.request({
             method: 'GET',
             url: '/api/blog/v1/tags',
             query: {
@@ -102,10 +102,10 @@ export class BlogService {
      * @returns AmarantBlogPostTagModel OK
      * @throws ApiError
      */
-    public static getBlogPostTagItem(
+    public getBlogPostTagItem(
         id: number,
     ): CancelablePromise<AmarantBlogPostTagModel> {
-        return __request(OpenAPI, {
+        return this.httpRequest.request({
             method: 'GET',
             url: '/api/blog/v1/tags/{id}',
             path: {
@@ -124,7 +124,7 @@ export class BlogService {
      * @returns any OK
      * @throws ApiError
      */
-    public static getBlogPostCategoryCollection(
+    public getBlogPostCategoryCollection(
         q?: AmarantGetBlogPostCategoryCollectionSearchCriteriaFilter,
         page?: number,
         itemsPerPage?: number,
@@ -133,7 +133,7 @@ export class BlogService {
     ): CancelablePromise<(AmarantApiPaginatedCollectionResponse & {
         data: Array<AmarantBlogPostCategoryModel>;
     })> {
-        return __request(OpenAPI, {
+        return this.httpRequest.request({
             method: 'GET',
             url: '/api/blog/v1/categories',
             query: {
@@ -152,10 +152,10 @@ export class BlogService {
      * @returns AmarantBlogPostCategoryModel OK
      * @throws ApiError
      */
-    public static getBlogPostCategoryItem(
+    public getBlogPostCategoryItem(
         id: number,
     ): CancelablePromise<AmarantBlogPostCategoryModel> {
-        return __request(OpenAPI, {
+        return this.httpRequest.request({
             method: 'GET',
             url: '/api/blog/v1/categories/{id}',
             path: {

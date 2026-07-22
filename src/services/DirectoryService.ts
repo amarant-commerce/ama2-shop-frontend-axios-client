@@ -6,9 +6,9 @@ import type { AmarantApiCollectionResponse } from '../models/AmarantApiCollectio
 import type { AmarantDirectoryCountryModel } from '../models/AmarantDirectoryCountryModel';
 import type { AmarantDirectoryRegionModel } from '../models/AmarantDirectoryRegionModel';
 import type { CancelablePromise } from '../core/CancelablePromise';
-import { OpenAPI } from '../core/OpenAPI';
-import { request as __request } from '../core/request';
+import type { BaseHttpRequest } from '../core/BaseHttpRequest';
 export class DirectoryService {
+    constructor(public readonly httpRequest: BaseHttpRequest) {}
     /**
      * Get country collection.
      * Get country collection.
@@ -17,13 +17,13 @@ export class DirectoryService {
      * @returns any OK
      * @throws ApiError
      */
-    public static getCountryCollection(
+    public getCountryCollection(
         include?: string,
         exclude?: string,
     ): CancelablePromise<(AmarantApiCollectionResponse & {
         data: Array<AmarantDirectoryCountryModel>;
     })> {
-        return __request(OpenAPI, {
+        return this.httpRequest.request({
             method: 'GET',
             url: '/api/directory/v1/countries',
             query: {
@@ -41,14 +41,14 @@ export class DirectoryService {
      * @returns any OK
      * @throws ApiError
      */
-    public static getCountryRegionCollection(
+    public getCountryRegionCollection(
         id: string,
         include?: string,
         exclude?: string,
     ): CancelablePromise<(AmarantApiCollectionResponse & {
         data: Array<AmarantDirectoryRegionModel>;
     })> {
-        return __request(OpenAPI, {
+        return this.httpRequest.request({
             method: 'GET',
             url: '/api/directory/v1/countries/{id}/regions',
             path: {

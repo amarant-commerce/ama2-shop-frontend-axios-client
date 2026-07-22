@@ -1,6 +1,7 @@
-import { OpenAPI } from '../core/OpenAPI';
-import { request as __request } from '../core/request';
 export class OrdersService {
+    constructor(httpRequest) {
+        this.httpRequest = httpRequest;
+    }
     /**
      * Place order.
      * Place order.
@@ -9,8 +10,8 @@ export class OrdersService {
      * @returns AmarantPlacedOrderResultModel Resource created.
      * @throws ApiError
      */
-    static placeOrder(cartId, requestBody) {
-        return __request(OpenAPI, {
+    placeOrder(cartId, requestBody) {
+        return this.httpRequest.request({
             method: 'POST',
             url: '/api/orders/v1/place/{cartId}',
             path: {
@@ -33,8 +34,8 @@ export class OrdersService {
      * @returns AmarantOrderModel OK
      * @throws ApiError
      */
-    static getOrderItem(id) {
-        return __request(OpenAPI, {
+    getOrderItem(id) {
+        return this.httpRequest.request({
             method: 'GET',
             url: '/api/orders/v1/{id}',
             path: {
@@ -56,8 +57,8 @@ export class OrdersService {
      * @returns any OK
      * @throws ApiError
      */
-    static getOrderCollection(q, page, itemsPerPage, include, exclude) {
-        return __request(OpenAPI, {
+    getOrderCollection(q, page, itemsPerPage, include, exclude) {
+        return this.httpRequest.request({
             method: 'GET',
             url: '/api/orders/v1',
             query: {
@@ -79,8 +80,8 @@ export class OrdersService {
      * @returns AmarantOrderModel OK
      * @throws ApiError
      */
-    static getGuestOrderItem(guestCode) {
-        return __request(OpenAPI, {
+    getGuestOrderItem(guestCode) {
+        return this.httpRequest.request({
             method: 'GET',
             url: '/api/orders/v1/guest-order/{guestCode}',
             path: {

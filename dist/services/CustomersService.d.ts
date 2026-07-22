@@ -19,7 +19,10 @@ import type { SocialLoginStartAuthenticationInputAmarantSalesCustomerSocialLogin
 import type { SocialLoginWithAuthorizationCodeInputAmarantSalesCustomerSocialLoginAuthorizationCodeInputDto } from '../models/SocialLoginWithAuthorizationCodeInputAmarantSalesCustomerSocialLoginAuthorizationCodeInputDto';
 import type { UpdateCustomerAddressItemInputAmarantSalesCustomerAccountAddressInputDto } from '../models/UpdateCustomerAddressItemInputAmarantSalesCustomerAccountAddressInputDto';
 import type { CancelablePromise } from '../core/CancelablePromise';
+import type { BaseHttpRequest } from '../core/BaseHttpRequest';
 export declare class CustomersService {
+    readonly httpRequest: BaseHttpRequest;
+    constructor(httpRequest: BaseHttpRequest);
     /**
      * Get authorization token.
      * Get authorization token.
@@ -28,7 +31,7 @@ export declare class CustomersService {
      * @returns AmarantSecurityJwtTokenModel OK
      * @throws ApiError
      */
-    static getAuthorizationToken(requestBody: GetAuthorizationTokenInputAmarantSalesCustomerLoginInputDto, xAmarant2FaCode?: string | number): CancelablePromise<AmarantSecurityJwtTokenModel>;
+    getAuthorizationToken(requestBody: GetAuthorizationTokenInputAmarantSalesCustomerLoginInputDto, xAmarant2FaCode?: string | number): CancelablePromise<AmarantSecurityJwtTokenModel>;
     /**
      * Refresh authorization token.
      * Refresh authorization token.
@@ -36,7 +39,7 @@ export declare class CustomersService {
      * @returns AmarantSecurityJwtTokenModel OK
      * @throws ApiError
      */
-    static refreshAuthorizationToken(requestBody: RefreshAuthorizationTokenInputAmarantSalesCustomerRefreshTokenInputDto): CancelablePromise<AmarantSecurityJwtTokenModel>;
+    refreshAuthorizationToken(requestBody: RefreshAuthorizationTokenInputAmarantSalesCustomerRefreshTokenInputDto): CancelablePromise<AmarantSecurityJwtTokenModel>;
     /**
      * Create customer account.
      * Create customer account.
@@ -44,7 +47,7 @@ export declare class CustomersService {
      * @returns AmarantSalesCustomerAccountOutputDto Resource created.
      * @throws ApiError
      */
-    static createCustomerAccount(requestBody: CreateCustomerAccountInputAmarantSalesCustomerAccountInputDto): CancelablePromise<AmarantSalesCustomerAccountOutputDto>;
+    createCustomerAccount(requestBody: CreateCustomerAccountInputAmarantSalesCustomerAccountInputDto): CancelablePromise<AmarantSalesCustomerAccountOutputDto>;
     /**
      * Confirm customer account.
      * Confirm customer account.
@@ -52,7 +55,7 @@ export declare class CustomersService {
      * @returns void
      * @throws ApiError
      */
-    static confirmCustomerAccount(requestBody: ConfirmCustomerAccountInputAmarantSalesCustomerAccountConfirmationInputDto): CancelablePromise<void>;
+    confirmCustomerAccount(requestBody: ConfirmCustomerAccountInputAmarantSalesCustomerAccountConfirmationInputDto): CancelablePromise<void>;
     /**
      * Initiate password reset.
      * Initiate password reset.
@@ -60,7 +63,7 @@ export declare class CustomersService {
      * @returns void
      * @throws ApiError
      */
-    static initiatePasswordReset(requestBody: InitiatePasswordResetInputAmarantSalesCustomerPasswordResetRequestInputDto): CancelablePromise<void>;
+    initiatePasswordReset(requestBody: InitiatePasswordResetInputAmarantSalesCustomerPasswordResetRequestInputDto): CancelablePromise<void>;
     /**
      * Reset password.
      * Reset password.
@@ -68,7 +71,7 @@ export declare class CustomersService {
      * @returns void
      * @throws ApiError
      */
-    static resetPassword(requestBody: ResetPasswordInputAmarantSalesCustomerResetAccountPasswordInputDto): CancelablePromise<void>;
+    resetPassword(requestBody: ResetPasswordInputAmarantSalesCustomerResetAccountPasswordInputDto): CancelablePromise<void>;
     /**
      * @deprecated
      * Get logged in customer. Deprecated, use v2 instead.
@@ -79,7 +82,7 @@ export declare class CustomersService {
      * @returns AmarantSalesCustomerAccountOutputDto OK
      * @throws ApiError
      */
-    static me(): CancelablePromise<AmarantSalesCustomerAccountOutputDto>;
+    me(): CancelablePromise<AmarantSalesCustomerAccountOutputDto>;
     /**
      * Update logged in customer.
      * Update logged in customer.
@@ -90,14 +93,14 @@ export declare class CustomersService {
      * @returns AmarantSalesCustomerAccountOutputDto Resource updated.
      * @throws ApiError
      */
-    static meUpdate(requestBody: MeUpdateInputAmarantSalesCustomerAccountUpdateInputDto): CancelablePromise<AmarantSalesCustomerAccountOutputDto>;
+    meUpdate(requestBody: MeUpdateInputAmarantSalesCustomerAccountUpdateInputDto): CancelablePromise<AmarantSalesCustomerAccountOutputDto>;
     /**
      * Get logged in customer.
      * Get logged in customer.
      * @returns AmarantSalesCustomerMeOutputDto OK
      * @throws ApiError
      */
-    static getLoggedInCustomer(): CancelablePromise<AmarantSalesCustomerMeOutputDto>;
+    getLoggedInCustomer(): CancelablePromise<AmarantSalesCustomerMeOutputDto>;
     /**
      * Update organization of logged in customer.
      * Update organization of logged in customer.
@@ -111,7 +114,7 @@ export declare class CustomersService {
      * @returns AmarantSalesCustomerAccountOrganizationOutputDto Resource updated.
      * @throws ApiError
      */
-    static meUpdateOrganization(requestBody: MeUpdateOrganizationInputAmarantSalesCustomerAccountOrganizationInputDto): CancelablePromise<AmarantSalesCustomerAccountOrganizationOutputDto>;
+    meUpdateOrganization(requestBody: MeUpdateOrganizationInputAmarantSalesCustomerAccountOrganizationInputDto): CancelablePromise<AmarantSalesCustomerAccountOrganizationOutputDto>;
     /**
      * Get customer address collection.
      * Get customer address collection.
@@ -123,7 +126,7 @@ export declare class CustomersService {
      * @returns any OK
      * @throws ApiError
      */
-    static getCustomerAddressCollection(include?: string, exclude?: string): CancelablePromise<(AmarantApiCollectionResponse & {
+    getCustomerAddressCollection(include?: string, exclude?: string): CancelablePromise<(AmarantApiCollectionResponse & {
         data: Array<AmarantSalesCustomerAccountAddressOutputDto>;
     })>;
     /**
@@ -136,7 +139,7 @@ export declare class CustomersService {
      * @returns AmarantSalesCustomerAccountAddressOutputDto Resource created.
      * @throws ApiError
      */
-    static createCustomerAddress(requestBody: CreateCustomerAddressInputAmarantSalesCustomerAccountAddressInputDto): CancelablePromise<AmarantSalesCustomerAccountAddressOutputDto>;
+    createCustomerAddress(requestBody: CreateCustomerAddressInputAmarantSalesCustomerAccountAddressInputDto): CancelablePromise<AmarantSalesCustomerAccountAddressOutputDto>;
     /**
      * Get customer address item.
      * Get customer address item.
@@ -147,7 +150,7 @@ export declare class CustomersService {
      * @returns AmarantSalesCustomerAccountAddressOutputDto OK
      * @throws ApiError
      */
-    static getCustomerAddressItem(id: number): CancelablePromise<AmarantSalesCustomerAccountAddressOutputDto>;
+    getCustomerAddressItem(id: number): CancelablePromise<AmarantSalesCustomerAccountAddressOutputDto>;
     /**
      * Update customer address item.
      * Update customer address item.
@@ -159,7 +162,7 @@ export declare class CustomersService {
      * @returns AmarantSalesCustomerAccountAddressOutputDto Resource updated.
      * @throws ApiError
      */
-    static updateCustomerAddressItem(id: number, requestBody: UpdateCustomerAddressItemInputAmarantSalesCustomerAccountAddressInputDto): CancelablePromise<AmarantSalesCustomerAccountAddressOutputDto>;
+    updateCustomerAddressItem(id: number, requestBody: UpdateCustomerAddressItemInputAmarantSalesCustomerAccountAddressInputDto): CancelablePromise<AmarantSalesCustomerAccountAddressOutputDto>;
     /**
      * Start social login authentication.
      * Start social login authentication.
@@ -170,7 +173,7 @@ export declare class CustomersService {
      * @returns AmarantSalesCustomerSocialLoginStartAuthenticationOutputDto OK
      * @throws ApiError
      */
-    static socialLoginStartAuthentication(requestBody: SocialLoginStartAuthenticationInputAmarantSalesCustomerSocialLoginStartAuthenticationInputDto): CancelablePromise<AmarantSalesCustomerSocialLoginStartAuthenticationOutputDto>;
+    socialLoginStartAuthentication(requestBody: SocialLoginStartAuthenticationInputAmarantSalesCustomerSocialLoginStartAuthenticationInputDto): CancelablePromise<AmarantSalesCustomerSocialLoginStartAuthenticationOutputDto>;
     /**
      * Login with authorization code.
      * Login with authorization code.
@@ -181,7 +184,7 @@ export declare class CustomersService {
      * @returns AmarantSecurityJwtTokenModel OK
      * @throws ApiError
      */
-    static socialLoginWithAuthorizationCode(requestBody: SocialLoginWithAuthorizationCodeInputAmarantSalesCustomerSocialLoginAuthorizationCodeInputDto): CancelablePromise<AmarantSecurityJwtTokenModel>;
+    socialLoginWithAuthorizationCode(requestBody: SocialLoginWithAuthorizationCodeInputAmarantSalesCustomerSocialLoginAuthorizationCodeInputDto): CancelablePromise<AmarantSecurityJwtTokenModel>;
     /**
      * Get social login provider collection.
      * Get social login provider collection.
@@ -190,7 +193,7 @@ export declare class CustomersService {
      * @returns any OK
      * @throws ApiError
      */
-    static socialLoginGetProviderCollection(include?: string, exclude?: string): CancelablePromise<(AmarantApiCollectionResponse & {
+    socialLoginGetProviderCollection(include?: string, exclude?: string): CancelablePromise<(AmarantApiCollectionResponse & {
         data: Array<AmarantSalesCustomerSocialLoginProviderOutputDto>;
     })>;
 }

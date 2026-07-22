@@ -3,7 +3,10 @@ import type { AmarantCookiePanelModel } from '../models/AmarantCookiePanelModel'
 import type { AmarantGetCookiePanelCollectionSearchCriteriaFilter } from '../models/AmarantGetCookiePanelCollectionSearchCriteriaFilter';
 import type { RecordCookiePanelConsentHistoryInputAmarantCookiePanelConsentHistoryInputDto } from '../models/RecordCookiePanelConsentHistoryInputAmarantCookiePanelConsentHistoryInputDto';
 import type { CancelablePromise } from '../core/CancelablePromise';
+import type { BaseHttpRequest } from '../core/BaseHttpRequest';
 export declare class AnalyticsService {
+    readonly httpRequest: BaseHttpRequest;
+    constructor(httpRequest: BaseHttpRequest);
     /**
      * Get cookie panel collection.
      * Get cookie panel collection.
@@ -15,7 +18,7 @@ export declare class AnalyticsService {
      * @returns any OK
      * @throws ApiError
      */
-    static getCookiePanelCollection(q?: AmarantGetCookiePanelCollectionSearchCriteriaFilter, page?: number, itemsPerPage?: number, include?: string, exclude?: string): CancelablePromise<(AmarantApiPaginatedCollectionResponse & {
+    getCookiePanelCollection(q?: AmarantGetCookiePanelCollectionSearchCriteriaFilter, page?: number, itemsPerPage?: number, include?: string, exclude?: string): CancelablePromise<(AmarantApiPaginatedCollectionResponse & {
         data: Array<AmarantCookiePanelModel>;
     })>;
     /**
@@ -25,7 +28,7 @@ export declare class AnalyticsService {
      * @returns AmarantCookiePanelModel OK
      * @throws ApiError
      */
-    static getCookiePanelItem(id: number): CancelablePromise<AmarantCookiePanelModel>;
+    getCookiePanelItem(id: number): CancelablePromise<AmarantCookiePanelModel>;
     /**
      * Record cookie panel consent history.
      * Record cookie panel consent history.
@@ -33,5 +36,5 @@ export declare class AnalyticsService {
      * @returns void
      * @throws ApiError
      */
-    static recordCookiePanelConsentHistory(requestBody: RecordCookiePanelConsentHistoryInputAmarantCookiePanelConsentHistoryInputDto): CancelablePromise<void>;
+    recordCookiePanelConsentHistory(requestBody: RecordCookiePanelConsentHistoryInputAmarantCookiePanelConsentHistoryInputDto): CancelablePromise<void>;
 }

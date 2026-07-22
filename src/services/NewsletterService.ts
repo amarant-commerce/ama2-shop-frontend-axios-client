@@ -5,9 +5,9 @@
 import type { AmarantSalesNewsletterSubscribeResultModel } from '../models/AmarantSalesNewsletterSubscribeResultModel';
 import type { SalesNewslettersSubscribeGuestInputAmarantSalesNewsletterInputModel } from '../models/SalesNewslettersSubscribeGuestInputAmarantSalesNewsletterInputModel';
 import type { CancelablePromise } from '../core/CancelablePromise';
-import { OpenAPI } from '../core/OpenAPI';
-import { request as __request } from '../core/request';
+import type { BaseHttpRequest } from '../core/BaseHttpRequest';
 export class NewsletterService {
+    constructor(public readonly httpRequest: BaseHttpRequest) {}
     /**
      * Confirm sales newsletter subscription.
      * Confirm sales newsletter subscription.
@@ -15,10 +15,10 @@ export class NewsletterService {
      * @returns void
      * @throws ApiError
      */
-    public static salesNewslettersConfirm(
+    public salesNewslettersConfirm(
         c: string,
     ): CancelablePromise<void> {
-        return __request(OpenAPI, {
+        return this.httpRequest.request({
             method: 'POST',
             url: '/api/sales-newsletters/v1/confirm',
             query: {
@@ -38,8 +38,8 @@ export class NewsletterService {
      * @returns AmarantSalesNewsletterSubscribeResultModel OK
      * @throws ApiError
      */
-    public static salesNewslettersSubscribe(): CancelablePromise<AmarantSalesNewsletterSubscribeResultModel> {
-        return __request(OpenAPI, {
+    public salesNewslettersSubscribe(): CancelablePromise<AmarantSalesNewsletterSubscribeResultModel> {
+        return this.httpRequest.request({
             method: 'POST',
             url: '/api/sales-newsletters/v1/subscribe',
             errors: {
@@ -57,10 +57,10 @@ export class NewsletterService {
      * @returns AmarantSalesNewsletterSubscribeResultModel OK
      * @throws ApiError
      */
-    public static salesNewslettersSubscribeGuest(
+    public salesNewslettersSubscribeGuest(
         requestBody: SalesNewslettersSubscribeGuestInputAmarantSalesNewsletterInputModel,
     ): CancelablePromise<AmarantSalesNewsletterSubscribeResultModel> {
-        return __request(OpenAPI, {
+        return this.httpRequest.request({
             method: 'POST',
             url: '/api/sales-newsletters/v1/subscribe-guest',
             body: requestBody,
@@ -79,8 +79,8 @@ export class NewsletterService {
      * @returns AmarantSalesNewsletterSubscribeResultModel OK
      * @throws ApiError
      */
-    public static salesNewslettersUnsubscribe(): CancelablePromise<AmarantSalesNewsletterSubscribeResultModel> {
-        return __request(OpenAPI, {
+    public salesNewslettersUnsubscribe(): CancelablePromise<AmarantSalesNewsletterSubscribeResultModel> {
+        return this.httpRequest.request({
             method: 'POST',
             url: '/api/sales-newsletters/v1/unsubscribe',
         });

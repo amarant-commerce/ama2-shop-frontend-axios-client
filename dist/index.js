@@ -2,7 +2,9 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
+export { AmarantShopFrontendApiClient } from './AmarantShopFrontendApiClient';
 export { ApiError } from './core/ApiError';
+export { BaseHttpRequest } from './core/BaseHttpRequest';
 export { CancelablePromise, CancelError } from './core/CancelablePromise';
 export { OpenAPI } from './core/OpenAPI';
 export { AddItemToCartInputAmarantSalesCartItemInputProductDto } from './models/AddItemToCartInputAmarantSalesCartItemInputProductDto';

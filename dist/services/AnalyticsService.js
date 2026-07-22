@@ -1,6 +1,7 @@
-import { OpenAPI } from '../core/OpenAPI';
-import { request as __request } from '../core/request';
 export class AnalyticsService {
+    constructor(httpRequest) {
+        this.httpRequest = httpRequest;
+    }
     /**
      * Get cookie panel collection.
      * Get cookie panel collection.
@@ -12,8 +13,8 @@ export class AnalyticsService {
      * @returns any OK
      * @throws ApiError
      */
-    static getCookiePanelCollection(q, page, itemsPerPage, include, exclude) {
-        return __request(OpenAPI, {
+    getCookiePanelCollection(q, page, itemsPerPage, include, exclude) {
+        return this.httpRequest.request({
             method: 'GET',
             url: '/api/cookie-panels/v1',
             query: {
@@ -32,8 +33,8 @@ export class AnalyticsService {
      * @returns AmarantCookiePanelModel OK
      * @throws ApiError
      */
-    static getCookiePanelItem(id) {
-        return __request(OpenAPI, {
+    getCookiePanelItem(id) {
+        return this.httpRequest.request({
             method: 'GET',
             url: '/api/cookie-panels/v1/{id}',
             path: {
@@ -48,8 +49,8 @@ export class AnalyticsService {
      * @returns void
      * @throws ApiError
      */
-    static recordCookiePanelConsentHistory(requestBody) {
-        return __request(OpenAPI, {
+    recordCookiePanelConsentHistory(requestBody) {
+        return this.httpRequest.request({
             method: 'POST',
             url: '/api/cookie-panels/v1/history',
             body: requestBody,

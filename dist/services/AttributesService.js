@@ -1,6 +1,7 @@
-import { OpenAPI } from '../core/OpenAPI';
-import { request as __request } from '../core/request';
 export class AttributesService {
+    constructor(httpRequest) {
+        this.httpRequest = httpRequest;
+    }
     /**
      * Get attribute collection.
      * Get attribute collection.
@@ -9,8 +10,8 @@ export class AttributesService {
      * @returns any OK
      * @throws ApiError
      */
-    static getAttributeCollection(include, exclude) {
-        return __request(OpenAPI, {
+    getAttributeCollection(include, exclude) {
+        return this.httpRequest.request({
             method: 'GET',
             url: '/api/attributes/v1',
             query: {
@@ -25,8 +26,8 @@ export class AttributesService {
      * @returns AmarantAttributeModel OK
      * @throws ApiError
      */
-    static getAttributeItem() {
-        return __request(OpenAPI, {
+    getAttributeItem() {
+        return this.httpRequest.request({
             method: 'GET',
             url: '/api/attributes/v1/{id}',
         });
