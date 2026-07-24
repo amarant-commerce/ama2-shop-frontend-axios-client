@@ -1,4 +1,7 @@
-export class ViewService {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.ViewService = void 0;
+class ViewService {
     constructor(httpRequest) {
         this.httpRequest = httpRequest;
     }
@@ -15,3 +18,4 @@ export class ViewService {
         });
     }
 }
+exports.ViewService = ViewService;

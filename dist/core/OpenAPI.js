@@ -1,4 +1,7 @@
-export const OpenAPI = {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.OpenAPI = void 0;
+exports.OpenAPI = {
     BASE: '',
     VERSION: '2.30.0',
     WITH_CREDENTIALS: false,

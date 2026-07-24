@@ -1,4 +1,7 @@
-export class AnalyticsService {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.AnalyticsService = void 0;
+class AnalyticsService {
     constructor(httpRequest) {
         this.httpRequest = httpRequest;
     }
@@ -62,3 +65,4 @@ export class AnalyticsService {
         });
     }
 }
+exports.AnalyticsService = AnalyticsService;

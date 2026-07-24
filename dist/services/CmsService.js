@@ -1,4 +1,7 @@
-export class CmsService {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.CmsService = void 0;
+class CmsService {
     constructor(httpRequest) {
         this.httpRequest = httpRequest;
     }
@@ -249,3 +252,4 @@ export class CmsService {
         });
     }
 }
+exports.CmsService = CmsService;

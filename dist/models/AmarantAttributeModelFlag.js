@@ -1,8 +1,11 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.AmarantAttributeModelFlag = void 0;
 /* generated using openapi-typescript-codegen -- do not edit */
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-export var AmarantAttributeModelFlag;
+var AmarantAttributeModelFlag;
 (function (AmarantAttributeModelFlag) {
     AmarantAttributeModelFlag["FACTORY"] = "factory";
     AmarantAttributeModelFlag["GLOBAL"] = "global";
@@ -24,4 +27,4 @@ export var AmarantAttributeModelFlag;
     AmarantAttributeModelFlag["SORTABLE_IN_GRID"] = "sortable_in_grid";
     AmarantAttributeModelFlag["USED_IN_CART_ITEM"] = "used_in_cart_item";
     AmarantAttributeModelFlag["USED_IN_ORDER_ITEM"] = "used_in_order_item";
-})(AmarantAttributeModelFlag || (AmarantAttributeModelFlag = {}));
+})(AmarantAttributeModelFlag || (exports.AmarantAttributeModelFlag = AmarantAttributeModelFlag = {}));

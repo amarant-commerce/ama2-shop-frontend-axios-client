@@ -1,4 +1,7 @@
-export class SearchService {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.SearchService = void 0;
+class SearchService {
     constructor(httpRequest) {
         this.httpRequest = httpRequest;
     }
@@ -19,3 +22,4 @@ export class SearchService {
         });
     }
 }
+exports.SearchService = SearchService;

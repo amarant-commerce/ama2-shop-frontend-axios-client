@@ -1,4 +1,7 @@
-export class AiService {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.AiService = void 0;
+class AiService {
     constructor(httpRequest) {
         this.httpRequest = httpRequest;
     }
@@ -25,3 +28,4 @@ export class AiService {
         });
     }
 }
+exports.AiService = AiService;

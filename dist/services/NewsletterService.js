@@ -1,4 +1,7 @@
-export class NewsletterService {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.NewsletterService = void 0;
+class NewsletterService {
     constructor(httpRequest) {
         this.httpRequest = httpRequest;
     }
@@ -76,3 +79,4 @@ export class NewsletterService {
         });
     }
 }
+exports.NewsletterService = NewsletterService;
