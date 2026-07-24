@@ -1,7 +1,4 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.QuotesService = void 0;
-class QuotesService {
+export class QuotesService {
     constructor(httpRequest) {
         this.httpRequest = httpRequest;
     }
@@ -74,4 +71,3 @@ class QuotesService {
         });
     }
 }
-exports.QuotesService = QuotesService;

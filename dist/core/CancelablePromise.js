@@ -1,4 +1,3 @@
-"use strict";
 var __classPrivateFieldSet = (this && this.__classPrivateFieldSet) || function (receiver, state, value, kind, f) {
     if (kind === "m") throw new TypeError("Private method is not writable");
     if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a setter");
@@ -11,13 +10,11 @@ var __classPrivateFieldGet = (this && this.__classPrivateFieldGet) || function (
     return kind === "m" ? f : kind === "a" ? f.call(receiver) : f ? f.value : state.get(receiver);
 };
 var _CancelablePromise_isResolved, _CancelablePromise_isRejected, _CancelablePromise_isCancelled, _CancelablePromise_cancelHandlers, _CancelablePromise_promise, _CancelablePromise_resolve, _CancelablePromise_reject;
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.CancelablePromise = exports.CancelError = void 0;
 /* generated using openapi-typescript-codegen -- do not edit */
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-class CancelError extends Error {
+export class CancelError extends Error {
     constructor(message) {
         super(message);
         this.name = 'CancelError';
@@ -26,8 +23,7 @@ class CancelError extends Error {
         return true;
     }
 }
-exports.CancelError = CancelError;
-class CancelablePromise {
+export class CancelablePromise {
     constructor(executor) {
         _CancelablePromise_isResolved.set(this, void 0);
         _CancelablePromise_isRejected.set(this, void 0);
@@ -113,4 +109,3 @@ class CancelablePromise {
         return __classPrivateFieldGet(this, _CancelablePromise_isCancelled, "f");
     }
 }
-exports.CancelablePromise = CancelablePromise;

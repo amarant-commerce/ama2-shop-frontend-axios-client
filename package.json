@@ -4,7 +4,7 @@
   "description": "Axios client for Amarant Commerce 2.0 Shop Frontend API",
   "main": "dist/index.js",
   "scripts": {
-    "build": "npx tsc"
+    "build": "npx tsc && node scripts/fix-esm-extensions.js"
   },
   "repository": {
     "type": "git",

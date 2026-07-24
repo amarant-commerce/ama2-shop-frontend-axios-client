@@ -1,7 +1,4 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.BlogService = void 0;
-class BlogService {
+export class BlogService {
     constructor(httpRequest) {
         this.httpRequest = httpRequest;
     }
@@ -126,4 +123,3 @@ class BlogService {
         });
     }
 }
-exports.BlogService = BlogService;

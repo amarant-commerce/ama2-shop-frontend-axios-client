@@ -1,7 +1,4 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.CheckoutService = void 0;
-class CheckoutService {
+export class CheckoutService {
     constructor(httpRequest) {
         this.httpRequest = httpRequest;
     }
@@ -19,4 +16,3 @@ class CheckoutService {
         });
     }
 }
-exports.CheckoutService = CheckoutService;

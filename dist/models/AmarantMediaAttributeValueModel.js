@@ -1,7 +1,4 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.AmarantMediaAttributeValueModel = void 0;
-var AmarantMediaAttributeValueModel;
+export var AmarantMediaAttributeValueModel;
 (function (AmarantMediaAttributeValueModel) {
     let type;
     (function (type) {
@@ -9,4 +6,4 @@ var AmarantMediaAttributeValueModel;
         type["VIDEO"] = "video";
         type["FILE"] = "file";
     })(type = AmarantMediaAttributeValueModel.type || (AmarantMediaAttributeValueModel.type = {}));
-})(AmarantMediaAttributeValueModel || (exports.AmarantMediaAttributeValueModel = AmarantMediaAttributeValueModel = {}));
+})(AmarantMediaAttributeValueModel || (AmarantMediaAttributeValueModel = {}));

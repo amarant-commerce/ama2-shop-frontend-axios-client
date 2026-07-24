@@ -1,7 +1,4 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.DirectoryService = void 0;
-class DirectoryService {
+export class DirectoryService {
     constructor(httpRequest) {
         this.httpRequest = httpRequest;
     }
@@ -46,4 +43,3 @@ class DirectoryService {
         });
     }
 }
-exports.DirectoryService = DirectoryService;

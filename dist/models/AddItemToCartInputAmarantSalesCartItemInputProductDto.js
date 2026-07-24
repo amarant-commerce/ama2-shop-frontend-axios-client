@@ -1,7 +1,4 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.AddItemToCartInputAmarantSalesCartItemInputProductDto = void 0;
-var AddItemToCartInputAmarantSalesCartItemInputProductDto;
+export var AddItemToCartInputAmarantSalesCartItemInputProductDto;
 (function (AddItemToCartInputAmarantSalesCartItemInputProductDto) {
     let type;
     (function (type) {
@@ -9,4 +6,4 @@ var AddItemToCartInputAmarantSalesCartItemInputProductDto;
         type["GROUPED"] = "grouped";
         type["CONFIGURABLE"] = "configurable";
     })(type = AddItemToCartInputAmarantSalesCartItemInputProductDto.type || (AddItemToCartInputAmarantSalesCartItemInputProductDto.type = {}));
-})(AddItemToCartInputAmarantSalesCartItemInputProductDto || (exports.AddItemToCartInputAmarantSalesCartItemInputProductDto = AddItemToCartInputAmarantSalesCartItemInputProductDto = {}));
+})(AddItemToCartInputAmarantSalesCartItemInputProductDto || (AddItemToCartInputAmarantSalesCartItemInputProductDto = {}));
