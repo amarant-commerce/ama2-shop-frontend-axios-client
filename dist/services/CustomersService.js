@@ -44,6 +44,29 @@ export class CustomersService {
         });
     }
     /**
+     * Login as customer.
+     * Login as customer.
+     *
+     * Rate limiting:
+     * - limit: 60
+     * - interval: 1 minute
+     * @param requestBody
+     * @returns AmarantSecurityJwtTokenModel OK
+     * @throws ApiError
+     */
+    loginAsCustomer(requestBody) {
+        return this.httpRequest.request({
+            method: 'POST',
+            url: '/api/customers/v1/login-as-customer',
+            body: requestBody,
+            mediaType: 'application/json',
+            errors: {
+                401: `Invalid secret (SA-090).`,
+                429: `Too many requests.`,
+            },
+        });
+    }
+    /**
      * Create customer account.
      * Create customer account.
      * @param requestBody
