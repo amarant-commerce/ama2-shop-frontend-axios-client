@@ -11,6 +11,7 @@ import type { CreateCustomerAccountInputAmarantSalesCustomerAccountInputDto } fr
 import type { CreateCustomerAddressInputAmarantSalesCustomerAccountAddressInputDto } from '../models/CreateCustomerAddressInputAmarantSalesCustomerAccountAddressInputDto';
 import type { GetAuthorizationTokenInputAmarantSalesCustomerLoginInputDto } from '../models/GetAuthorizationTokenInputAmarantSalesCustomerLoginInputDto';
 import type { InitiatePasswordResetInputAmarantSalesCustomerPasswordResetRequestInputDto } from '../models/InitiatePasswordResetInputAmarantSalesCustomerPasswordResetRequestInputDto';
+import type { LoginAsCustomerInputAmarantSalesLoginAsCustomerInputDto } from '../models/LoginAsCustomerInputAmarantSalesLoginAsCustomerInputDto';
 import type { MeUpdateInputAmarantSalesCustomerAccountUpdateInputDto } from '../models/MeUpdateInputAmarantSalesCustomerAccountUpdateInputDto';
 import type { MeUpdateOrganizationInputAmarantSalesCustomerAccountOrganizationInputDto } from '../models/MeUpdateOrganizationInputAmarantSalesCustomerAccountOrganizationInputDto';
 import type { RefreshAuthorizationTokenInputAmarantSalesCustomerRefreshTokenInputDto } from '../models/RefreshAuthorizationTokenInputAmarantSalesCustomerRefreshTokenInputDto';
@@ -37,6 +38,18 @@ export declare class CustomersService {
      * @throws ApiError
      */
     static refreshAuthorizationToken(requestBody: RefreshAuthorizationTokenInputAmarantSalesCustomerRefreshTokenInputDto): CancelablePromise<AmarantSecurityJwtTokenModel>;
+    /**
+     * Login as customer.
+     * Login as customer.
+     *
+     * Rate limiting:
+     * - limit: 60
+     * - interval: 1 minute
+     * @param requestBody
+     * @returns AmarantSecurityJwtTokenModel OK
+     * @throws ApiError
+     */
+    static loginAsCustomer(requestBody: LoginAsCustomerInputAmarantSalesLoginAsCustomerInputDto): CancelablePromise<AmarantSecurityJwtTokenModel>;
     /**
      * Create customer account.
      * Create customer account.

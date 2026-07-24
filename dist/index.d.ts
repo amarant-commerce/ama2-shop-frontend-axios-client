@@ -166,6 +166,7 @@ export type { GetAuthorizationTokenInputAmarantSalesCustomerLoginInputDto } from
 export type { GetAvailableShippingRatesInputAmarantSalesCartShippingRateEstimationGroup } from './models/GetAvailableShippingRatesInputAmarantSalesCartShippingRateEstimationGroup';
 export type { InitiatePasswordResetInputAmarantSalesCustomerPasswordResetRequestInputDto } from './models/InitiatePasswordResetInputAmarantSalesCustomerPasswordResetRequestInputDto';
 export type { InputAmarantCmsContactFormInputDto } from './models/InputAmarantCmsContactFormInputDto';
+export type { LoginAsCustomerInputAmarantSalesLoginAsCustomerInputDto } from './models/LoginAsCustomerInputAmarantSalesLoginAsCustomerInputDto';
 export type { MeUpdateInputAmarantSalesCustomerAccountUpdateInputDto } from './models/MeUpdateInputAmarantSalesCustomerAccountUpdateInputDto';
 export type { MeUpdateOrganizationInputAmarantSalesCustomerAccountOrganizationInputDto } from './models/MeUpdateOrganizationInputAmarantSalesCustomerAccountOrganizationInputDto';
 export type { PlaceOrderInputAmarantSalesPlaceOrderInputDto } from './models/PlaceOrderInputAmarantSalesPlaceOrderInputDto';
