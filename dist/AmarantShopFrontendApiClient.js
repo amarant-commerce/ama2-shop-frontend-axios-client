@@ -9,6 +9,7 @@ import { CartsService } from './services/CartsService.js';
 import { CategoriesService } from './services/CategoriesService.js';
 import { CheckoutService } from './services/CheckoutService.js';
 import { CmsService } from './services/CmsService.js';
+import { CustomerContractsService } from './services/CustomerContractsService.js';
 import { CustomersService } from './services/CustomersService.js';
 import { DirectoryService } from './services/DirectoryService.js';
 import { NewsletterService } from './services/NewsletterService.js';
@@ -41,6 +42,7 @@ export class AmarantShopFrontendApiClient {
         this.categories = new CategoriesService(this.request);
         this.checkout = new CheckoutService(this.request);
         this.cms = new CmsService(this.request);
+        this.customerContracts = new CustomerContractsService(this.request);
         this.customers = new CustomersService(this.request);
         this.directory = new DirectoryService(this.request);
         this.newsletter = new NewsletterService(this.request);

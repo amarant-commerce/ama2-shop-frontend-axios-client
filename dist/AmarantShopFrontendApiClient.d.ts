@@ -10,6 +10,7 @@ import { CartsService } from './services/CartsService';
 import { CategoriesService } from './services/CategoriesService';
 import { CheckoutService } from './services/CheckoutService';
 import { CmsService } from './services/CmsService';
+import { CustomerContractsService } from './services/CustomerContractsService';
 import { CustomersService } from './services/CustomersService';
 import { DirectoryService } from './services/DirectoryService';
 import { NewsletterService } from './services/NewsletterService';
@@ -30,6 +31,7 @@ export declare class AmarantShopFrontendApiClient {
     readonly categories: CategoriesService;
     readonly checkout: CheckoutService;
     readonly cms: CmsService;
+    readonly customerContracts: CustomerContractsService;
     readonly customers: CustomersService;
     readonly directory: DirectoryService;
     readonly newsletter: NewsletterService;

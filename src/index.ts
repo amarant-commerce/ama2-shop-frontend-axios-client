@@ -144,6 +144,7 @@ export type { AmarantSalesCustomerAccountOrganizationOutputDto } from './models/
 export type { AmarantSalesCustomerAccountOutputDto } from './models/AmarantSalesCustomerAccountOutputDto';
 export { AmarantSalesCustomerAccountStateOutputDto } from './models/AmarantSalesCustomerAccountStateOutputDto';
 export { AmarantSalesCustomerAccountType } from './models/AmarantSalesCustomerAccountType';
+export type { AmarantSalesCustomerContractTerminateContractOrderItemInputDto } from './models/AmarantSalesCustomerContractTerminateContractOrderItemInputDto';
 export type { AmarantSalesCustomerMeOutputDto } from './models/AmarantSalesCustomerMeOutputDto';
 export type { AmarantSalesCustomerSocialLoginProviderOutputDto } from './models/AmarantSalesCustomerSocialLoginProviderOutputDto';
 export type { AmarantSalesCustomerSocialLoginStartAuthenticationOutputDto } from './models/AmarantSalesCustomerSocialLoginStartAuthenticationOutputDto';
@@ -188,6 +189,8 @@ export type { SetShippingInformationInputAmarantSalesCartShippingInformationInpu
 export type { SocialLoginStartAuthenticationInputAmarantSalesCustomerSocialLoginStartAuthenticationInputDto } from './models/SocialLoginStartAuthenticationInputAmarantSalesCustomerSocialLoginStartAuthenticationInputDto';
 export type { SocialLoginWithAuthorizationCodeInputAmarantSalesCustomerSocialLoginAuthorizationCodeInputDto } from './models/SocialLoginWithAuthorizationCodeInputAmarantSalesCustomerSocialLoginAuthorizationCodeInputDto';
 export type { SubmitCmsOrganizationalContactFormInputAmarantCmsOrganizationalContactFormInputDto } from './models/SubmitCmsOrganizationalContactFormInputAmarantCmsOrganizationalContactFormInputDto';
+export type { TerminateCustomerContractInputAmarantSalesCustomerContractTerminateContractInputDto } from './models/TerminateCustomerContractInputAmarantSalesCustomerContractTerminateContractInputDto';
+export type { TerminateCustomerOrderContractInputAmarantSalesCustomerContractTerminateContractInputDto } from './models/TerminateCustomerOrderContractInputAmarantSalesCustomerContractTerminateContractInputDto';
 export type { UpdateCartItemInputAmarantSalesCartItemUpdateInputDto } from './models/UpdateCartItemInputAmarantSalesCartItemUpdateInputDto';
 export type { UpdateCustomerAddressItemInputAmarantSalesCustomerAccountAddressInputDto } from './models/UpdateCustomerAddressItemInputAmarantSalesCustomerAccountAddressInputDto';
 export type { UpdateProductWishlistInputAmarantUpdateProductWishlistInput } from './models/UpdateProductWishlistInputAmarantUpdateProductWishlistInput';
@@ -202,6 +205,7 @@ export { CartsService } from './services/CartsService';
 export { CategoriesService } from './services/CategoriesService';
 export { CheckoutService } from './services/CheckoutService';
 export { CmsService } from './services/CmsService';
+export { CustomerContractsService } from './services/CustomerContractsService';
 export { CustomersService } from './services/CustomersService';
 export { DirectoryService } from './services/DirectoryService';
 export { NewsletterService } from './services/NewsletterService';

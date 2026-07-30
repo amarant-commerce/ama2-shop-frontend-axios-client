@@ -15,6 +15,7 @@ import { CartsService } from './services/CartsService';
 import { CategoriesService } from './services/CategoriesService';
 import { CheckoutService } from './services/CheckoutService';
 import { CmsService } from './services/CmsService';
+import { CustomerContractsService } from './services/CustomerContractsService';
 import { CustomersService } from './services/CustomersService';
 import { DirectoryService } from './services/DirectoryService';
 import { NewsletterService } from './services/NewsletterService';
@@ -35,6 +36,7 @@ export class AmarantShopFrontendApiClient {
     public readonly categories: CategoriesService;
     public readonly checkout: CheckoutService;
     public readonly cms: CmsService;
+    public readonly customerContracts: CustomerContractsService;
     public readonly customers: CustomersService;
     public readonly directory: DirectoryService;
     public readonly newsletter: NewsletterService;
@@ -66,6 +68,7 @@ export class AmarantShopFrontendApiClient {
         this.categories = new CategoriesService(this.request);
         this.checkout = new CheckoutService(this.request);
         this.cms = new CmsService(this.request);
+        this.customerContracts = new CustomerContractsService(this.request);
         this.customers = new CustomersService(this.request);
         this.directory = new DirectoryService(this.request);
         this.newsletter = new NewsletterService(this.request);
