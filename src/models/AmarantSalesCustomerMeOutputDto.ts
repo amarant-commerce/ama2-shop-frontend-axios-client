@@ -6,5 +6,6 @@ import type { AmarantSalesCustomerAccountOutputDto } from './AmarantSalesCustome
 export type AmarantSalesCustomerMeOutputDto = {
     loggedIn: boolean;
     customer?: AmarantSalesCustomerAccountOutputDto | null;
+    meta: Record<string, (string | number | boolean | Record<string, any> | null)>;
 };
 

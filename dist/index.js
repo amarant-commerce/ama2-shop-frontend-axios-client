@@ -26,6 +26,7 @@ export { CartsService } from './services/CartsService';
 export { CategoriesService } from './services/CategoriesService';
 export { CheckoutService } from './services/CheckoutService';
 export { CmsService } from './services/CmsService';
+export { CustomerContractsService } from './services/CustomerContractsService';
 export { CustomersService } from './services/CustomersService';
 export { DirectoryService } from './services/DirectoryService';
 export { NewsletterService } from './services/NewsletterService';
