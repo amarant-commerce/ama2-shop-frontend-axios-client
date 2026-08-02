@@ -22,6 +22,7 @@ export { AnalyticsService } from './services/AnalyticsService';
 export { ApplicationService } from './services/ApplicationService';
 export { AttributesService } from './services/AttributesService';
 export { BlogService } from './services/BlogService';
+export { BoxNowService } from './services/BoxNowService';
 export { CartsService } from './services/CartsService';
 export { CategoriesService } from './services/CategoriesService';
 export { CheckoutService } from './services/CheckoutService';

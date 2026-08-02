@@ -9,6 +9,6 @@ import type { AmarantSearchResultProductSearchResultItemModel } from './AmarantS
 export type AmarantSearchResultModel = Array<{
     type: string;
     label: string;
-    results: Array<(AmarantSearchResultPostCategorySearchResultItemModel | AmarantSearchResultPostSearchResultItemModel | AmarantSearchResultProductSearchResultItemModel | AmarantSearchResultCategorySearchResultItemModel)>;
+    results: Array<(AmarantSearchResultProductSearchResultItemModel | AmarantSearchResultCategorySearchResultItemModel | AmarantSearchResultPostCategorySearchResultItemModel | AmarantSearchResultPostSearchResultItemModel)>;
     viewAllResultsPath?: string | null;
 }>;
