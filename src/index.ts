@@ -36,6 +36,7 @@ export type { AmarantBlogPostCategoryModel } from './models/AmarantBlogPostCateg
 export type { AmarantBlogPostModel } from './models/AmarantBlogPostModel';
 export type { AmarantBlogPostTagModel } from './models/AmarantBlogPostTagModel';
 export type { AmarantBlogPostVersionModel } from './models/AmarantBlogPostVersionModel';
+export type { AmarantBoxNowDestinationModel } from './models/AmarantBoxNowDestinationModel';
 export type { AmarantCartAddressModel } from './models/AmarantCartAddressModel';
 export type { AmarantCartAdjustmentModel } from './models/AmarantCartAdjustmentModel';
 export type { AmarantCartCustomerModel } from './models/AmarantCartCustomerModel';
@@ -201,6 +202,7 @@ export { AnalyticsService } from './services/AnalyticsService';
 export { ApplicationService } from './services/ApplicationService';
 export { AttributesService } from './services/AttributesService';
 export { BlogService } from './services/BlogService';
+export { BoxNowService } from './services/BoxNowService';
 export { CartsService } from './services/CartsService';
 export { CategoriesService } from './services/CategoriesService';
 export { CheckoutService } from './services/CheckoutService';

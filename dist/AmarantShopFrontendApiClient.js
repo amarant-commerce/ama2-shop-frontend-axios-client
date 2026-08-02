@@ -5,6 +5,7 @@ import { AnalyticsService } from './services/AnalyticsService.js';
 import { ApplicationService } from './services/ApplicationService.js';
 import { AttributesService } from './services/AttributesService.js';
 import { BlogService } from './services/BlogService.js';
+import { BoxNowService } from './services/BoxNowService.js';
 import { CartsService } from './services/CartsService.js';
 import { CategoriesService } from './services/CategoriesService.js';
 import { CheckoutService } from './services/CheckoutService.js';
@@ -38,6 +39,7 @@ export class AmarantShopFrontendApiClient {
         this.application = new ApplicationService(this.request);
         this.attributes = new AttributesService(this.request);
         this.blog = new BlogService(this.request);
+        this.boxNow = new BoxNowService(this.request);
         this.carts = new CartsService(this.request);
         this.categories = new CategoriesService(this.request);
         this.checkout = new CheckoutService(this.request);

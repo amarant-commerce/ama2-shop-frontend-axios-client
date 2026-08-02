@@ -6,6 +6,7 @@ import { AnalyticsService } from './services/AnalyticsService';
 import { ApplicationService } from './services/ApplicationService';
 import { AttributesService } from './services/AttributesService';
 import { BlogService } from './services/BlogService';
+import { BoxNowService } from './services/BoxNowService';
 import { CartsService } from './services/CartsService';
 import { CategoriesService } from './services/CategoriesService';
 import { CheckoutService } from './services/CheckoutService';
@@ -27,6 +28,7 @@ export declare class AmarantShopFrontendApiClient {
     readonly application: ApplicationService;
     readonly attributes: AttributesService;
     readonly blog: BlogService;
+    readonly boxNow: BoxNowService;
     readonly carts: CartsService;
     readonly categories: CategoriesService;
     readonly checkout: CheckoutService;

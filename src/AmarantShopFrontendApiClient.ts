@@ -11,6 +11,7 @@ import { AnalyticsService } from './services/AnalyticsService';
 import { ApplicationService } from './services/ApplicationService';
 import { AttributesService } from './services/AttributesService';
 import { BlogService } from './services/BlogService';
+import { BoxNowService } from './services/BoxNowService';
 import { CartsService } from './services/CartsService';
 import { CategoriesService } from './services/CategoriesService';
 import { CheckoutService } from './services/CheckoutService';
@@ -32,6 +33,7 @@ export class AmarantShopFrontendApiClient {
     public readonly application: ApplicationService;
     public readonly attributes: AttributesService;
     public readonly blog: BlogService;
+    public readonly boxNow: BoxNowService;
     public readonly carts: CartsService;
     public readonly categories: CategoriesService;
     public readonly checkout: CheckoutService;
@@ -64,6 +66,7 @@ export class AmarantShopFrontendApiClient {
         this.application = new ApplicationService(this.request);
         this.attributes = new AttributesService(this.request);
         this.blog = new BlogService(this.request);
+        this.boxNow = new BoxNowService(this.request);
         this.carts = new CartsService(this.request);
         this.categories = new CategoriesService(this.request);
         this.checkout = new CheckoutService(this.request);

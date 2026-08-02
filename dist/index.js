@@ -24,6 +24,7 @@ export { AnalyticsService } from './services/AnalyticsService.js';
 export { ApplicationService } from './services/ApplicationService.js';
 export { AttributesService } from './services/AttributesService.js';
 export { BlogService } from './services/BlogService.js';
+export { BoxNowService } from './services/BoxNowService.js';
 export { CartsService } from './services/CartsService.js';
 export { CategoriesService } from './services/CategoriesService.js';
 export { CheckoutService } from './services/CheckoutService.js';
