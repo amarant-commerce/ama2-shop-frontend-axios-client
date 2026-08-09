@@ -142,6 +142,7 @@ export type { AmarantSalesCustomerAccountOrganizationOutputDto } from './models/
 export type { AmarantSalesCustomerAccountOutputDto } from './models/AmarantSalesCustomerAccountOutputDto';
 export { AmarantSalesCustomerAccountStateOutputDto } from './models/AmarantSalesCustomerAccountStateOutputDto';
 export { AmarantSalesCustomerAccountType } from './models/AmarantSalesCustomerAccountType';
+export type { AmarantSalesCustomerContractSubmissionResultOutputDto } from './models/AmarantSalesCustomerContractSubmissionResultOutputDto';
 export type { AmarantSalesCustomerContractTerminateContractOrderItemInputDto } from './models/AmarantSalesCustomerContractTerminateContractOrderItemInputDto';
 export type { AmarantSalesCustomerMeOutputDto } from './models/AmarantSalesCustomerMeOutputDto';
 export type { AmarantSalesCustomerSocialLoginProviderOutputDto } from './models/AmarantSalesCustomerSocialLoginProviderOutputDto';
@@ -174,6 +175,7 @@ export type { GetAvailableShippingRatesInputAmarantSalesCartShippingRateEstimati
 export type { InitiatePasswordResetInputAmarantSalesCustomerPasswordResetRequestInputDto } from './models/InitiatePasswordResetInputAmarantSalesCustomerPasswordResetRequestInputDto';
 export type { InputAmarantCmsContactFormInputDto } from './models/InputAmarantCmsContactFormInputDto';
 export type { LoginAsCustomerInputAmarantSalesLoginAsCustomerInputDto } from './models/LoginAsCustomerInputAmarantSalesLoginAsCustomerInputDto';
+export type { LookupCustomerOrderContractInputAmarantSalesCustomerContractLookupOrderInputDto } from './models/LookupCustomerOrderContractInputAmarantSalesCustomerContractLookupOrderInputDto';
 export type { MeUpdateInputAmarantSalesCustomerAccountUpdateInputDto } from './models/MeUpdateInputAmarantSalesCustomerAccountUpdateInputDto';
 export type { MeUpdateOrganizationInputAmarantSalesCustomerAccountOrganizationInputDto } from './models/MeUpdateOrganizationInputAmarantSalesCustomerAccountOrganizationInputDto';
 export type { PlaceOrderInputAmarantSalesPlaceOrderInputDto } from './models/PlaceOrderInputAmarantSalesPlaceOrderInputDto';

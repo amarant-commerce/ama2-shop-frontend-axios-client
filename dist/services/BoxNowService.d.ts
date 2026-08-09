@@ -8,5 +8,5 @@ export declare class BoxNowService {
      * @returns AmarantBoxNowDestinationModel OK
      * @throws ApiError
      */
-    static getDestination(id: string): CancelablePromise<AmarantBoxNowDestinationModel>;
+    static getBoxnowDestinationItem(id: string): CancelablePromise<AmarantBoxNowDestinationModel>;
 }

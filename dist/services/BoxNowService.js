@@ -8,7 +8,7 @@ export class BoxNowService {
      * @returns AmarantBoxNowDestinationModel OK
      * @throws ApiError
      */
-    static getDestination(id) {
+    static getBoxnowDestinationItem(id) {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/api/boxnow/v1/destinations/{id}',
