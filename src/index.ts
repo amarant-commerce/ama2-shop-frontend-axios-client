@@ -145,6 +145,8 @@ export type { AmarantSalesCustomerAccountOrganizationOutputDto } from './models/
 export type { AmarantSalesCustomerAccountOutputDto } from './models/AmarantSalesCustomerAccountOutputDto';
 export { AmarantSalesCustomerAccountStateOutputDto } from './models/AmarantSalesCustomerAccountStateOutputDto';
 export { AmarantSalesCustomerAccountType } from './models/AmarantSalesCustomerAccountType';
+export type { AmarantSalesCustomerContractOrderLookupItemOutputDto } from './models/AmarantSalesCustomerContractOrderLookupItemOutputDto';
+export type { AmarantSalesCustomerContractOrderLookupResultOutputDto } from './models/AmarantSalesCustomerContractOrderLookupResultOutputDto';
 export type { AmarantSalesCustomerContractSubmissionResultOutputDto } from './models/AmarantSalesCustomerContractSubmissionResultOutputDto';
 export type { AmarantSalesCustomerContractTerminateContractOrderItemInputDto } from './models/AmarantSalesCustomerContractTerminateContractOrderItemInputDto';
 export type { AmarantSalesCustomerMeOutputDto } from './models/AmarantSalesCustomerMeOutputDto';

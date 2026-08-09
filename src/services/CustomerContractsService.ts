@@ -2,6 +2,7 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
+import type { AmarantSalesCustomerContractOrderLookupResultOutputDto } from '../models/AmarantSalesCustomerContractOrderLookupResultOutputDto';
 import type { AmarantSalesCustomerContractSubmissionResultOutputDto } from '../models/AmarantSalesCustomerContractSubmissionResultOutputDto';
 import type { LookupCustomerOrderContractInputAmarantSalesCustomerContractLookupOrderInputDto } from '../models/LookupCustomerOrderContractInputAmarantSalesCustomerContractLookupOrderInputDto';
 import type { TerminateCustomerContractInputAmarantSalesCustomerContractTerminateContractInputDto } from '../models/TerminateCustomerContractInputAmarantSalesCustomerContractTerminateContractInputDto';
@@ -14,12 +15,12 @@ export class CustomerContractsService {
      * Look up an order by email and order number for contract termination.
      * Look up an order by email and order number for contract termination.
      * @param requestBody
-     * @returns any OK
+     * @returns AmarantSalesCustomerContractOrderLookupResultOutputDto OK
      * @throws ApiError
      */
     public lookupCustomerOrderContract(
         requestBody: LookupCustomerOrderContractInputAmarantSalesCustomerContractLookupOrderInputDto,
-    ): CancelablePromise<LookupCustomerOrderContractInputAmarantSalesCustomerContractLookupOrderInputDto> {
+    ): CancelablePromise<AmarantSalesCustomerContractOrderLookupResultOutputDto> {
         return this.httpRequest.request({
             method: 'POST',
             url: '/api/sales-customer-contracts/v1/lookup-order',

@@ -1,3 +1,4 @@
+import type { AmarantSalesCustomerContractOrderLookupResultOutputDto } from '../models/AmarantSalesCustomerContractOrderLookupResultOutputDto';
 import type { AmarantSalesCustomerContractSubmissionResultOutputDto } from '../models/AmarantSalesCustomerContractSubmissionResultOutputDto';
 import type { LookupCustomerOrderContractInputAmarantSalesCustomerContractLookupOrderInputDto } from '../models/LookupCustomerOrderContractInputAmarantSalesCustomerContractLookupOrderInputDto';
 import type { TerminateCustomerContractInputAmarantSalesCustomerContractTerminateContractInputDto } from '../models/TerminateCustomerContractInputAmarantSalesCustomerContractTerminateContractInputDto';
@@ -11,10 +12,10 @@ export declare class CustomerContractsService {
      * Look up an order by email and order number for contract termination.
      * Look up an order by email and order number for contract termination.
      * @param requestBody
-     * @returns any OK
+     * @returns AmarantSalesCustomerContractOrderLookupResultOutputDto OK
      * @throws ApiError
      */
-    lookupCustomerOrderContract(requestBody: LookupCustomerOrderContractInputAmarantSalesCustomerContractLookupOrderInputDto): CancelablePromise<LookupCustomerOrderContractInputAmarantSalesCustomerContractLookupOrderInputDto>;
+    lookupCustomerOrderContract(requestBody: LookupCustomerOrderContractInputAmarantSalesCustomerContractLookupOrderInputDto): CancelablePromise<AmarantSalesCustomerContractOrderLookupResultOutputDto>;
     /**
      * Terminate customer contract.
      * Terminate customer contract.
