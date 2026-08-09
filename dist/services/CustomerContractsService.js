@@ -5,7 +5,7 @@ export class CustomerContractsService {
      * Look up an order by email and order number for contract termination.
      * Look up an order by email and order number for contract termination.
      * @param requestBody
-     * @returns any OK
+     * @returns AmarantSalesCustomerContractOrderLookupResultOutputDto OK
      * @throws ApiError
      */
     static lookupCustomerOrderContract(requestBody) {
