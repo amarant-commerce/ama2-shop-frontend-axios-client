@@ -6,6 +6,7 @@ import type { AmarantSalesCustomerContractTerminateContractOrderItemInputDto } f
 export type TerminateCustomerOrderContractInputAmarantSalesCustomerContractTerminateContractInputDto = {
     email: string;
     orderNumber: string;
+    name: string;
     message?: string | null;
     orderItems: Array<AmarantSalesCustomerContractTerminateContractOrderItemInputDto>;
 };

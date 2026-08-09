@@ -14,7 +14,7 @@ export class BoxNowService {
      * @returns AmarantBoxNowDestinationModel OK
      * @throws ApiError
      */
-    public getDestination(
+    public getBoxnowDestinationItem(
         id: string,
     ): CancelablePromise<AmarantBoxNowDestinationModel> {
         return this.httpRequest.request({

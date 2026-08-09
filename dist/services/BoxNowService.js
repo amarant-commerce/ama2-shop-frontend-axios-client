@@ -9,7 +9,7 @@ export class BoxNowService {
      * @returns AmarantBoxNowDestinationModel OK
      * @throws ApiError
      */
-    getDestination(id) {
+    getBoxnowDestinationItem(id) {
         return this.httpRequest.request({
             method: 'GET',
             url: '/api/boxnow/v1/destinations/{id}',

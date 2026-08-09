@@ -3,10 +3,25 @@ export class CustomerContractsService {
         this.httpRequest = httpRequest;
     }
     /**
+     * Look up an order by email and order number for contract termination.
+     * Look up an order by email and order number for contract termination.
+     * @param requestBody
+     * @returns any OK
+     * @throws ApiError
+     */
+    lookupCustomerOrderContract(requestBody) {
+        return this.httpRequest.request({
+            method: 'POST',
+            url: '/api/sales-customer-contracts/v1/lookup-order',
+            body: requestBody,
+            mediaType: 'application/json',
+        });
+    }
+    /**
      * Terminate customer contract.
      * Terminate customer contract.
      * @param requestBody
-     * @returns void
+     * @returns AmarantSalesCustomerContractSubmissionResultOutputDto Resource created.
      * @throws ApiError
      */
     terminateCustomerContract(requestBody) {
@@ -21,7 +36,7 @@ export class CustomerContractsService {
      * Terminate customer order contract.
      * Terminate customer order contract.
      * @param requestBody
-     * @returns void
+     * @returns AmarantSalesCustomerContractSubmissionResultOutputDto Resource created.
      * @throws ApiError
      */
     terminateCustomerOrderContract(requestBody) {
