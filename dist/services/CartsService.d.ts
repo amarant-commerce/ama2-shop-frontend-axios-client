@@ -8,6 +8,7 @@ import type { DiscardCartCouponInputAmarantSalesCartCouponInputDto } from '../mo
 import type { GetAvailableShippingRatesInputAmarantSalesCartShippingRateEstimationGroup } from '../models/GetAvailableShippingRatesInputAmarantSalesCartShippingRateEstimationGroup';
 import type { SetPaymentInformationInputAmarantSalesCartPaymentInformationInputGroupDto } from '../models/SetPaymentInformationInputAmarantSalesCartPaymentInformationInputGroupDto';
 import type { SetShippingInformationInputAmarantSalesCartShippingInformationInputGroupDto } from '../models/SetShippingInformationInputAmarantSalesCartShippingInformationInputGroupDto';
+import type { TrackMailchimpCampaignInputAmarantMailchimpTrackCampaignInputDto } from '../models/TrackMailchimpCampaignInputAmarantMailchimpTrackCampaignInputDto';
 import type { UpdateCartItemInputAmarantSalesCartItemUpdateInputDto } from '../models/UpdateCartItemInputAmarantSalesCartItemUpdateInputDto';
 import type { CancelablePromise } from '../core/CancelablePromise';
 import type { BaseHttpRequest } from '../core/BaseHttpRequest';
@@ -99,6 +100,15 @@ export declare class CartsService {
      * @throws ApiError
      */
     discardCartCoupon(id: string, requestBody: DiscardCartCouponInputAmarantSalesCartCouponInputDto): CancelablePromise<AmarantCartModel>;
+    /**
+     * Record a Mailchimp campaign click id (mc_cid) against the cart, for later attribution when the order is placed.
+     * Record a Mailchimp campaign click id (mc_cid) against the cart, for later attribution when the order is placed.
+     * @param id Cart ID.
+     * @param requestBody
+     * @returns void
+     * @throws ApiError
+     */
+    trackMailchimpCampaign(id: string, requestBody: TrackMailchimpCampaignInputAmarantMailchimpTrackCampaignInputDto): CancelablePromise<void>;
     /**
      * Remove cart item.
      * Remove cart item.

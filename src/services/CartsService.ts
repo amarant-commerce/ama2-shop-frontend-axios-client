@@ -12,6 +12,7 @@ import type { DiscardCartCouponInputAmarantSalesCartCouponInputDto } from '../mo
 import type { GetAvailableShippingRatesInputAmarantSalesCartShippingRateEstimationGroup } from '../models/GetAvailableShippingRatesInputAmarantSalesCartShippingRateEstimationGroup';
 import type { SetPaymentInformationInputAmarantSalesCartPaymentInformationInputGroupDto } from '../models/SetPaymentInformationInputAmarantSalesCartPaymentInformationInputGroupDto';
 import type { SetShippingInformationInputAmarantSalesCartShippingInformationInputGroupDto } from '../models/SetShippingInformationInputAmarantSalesCartShippingInformationInputGroupDto';
+import type { TrackMailchimpCampaignInputAmarantMailchimpTrackCampaignInputDto } from '../models/TrackMailchimpCampaignInputAmarantMailchimpTrackCampaignInputDto';
 import type { UpdateCartItemInputAmarantSalesCartItemUpdateInputDto } from '../models/UpdateCartItemInputAmarantSalesCartItemUpdateInputDto';
 import type { CancelablePromise } from '../core/CancelablePromise';
 import type { BaseHttpRequest } from '../core/BaseHttpRequest';
@@ -208,6 +209,28 @@ export class CartsService {
         return this.httpRequest.request({
             method: 'DELETE',
             url: '/api/carts/v1/{id}/coupons',
+            path: {
+                'id': id,
+            },
+            body: requestBody,
+            mediaType: 'application/json',
+        });
+    }
+    /**
+     * Record a Mailchimp campaign click id (mc_cid) against the cart, for later attribution when the order is placed.
+     * Record a Mailchimp campaign click id (mc_cid) against the cart, for later attribution when the order is placed.
+     * @param id Cart ID.
+     * @param requestBody
+     * @returns void
+     * @throws ApiError
+     */
+    public trackMailchimpCampaign(
+        id: string,
+        requestBody: TrackMailchimpCampaignInputAmarantMailchimpTrackCampaignInputDto,
+    ): CancelablePromise<void> {
+        return this.httpRequest.request({
+            method: 'PATCH',
+            url: '/api/carts/v1/{id}/track-campaign',
             path: {
                 'id': id,
             },

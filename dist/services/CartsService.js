@@ -177,6 +177,25 @@ export class CartsService {
         });
     }
     /**
+     * Record a Mailchimp campaign click id (mc_cid) against the cart, for later attribution when the order is placed.
+     * Record a Mailchimp campaign click id (mc_cid) against the cart, for later attribution when the order is placed.
+     * @param id Cart ID.
+     * @param requestBody
+     * @returns void
+     * @throws ApiError
+     */
+    trackMailchimpCampaign(id, requestBody) {
+        return this.httpRequest.request({
+            method: 'PATCH',
+            url: '/api/carts/v1/{id}/track-campaign',
+            path: {
+                'id': id,
+            },
+            body: requestBody,
+            mediaType: 'application/json',
+        });
+    }
+    /**
      * Remove cart item.
      * Remove cart item.
      * @param id Cart ID.
