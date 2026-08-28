@@ -1,6 +1,8 @@
 import type { AmarantSalesCheckoutConfigurationModel } from '../models/AmarantSalesCheckoutConfigurationModel';
 import type { AmarantSalesCheckoutPaymentRedirectCancelOutputModel } from '../models/AmarantSalesCheckoutPaymentRedirectCancelOutputModel';
 import type { AmarantSalesCheckoutPaymentRedirectSuccessOutputModel } from '../models/AmarantSalesCheckoutPaymentRedirectSuccessOutputModel';
+import type { CheckoutPaymentRedirectCancelInputAmarantSalesCheckoutPaymentRedirectCancelInputDto } from '../models/CheckoutPaymentRedirectCancelInputAmarantSalesCheckoutPaymentRedirectCancelInputDto';
+import type { CheckoutPaymentRedirectSuccessInputAmarantSalesCheckoutPaymentRedirectSuccessInputDto } from '../models/CheckoutPaymentRedirectSuccessInputAmarantSalesCheckoutPaymentRedirectSuccessInputDto';
 import type { CancelablePromise } from '../core/CancelablePromise';
 import type { BaseHttpRequest } from '../core/BaseHttpRequest';
 export declare class CheckoutService {
@@ -17,17 +19,17 @@ export declare class CheckoutService {
     /**
      * Handle payment redirect success.
      * Handle payment redirect success.
-     * @param methodCode Payment method code.
+     * @param requestBody
      * @returns AmarantSalesCheckoutPaymentRedirectSuccessOutputModel OK
      * @throws ApiError
      */
-    checkoutPaymentRedirectSuccess(methodCode: string): CancelablePromise<AmarantSalesCheckoutPaymentRedirectSuccessOutputModel>;
+    checkoutPaymentRedirectSuccess(requestBody: CheckoutPaymentRedirectSuccessInputAmarantSalesCheckoutPaymentRedirectSuccessInputDto): CancelablePromise<AmarantSalesCheckoutPaymentRedirectSuccessOutputModel>;
     /**
      * Handle payment redirect cancel.
      * Handle payment redirect cancel.
-     * @param methodCode Payment method code.
+     * @param requestBody
      * @returns AmarantSalesCheckoutPaymentRedirectCancelOutputModel OK
      * @throws ApiError
      */
-    checkoutPaymentRedirectCancel(methodCode: string): CancelablePromise<AmarantSalesCheckoutPaymentRedirectCancelOutputModel>;
+    checkoutPaymentRedirectCancel(requestBody: CheckoutPaymentRedirectCancelInputAmarantSalesCheckoutPaymentRedirectCancelInputDto): CancelablePromise<AmarantSalesCheckoutPaymentRedirectCancelOutputModel>;
 }
