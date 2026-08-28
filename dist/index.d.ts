@@ -164,6 +164,8 @@ export type { AmarantSecurityJwtTokenModel } from './models/AmarantSecurityJwtTo
 export { AmarantTotalCodeModel } from './models/AmarantTotalCodeModel';
 export { AmarantTotalLabelModel } from './models/AmarantTotalLabelModel';
 export type { ApplyCartCouponInputAmarantSalesCartCouponInputDto } from './models/ApplyCartCouponInputAmarantSalesCartCouponInputDto';
+export type { CheckoutPaymentRedirectCancelInputAmarantSalesCheckoutPaymentRedirectCancelInputDto } from './models/CheckoutPaymentRedirectCancelInputAmarantSalesCheckoutPaymentRedirectCancelInputDto';
+export type { CheckoutPaymentRedirectSuccessInputAmarantSalesCheckoutPaymentRedirectSuccessInputDto } from './models/CheckoutPaymentRedirectSuccessInputAmarantSalesCheckoutPaymentRedirectSuccessInputDto';
 export type { ConfirmCustomerAccountInputAmarantSalesCustomerAccountConfirmationInputDto } from './models/ConfirmCustomerAccountInputAmarantSalesCustomerAccountConfirmationInputDto';
 export type { CreateCustomerAccountInputAmarantSalesCustomerAccountInputDto } from './models/CreateCustomerAccountInputAmarantSalesCustomerAccountInputDto';
 export type { CreateCustomerAddressInputAmarantSalesCustomerAccountAddressInputDto } from './models/CreateCustomerAddressInputAmarantSalesCustomerAccountAddressInputDto';

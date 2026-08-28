@@ -5,6 +5,8 @@
 import type { AmarantSalesCheckoutConfigurationModel } from '../models/AmarantSalesCheckoutConfigurationModel';
 import type { AmarantSalesCheckoutPaymentRedirectCancelOutputModel } from '../models/AmarantSalesCheckoutPaymentRedirectCancelOutputModel';
 import type { AmarantSalesCheckoutPaymentRedirectSuccessOutputModel } from '../models/AmarantSalesCheckoutPaymentRedirectSuccessOutputModel';
+import type { CheckoutPaymentRedirectCancelInputAmarantSalesCheckoutPaymentRedirectCancelInputDto } from '../models/CheckoutPaymentRedirectCancelInputAmarantSalesCheckoutPaymentRedirectCancelInputDto';
+import type { CheckoutPaymentRedirectSuccessInputAmarantSalesCheckoutPaymentRedirectSuccessInputDto } from '../models/CheckoutPaymentRedirectSuccessInputAmarantSalesCheckoutPaymentRedirectSuccessInputDto';
 import type { CancelablePromise } from '../core/CancelablePromise';
 import { OpenAPI } from '../core/OpenAPI';
 import { request as __request } from '../core/request';
@@ -25,37 +27,35 @@ export class CheckoutService {
     /**
      * Handle payment redirect success.
      * Handle payment redirect success.
-     * @param methodCode Payment method code.
+     * @param requestBody
      * @returns AmarantSalesCheckoutPaymentRedirectSuccessOutputModel OK
      * @throws ApiError
      */
     public static checkoutPaymentRedirectSuccess(
-        methodCode: string,
+        requestBody: CheckoutPaymentRedirectSuccessInputAmarantSalesCheckoutPaymentRedirectSuccessInputDto,
     ): CancelablePromise<AmarantSalesCheckoutPaymentRedirectSuccessOutputModel> {
         return __request(OpenAPI, {
             method: 'POST',
-            url: '/api/checkout/v1/payment/redirect/success/{methodCode}',
-            path: {
-                'methodCode': methodCode,
-            },
+            url: '/api/checkout/v1/payment/redirect/success',
+            body: requestBody,
+            mediaType: 'application/json',
         });
     }
     /**
      * Handle payment redirect cancel.
      * Handle payment redirect cancel.
-     * @param methodCode Payment method code.
+     * @param requestBody
      * @returns AmarantSalesCheckoutPaymentRedirectCancelOutputModel OK
      * @throws ApiError
      */
     public static checkoutPaymentRedirectCancel(
-        methodCode: string,
+        requestBody: CheckoutPaymentRedirectCancelInputAmarantSalesCheckoutPaymentRedirectCancelInputDto,
     ): CancelablePromise<AmarantSalesCheckoutPaymentRedirectCancelOutputModel> {
         return __request(OpenAPI, {
             method: 'POST',
-            url: '/api/checkout/v1/payment/redirect/cancel/{methodCode}',
-            path: {
-                'methodCode': methodCode,
-            },
+            url: '/api/checkout/v1/payment/redirect/cancel',
+            body: requestBody,
+            mediaType: 'application/json',
         });
     }
 }

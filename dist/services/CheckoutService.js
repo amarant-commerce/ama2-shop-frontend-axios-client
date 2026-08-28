@@ -17,33 +17,31 @@ export class CheckoutService {
     /**
      * Handle payment redirect success.
      * Handle payment redirect success.
-     * @param methodCode Payment method code.
+     * @param requestBody
      * @returns AmarantSalesCheckoutPaymentRedirectSuccessOutputModel OK
      * @throws ApiError
      */
-    static checkoutPaymentRedirectSuccess(methodCode) {
+    static checkoutPaymentRedirectSuccess(requestBody) {
         return __request(OpenAPI, {
             method: 'POST',
-            url: '/api/checkout/v1/payment/redirect/success/{methodCode}',
-            path: {
-                'methodCode': methodCode,
-            },
+            url: '/api/checkout/v1/payment/redirect/success',
+            body: requestBody,
+            mediaType: 'application/json',
         });
     }
     /**
      * Handle payment redirect cancel.
      * Handle payment redirect cancel.
-     * @param methodCode Payment method code.
+     * @param requestBody
      * @returns AmarantSalesCheckoutPaymentRedirectCancelOutputModel OK
      * @throws ApiError
      */
-    static checkoutPaymentRedirectCancel(methodCode) {
+    static checkoutPaymentRedirectCancel(requestBody) {
         return __request(OpenAPI, {
             method: 'POST',
-            url: '/api/checkout/v1/payment/redirect/cancel/{methodCode}',
-            path: {
-                'methodCode': methodCode,
-            },
+            url: '/api/checkout/v1/payment/redirect/cancel',
+            body: requestBody,
+            mediaType: 'application/json',
         });
     }
 }
