@@ -136,6 +136,8 @@ export type { AmarantSalesCheckoutAddressConfigurationModel } from './models/Ama
 export type { AmarantSalesCheckoutAttributeModel } from './models/AmarantSalesCheckoutAttributeModel';
 export type { AmarantSalesCheckoutConfigurationModel } from './models/AmarantSalesCheckoutConfigurationModel';
 export type { AmarantSalesCheckoutCustomerAccountConfigurationModel } from './models/AmarantSalesCheckoutCustomerAccountConfigurationModel';
+export type { AmarantSalesCheckoutPaymentRedirectCancelOutputModel } from './models/AmarantSalesCheckoutPaymentRedirectCancelOutputModel';
+export type { AmarantSalesCheckoutPaymentRedirectSuccessOutputModel } from './models/AmarantSalesCheckoutPaymentRedirectSuccessOutputModel';
 export type { AmarantSalesCustomerAccountAddressInputDto } from './models/AmarantSalesCustomerAccountAddressInputDto';
 export type { AmarantSalesCustomerAccountAddressOutputDto } from './models/AmarantSalesCustomerAccountAddressOutputDto';
 export type { AmarantSalesCustomerAccountOrganizationOutputDto } from './models/AmarantSalesCustomerAccountOrganizationOutputDto';
@@ -193,6 +195,7 @@ export type { SocialLoginWithAuthorizationCodeInputAmarantSalesCustomerSocialLog
 export type { SubmitCmsOrganizationalContactFormInputAmarantCmsOrganizationalContactFormInputDto } from './models/SubmitCmsOrganizationalContactFormInputAmarantCmsOrganizationalContactFormInputDto';
 export type { TerminateCustomerContractInputAmarantSalesCustomerContractTerminateContractInputDto } from './models/TerminateCustomerContractInputAmarantSalesCustomerContractTerminateContractInputDto';
 export type { TerminateCustomerOrderContractInputAmarantSalesCustomerContractTerminateContractInputDto } from './models/TerminateCustomerOrderContractInputAmarantSalesCustomerContractTerminateContractInputDto';
+export type { TrackMailchimpCampaignInputAmarantMailchimpTrackCampaignInputDto } from './models/TrackMailchimpCampaignInputAmarantMailchimpTrackCampaignInputDto';
 export type { UpdateCartItemInputAmarantSalesCartItemUpdateInputDto } from './models/UpdateCartItemInputAmarantSalesCartItemUpdateInputDto';
 export type { UpdateCustomerAddressItemInputAmarantSalesCustomerAccountAddressInputDto } from './models/UpdateCustomerAddressItemInputAmarantSalesCustomerAccountAddressInputDto';
 export type { UpdateProductWishlistInputAmarantUpdateProductWishlistInput } from './models/UpdateProductWishlistInputAmarantUpdateProductWishlistInput';

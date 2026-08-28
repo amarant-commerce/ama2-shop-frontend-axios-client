@@ -9,6 +9,7 @@ export type AmarantSalesCheckoutConfigurationModel = {
     allowCarts: boolean;
     allowNewCarts: boolean;
     allowGuestOrders: boolean;
+    allowRegistration: boolean;
     allowedAccountTypes: Array<string>;
     addressConfiguration: AmarantSalesCheckoutAddressConfigurationModel;
     customerAccountConfiguration: AmarantSalesCheckoutCustomerAccountConfigurationModel;
